@@ -1,6 +1,6 @@
 header {
     margin: 2rem auto;
-    background-color: rgb(6, 73, 35);
+    background-color: blueviolet;
     padding: 1.25rem;
     text-align: center;
    color: ghostwhite;
@@ -10,7 +10,7 @@ header {
 
 footer {
     margin: 1rem auto;
-    background-color: rgb(6, 73, 35);
+    background-color: blueviolet;
     padding: .11rem;
     text-align: center;
     max-width: 690px;
