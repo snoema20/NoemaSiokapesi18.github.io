@@ -1,7 +1,7 @@
 header {
     margin: 2rem auto;
     background-color: chartreuse;
-    padding: 1.25rem;
+    padding: 1.10rem;
     text-align: center;
    color: ghostwhite;
  font-size: 22px;
@@ -25,9 +25,8 @@ main{
     
 }
 
- image {
+ images {
 float: right;
-
 
 }
 
