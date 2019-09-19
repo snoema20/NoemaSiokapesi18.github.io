@@ -1,0 +1,8 @@
+// fuction to current year{
+    document.getElementByID('currentYear').innerHTML = new Date;
+
+}
+{
+    //get document last modified Date
+    document.getElementByID('lastUpdated').innerHTML = "lastUpdated: " + document.lasgtModified;
+}
