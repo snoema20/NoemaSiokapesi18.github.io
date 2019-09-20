@@ -1,6 +1,0 @@
-
-   { document.getElementByID('currentYear').innerHTML = new Date;
-
-}
-{ document.getElementByID('lastUpdated').innerHTML = "lastUpdated: " + document.lasgtModified;
-}
