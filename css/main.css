@@ -7,7 +7,7 @@ body{
 }
 h1 {
     background-color: brown;
-    color: rgb(54, 99, 9);
+    color: rgb(93, 22, 206);
     font-size: 1.7em;
     line-height: 1.5em;
     padding: 2em;
@@ -18,6 +18,7 @@ h2{
     font-size: 1.5em;
     line-height: 1.02em;
    color: black;
+   text-align: center;
 
 }
 
@@ -37,6 +38,7 @@ box-shadow: 0 5px 9px 0 #353535, 0 7px 21px 0 #353535;
 #section id {
     text-align: center;
 }
+
 footer{
     background-color: brown;
     padding: 1.01em;
