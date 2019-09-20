@@ -1,7 +1,10 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
+#div_1 {
+    width: 52%;
+    max-width: 0 auto;
+}
 head {
     background-color: brown;
     color: chartreuse;
@@ -12,14 +15,17 @@ head {
     border-radius: 15px;
 }
 
-main{
+h2{
     font-size: 1.5em;
     line-height: 1.02em;
    color: black;
 
 }
 
-picture{
+a{
+    color: bisque;
+}
+#Picture{
 position: relative;
 float: right;
 width: 150px;
