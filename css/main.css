@@ -5,7 +5,7 @@ body{
     width: 52%;
     max-width: 0 auto;
 }
-div {
+h1 {
     background-color: brown;
     color: chartreuse;
     font-size: 1.7em;
