@@ -1,11 +1,11 @@
 head {
-    margin: 1rem auto;
+    margin: 2rem auto;
     background-color: chartreuse;
-    padding: 1.10rem;
+    padding: 1.20rem;
     text-align: center;
-   color: black;
- font-size: 22px;
- max-width: 690px;
+    color: black;
+    font-size: 22px;
+    max-width: 690px;
 }
 
 footer {
