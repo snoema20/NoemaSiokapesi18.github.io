@@ -29,6 +29,15 @@ main{
      float: right;
  }
 
+#headtitle {
+background-color: aquamarine;
+color: blueviolet;
+font-size: 2em;
+line-height: 1.4em;
+padding: 1.3em;
+text-align: center;
+border-radius: 11px;
+}
 
 
 
