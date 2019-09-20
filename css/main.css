@@ -7,7 +7,7 @@ body{
 }
 h1 {
     background-color: brown;
-    color: chartreuse;
+    color: rgb(54, 99, 9);
     font-size: 1.7em;
     line-height: 1.5em;
     padding: 2em;
@@ -22,18 +22,21 @@ h2{
 }
 
 a{
-    color: bisque;
+    color:black;
 }
 #Picture{
 position: relative;
 float: right;
-width: 120px;
-height: 100px;
+width: 150px;
+height: 130px;
 max-width: 81%;
 top: 16px;
 box-shadow: 0 5px 9px 0 #353535, 0 7px 21px 0 #353535;
 }
 
+section {
+    text-align: center;
+}
 footer{
     background-color: brown;
     padding: 1.01em;
