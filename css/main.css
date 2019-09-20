@@ -10,9 +10,9 @@ h1 {
     color: rgb(93, 22, 206);
     font-size: 2.5em;
     line-height: 2em;
-    padding: 2em;
+    padding: 1.7em;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 section {
     font-size: 1.5em;
