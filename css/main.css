@@ -2,7 +2,7 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-head {
+header {
     background-color: brown;
     color: chartreuse;
     font-size: 1.7em;
@@ -12,7 +12,7 @@ head {
     border-radius: 11px;
 }
 
-h2{
+main{
     font-size: 1.7em;
     line-height: 1.2em;
    color: chartreuse;
@@ -37,4 +37,12 @@ footer{
     text-align: center;
     line-height: 1.4em;
     border-radius: 10px;
+}
+
+footer a {
+    color: black;
+}
+
+#lastUpdated {
+    color: black
 }
