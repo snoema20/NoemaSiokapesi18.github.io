@@ -57,7 +57,7 @@ ul li a:link {
     text-decoration: none;
 }
 
-ul li a: :visited {
+ul li a:visited {
     color: black;
 }
 
@@ -65,7 +65,7 @@ ul li a:hover {
     color: black;
 }
 
-a: :active {
+a:active {
     color: black;
 }
 
