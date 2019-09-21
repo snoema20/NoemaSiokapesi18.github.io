@@ -39,9 +39,9 @@ h2 {
 footer {
     background-color: darkred;
     padding: 2em;
-    color: blue;
+    color: black;
     text-align: center;
-    font-size: 0.7em;
+    font-size: 1em;
     line-height: 1.5em;
     border-radius: 13px;
 }
