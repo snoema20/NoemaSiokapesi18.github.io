@@ -25,22 +25,22 @@ h2 {
 #Picture {
     position: relative;
     float: right;
-    width: 100px;
-    max-width: 82%;
+    width: 50px;
+    max-width: 50%;
     top: 16px;
-    height: 100px;
+    height: 50px;
     margin-right: 14px;
     box-shadow: 0 5px 8px 0 #353535, 0 5px 21px 0 #353535;
 }
 
 footer {
     background-color: darkred;
-    padding: 2em;
+    padding: 1em;
     color: black;
     text-align: center;
     font-size: 1em;
     line-height: 1.5em;
-    border-radius: 8px;
+    border-radius: 7px;
 }
 
 footer a {
