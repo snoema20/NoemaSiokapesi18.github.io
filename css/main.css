@@ -6,7 +6,7 @@ body {
     width: 53%;
     margin: 0 auto;
 }
-#head {
+#header {
     background-color: darkred;
     color: blue;
     font-size: 2em;
