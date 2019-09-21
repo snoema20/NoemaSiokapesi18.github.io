@@ -32,7 +32,7 @@ img {
     float: right;
     margin: 11px;
     border: 1.2px saddlebrown;
-    box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
 }
 
 h1 h2 h3 h4 h5 h6 {
@@ -42,13 +42,13 @@ h1 h2 h3 h4 h5 h6 {
 }
 
 h1 {
-    font-size: 1.20em;
+    font-size: 2em;
     padding: 2em;
     margin-top: 22px;
 }
 
 h2 {
-    font-size: 1.80em;
+    font-size: 1.30em;
     margin: 0;
 }
 
