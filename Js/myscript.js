@@ -1,13 +1,5 @@
-var options = {
-    weekday: 'long', 
-    day: 'numeric', 
-    month: 'long', 
-    year: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric'
-}
+//Function to get current year
+document.getElementById('Year').innerHTML = new Date().getFullYear();
 
-document.getElementById('currentDate').innerHTML = new Date().toLocaleDateString('en-US', options);
-
-document.getElementById('copyright').textContent = new Date(document.lastModified).getFullYear();
+//Get document last modified date
+document.getElementById('lastUpdated').innerHTML = "Last Updated: " + document.lastModified;
