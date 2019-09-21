@@ -1,12 +1,3 @@
-var option = {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    year: 'number',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-}
+document.getElementById('Year').innerHTML = new Date().getFullYear;
 
-document.getElementById('currentDate').innerHTML = new Date().toLocaleString('en-US', options);
-document.getElementById('copyright').textContent = new Date(document.lastModified).getFullYear();
+document.getElementById('lastUpdated').innerHTML = "Last Updated: " + document.lastModified;
