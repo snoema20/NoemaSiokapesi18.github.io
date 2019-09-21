@@ -15,7 +15,7 @@ header, nav, main, footer {
 header, footer {
     background-color: blueviolet;
     text-align: center;
-    border: 1.1px saddlebrown;
+    border: 3px saddlebrown;
     border-radius: 11px;
 }
 
