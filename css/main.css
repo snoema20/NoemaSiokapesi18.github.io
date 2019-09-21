@@ -1,59 +1,64 @@
 body{
-    text-align: center;
+    font-size: 1.3em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: aqua;
 }
-#div_1 {
-    width: 52%;
-    max-width: 0 auto;
+header, nav, main, footer {
+    margin: 1.3rem auto;
+    max-width: 750px;
+}
+header, footer {
+    background-color: brown;
+    text-align: center;
+    border: 1.4px saddlebrown;
+    border-radius: 11px;
+}
+
+header {
+    height: 100%;
+}
+
+main{
+    padding: 26px;
+    max-width: 730px;
+}
+img{
+    float: right;
+    margin: 11px;
+    border: 1.3px sandybrown;
+    border-radius: 11px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0.5px 5px 0 rgba(0, 0, 0, 0.24);
+
+}
+h1 h2 h3 h4 h5 h6 {
+    font-family: 'open Sans', sans-serif;
+    color: blueviolet;
 }
 h1 {
-    background-color: brown;
-    color: green;
-    font-size: 2.5em;
-    line-height: 2em;
-    padding: 1.3em;
-    text-align: center;
-    border-radius: 9px;
+    font-size: 2.89em;
+    padding: 0;
+    margin-top: 20px;
 }
-section {
-    font-size: 1.5em;
-    line-height: 1.02em;
-   color: black;
-   text-align: center;
-
+hr {
+    background-color: antiquewhite;
+    height: 1.2px;
+    border: 0;
+    padding: 0px;
+    margin: 0px;
+    
 }
-
-a{
-    color:black;
-}
-#Picture{
-position: relative;
-float: right;
-width: 150px;
-height: 140px;
-max-width: 81%;
-top: 16px;
-box-shadow: 0 5px 9px 0 #353535, 0 7px 21px 0 #353535;
-}
-
-#section id {
-    text-align: center;
-}
-
 footer{
-    background-color: brown;
-    padding: 1.01em;
-    color: black;
-    font-size: 0.8em;
-    text-align: center;
-    line-height: 1.4em;
-    border-radius: 7px;
+    padding: 6px;
+    height: 63px;
+    font-size: 16px;
+    line-height: 7px;
+    color: darksalmon;
+}
+#copyright {
+    color: blue;
+    font-size: 16px;
 }
 
-footer a {
-    color: black;
-}
-
-#lastUpdated {
-    color: black
+#currentDate {
+    color: blue;
 }
