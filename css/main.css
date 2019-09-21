@@ -54,9 +54,9 @@ footer{
     line-height: 7px;
     color: darksalmon;
 }
-#copyright {
+#lastUpdated {
     color: blue;
-    font-size: 16px;
+}
 }
 
 #currentDate {
