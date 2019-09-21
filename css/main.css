@@ -30,8 +30,8 @@ main{
 
 img {
     float: right;
-    margin: 11px;
-    border: 1.2px saddlebrown;
+    margin: 7px;
+    border: 1px saddlebrown;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.15);
 }
 
