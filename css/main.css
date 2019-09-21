@@ -5,7 +5,7 @@ body{
 }
 header, nav, main, footer {
     margin: 1.3rem auto;
-    max-width: 500px;
+    max-width: 400px;
 }
 header, footer {
     background-color: brown;
