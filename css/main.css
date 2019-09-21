@@ -10,7 +10,7 @@ header, nav, main, footer {
 header, footer {
     background-color: brown;
     text-align: center;
-    border: 4px saddlebrown;
+    border: 12px saddlebrown;
     border-radius: 11px;
 }
 
@@ -48,8 +48,8 @@ hr {
     
 }
 footer{
-    padding: 6px;
-    height: 63px;
+    padding: 8px;
+    height: 70px;
     font-size: 16px;
     line-height: 10px;
     color: darksalmon;
