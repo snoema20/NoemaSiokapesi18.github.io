@@ -6,7 +6,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 #div_1 {
-    width: 53S%;
+    width: 53%;
     margin: 0 auto;
 }
 #head {
@@ -51,5 +51,13 @@ color: black;
 }
 
 #lastUpdated {
+    color: blue;
+}
+#copyright {
+    color: blue;
+    font-size: 15px;
+}
+
+#currentDate {
     color: blue;
 }
