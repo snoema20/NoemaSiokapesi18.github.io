@@ -1,4 +1,5 @@
 body{
+    text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #div_1 {
@@ -12,7 +13,6 @@ h1 {
     line-height: 2em;
     padding: 1.3em;
     text-align: center;
-    position:center;
     border-radius: 9px;
 }
 section {
