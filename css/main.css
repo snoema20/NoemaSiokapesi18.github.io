@@ -4,7 +4,7 @@ body {
     font-size: 1.2em;
     padding: 0em;
     background: white;
-    color: aquamarine;
+    color: brown;
 }
 
 header, nav, main, footer {
@@ -43,7 +43,7 @@ h1 h2 h3 h4 h5 h6 {
 
 h1 {
     font-size: 1.20em;
-    padding: 0;
+    padding: 2em;
     margin-top: 22px;
 }
 
@@ -70,7 +70,7 @@ a: :active {
 }
 
 hr {
-    background-color: aquamarine;
+    background-color: black;
     height: 1.1px;
     border: 0;
     padding: 0px;
