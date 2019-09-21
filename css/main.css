@@ -10,7 +10,7 @@ header, nav, main, footer {
 header, footer {
     background-color: brown;
     text-align: center;
-    border: 1.4px saddlebrown;
+    border: 4px saddlebrown;
     border-radius: 11px;
 }
 
