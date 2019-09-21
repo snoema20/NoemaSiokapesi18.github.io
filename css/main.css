@@ -2,61 +2,54 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     
 }
-header, nav, main, footer {
-    margin: 1.3rem auto;
-    max-width: 400px;
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
-header, footer {
-    background-color: brown;
+#div_1 {
+    width: 53S%;
+    margin: 0 auto;
+}
+#head {
+    background-color: darkred;
+    color: blue;
+    font-size: 2.4em;
+    padding: 1.2em;
+    line-height: 1.4em;
     text-align: center;
-    border: 18px saddlebrown;
-    border-radius: 15px;
-}
-
-header {
-    height: 100%;
-}
-
-main{
-    padding: 26px;
-    max-width: 730px;
-}
-img{
-    float: right;
-    margin: 11px;
-    border: 1.3px sandybrown;
     border-radius: 11px;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0.5px 5px 0 rgba(0, 0, 0, 0.24);
-
 }
-h1 h2 h3 h4 h5 h6 {
-    font-family: 'open Sans', sans-serif;
+
+h2 {
+    font-size: 1.7em;
+    line-height: 1.5em;
     color: blueviolet;
 }
-h1 {
-    font-size: 2.89em;
-    padding: 0;
-    margin-top: 20px;
-}
-hr {
-    background-color: antiquewhite;
-    height: 1.2px;
-    border: 0;
-    padding: 0px;
-    margin: 0px;
-    
-}
-footer{
-    padding: 8px;
-    height: 70px;
-    font-size: 16px;
-    line-height: 10px;
-    color: darksalmon;
-}
-#lastUpdated {
-    color: blue;
+
+#Picture {
+    position: relative;
+    float: right;
+    width: 152px;
+    max-width: 82S%;
+    top: 16px;
+    height: 202px;
+    margin-right: 14px;
+    box-shadow: 0 5px 8px 0 #353535, 0 5px 21px 0 #35355;
 }
 
-#currentDate {
+footer {
+    background-color: darkred;
+    padding: 2em;
+    color: blue;
+    text-align: center;
+    font-size: 0.7em;
+    line-height: 1.5em;
+    border-radius: 13px;
+}
+
+footer a {
+color: black;
+}
+
+#lastUpdated {
     color: blue;
 }
