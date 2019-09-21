@@ -1,9 +1,6 @@
-body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
-}
+
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #div_1 {
     width: 53%;
@@ -28,10 +25,10 @@ h2 {
 #Picture {
     position: relative;
     float: right;
-    width: 152px;
+    width: 100px;
     max-width: 82%;
     top: 16px;
-    height: 202px;
+    height: 100px;
     margin-right: 14px;
     box-shadow: 0 5px 8px 0 #353535, 0 5px 21px 0 #353535;
 }
@@ -43,7 +40,7 @@ footer {
     text-align: center;
     font-size: 1em;
     line-height: 1.5em;
-    border-radius: 13px;
+    border-radius: 8px;
 }
 
 footer a {
@@ -51,13 +48,13 @@ color: black;
 }
 
 #lastUpdated {
-    color: blue;
+    color: black;
 }
 #copyright {
-    color: blue;
+    color: black;
     font-size: 15px;
 }
 
 #currentDate {
-    color: blue;
+    color: black;
 }
