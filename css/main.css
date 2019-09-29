@@ -86,10 +86,10 @@ footer {
 }
 
 #copyright {
-    color: black;
+    color: rgb(98, 121, 199);
     font-size: 13px;
 }
 
 #currentDate {
-    color: black;
+    color: rgb(71, 124, 185);
 }
