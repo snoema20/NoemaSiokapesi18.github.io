@@ -43,14 +43,14 @@
 
  p {
     padding: 10px;
-    color: #b69e9e;
+    color: #080101;
     font-size: 0.85em;
     line-height: 1.2em;
  }
 
  .web-link a {
-   background-color: #ffc857; 
-   color: #c46ea7; 
+   background-color: aquamarine; 
+   color: #230f79; 
    padding: 10px; 
    text-align: center; 
    display: inline-block;
