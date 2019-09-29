@@ -22,17 +22,17 @@
  }
 
  .img1 {
-    border-radius: 28px;    
+    border-radius: 20px;    
     padding: 8px;
-    width: 147px;
+    width: 130px;
     height: auto;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 2);
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 2);
  }
 
  .subheader {
    font-size: 1em;
    background-color: #79c9e9;
-   padding: 10px;
+   padding: 9px;
    color: #075705
  }
 
