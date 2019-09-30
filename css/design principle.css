@@ -24,27 +24,27 @@
  .img1 {
     border-radius: 12px;    
     padding: 9px;
-    width: 120px;
+    width: 70px;
     height: auto;
     box-shadow: 0 6px 5px 0 rgba(0, 0, 0, 2);
  }
 
  .subheader {
    font-size: 1em;
-   background-color: #79c9e9;
+   background-color: #0f96c7;
    padding: 9px;
-   color: #075705
+   color: #011100
  }
 
  .header-3 {
-    padding: 3px;
-    font-size: 0.95em;
+    padding: 2px;
+    font-size: 2.95em;
  }
 
  p {
     padding: 10px;
     color: #080101;
-    font-size: 1em;
+    font-size: 2em;
     line-height: 1.2em;
  }
 
@@ -63,7 +63,7 @@
 
  @media only screen and (min-width: 30.5em) {
     .img1 {
-       width: 100px;
+       width: auto
        height: auto;
 
     }
