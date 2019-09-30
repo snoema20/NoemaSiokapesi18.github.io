@@ -15,7 +15,7 @@ header {
     background-color: #2216cc;
     text-align: center;
     border: 1px solid #01141b;
-    max-width: 700px;
+    max-width: 500px;
     margin: 0 auto;  
 }
 
@@ -37,7 +37,7 @@ article:nth-child(3){
 
 #column1, #column2, #column3, .columnImage {
     display: inline-block;
-    padding-bottom: 9px;
+    padding-bottom: 6px;
     text-align: center;
     
 }
@@ -46,7 +46,7 @@ article:nth-child(3){
     
 
 .columnImage {
-    border-radius: 8px;
+    border-radius: 6px;
     background-color: #d4e6ee;
     margin: 0px;
     border: 0.3px solid #024059;
@@ -55,10 +55,10 @@ article:nth-child(3){
 
 .columnImage p {
     display: block;
-    font-size: .75rem;
+    font-size: .60rem;
     text-align: center;
-    border-radius: 11px;
-    padding: 4px;
+    border-radius: 8px;
+    padding: 2px;
     background-color: #d4e6ee;
     
 }
@@ -68,14 +68,14 @@ article:nth-child(3){
     border-top-left-radius: 11px;
     border-top-right-radius: 11px;
     margin: 0px;
-    padding: 4px;
-    padding-bottom: 11px;
+    padding: 2px;
+    padding-bottom: 7px;
     text-align: center;
-    height: 3.7rem;
+    height: 3.1rem;
 }
 
 .columnImage h3 {
-    padding: 14px;
+    padding: 10px;
     font-weight: bold;
 }
 
