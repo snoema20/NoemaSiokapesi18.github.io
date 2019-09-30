@@ -1,31 +1,40 @@
 @import url(https://fonts.google.com/specimen/Mansalva?selection.family=Mansalva);
    
 body {
-    margin-top: 6px;
-    font-size: 1.3em;
-    font-family: fantasy;
+    margin-top: 5px;
+    font-size: 1.1em;
+    font-family: 'Roboto', sans-serif;
     padding: 0;
-    background-color: #c7dba6;
-    color: #02151d;
+    background-color: #f1f5f7;
+    color: #024059;
 }
 
-
+/*header, nav, main, footer {
+    /*margin: 0 auto;  if probs change 1 rem to 0 auto; this centers the page
+    max-width: 767px;
+}*/
 
 header, footer {
-    background-color: #2216cc;
+    background-color: #36768e;
     text-align: center;
-    border: 1px solid #7bd7f8;
-    max-width: 200px;
-    margin: 0 auto;  
+    border: 1px solid #024059;
+    max-width: 767px;
+    margin: 0 auto;
+   
+    /*padding: 20px 0 20px;*/
 }
 
+
+    /*header {height: 100px;} */ /* removing this worked to allow the page elements to nest under each other properly! */
+
+
 main {
-    max-width: 300px;
+    max-width: 767px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 15px;
-    font-size: 1rem;
+    font-size: 0.8rem;
         
 }
 
@@ -37,7 +46,7 @@ article:nth-child(3){
 
 #column1, #column2, #column3, .columnImage {
     display: inline-block;
-    padding-bottom: 3px;
+    padding-bottom: 10px;
     text-align: center;
     
 }
@@ -46,74 +55,74 @@ article:nth-child(3){
     
 
 .columnImage {
-    border-radius: 3px;
+    border-radius: 10px;
     background-color: #d4e6ee;
     margin: 0px;
-    border: 0.3px solid #024059;
+    border: 1px solid #024059;
 
 }
 
 .columnImage p {
     display: block;
-    font-size: 3.60rem;
+    font-size: .75rem;
     text-align: center;
-    border-radius: 3px;
-    padding: 2px;
+    border-radius: 10px;
+    padding: 5px;
     background-color: #d4e6ee;
     
 }
 
 .columnImage h2 {
     background-color: white;
-    border-top-left-radius: 11px;
-    border-top-right-radius: 11px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     margin: 0px;
-    padding: 2px;
-    padding-bottom: 3px;
+    padding: 5px;
+    padding-bottom: 10px;
     text-align: center;
-    height: 3.1rem;
+    height: 3rem;
 }
 
 .columnImage h3 {
-    padding: 2px;
+    padding: 15px;
     font-weight: bold;
 }
 
-img { 
+img { /* maybe change to main img or something*/
     height: auto;
-    width: 100%; 
-    border: 1px solid #6b5cc5;
-    margin-top: 11px;
-    margin-bottom: 11px;
-    border-radius: 11px;    
-      
+    width: 90%; 
+    border: 1px solid #024059;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;    
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);   
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: fantasy, serif;
+    font-family: 'Roboto Slab', serif;
     margin: 0;
 }
 
 h1 {
-    font-size: 1.4rem;
-    color: #03010e;
-  
+    font-size: 1.5rem;
+    color: #024059;
+    /*height: 7vh;*/
 }
 
 h2 {
-    font-size: 1.3rem;
-    color: #0c0427;
-    padding: 0 0 5px 0;
+    font-size: 1.25rem;
+    color: #36768e;
+    padding: 0 0 10px 0;
     text-align: left;   
 }
 
 h3 {
-    font-size: 1.4rem;
-    color: #080413;
+    font-size: 1rem;
+    color: #024059;
 }
 
 ul li a:link {
-    color: #3728be;
+    color: #024059;
     text-decoration: none;
 }
 
@@ -129,7 +138,7 @@ ul li a:active {
 }
 
 a:link {
-    color: #e7f1f5;
+    color: #024059;
     text-decoration: none;
 }
 
@@ -144,18 +153,17 @@ a:active {
     color: khaki;
 }
 
-    
-
 footer {
-    padding: 10px;
-    font-size: 17px;
-    line-height: 4px;
-    color: #96360a;
+    padding: 5px;
+    /*height: 60px;*/  /* removing this worked to allow the page elements to nest under each other properly! */
+    font-size: 14px;
+    /*line-height: 5px;
+    color: #f1f5f7;*/
 }
 #copyright {
-    color:#03000c;
-    font-size: 20px;
+    color:#f1f5f7;
+    font-size: 14px;
 }
 #currentDate {
-    color: #010b11;
+    color: #f1f5f7;
 }
