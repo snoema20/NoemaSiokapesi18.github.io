@@ -58,16 +58,16 @@ article:nth-child(3){
 
 .columnImage p {
     display: block;
-    font-size: .75rem;
+    font-size: 1rem;
     text-align: center;
     border-radius: 10px;
     padding: 5px;
-    background-color: #d4e6ee;
+    background-color: #f56032;
     
 }
 
 .columnImage h2 {
-    background-color: white;
+    background-color: rgb(164, 9, 202);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin: 0px;
@@ -87,8 +87,8 @@ img {
     width: auto; 
     border: 1px solid #024059;
     margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;    
+    margin-bottom: 5px;
+    border-radius: 5px;    
      
 }
 
@@ -104,7 +104,7 @@ h1 {
 }
 
 h2 {
-    font-size: 3.25rem;
+    font-size: 3rem;
     color: #010608;
     padding: 0 0 7px 0;
     text-align: left;   
