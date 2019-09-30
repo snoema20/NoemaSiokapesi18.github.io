@@ -3,16 +3,11 @@
 body {
     margin-top: 5px;
     font-size: 1.1em;
-    font-family: 'Roboto', sans-serif;
+    font-family: fantasy, sans-serif;
     padding: 0;
     background-color: #f1f5f7;
     color: #024059;
 }
-
-/*header, nav, main, footer {
-    /*margin: 0 auto;  if probs change 1 rem to 0 auto; this centers the page
-    max-width: 767px;
-}*/
 
 header, footer {
     background-color: #36768e;
@@ -21,12 +16,11 @@ header, footer {
     max-width: 767px;
     margin: 0 auto;
    
-    /*padding: 20px 0 20px;*/
+   
 }
 
 
-    /*header {height: 100px;} */ /* removing this worked to allow the page elements to nest under each other properly! */
-
+    
 
 main {
     max-width: 767px;
@@ -88,7 +82,7 @@ article:nth-child(3){
     font-weight: bold;
 }
 
-img { /* maybe change to main img or something*/
+img { 
     height: auto;
     width: 90%; 
     border: 1px solid #024059;
@@ -106,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 1.5rem;
     color: #024059;
-    /*height: 7vh;*/
+    
 }
 
 h2 {
