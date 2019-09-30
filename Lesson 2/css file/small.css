@@ -5,7 +5,7 @@ body {
     font-size: 1.3em;
     font-family: fantasy;
     padding: 0;
-    background-color: #a7440b;
+    background-color: #c7dba6;
     color: #02151d;
 }
 
@@ -14,7 +14,7 @@ body {
 header, footer {
     background-color: #2216cc;
     text-align: center;
-    border: 1px solid #01141b;
+    border: 1px solid #7bd7f8;
     max-width: 200px;
     margin: 0 auto;  
 }
@@ -153,9 +153,9 @@ footer {
     color: #96360a;
 }
 #copyright {
-    color:#d7d5df;
+    color:#03000c;
     font-size: 20px;
 }
 #currentDate {
-    color: #e6ecf0;
+    color: #010b11;
 }
