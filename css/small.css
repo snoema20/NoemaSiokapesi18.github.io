@@ -84,7 +84,7 @@ article:nth-child(3){
 
 img { 
     height: auto;
-    width: 760%; 
+    width: auto; 
     border: 1px solid #024059;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -98,20 +98,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 1rem;
+    font-size: 3rem;
     color: #024059;
     
 }
 
 h2 {
-    font-size: 1.25rem;
+    font-size: 3.25rem;
     color: #36768e;
-    padding: 0 0 10px 0;
+    padding: 0 0 7px 0;
     text-align: left;   
 }
 
 h3 {
-    font-size: 1rem;
+    font-size: 5rem;
     color: #024059;
 }
 
@@ -152,11 +152,11 @@ footer {
     padding: 10px;
     font-size: 17px;
     line-height: 4px;
-    color: #96360a;
+    color: #fcf7f5;
 }
 #copyright {
     color:#020008;
-    font-size: 20px;
+    font-size: 25px;
 }
 #currentDate {
     color: #000508;
