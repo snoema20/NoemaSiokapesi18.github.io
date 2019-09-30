@@ -9,7 +9,7 @@ body {
     color: #024059;
 }
 
-header {
+header, footer {
     background-color: #36768e;
     text-align: center;
     border: 1px solid #024059;
