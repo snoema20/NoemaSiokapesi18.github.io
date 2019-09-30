@@ -22,7 +22,7 @@ header, footer {
 
 
    main {
-    max-width: 200px;
+    max-width: 600px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -83,7 +83,7 @@ article:nth-child(3){
 
 img { 
     height: auto;
-    width: 40%; 
+    width: 70%; 
     border: 1px solid #024059;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -92,7 +92,7 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto Slab', serif;
+    font-family: fantasy;
     margin: 0;
 }
 
