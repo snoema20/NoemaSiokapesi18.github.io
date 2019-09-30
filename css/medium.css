@@ -1,7 +1,7 @@
 @media only screen and (min-width: 37.5em) {
     
     header, main, footer {
-        min-width: 37.5em;
+        min-width: 24.5em;
     }
         
     header, footer {
@@ -10,8 +10,8 @@
     
     main {
         grid-template-columns: 1fr 1fr;
-        padding: 25px;
-        /*column-gap: 1.5rem;*/
+        padding: 18px;
+       
     }
     
     article:nth-child(2) {
@@ -27,12 +27,12 @@
     }
     
     h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         padding: 20px;
     }
         
     h2 {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     
     h3{
