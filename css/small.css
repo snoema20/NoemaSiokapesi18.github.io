@@ -6,7 +6,7 @@ body {
     font-size: 1.1em;
     font-family: 'Roboto', sans-serif;
     padding: 0;
-    background-color: #d18023;
+    background-color: #f3f3f3;
     color: #024059;
 }
 
@@ -14,7 +14,7 @@ header, footer {
     background-color: #36768e;
     text-align: center;
     border: 1px solid #024059;
-    max-width: 767px;
+    max-width: 200px;
     margin: 0 auto;
    
   
@@ -22,7 +22,7 @@ header, footer {
 
 
 main {
-    max-width: 500px;
+    max-width: 200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
