@@ -6,7 +6,7 @@ body {
     font-size: 1.1em;
     font-family: 'Roboto', sans-serif;
     padding: 0;
-    background-color: #f1f5f7;
+    background-color: #d18023;
     color: #024059;
 }
 
@@ -22,12 +22,12 @@ header, footer {
 
 
 main {
-    max-width: 767px;
+    max-width: 500px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 15px;
-    font-size: 0.8rem;
+    font-size: 2.8rem;
         
 }
 
@@ -81,9 +81,9 @@ article:nth-child(3){
     font-weight: bold;
 }
 
-img { /* maybe change to main img or something*/
+img {
     height: auto;
-    width: 90%; 
+    width: 50%; 
     border: 1px solid #024059;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 1.5rem;
     color: #024059;
-    /*height: 7vh;*/
+   
 }
 
 h2 {
