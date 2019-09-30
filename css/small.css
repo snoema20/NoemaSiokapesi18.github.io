@@ -2,11 +2,11 @@
    
 body {
     margin-top: 4px;
-    font-size: 1.2em;
+    font-size: 1em;
     font-family: fantasy;
     padding: 0;
     background-color: #ebe8e5;
-    color: #024059;
+    color: #02151d;
 }
 
 
@@ -20,7 +20,7 @@ header, footer {
 }
 
 main {
-    max-width: 700px;
+    max-width: 770px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -37,7 +37,7 @@ article:nth-child(3){
 
 #column1, #column2, #column3, .columnImage {
     display: inline-block;
-    padding-bottom: 6px;
+    padding-bottom: 11px;
     text-align: center;
     
 }
@@ -46,7 +46,7 @@ article:nth-child(3){
     
 
 .columnImage {
-    border-radius: 6px;
+    border-radius: 11px;
     background-color: #d4e6ee;
     margin: 0px;
     border: 1px solid #024059;
@@ -57,7 +57,7 @@ article:nth-child(3){
     display: block;
     font-size: .75rem;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 11px;
     padding: 4px;
     background-color: #d4e6ee;
     
@@ -65,17 +65,17 @@ article:nth-child(3){
 
 .columnImage h2 {
     background-color: white;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
     margin: 0px;
-    padding: 4px;
-    padding-bottom: 6px;
+    padding: 6px;
+    padding-bottom: 11px;
     text-align: center;
-    height: 2.5rem;
+    height: 3.5rem;
 }
 
 .columnImage h3 {
-    padding: 10px;
+    padding: 16px;
     font-weight: bold;
 }
 
@@ -95,21 +95,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 1.3rem;
-    color: #040120;
+    font-size: 1.6rem;
+    color: #03010e;
     /*height: 7vh;*/
 }
 
 h2 {
-    font-size: 1.25rem;
+    font-size: 1.55rem;
     color: #0c0427;
     padding: 0 0 8px 0;
     text-align: left;   
 }
 
 h3 {
-    font-size: 1rem;
-    color: #10062b;
+    font-size: 1.30rem;
+    color: #080413;
 }
 
 ul li a:link {
