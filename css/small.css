@@ -12,20 +12,20 @@ body {
 
 
 header, footer {
-    background-color: #d84c15;
+    background-color: #090636;
     text-align: center;
     border: 2.2px solid #024059;
-    max-width: 767px;
+    max-width: 500px;
     margin: 0 auto;  
 }
 
 main {
-    max-width: 758px;
+    max-width: 700px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    column-gap: 14px;
-    font-size: 2.2rem;
+    column-gap: 10px;
+    font-size: 1rem;
         
 }
 
@@ -37,7 +37,7 @@ article:nth-child(3){
 
 #column1, #column2, #column3, .columnImage {
     display: inline-block;
-    padding-bottom: 8px;
+    padding-bottom: 6px;
     text-align: center;
     
 }
@@ -46,7 +46,7 @@ article:nth-child(3){
     
 
 .columnImage {
-    border-radius: 8px;
+    border-radius: 6px;
     background-color: #d4e6ee;
     margin: 0px;
     border: 1px solid #024059;
@@ -57,25 +57,25 @@ article:nth-child(3){
     display: block;
     font-size: .75rem;
     text-align: center;
-    border-radius: 8px;
-    padding: 5px;
+    border-radius: 6px;
+    padding: 4px;
     background-color: #d4e6ee;
     
 }
 
 .columnImage h2 {
     background-color: white;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
     margin: 0px;
-    padding: 5px;
-    padding-bottom: 8px;
+    padding: 4px;
+    padding-bottom: 6px;
     text-align: center;
     height: 2.5rem;
 }
 
 .columnImage h3 {
-    padding: 13px;
+    padding: 10px;
     font-weight: bold;
 }
 
@@ -83,10 +83,10 @@ img { /* maybe change to main img or something*/
     height: auto;
     width: 30%; 
     border: 1px solid #6b5cc5;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 5px;    
-    box-shadow: 0 0 10px 0 rgba(223, 99, 99, 0.897), 0 2px 2px 0 rgba(243, 111, 111, 0.24);   
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 3px;    
+    box-shadow: 0 0 6px 0 rgba(223, 99, 99, 0.897), 0 2px 2px 0 rgba(243, 111, 111, 0.24);   
 }
 
 h1, h2, h3, h4, h5, h6 {
