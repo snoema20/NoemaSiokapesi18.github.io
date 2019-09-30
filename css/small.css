@@ -6,28 +6,18 @@
         font-size: 1.1em;
         font-family: 'Roboto', sans-serif;
         padding: 0;
-        background-color: #f1f5f7;
-        color: #024059;
+        background-color: #6e370a;
+        color: #00070a;
     }
     
-    /*header, nav, main, footer {
-        /*margin: 0 auto;  if probs change 1 rem to 0 auto; this centers the page
-        max-width: 767px;
-    }*/
-    
+   
     header, footer {
-        background-color: #36768e;
+        background-color: #47085a;
         text-align: center;
         border: 1px solid #024059;
         max-width: 767px;
         margin: 0 auto;
-       
-        /*padding: 20px 0 20px;*/
     }
-    
-    
-        /*header {height: 100px;} */ /* removing this worked to allow the page elements to nest under each other properly! */
-    
     
     main {
         max-width: 767px;
@@ -89,7 +79,7 @@
         font-weight: bold;
     }
     
-    img { /* maybe change to main img or something*/
+    img { 
         height: auto;
         width: 90%; 
         border: 1px solid #024059;
@@ -106,20 +96,20 @@
     
     h1 {
         font-size: 1.5rem;
-        color: #024059;
-        /*height: 7vh;*/
+        color: #053515;
+       
     }
     
     h2 {
         font-size: 1.25rem;
-        color: #36768e;
+        color: #660a30;
         padding: 0 0 10px 0;
         text-align: left;   
     }
     
     h3 {
         font-size: 1rem;
-        color: #024059;
+        color: #011118;
     }
     
     ul li a:link {
@@ -156,11 +146,8 @@
     
     footer {
         padding: 5px;
-        /*height: 60px;*/  /* removing this worked to allow the page elements to nest under each other properly! */
         font-size: 14px;
-        /*line-height: 5px;
-        color: #f1f5f7;*/
-    font-size: 25px;
+        
     }
     #copyright {
         color:#f1f5f7;
