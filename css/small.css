@@ -4,7 +4,7 @@
 body {
     margin-top: 5px;
     font-size: 1.1em;
-    font-family: 'Roboto', sans-serif;
+    font-family: fantasy, sans-serif;
     padding: 0;
     background-color: #f3f3f3;
     color: #024059;
@@ -22,7 +22,7 @@ header, footer {
 
 
 main {
-    max-width: 200px;
+    max-width: 500px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
