@@ -1,25 +1,16 @@
-@media only screen and (min-width: 37.5em) {
+@media only screen and (min-width: 32.5em) {
     
     header, main, footer {
-        min-width: 33.5em;
+        min-width: 32.5em;
     }
         
     header, footer {
         border-radius: 10px;
     }
     
-    main {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    article:nth-child(3){
-        grid-column: span 2;
-    
-    }
-    
     h1 {
-        font-size: 2rem;
-        margin-top: 10px;
+        font-size: 2.5rem;
+        margin-top: 20px;
     }
         
     h2 {
@@ -28,8 +19,8 @@
     
     img {
             border-radius: 10px;    
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
             margin: 10px;
             float: right;
     }
-}
+    }
