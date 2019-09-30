@@ -86,7 +86,7 @@ img { /* maybe change to main img or something*/
     margin-top: 5px;
     margin-bottom: 5px;
     border-radius: 6px;    
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);   
+    box-shadow: 0 0 20px 0 rgba(223, 99, 99, 0.897), 0 2px 2px 0 rgba(243, 111, 111, 0.24);   
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -147,11 +147,11 @@ a:active {
     
 
 footer {
-    padding: 4px;
+    padding: 7px;
     /*height: 60px;*/  /* removing this worked to allow the page elements to nest under each other properly! */
     font-size: 13px;
     line-height: 4px;
-    color: #010f16;
+    color: #96360a;
 }
 #copyright {
     color:#d7d5df;
