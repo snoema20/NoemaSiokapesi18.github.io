@@ -10,11 +10,6 @@ body {
     color: #024059;
 }
 
-/*header, nav, main, footer {
-    /*margin: 0 auto;  if probs change 1 rem to 0 auto; this centers the page
-    max-width: 767px;
-}*/
-
 header, footer {
     background-color: #36768e;
     text-align: center;
@@ -22,11 +17,8 @@ header, footer {
     max-width: 767px;
     margin: 0 auto;
    
-    /*padding: 20px 0 20px;*/
+  
 }
-
-
-    /*header {height: 100px;} */ /* removing this worked to allow the page elements to nest under each other properly! */
 
 
 main {
@@ -156,10 +148,9 @@ a:active {
 
 footer {
     padding: 5px;
-    /*height: 60px;*/  /* removing this worked to allow the page elements to nest under each other properly! */
+  
     font-size: 14px;
-    /*line-height: 5px;
-    color: #f1f5f7;*/
+
 }
 #copyright {
     color:#f1f5f7;
