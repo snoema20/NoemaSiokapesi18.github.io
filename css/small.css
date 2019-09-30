@@ -14,8 +14,8 @@ body {
 header, footer {
     background-color: #090636;
     text-align: center;
-    border: 2.2px solid #024059;
-    max-width: 500px;
+    border: 1px solid #024059;
+    max-width: 770px;
     margin: 0 auto;  
 }
 
