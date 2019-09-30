@@ -5,7 +5,7 @@ body {
     font-size: 1.1em;
     font-family: 'Roboto', sans-serif;
     padding: 0;
-    background-color: #dd1021;
+    background-color: rgb(255, 247, 248);
     color: #024059;
 }
 
@@ -81,7 +81,7 @@ article:nth-child(3){
 
 img { 
     height: auto;
-    width: 90%; 
+    width: 50%; 
     border: 1px solid #024059;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -90,25 +90,25 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto Slab', serif;
+    font-family: fantasy
     margin: 0;
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #024059;
   
 }
 
 h2 {
-    font-size: 1.25rem;
+    font-size: 1.02rem;
     color: #36768e;
     padding: 0 0 10px 0;
     text-align: left;   
 }
 
 h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #024059;
 }
 
