@@ -11,7 +11,7 @@ body {
 
 
 
-header, footer {
+header {
     background-color: #2216cc;
     text-align: center;
     border: 1px solid #01141b;
@@ -46,10 +46,10 @@ article:nth-child(3){
     
 
 .columnImage {
-    border-radius: 11px;
+    border-radius: 8px;
     background-color: #d4e6ee;
     margin: 0px;
-    border: 1px solid #024059;
+    border: 0.7px solid #024059;
 
 }
 
