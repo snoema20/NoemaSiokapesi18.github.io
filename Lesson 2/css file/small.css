@@ -5,27 +5,27 @@ body {
     font-size: 1.3em;
     font-family: fantasy;
     padding: 0;
-    background-color: #ebe8e5;
+    background-color: #a7440b;
     color: #02151d;
 }
 
 
 
 header, footer {
-    background-color: #090636;
+    background-color: #2216cc;
     text-align: center;
-    border: 1px solid #024059;
-    max-width: 770px;
+    border: 1px solid #01141b;
+    max-width: 700px;
     margin: 0 auto;  
 }
 
 main {
-    max-width: 770px;
+    max-width: 700px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    column-gap: 16px;
-    font-size: 0.7rem;
+    column-gap: 15px;
+    font-size: 1rem;
         
 }
 
