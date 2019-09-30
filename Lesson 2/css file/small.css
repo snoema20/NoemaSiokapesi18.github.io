@@ -15,7 +15,7 @@ header {
     background-color: #2216cc;
     text-align: center;
     border: 1px solid #01141b;
-    max-width: 500px;
+    max-width: 200px;
     margin: 0 auto;  
 }
 
@@ -108,7 +108,7 @@ h2 {
 }
 
 h3 {
-    font-size: 0.7rem;
+    font-size: 0.4rem;
     color: #080413;
 }
 

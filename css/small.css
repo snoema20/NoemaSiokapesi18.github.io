@@ -9,11 +9,11 @@ body {
     color: #024059;
 }
 
-header, footer {
+header {
     background-color: #36768e;
     text-align: center;
     border: 1px solid #024059;
-    max-width: 767px;
+    max-width: 500px;
     margin: 0 auto;
    
    
@@ -23,7 +23,7 @@ header, footer {
     
 
 main {
-    max-width: 767px;
+    max-width: 500px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -105,13 +105,13 @@ h1 {
 
 h2 {
     font-size: 3.25rem;
-    color: #36768e;
+    color: #010608;
     padding: 0 0 7px 0;
     text-align: left;   
 }
 
 h3 {
-    font-size: 5rem;
+    font-size: 3rem;
     color: #024059;
 }
 
