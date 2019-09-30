@@ -129,7 +129,7 @@ ul li a:active {
 }
 
 a:link {
-    color: #024059;
+    color: #e7f1f5;
     text-decoration: none;
 }
 
@@ -154,7 +154,7 @@ footer {
     color: #010f16;
 }
 #copyright {
-    color:#310dd1;
+    color:#d7d5df;
     font-size: 14px;
 }
 #currentDate {
