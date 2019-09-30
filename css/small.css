@@ -1,163 +1,171 @@
 @import url(https://fonts.google.com/specimen/Mansalva?selection.family=Mansalva);
    
-body {
-    margin-top: 5px;
-    font-size: 1.1em;
-    font-family: fantasy, sans-serif;
-    padding: 0;
-    background-color: #f1f5f7;
-    color: #024059;
-}
 
-header, footer {
-    background-color: #36768e;
-    text-align: center;
-    border: 1px solid #024059;
-    max-width: 500px;
-    margin: 0 auto;
-   
-   
-}
-
-
+    body {
+        margin-top: 5px;
+        font-size: 1.1em;
+        font-family: 'Roboto', sans-serif;
+        padding: 0;
+        background-color: #f1f5f7;
+        color: #024059;
+    }
     
-
-main {
-    max-width: 500px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    column-gap: 15px;
-    font-size: 0.8rem;
+    /*header, nav, main, footer {
+        /*margin: 0 auto;  if probs change 1 rem to 0 auto; this centers the page
+        max-width: 767px;
+    }*/
+    
+    header, footer {
+        background-color: #36768e;
+        text-align: center;
+        border: 1px solid #024059;
+        max-width: 767px;
+        margin: 0 auto;
+       
+        /*padding: 20px 0 20px;*/
+    }
+    
+    
+        /*header {height: 100px;} */ /* removing this worked to allow the page elements to nest under each other properly! */
+    
+    
+    main {
+        max-width: 767px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 15px;
+        font-size: 0.8rem;
+            
+    }
+    
+    article:nth-child(3){
+        grid-column: span 1;
+    }
+    
+    
+    
+    #column1, #column2, #column3, .columnImage {
+        display: inline-block;
+        padding-bottom: 10px;
+        text-align: center;
         
-}
-
-article:nth-child(3){
-    grid-column: span 1;
-}
-
-
-
-#column1, #column2, #column3, .columnImage {
-    display: inline-block;
-    padding-bottom: 10px;
-    text-align: center;
+    }
     
-}
-
-
     
-
-.columnImage {
-    border-radius: 10px;
-    background-color: #d4e6ee;
-    margin: 0px;
-    border: 1px solid #024059;
-
-}
-
-.columnImage p {
-    display: block;
-    font-size: 1rem;
-    text-align: center;
-    border-radius: 10px;
-    padding: 5px;
-    background-color: #f56032;
+        
     
-}
-
-.columnImage h2 {
-    background-color: rgb(164, 9, 202);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin: 0px;
-    padding: 5px;
-    padding-bottom: 10px;
-    text-align: center;
-    height: 3rem;
-}
-
-.columnImage h3 {
-    padding: 13px;
-    font-weight: bold;
-}
-
-img { 
-    height: auto;
-    width: auto; 
-    border: 1px solid #024059;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    border-radius: 5px;    
-     
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto Slab', serif;
-    margin: 0;
-}
-
-h1 {
-    font-size: 2rem;
-    color: #024059;
+    .columnImage {
+        border-radius: 10px;
+        background-color: #d4e6ee;
+        margin: 0px;
+        border: 1px solid #024059;
     
-}
-
-h2 {
-    font-size: 3rem;
-    color: #010608;
-    padding: 0 0 7px 0;
-    text-align: left;   
-}
-
-h3 {
-    font-size: 2rem;
-    color: #024059;
-}
-
-ul li a:link {
-    color: #024059;
-    text-decoration: none;
-}
-
-ul li a:visited {
-    color: indigo;
-}
-
-ul li a:hover {
-    color:  darkgoldenrod;
-}
-ul li a:active {
-    color: khaki;
-}
-
-a:link {
-    color: #024059;
-    text-decoration: none;
-}
-
-a:visited {
-    color: indigo;
-}
-
-a:hover {
-    color:  darkgoldenrod;
-}
-a:active {
-    color: khaki;
-}
-
-
-footer {
-    padding: 10px;
-    font-size: 17px;
-    line-height: 4px;
-    color: #fcf7f5;
-}
-#copyright {
-    color:#020008;
+    }
+    
+    .columnImage p {
+        display: block;
+        font-size: .75rem;
+        text-align: center;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: #d4e6ee;
+        
+    }
+    
+    .columnImage h2 {
+        background-color: white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        margin: 0px;
+        padding: 5px;
+        padding-bottom: 10px;
+        text-align: center;
+        height: 3rem;
+    }
+    
+    .columnImage h3 {
+        padding: 15px;
+        font-weight: bold;
+    }
+    
+    img { /* maybe change to main img or something*/
+        height: auto;
+        width: 90%; 
+        border: 1px solid #024059;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;    
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);   
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Roboto Slab', serif;
+        margin: 0;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        color: #024059;
+        /*height: 7vh;*/
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+        color: #36768e;
+        padding: 0 0 10px 0;
+        text-align: left;   
+    }
+    
+    h3 {
+        font-size: 1rem;
+        color: #024059;
+    }
+    
+    ul li a:link {
+        color: #024059;
+        text-decoration: none;
+    }
+    
+    ul li a:visited {
+        color: indigo;
+    }
+    
+    ul li a:hover {
+        color:  darkgoldenrod;
+    }
+    ul li a:active {
+        color: khaki;
+    }
+    
+    a:link {
+        color: #024059;
+        text-decoration: none;
+    }
+    
+    a:visited {
+        color: indigo;
+    }
+    
+    a:hover {
+        color:  darkgoldenrod;
+    }
+    a:active {
+        color: khaki;
+    }
+    
+    footer {
+        padding: 5px;
+        /*height: 60px;*/  /* removing this worked to allow the page elements to nest under each other properly! */
+        font-size: 14px;
+        /*line-height: 5px;
+        color: #f1f5f7;*/
     font-size: 25px;
-}
+    }
+    #copyright {
+        color:#f1f5f7;
+        font-size: 14px;
+    } 
 #currentDate {
-    color: #000508;
+    color: #030e14;
 }
