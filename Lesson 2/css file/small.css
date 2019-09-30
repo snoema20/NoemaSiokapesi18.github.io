@@ -11,7 +11,7 @@ body {
 
 
 
-header {
+header, footer {
     background-color: #2216cc;
     text-align: center;
     border: 1px solid #01141b;
