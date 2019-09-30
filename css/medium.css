@@ -1,46 +1,13 @@
-@media only screen and (min-width: 37.5em) {
-    
-    header, main, footer {
-        min-width: 28em;
-    }
-        
-    header, footer {
-        border-radius: 10px;
-    }
-    
-    main {
-        grid-template-columns: 1fr 1fr;
-        padding: 18px;
-       
-    }
-    
-    article:nth-child(2) {
-        display: block;
-    }
-    article:nth-child(3){
-        grid-column: span 2;
-    
-    }
-    
-    main img{
-        display: block;
-    }
-    
+@media only screen and (min-width: 32.5em) {
     h1 {
-        font-size: 1.5rem;
-        padding: 20px;
+     font-size: 2.5em;
     }
-        
+ 
     h2 {
-        font-size: 1.5rem;
+     font-size: 1.5em;
     }
-    
-    h3{
-        font-size: 1.3rem;
+ 
+    header img {
+     float: right;
     }
-    
-    img {
-        margin-left: auto;
-        margin-right: auto
-    }
-    }
+ }
