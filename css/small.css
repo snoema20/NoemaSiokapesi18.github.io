@@ -78,18 +78,18 @@ article:nth-child(3){
 }
 
 .columnImage h3 {
-    padding: 15px;
+    padding: 13px;
     font-weight: bold;
 }
 
 img { 
     height: auto;
-    width: 90%; 
+    width: 760%; 
     border: 1px solid #024059;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 10px;    
-    box-shadow: 0 0 20px 0 rgba(104, 82, 226, 0.822), 0 5px 5px 0 rgba(104, 25, 231, 0.24);   
+     
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -98,7 +98,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #024059;
     
 }
@@ -155,9 +155,9 @@ footer {
     color: #96360a;
 }
 #copyright {
-    color:#d7d5df;
+    color:#020008;
     font-size: 20px;
 }
 #currentDate {
-    color: #e6ecf0;
+    color: #000508;
 }
