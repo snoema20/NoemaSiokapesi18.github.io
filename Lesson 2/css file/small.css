@@ -17,7 +17,7 @@ header, nav, main, footer {
 header, footer {
     background-color: #e49e35;
     text-align: center;
-    border: 3px solid #022210;
+    border: 3px solid #112e1e;
 }
 
 header {
@@ -51,7 +51,7 @@ h1 {
 h2 {
     font-size: 3.4rem;
     margin: 0;
-    color: maroon;
+    color: rgb(29, 2, 2);
 }
 
 ul li a:link {
