@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
+@import url('https://fonts.google.com/specimen/Ranga');
 
 body {
     margin-top: 10px;
@@ -15,7 +15,7 @@ header, nav, main, footer {
 }
 
 header, footer {
-    background-color: #36768e;
+    background-color: #e49e35;
     text-align: center;
     border: 1px solid #024059;
 }
