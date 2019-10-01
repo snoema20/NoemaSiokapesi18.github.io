@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Franklin Weather</title>
+        <meta name="description" content="Franklin has weather, hear it here first!">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/weather.css">
+        <link rel="stylesheet" href="css/large.css">
+        <link rel="stylesheet" href="css/medium.css">
+        <link rel="stylesheet" href="css/small.css">
+        
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+            }
+            /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+            }
+        </script>
+    </head>
+    <body>
+        
+        <header class="headBack">
+            <img src="images/cloud.png" width="200" height="273" alt="Cloudy">
+            <h1 class="heading">Franklin</h1>
+            <span class="icon" onclick="openNav()">&#9776; &nbsp;</span>
+        </header>
+
+        <nav id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id=”content-mobile”>&times;</a>
+                <a href="">Home</a> 
+                <a href="">Franklin</a> 
+                <a href="">Greenville</a> 
+                <a href="">Springfield</a>
+                <a href="">Storm Center</a> 
+                <a href="">Gallery</a>
+            </nav>
+        
+        <nav id=”content-desktop” class="navBar">
+            <a href="">Home</a> 
+            <a href="">Franklin</a> 
+            <a href="">Greenville</a> 
+            <a href="">Springfield</a>
+            <a href="">Storm Center</a> 
+            <a href="">Gallery</a>
+        </nav>
+
+        <main>
+            <section class="story">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2">Franklin Weather Sample/Placeholder Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>  
+                        <tr>
+                            <td>Summary</td>
+                            <td>Sunny</td>
+                        </tr>
+                        <tr>
+                            <td>High</td>
+                            <td>90°F</td>
+                        </tr>
+                        <tr>
+                            <td>Low</td>
+                            <td>66°F</td>
+                        </tr>
+                        <tr>
+                            <td>Chance Precipitation</td>
+                            <td>0%</td>
+                        </tr>
+                        <tr>
+                            <td>Max Wind</td>
+                            <td>5 mph SW</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section class="storyAlt" id=”content-desktop”>
+                <h3 class="desktop">Ten Day Forecast</h3>
+                <table class="desktop">
+                    <thead>
+                        <tr>
+                            <th>Day 1</th>
+                            <th>Day 2</th>
+                            <th>Day 3</th>
+                            <th>Day 4</th>
+                            <th>Day 5</th>
+                            <th>Day 6</th>
+                            <th>Day 7</th>
+                            <th>Day 8</th>
+                            <th>Day 9</th>
+                            <th>Day 10</th>
+                        </tr>
+                    </thead>
+                    <tbody>  
+                        <tr>
+                            <td>89&deg;F</td>
+                            <td>87&deg;F</td>
+                            <td>78&deg;F</td>
+                            <td>75&deg;F</td>
+                            <td>72&deg;F</td>
+                            <td>72&deg;F</td>
+                            <td>79&deg;F</td>
+                            <td>83&deg;F</td>
+                            <td>85&deg;F</td>
+                            <td>89&deg;F</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="story">
+                <article>
+                    <h3>Weather Story</h3>
+                    <aside><img src="images/rain.jpg" class="rightImg" alt="rainy day"></aside>
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. 
+                    </p><p>
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. 
+                    </p><p>
+                    Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. 
+                    </p><p>
+                    Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. 
+                    </p><p>
+                    Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. 
+                    </p>
+                </article>
+            </section>
+            <section class="endSpace"><p>&nbsp;<br></p></section><!--Extra space below if Last so that footer doesn't hide text-->
+        </main>
+        <footer>  
+            <section class="contact">
+                <p><b>The Weather Site</b></p>
+                <p>123 Main St, Franklin, MU, 83454<br>
+                (999) 999 999 contact@theurl.com<br>
+                </p>
+            </section>
+            <p>&copy; 2018 &nbsp; | &nbsp; Weather the Weather &nbsp; | &nbsp; Franklin &nbsp; | &nbsp; <a href="">Home</a><!-- Will return user to main page! --></p>
+        </footer>
+    </body>
+</html>
