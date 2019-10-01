@@ -1,13 +1,46 @@
-@media only screen and (min-width: 32.5em) {
+@media only screen and (min-width: 37.5em) {
+    
+    header, main, footer {
+        min-width: 37.5em;
+    }
+        
+    header, footer {
+        border-radius: 10px;
+    }
+    
+    main {
+        grid-template-columns: 1fr 1fr;
+        padding: 25px;
+        /*column-gap: 1.5rem;*/
+    }
+    
+    article:nth-child(2) {
+        display: block;
+    }
+    article:nth-child(3){
+        grid-column: span 2;
+    
+    }
+    
+    main img{
+        display: block;
+    }
+    
     h1 {
-     font-size: 2.5em;
+        font-size: 2.5rem;
+        padding: 20px;
     }
- 
+        
     h2 {
-     font-size: 1.5em;
+        font-size: 1.5rem;
     }
- 
-    header img {
-     float: right;
+    
+    h3{
+        font-size: 1rem;
     }
- }
+    
+    img {
+        margin-left: auto;
+        margin-right: auto
+    }
+    }
