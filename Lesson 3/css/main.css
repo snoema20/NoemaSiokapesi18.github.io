@@ -1,62 +1,58 @@
-/* CIT 230 - Assignment Portal CSS Template */
-/* You may use #HEX or color names */
-
-/* * is a wildcard referring to all elements. */
-
-*  { 
-    margin: 0; 
-    box-sizing: border-box; 
-    color: #036;
-} 
-
-a {
-    color: #00e;
-}
-
 body {
-    font-size: 16px;
-    line-height: 32px;
-    font-family: Ubuntu, sans-serif;
-    color: #eee;
-} 
-
-h1 {
-    /* font-size: x.xrem  (rem is a unit of measure); */ 
-    color: whitesmoke;
-    font-size: 4rem;
+    font-family: 'Arial', sans-serif;
+    background-color: aqua;
 }
 
-h2 {
-    /* font-size: x.xrem ;*/
+#wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: chocolate;
+    padding: 33px;
+}
+
+header {
+    background-color: peru;
+    height: 4px;
+}
+
+header h1 {
+    text-transform: uppercase;
     text-align: center;
-    border-bottom: 1px solid#bbb;
-} 
+    color: blueviolet;
+    line-height: 50px;
+}
 
-header, main, footer {
-    margin: 1.25rem auto; 
-    padding: .5rem;
-    max-width: 640px;
-} 
-logo {
-    position: fixed;
-    top:0;
-    left:0;
+header h2 {
+    font-variant: small-caps;
+    text-align: center;
+    color: aliceblue
+}
+
+.main_menu {
+    padding: 50 o 5px 0;
+    text-align: center;
+    line-height: 32px;
+    background-color: powderblue;
+}
+
+ul.main_menu {
+    margin-top: 16px;
+}
+
+.main_menu li {
+    display: inherit;
+    padding:  0 11px 0 11px;
+    font-size:  30px;
 
 }
 
-header, footer, footer a {
-    text-align: center; 
-    background-color: #369; 
-    color: whitesmoke;
-    
-} 
+.main_menu a {
+    text-decoration: none;
+    color: brown;
+    padding: 7px;
+    font-variant: small-caps;
+}
 
-header img {
-    width: 183px; 
-    height: auto; 
-    float: right; 
-} 
-
-footer {
-    font-size: medium;
+.main_menu a:hover {
+    color: lightcoral;
 }
