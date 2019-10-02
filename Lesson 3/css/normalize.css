@@ -339,3 +339,8 @@ template {
 [hidden] {
   display: none;
 }
+logo{
+position: fixed;
+top:0;
+left:0;
+}

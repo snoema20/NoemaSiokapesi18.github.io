@@ -36,6 +36,12 @@ header, main, footer {
     padding: .5rem;
     max-width: 640px;
 } 
+logo {
+    position: fixed;
+    top:0;
+    left:0;
+    
+}
 
 header, footer, footer a {
     text-align: center; 
