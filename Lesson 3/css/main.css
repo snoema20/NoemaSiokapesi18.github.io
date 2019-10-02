@@ -41,7 +41,7 @@ ul.main_menu {
 }
 
 .main_menu li {
-    display: table-column;
+    display: block;
     padding:  0 11px 0 11px;
     font-size:  30px;
 
