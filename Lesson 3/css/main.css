@@ -2,6 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: aqua;
 }
+li
 
 #wrapper {
     max-width: 960px;
@@ -55,4 +56,5 @@ ul.main_menu {
 
 .main_menu a:hover {
     color: lightcoral;
+   
 }
