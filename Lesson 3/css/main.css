@@ -40,7 +40,7 @@ ul.main_menu {
 }
 
 .main_menu li {
-    display: inherit;
+    display: table-column;
     padding:  0 11px 0 11px;
     font-size:  30px;
 
