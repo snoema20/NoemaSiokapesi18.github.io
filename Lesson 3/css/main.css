@@ -23,6 +23,7 @@ body {
 h1 {
     /* font-size: x.xrem  (rem is a unit of measure); */ 
     color: whitesmoke;
+    font-size: 4rem;
 }
 
 h2 {
@@ -40,13 +41,14 @@ logo {
     position: fixed;
     top:0;
     left:0;
-    
+
 }
 
 header, footer, footer a {
     text-align: center; 
     background-color: #369; 
     color: whitesmoke;
+    
 } 
 
 header img {
@@ -56,5 +58,5 @@ header img {
 } 
 
 footer {
-    font-size: smaller;
+    font-size: medium;
 }
