@@ -2,47 +2,53 @@
 /* You may use #HEX or color names */
 
 /* * is a wildcard referring to all elements. */
-* { margin: 0; box-sizing: border-box; } 
 
-body { 
-    font-size: 16px; 
-    line-height: 32px;
-    font-family: sans-serif;
-    color: black;
+*  { 
+    margin: 0; 
+    box-sizing: border-box; 
+    color: #036;
+} 
+
+a {
+    color: #00e;
 }
 
+body {
+    font-size: 16px;
+    line-height: 32px;
+    font-family: Ubuntu, sans-serif;
+    color: #eee;
+} 
+
 h1 {
-    font-size: 2.4rem;
+    /* font-size: x.xrem  (rem is a unit of measure); */ 
     color: whitesmoke;
 }
 
 h2 {
-    font-size: 2rem;
+    /* font-size: x.xrem ;*/
     text-align: center;
-    border-bottom: 1px solid #bbb;
-}
+    border-bottom: 1px solid#bbb;
+} 
 
 header, main, footer {
-    margin: 1.25rem auto;
+    margin: 1.25rem auto; 
     padding: .5rem;
-    max-width: 50em;
-}
+    max-width: 640px;
+} 
 
 header, footer, footer a {
-    text-align: center;
-    background-color: #181818;
+    text-align: center; 
+    background-color: #369; 
     color: whitesmoke;
-    vertical-align: middle;
-}
+} 
 
 header img {
-    width: 140px;
-    height: auto;
-    float: right;
-}
+    width: 183px; 
+    height: auto; 
+    float: right; 
+} 
 
 footer {
-    font-size: 16px;
-    height: 16vh;
-    width: 100%;
+    font-size: smaller;
 }
