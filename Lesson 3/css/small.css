@@ -1,0 +1,170 @@
+body {
+    font-family: 'Crete Round', serif, sans-serif;
+    margin: auto;
+}
+#wrap {
+    width: 100%;
+    margin: auto;
+    background-color: #FFF15E;
+    align-self: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding: 5px;
+}
+
+header,
+nav,
+main,
+footer {
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 2em;
+    color: #FFF15E;
+    font-family: 'Patua One', cursive, sans-serif;
+}
+
+h2 {
+    font-size: 1em;
+    color: #C62B2B;
+    font-family: 'Patua One', cursive, sans-serif;
+}
+
+p, table, nav {
+    font-size: 0.7em;
+}
+
+#top-page, footer{
+    background-color: #46B1C9;
+}
+nav {
+    border-top: solid #C62B2B;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li a {
+    display: block;
+    color: #FFF15E;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #FFF15E;
+    color: #C62B2B;
+}
+
+a {
+    color: #C62B2B;
+}
+
+#color-palette {
+    width: 80%;
+    height: auto;
+}
+
+.active {
+    background-color: #FFF15E;
+}
+
+.active a{
+    color: #C62B2B;
+}
+
+header {
+    margin: auto;
+}
+.txtCenter{
+    text-align: center;
+    padding: 5px;
+}
+
+footer {
+    padding: 1em;
+    color: #FFF15E;
+    font-size: 0.9em;
+    text-align: center;
+    line-height: 1.3em;
+}
+
+footer a {
+    color: #C62B2B;
+}
+
+td, th {
+    border: solid 1px #46B1C9;
+    padding: 5px;
+}
+
+th {
+    background-color: #46B1C9;
+    color: #C62B2B;
+    font-family: 'Patua One', cursive, sans-serif;
+}
+
+main section table {
+    margin: auto;
+    padding: 10px;
+}
+
+main section table.colored-td-first-child td:first-child {
+    background-color: #46B1C9;
+    color: #FFF15E;
+}
+
+#table-color-scheme tr:first-child td {
+    padding-top: 150px;
+}
+
+td img {
+    max-width: 100%;
+    height: auto;
+}
+
+.yello {
+    background-color: #46B1C9;
+    color: #FFF15E;
+}
+
+.red {
+    background-color: #46B1C9;
+    color: #C62B2B;
+}
+
+.black {
+    background-color: white;
+    color: black;
+}
+
+.patua {
+    font-family: 'Patua One', cursive, sans-serif;
+}
+
+.crete {
+    font-family: 'Crete Round', serif, sans-serif;
+}
+
+.small {
+    font-size: 1em;
+}
+
+.medium {
+    font-size: 1.5em;
+}
+
+.large {
+    font-size: 3em;
+}
