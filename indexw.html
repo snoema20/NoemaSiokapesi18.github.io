@@ -1,46 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us">
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Siokapesi Noema: CIT 230 Assignments</title>
-        <meta name="description" content="Assignment portal for Siokapesi Noema in CIT 230: Web Frontend Development at Brigham Young University - Idaho">
-    
-        <link rel="stylesheet" href="css/main.css">
-    </head>
 
-    <body>
-        
-            <div id="wrapper">
-            
-            <header>
-            <h1>Seattle Weather Forecast</h1>
-            <h2>Accurate weather Forecast and on time</h2>
+<head>
+    <title>Assignment|Home</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Assignment weather page Giacomo Draghi, CIT 230: Web Frontend Development at Brigham Young University - Idaho">
+    <meta name="author" content="Giacomo Draghi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/css/small.css">
+    <link rel="stylesheet" href="static/css/medim.css">
+    <link rel="stylesheet" href="static/css/large.css">
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round%7cPatua+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="wrap">
+        <div id="top-page">
+           <header>
+                <div class="txtCenter">
+                    <img src="static/assests/logo_format.png" alt="logo" />
+                    <h1>Italy's weather</h1>
+                </div>
             </header>
+            <nav>
+                <ul id="menu-ul">
+                    <li class="menu-li active"><a href="index.html" target="_self">Home</a></li>
+                    <li class="menu-li"><a href="target-audience.html" target="_self">Target Audience</a></li>
+                    <li class="menu-li"><a href="color-scheme.html" target="_self">Color Scheme</a></li>
+                    <li class="menu-li"><a href="typography.html" target="_self">Typography</a></li>
+                </ul>
+            </nav> 
+        </div>
         
-            <ul>
-                
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Locations</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Search</a></li>
-                <li style="float: right"></li>
-            </ul>
-        
-
-              
-                <footer>
-                        <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
-                        <p>Last Updated: <span id="currentDate"></span></p>
-                            
-                       </footer>
-                   
-                    <script src="js/myscript.js"></script>
-                    
-                </Body>
-            </html>
-            
+        <main>
+            <section class="txtCenter">
+               <h2>Site Purpose</h2>
+               <p>The purpose of the site is to inform and update people in Italy about weather conditions, so that everyone can have a good time, going outside being prepare at every time. We want to make it possible for everyone to have this information at every time and on any device.</p>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; <span id="Year"></span> | Giacomo Draghi | Rimini, Italy | <a href="https://www.byui.edu/online"target="_blank">BYUI Online Learning</a><br><span id="lastUpdated"></span></p>
+        </footer>
+    </div>
+    <script src="static/js/myscript.js"></script>
+</body>
+</html>
