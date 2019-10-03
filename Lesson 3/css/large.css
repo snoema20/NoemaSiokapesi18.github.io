@@ -15,14 +15,14 @@
         vertical-align:middle;
     }
     h1{
-        font-size: 3em;
+        font-size: 5em;
     }
     
     h2 {
-        font-size: 1.5em;
+        font-size: 3em;
     }
     
     p, table, nav {
-        font-size: 1em;
+        font-size: 3em;
     }
 }

@@ -5,7 +5,7 @@ body {
 #wrap {
     width: 100%;
     margin: auto;
-    background-color: #FFF15E;
+    background-color: rgb(20, 109, 243);
     align-self: center;
 }
 
@@ -26,13 +26,13 @@ footer {
 
 h1{
     font-size: 2em;
-    color: #FFF15E;
+    color: rgb(10, 44, 24);
     font-family: 'Patua One', cursive, sans-serif;
 }
 
 h2 {
     font-size: 1em;
-    color: #C62B2B;
+    color: rgb(87, 5, 5);
     font-family: 'Patua One', cursive, sans-serif;
 }
 
@@ -41,10 +41,10 @@ p, table, nav {
 }
 
 #top-page, footer{
-    background-color: #46B1C9;
+    background-color: rgb(201, 235, 11);
 }
 nav {
-    border-top: solid #C62B2B;
+    border-top: solid rgb(221, 159, 159);
 }
 
 nav ul {
@@ -56,19 +56,19 @@ nav ul {
 
 nav li a {
     display: block;
-    color: #FFF15E;
+    color: rgb(63, 58, 3);
     text-align: center;
     padding: 12px;
     text-decoration: none;
 }
 
 nav a:hover {
-    background-color: #FFF15E;
-    color: #C62B2B;
+    background-color: rgb(51, 47, 4);
+    color: rgb(224, 125, 125);
 }
 
 a {
-    color: #C62B2B;
+    color: rgb(224, 135, 135);
 }
 
 #color-palette {
@@ -77,11 +77,11 @@ a {
 }
 
 .active {
-    background-color: #FFF15E;
+    background-color: rgb(51, 4, 105);
 }
 
 .active a{
-    color: #C62B2B;
+    color: rgb(11, 85, 29);
 }
 
 header {
@@ -94,14 +94,14 @@ header {
 
 footer {
     padding: 1em;
-    color: #FFF15E;
+    color: rgb(81, 218, 63);
     font-size: 0.9em;
     text-align: center;
     line-height: 1.3em;
 }
 
 footer a {
-    color: #C62B2B;
+    color: rgb(9, 11, 122);
 }
 
 td, th {
@@ -110,7 +110,7 @@ td, th {
 }
 
 th {
-    background-color: #46B1C9;
+    background-color: rgb(197, 80, 13);
     color: #C62B2B;
     font-family: 'Patua One', cursive, sans-serif;
 }
@@ -121,7 +121,7 @@ main section table {
 }
 
 main section table.colored-td-first-child td:first-child {
-    background-color: #46B1C9;
+    background-color: rgb(97, 81, 243);
     color: #FFF15E;
 }
 
@@ -158,11 +158,11 @@ td img {
 }
 
 .small {
-    font-size: 1em;
+    font-size: 5em;
 }
 
 .medium {
-    font-size: 1.5em;
+    font-size: 4em;
 }
 
 .large {
