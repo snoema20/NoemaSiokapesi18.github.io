@@ -5,7 +5,7 @@ body {
 #wrap {
     width: 100%;
     margin: auto;
-    background-color: rgb(20, 109, 243);
+    background-color: rgb(215, 245, 43);
     align-self: center;
 }
 
@@ -25,19 +25,19 @@ footer {
 }
 
 h1{
-    font-size: 2em;
+    font-size: 7em;
     color: rgb(179, 16, 111);
     font-family: 'Patua One', cursive, sans-serif;
 }
 
 h2 {
-    font-size: 1em;
+    font-size: 5em;
     color: rgb(229, 232, 235);
     font-family: 'Patua One', cursive, sans-serif;
 }
 
 p, table, nav {
-    font-size: 0.7em;
+    font-size: 3em;
 }
 
 #top-page, footer{
