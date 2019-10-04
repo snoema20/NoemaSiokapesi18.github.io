@@ -95,7 +95,7 @@ header {
 footer {
     padding: 1em;
     color: rgb(1, 10, 14);
-    font-size: 0.9em;
+    font-size: 0.7em;
     text-align: center;
     line-height: 1.3em;
 }
@@ -121,8 +121,8 @@ main section table {
 }
 
 main section table.colored-td-first-child td:first-child {
-    background-color: rgb(97, 81, 243);
-    color: rgb(17, 16, 1);
+    background-color: rgb(16, 8, 80);
+    color: rgb(235, 241, 243);
 }
 
 #table-color-scheme tr:first-child td {
