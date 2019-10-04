@@ -27,7 +27,7 @@ footer {
 h1{
     font-size: 2em;
     color: rgb(179, 16, 111);
-    font-family: 'Patua One', cursive, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h2 {
@@ -56,7 +56,7 @@ nav ul {
 
 nav li a {
     display: block;
-    color: rgb(204, 192, 55);
+    color: rgb(23, 1, 75);
     text-align: center;
     padding: 12px;
     text-decoration: none;
@@ -81,7 +81,7 @@ a {
 }
 
 .active a{
-    color: rgb(110, 42, 3);
+    color: gold(110, 42, 3);
 }
 
 header {
