@@ -25,19 +25,19 @@ footer {
 }
 
 h1{
-    font-size: 7em;
+    font-size: 4em;
     color: rgb(179, 16, 111);
     font-family: 'Patua One', cursive, sans-serif;
 }
 
 h2 {
-    font-size: 5em;
+    font-size: 3em;
     color: rgb(229, 232, 235);
     font-family: 'Patua One', cursive, sans-serif;
 }
 
 p, table, nav {
-    font-size: 3em;
+    font-size: 2em;
 }
 
 #top-page, footer{
@@ -158,13 +158,13 @@ td img {
 }
 
 .small {
-    font-size: 5em;
-}
-
-.medium {
     font-size: 4em;
 }
 
-.large {
+.medium {
     font-size: 3em;
+}
+
+.large {
+    font-size: 2em;
 }
