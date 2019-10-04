@@ -63,7 +63,7 @@ nav li a {
 }
 
 nav a:hover {
-    background-color: rgb(15, 14, 1);
+    background-color: rgb(223, 170, 24);
     color: rgb(39, 6, 102);
 }
 
@@ -81,7 +81,7 @@ a {
 }
 
 .active a{
-    color: gold(110, 42, 3);
+    color: purple(110, 42, 3);
 }
 
 header {
