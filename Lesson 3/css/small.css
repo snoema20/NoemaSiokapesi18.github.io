@@ -25,13 +25,13 @@ footer {
 }
 
 h1{
-    font-size: 4em;
+    font-size: 2em;
     color: rgb(179, 16, 111);
     font-family: 'Patua One', cursive, sans-serif;
 }
 
 h2 {
-    font-size: 3em;
+    font-size: 1.5em;
     color: rgb(229, 232, 235);
     font-family: 'Patua One', cursive, sans-serif;
 }
@@ -64,7 +64,7 @@ nav li a {
 
 nav a:hover {
     background-color: rgb(243, 226, 41);
-    color: rgb(224, 125, 125);
+    color: rgb(39, 6, 102);
 }
 
 a {
@@ -81,7 +81,7 @@ a {
 }
 
 .active a{
-    color: rgb(69, 243, 77);
+    color: rgb(1, 19, 2);
 }
 
 header {
@@ -122,7 +122,7 @@ main section table {
 
 main section table.colored-td-first-child td:first-child {
     background-color: rgb(97, 81, 243);
-    color: rgb(241, 233, 134);
+    color: rgb(17, 16, 1);
 }
 
 #table-color-scheme tr:first-child td {
@@ -158,13 +158,13 @@ td img {
 }
 
 .small {
-    font-size: 4em;
-}
-
-.medium {
     font-size: 3em;
 }
 
-.large {
+.medium {
     font-size: 2em;
+}
+
+.large {
+    font-size: 1.8em;
 }
