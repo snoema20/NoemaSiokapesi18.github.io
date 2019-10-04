@@ -5,7 +5,7 @@ body {
 #wrap {
     width: 100%;
     margin: auto;
-    background-color: rgb(215, 245, 43);
+    background-color: rgb(139, 226, 39);
     align-self: center;
 }
 
@@ -122,7 +122,7 @@ main section table {
 
 main section table.colored-td-first-child td:first-child {
     background-color: rgb(97, 81, 243);
-    color: #FFF15E;
+    color: rgb(241, 233, 134);
 }
 
 #table-color-scheme tr:first-child td {
