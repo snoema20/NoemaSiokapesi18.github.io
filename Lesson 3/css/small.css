@@ -56,7 +56,7 @@ nav ul {
 
 nav li a {
     display: block;
-    color: rgb(23, 1, 75);
+    color: gold(1, 75, 32);
     text-align: center;
     padding: 12px;
     text-decoration: none;
