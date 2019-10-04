@@ -1,5 +1,5 @@
 body {
-    font-family: fantasy ;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
     margin: auto;
 }
 #wrap {
@@ -27,13 +27,13 @@ footer {
 h1{
     font-size: 2em;
     color: rgb(179, 16, 111);
-    font-family: fantasy;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 h2 {
     font-size: 1.5em;
     color: rgb(229, 232, 235);
-    font-family: fantasy;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 p, table, nav {
@@ -112,7 +112,7 @@ td, th {
 th {
     background-color: rgb(197, 80, 13);
     color: #C62B2B;
-    font-family: 'Patua One', cursive, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 main section table {
