@@ -1,9 +1,9 @@
 .contentbox {
-    display: block;
+    display: flexbox;
     margin: 12px auto;
     border: 2px darkorange;
     padding: 17px;
-    background-color: aqua;
+    background-color: none;
     color: black;
     font-style: oblique;
     font-size: 22px;
