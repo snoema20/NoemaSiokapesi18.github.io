@@ -1,0 +1,466 @@
+/* This is  my main CSS file */
+
+@import url('https://fonts.googleapis.com/css?family=Sansita');
+* {
+	box-sizing: border-box;
+	/* changes width property
+	to total width instead of content width */
+}
+
+
+/*for mobile devices*/
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+main,
+figcaption,
+figure {
+	display: block;
+	/* just in case we have
+	any older browsers that don't recognize
+	the HTML5 semantic elements */
+}
+
+img {
+	max-width: 100%;
+}
+
+.title {
+	background-color: #b0d7dc;
+	/*same color in the feeling lucky image*/
+	padding-bottom: .05px;
+}
+
+body {
+	margin: 0;
+	/* remove any margin from body */
+	padding: 0;
+	/* ditto for padding */
+	font-size: 20px;
+	height: 100%;
+}
+
+.franklin .overview {
+	background-image: url("../images/sunny-winter.jpg");
+}
+
+.greenville .overview {
+	background-image: url("../images/thunderstorm.jpg");
+}
+
+main {
+	display: flex;
+	flex-flow: column;
+	flex-wrap: nowrap;
+	align-items: center;
+	background-color: rgba(200, 200, 200, .6);
+	flex-grow: 1;
+}
+
+nav ul {
+	display: flex;
+	justify-content: space-around;
+	padding: 0;
+}
+
+
+/*Move the nav bar to the bottom in a fixed position*/
+
+nav {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: salmon;
+	font-size: 15px;
+}
+
+
+/*don't need a link to home here*/
+
+nav li:first-child {
+	display: none;
+}
+
+
+/*Add space between links on the nav bar*/
+
+nav li {
+	list-style-type: none;
+}
+
+
+/*The last link on the nav bar doesn't need extra space to the right*/
+
+nav li:last-child {
+	margin-right: 0;
+	padding-right: 0;
+}
+
+
+/*unvisited link*/
+
+nav a:link {
+	text-decoration: none;
+	color: #47556F;
+}
+
+
+/*links that have been visited should look the same*/
+
+nav a:visited {
+	text-decoration: none;
+	color: #47556F;
+}
+
+
+/*hover over link yellow and underlined*/
+
+nav a:hover {
+	color: #E7EF61;
+	text-decoration: underline;
+}
+
+
+/*click on the link change color and underline*/
+
+nav a:active {
+	color: #A6D8DB;
+	text-decoration: underline;
+}
+
+
+/*positons the title "Local Weather*/
+
+.title h1 {
+	text-align: right;
+	margin-top: -.2em;
+	margin-bottom: .5em;
+}
+
+
+/*Current Location information on index.html*/
+
+.weather-container {
+	text-align: center;
+	background-color: rgb(85, 76, 168);
+	width: 100%;
+	color: bisque;
+	padding-top: .5em;
+	padding-bottom: 5.5em;
+}
+
+.weather-container h2 {
+	color: bisque;
+}
+
+.weather-container #currentTemp {
+	font-size: 30px;
+}
+
+.weather-container #cityDisplay {
+	font-size: 30px;
+}
+
+.weather-container ul {
+	list-style: none;
+}
+
+#add1 {
+	padding-top: .5em;
+}
+
+
+/*opaque box behind the overview section*/
+
+.overview {
+	margin: .2em auto;
+	border: 1px solid;
+	background-image: url(../images/sunny-winter.jpg);
+	border-radius: 5px;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	padding-top: 0;
+	flex-grow: 1;
+	text-align: center;
+}
+
+#overview_wrapper {
+	text-align-last: center;
+	/*opaque box around overview information*/
+	background-color: rgba(200, 200, 200, .6);
+	margin: .2em auto;
+	border: 1px solid;
+	border-radius: 5px;
+	width: 90%;
+	text-align: center;
+	color: rgb(8, 48, 69);
+}
+
+
+/*positions the sunny symbol and high/low*/
+
+.overview p {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+/*positions the temperature and sets temperature font size to be very large*/
+
+.overview .temp {
+	font-size: 3.5em;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+
+/*reduces space above the location*/
+
+.overview h2 {
+	margin: 0;
+	padding: 0;
+}
+
+.curr_conditions ul {
+	list-style: none;
+}
+
+#wind_wrapper,
+#precip_wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+}
+
+#wind,
+#precip {
+	text-align: right;
+	width: 50%;
+	padding-right: 1em;
+}
+
+#windInfo,
+#precipInfo {
+	width: 50%;
+	text-align: left;
+	padding-left: 0;
+}
+
+
+/*We don't need to view the hourly conditions on the small frame*/
+
+.hourly,
+.sunny {
+	display: none;
+}
+
+/*sytle the search page*/
+#weatherSearch {
+	padding-top: 30px;
+	padding-bottom: 350px;
+	align-content: center;
+}
+
+#weatherResults ul {
+	list-style-type: none;
+}
+
+
+/*footer has the same background color as the header at the top of the page*/
+
+footer {
+	display: flex;
+	background-color: #b0d7dc;
+	line-height: 2.8em;
+	flex-grow: 1;
+	padding-bottom: 2em;
+}
+
+
+/*set font for all headings*/
+
+.main h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Sansita, "second choice", generic-family;
+	color: #083045;
+}
+
+
+/**************************************/
+
+
+/*for desktops/laptops*/
+
+@media only screen and (min-width: 481px) {
+	main {
+		display: flex;
+		flex-flow: wrap;
+		align-items: center;
+		background-color: rgba(200, 200, 200, .6);
+		/*		background-repeat:no-repeat;*/
+		align-items: stretch;
+		/*makes the blocks for main the same height*/
+	}
+	/*positons the title "Local Weather*/
+	.title h1 {
+		display: flex;
+		align-self: flex-start;
+		margin-left: 4.5em;
+		margin-top: 0;
+	}
+	/*Move the nav bar to the top under the feeling lucky logo*/
+	nav {
+		position: relative;
+		justify-content: center;
+		width: 100%;
+		/*without this the nav moves to the left and rearranges blocks*/
+	}
+	/*unhides the home link*/
+	nav li:first-child {
+		display: inline-flex;
+	}
+	main.franklin {
+		background-repeat: no-repeat;
+	}
+	main.greenville {
+		background-repeat: no-repeat;
+	}
+	/*format the overview section*/
+	.overview {
+		display: flex;
+		flex-direction: column;
+		order: 2;
+		align-content: space-around;
+		padding: 1em;
+		background-size: cover;
+		width: 33%;
+		margin: 0;
+		flex-grow: 2;
+	}
+	/*opaque box behind the overview section info*/
+	.#overview_wrapper {
+		/*		background-color: rgba(200, 200, 200, .6);*/
+		margin: .2em auto;
+		border: 1px solid;
+		border-radius: 5px;
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+		padding-top: 0;
+	}
+	.overview p {
+		color: #083045;
+	}
+	.sunny {
+		display: inline;
+		text-align: center;
+		color: floralwhite
+	}
+	.thunder {
+		text-align: center;
+		color: floralwhite
+	}
+	/*reduces space above the location and adds image before h2*/
+	.overview h2 {
+		align-self: center;
+		padding-bottom: 1em;
+	}
+	/*position the items in the current conditions section to the left of overview*/
+	.curr_conditions {
+		display: flex;
+		flex-direction: column;
+		order: 1;
+		width: 33%;
+		margin: 0;
+		padding-top: 1em;
+	}
+	.hourly {
+		display: flex;
+		order: 3;
+		flex-wrap: wrap;
+		width: 33%;
+		align-items: flex-start;
+		justify-content: space-around;
+		flex-direction: row;
+		align-items: baseline;
+		width: 33%;
+		border: 1px solid;
+	}
+	.hourly h2 {
+		width: 100%;
+		flex-direction: column;
+		text-align: center;
+		margin: 0;
+		padding-top: 1em;
+	}
+	.hourly ul {
+		list-style-type: none;
+		justify-content: flex-start;
+		margin-left: -3em;
+		padding-left: 0;
+	}
+	/*space between hourly forcast items*/
+	.hourly li {
+		padding-bottom: .5em;
+	}
+	/*footer has the same background color as the header at the top of the page*/
+	footer {
+		background-color: #b0d7dc;
+		line-height: 2.8em;
+		flex-grow: 1;
+		margin: 0;
+		padding-bottom: 0;
+	}
+	/*styles the index page*/
+	,
+	weather-container h2 {
+		color: beige;
+		padding: 0;
+		margin: 0;
+	}
+	.weather-container {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 1em;
+	}
+	/*for index.html page*/
+	.weather-container #cityDisplay {
+		font-size: 40px;
+	}
+	.weather-container h2 {
+		font-size: 30px;
+	}
+	.weather-container #currentTemp {
+		font-size: 30px;
+	}
+	#summary {
+		padding: .26em;
+		font-size: 30px;
+	}
+	#add1,
+	#add2,
+	#add3 {
+		font-size: 20px;
+	}
+
+	/*style the search page*/
+	#weatherSearch{
+		padding-bottom: 505px;
+		color: darkblue;
+	}
+
+	#weatherResults{
+		font-size: 20px;
+		text-align: center;
+		padding-left: 100px;
+	}
+}
