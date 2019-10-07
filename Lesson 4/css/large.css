@@ -8,9 +8,12 @@
     font-style: oblique;
     font-size: 22px;
 }
-h2 {
-    font-size: 24px;
-text-align: center;
+<style>
+#myHeader {
+    background-color: aqua;
+    color: black;
+    padding: 38px;
+    text-align: center;
 }
 # {
     box-sizing: border-box;
@@ -22,7 +25,7 @@ main {
 }
 
 div {
-    display: block;
+    display: flexbox;
 }
 
 body {
