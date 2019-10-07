@@ -20,7 +20,17 @@ div {
 body {
     font-size: 18px;
     font-family: fantasy;
+    text-align: center;
 }
 html {
     color: peru;
+    
+}
+header {
+    font-size: 22px;
+    
+}
+
+img {
+    position: fixed;
 }
