@@ -8,12 +8,17 @@
     font-style: oblique;
     font-size: 22px;
 }
-<style>
+
 #myHeader {
     background-color: aqua;
     color: black;
     padding: 38px;
     text-align: center;
+}
+.city {
+    background-color: sandybrown;
+    color: aliceblue;
+    padding: 10px;
 }
 # {
     box-sizing: border-box;
