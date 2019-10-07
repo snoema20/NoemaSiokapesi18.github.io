@@ -1,0 +1,28 @@
+@media only screen and (min-width: 60em) {
+    body{
+        width: 70%;
+    }
+    nav ul {
+        display: flex;
+    }
+
+    nav ul li {
+        flex: 1 1 100%;
+    }
+
+    header h1, header img{
+        display:inline-block;
+        vertical-align:middle;
+    }
+    h1{
+        font-size: 4em;
+    }
+    
+    h2 {
+        font-size: 2em;
+    }
+    
+    p, table, nav {
+        font-size: 3em;
+    }
+}
