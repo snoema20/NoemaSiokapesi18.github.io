@@ -113,7 +113,7 @@ nav {
 	text-decoration: none;
 }
 .menu-ul a:hover {
-	background-color: violet;
+	background-color: rgb(14, 13, 14);
     color: rgb(99, 71, 226);
 	font-weight: 700;
 }
