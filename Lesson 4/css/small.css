@@ -33,7 +33,7 @@ main {
     display: flex;
     flex-flow: column;
     padding: 1px;
-    background-color: rgb(112, 130, 231);
+    background-color: rgb(245, 246, 250);
 }
 
 h1{
