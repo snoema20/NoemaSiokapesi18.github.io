@@ -1,5 +1,5 @@
 body {
-    font-family: 'Crete Round', serif, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     margin: 0 auto;
 }
 header, footer {
@@ -33,12 +33,12 @@ main {
     display: flex;
     flex-flow: column;
     padding: 1px;
-    background-color: rgb(112, 130, 231));
+    background-color: rgb(112, 130, 231);
 }
 
 h1{
     font-size: 2em;
-    color: rgb(151, 14, 98);
+    color: rgb(100, 5, 10);
     font-family: 'Patua One', cursive, sans-serif;
 }
 
@@ -113,7 +113,7 @@ nav {
 	text-decoration: none;
 }
 .menu-ul a:hover {
-	background-color: rgb(14, 13, 14);
+	background-color: rgb(233, 108, 108);
     color: rgb(99, 71, 226);
 	font-weight: 700;
 }
@@ -125,9 +125,6 @@ nav {
     color: rgb(14, 1, 17);
 }
 
-/* the onclick JS toggles the .repsonsive class from display none (.navigation li) to display block because the repsonsive class is added to the end of the class list like this in HTML Line #6.
-  <ul class="navigation responsive">
-  */
 .responsive li {
 	display: block;
 }
