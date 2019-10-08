@@ -1,52 +1,54 @@
-.contentbox {
-    display: flexbox;
-    margin: 12px auto;
-    border: 2px darkorange;
-    padding: 17px;
-    background-color: none;
-    color: black;
-    font-style: oblique;
-    font-size: 22px;
-}
-
-#myHeader {
-    background-color: aqua;
-    color: black;
-    padding: 38px;
-    text-align: center;
-}
-.city {
-    background-color: sandybrown;
-    color: aliceblue;
-    padding: 10px;
-}
-# {
-    box-sizing: border-box;
-    line-height: 1.4em;
-}
-main {
-    font-size: 20px;
-    text-align: center;
-}
-
-div {
-    display: flexbox;
-}
-
 body {
-    font-size: 18px;
-    font-family: fantasy;
-    text-align: center;
-}
-html {
-    color: peru;
-    
-}
-header {
-    font-size: 22px;
-    
+	background-color: #bbb;
+	padding: 0;
+	margin: 0;
 }
 
-img {
-    position: left;
+header {
+	background-color: #fff;
+	padding: 5px 0;
+	display: flex;
+	align-items:center;
+	justify-content:center;
+}
+
+header img {
+	width: 80px;
+	height: auto;
+}
+
+.headings {
+	display: flex;
+	flex-direction: column;
+}
+
+.headings h1 {
+	font-size: 1.6rem;
+	margin: 0 0 0 17px;
+}
+
+.m {
+	font-style: italic;
+	letter-spacing: 1pt;
+	color: forestgreen;
+	margin-left: 20px;
+	font-size: .9rem;
+}
+
+
+/* Larger viewports */
+@media only screen and (min-width: 32.5em) {
+	header img {
+		width: 100%;
+	}
+
+	.headings h1 {
+		font-size: 3rem;
+	}
+
+	.m {
+		letter-spacing: 1.5pt;
+		font-size: larger;
+		margin-left: 17px;
+	}
 }
