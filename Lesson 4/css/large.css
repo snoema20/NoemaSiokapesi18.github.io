@@ -1,11 +1,12 @@
 body {
 	background-color: #bbb;
-	padding: 0;
-	margin: 0;
+	padding: 2rem;
+    margin: 0;
+    align-content: center;
 }
 
 header {
-	background-color: #fff;
+	background-color: rgb(59, 168, 231);
 	padding: 5px 0;
 	display: flex;
 	align-items:center;
@@ -14,17 +15,20 @@ header {
 
 header img {
 	width: 80px;
-	height: auto;
+    height: auto;
+    position: left;
 }
 
 .headings {
 	display: flex;
-	flex-direction: column;
+    flex-direction: column;
+    align-items: center;
 }
 
 .headings h1 {
 	font-size: 1.6rem;
-	margin: 0 0 0 17px;
+    margin: 0 0 0 17px;
+    text-align: center;
 }
 
 .m {
