@@ -1,37 +1,55 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head>
-    <title>Weather Alert</title>
-   <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width, intial-scale=1, maximum-scale=1">
-   <meta name="description" content="Weather Web Site"> 
-    <link href="https://fonts.google.com/specimen/Mansalva" rel="stylesheet">
-    <link ref="stylesheet" href="css/preston.css">
-   
-</head>
-<body>
-        
-        <header>
+    <head>
+        <title>Assignment|Home</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Assignment weather page Giacomo Draghi, CIT 230: Web Frontend Development at Brigham Young University - Idaho">
+        <meta name="author" content="Giacomo Draghi">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static/css/small.css">
+        <link rel="stylesheet" href="static/css/normalize.css">
+        <link rel="stylesheet" href="static/css/large.css">
+        <link href="https://fonts.googleapis.com/css?family=Crete+Round%7cPatua+One&display=swap" rel="stylesheet">
+    </head>
+    <body>
+            <header>
                 <picture>
-                    <img src="images/images.png" alt="The world logo">
+                    <img src="static/images/logo_format.png" alt="logo" />
                 </picture>
-                <section class="headings">
-                    <h1>Weather Alert</h1>
-                    <div class="m">Most Updated Weather Forecast</div>
-                    <h2>Preston Idaho</h2>
+                
+                <section class = "headings">
+                    <h1>Italy's weather</h1>
+                    <h2>Your weather 24H</h2>
                 </section>
+                
             </header>
             <nav>
-                <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">Preston</a></li>
-                    <li><a href="#">Soda Spring</a></li>
-                    <li><a href="#">Fish Haven</a></li>
-                    <li><a href="#">Storm Center</a></li>
-                    <li><a href="#">Gallery</a></li>
+                <ul class="menu-ul">
+                    <li class="menu-li"><a href="#" onclick="toggleMenu()">&#9776; Menu</a></li>
+                    <li class="menu-li"><a href="#" target="_self">Home</a></li>
+                    <li class="menu-li active"><a href="preston-4.html" target="_self">Preston</a></li>
+                    <li class="menu-li"><a href="#" target="_self">Soda Spiring</a></li>
+                    <li class="menu-li"><a href="#" target="_self">Fish Haven</a></li>
+                    <li class="menu-li"><a href="#" target="_self">Storm Center</a></li>
+                    <li class="menu-li"><a href="#" target="_self">Gallery</a></li>
                 </ul>
             </nav>
+            <main>
+                <h2>Preston Idaho</h2>
+                <div class = "contentbox">
+                  <p>Hero w/weather summary</p>    
+                </div>
+                <div class = "contentbox">
+                    <p>5 Day Forecast</p>
+                </div>
+                <div class = "contentbox">
+                    <p>Article</p>
+                </div>
+                <div class = "contentbox">
+                    <p>Contact informations</p>
+                </div>
+            </main>
            
         <footer>
                 <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
