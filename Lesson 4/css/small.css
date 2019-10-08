@@ -29,7 +29,7 @@ main, footer {
     margin: 0 auto;
 }
 main {
-    color: #031402;
+    color: #270cbd;
     display: flex;
     flex-flow: column;
     padding: 1px;
@@ -38,7 +38,7 @@ main {
 
 h1{
     font-size: 2em;
-    color: rgb(100, 5, 10);
+    color: rgb(170, 17, 25);
     font-family: 'Patua One', cursive, sans-serif;
 }
 
@@ -107,7 +107,7 @@ nav {
 }
 .menu-ul a {
 	display: block;
-	color: darkviolet;
+	color: rgb(17, 1, 24);
 	padding: 0.75rem;
 	text-align: center;
 	text-decoration: none;
