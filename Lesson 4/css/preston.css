@@ -1,36 +1,30 @@
 body {
 	background-color: #bbb;
-	padding: 2rem;
-    margin: 0;
-    align-content: center;
+	padding: 0;
+	margin: 0;
 }
 
-
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column;
-    padding: 5px;
-    background-color: lightskyblue;
+	background-color: #fff;
+	padding: 5px 0;
+	display: flex;
+	align-items:center;
+	justify-content:center;
 }
 
 header img {
 	width: 80px;
-    height: auto;
-    position: left;
+	height: auto;
 }
 
 .headings {
 	display: flex;
-    flex-direction: column;
-    align-items: center;
+	flex-direction: column;
 }
 
 .headings h1 {
 	font-size: 1.6rem;
-    margin: 0 0 0 17px;
-    text-align: center;
+	margin: 0 0 0 17px;
 }
 
 .m {
