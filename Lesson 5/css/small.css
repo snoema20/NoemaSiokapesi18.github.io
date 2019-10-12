@@ -89,9 +89,9 @@ footer a {
 }
 
 nav {
-    background-color: rgb(16, 204, 47);
+    background-color: rgb(67, 131, 226);
     margin: 0px;
-    border-top: solid #C62B2B;
+    border-top: solid rgb(64, 107, 8);
 }
 .menu-ul {
 	list-style: none;
@@ -113,7 +113,7 @@ nav {
 	text-decoration: none;
 }
 .menu-ul a:hover {
-	background-color: rgb(214, 240, 71);
+	background-color: rgb(150, 109, 228);
     color: rgb(97, 95, 3);
 	font-weight: 700;
 }
@@ -122,7 +122,7 @@ nav {
 }
 
 .menu-ul .active a{
-    color: rgb(16, 204, 47);
+    color: rgb(16, 19, 204);
 }
 
 .responsive li {
