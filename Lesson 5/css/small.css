@@ -19,6 +19,10 @@ header img {
 	flex-direction: column;
 }
 
+h2 p{
+    font-size: 1.5rem;
+    color: black;
+}
 .headings h1 {
 	font-size: 1.7rem;
 	margin: 0 0 0 17px;
