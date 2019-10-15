@@ -21,7 +21,8 @@ header img {
 
 h2 p{
     font-size: 1.5rem;
-    color: black;
+    color: black; 
+   
 }
 .headings h1 {
 	font-size: 1.7rem;
@@ -49,7 +50,8 @@ h1{
 h2 {
     font-size: 1em;
     color: rgb(5, 66, 30);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 
 main h2 {
