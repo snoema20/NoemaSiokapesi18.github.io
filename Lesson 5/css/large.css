@@ -1,4 +1,4 @@
-/* Media Query for medium + screens */
+
 @media only screen and (min-width: 60em) {
 	.menu-ul {
 		display: flex;
@@ -30,5 +30,11 @@
     
     p, table, nav {
         font-size: 1.5em;
-    }
+	}
+	img {
+		border-radius: 5px;    
+		box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.10);
+		margin: 5px;
+		float: center;
+}
 }
