@@ -59,7 +59,7 @@
   }
   sub,
   sup {
-    font-size: 40%;
+    font-size: 60%;
     line-height: 0;
     position: relative;
     vertical-align: baseline;
@@ -79,7 +79,7 @@
   select,
   textarea {
     font-family: inherit; 
-    font-size: 50%; 
+    font-size: 70%; 
     line-height: 1.10; 
     margin: 0; 
   }
