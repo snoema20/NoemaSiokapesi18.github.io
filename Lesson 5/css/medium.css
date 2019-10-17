@@ -19,8 +19,8 @@
     
     img {
             border-radius: 5px;    
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.10);
-            margin: 10px;
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.10);
+            margin: 5px;
             float: center;
     }
     }
