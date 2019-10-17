@@ -129,7 +129,7 @@ nav {
 	font-weight: 700;
 }
 .active {
-    background-color: rgb(197, 96, 38);
+    background-color: yellow;;
 }
 
 .menu-ul .active a{

@@ -1,8 +1,8 @@
   
 
  html {
-    line-height: 1.15; /* 1 */
-    -webkit-text-size-adjust: 100%; /* 2 */
+    line-height: 1.10; 
+    -webkit-text-size-adjust: 100%; 
   }
    
   body {
@@ -14,7 +14,7 @@
   
   
   h1 {
-    font-size: 2em;
+    font-size: 2.1em;
     margin: 0.67em 0;
   }
   
@@ -25,13 +25,13 @@
   }
   
   pre {
-    font-family: monospace, monospace; 
-    font-size: 1em;
+    font-family: monospace;
+    font-size: 1.2em;
   }
   
   
   a {
-    background-color: transparent;
+    background-color: unset;
   }
   
   abbr[title] {
@@ -49,8 +49,8 @@
   code,
   kbd,
   samp {
-    font-family: monospace, monospace; 
-    font-size: 1em; 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.2em; 
   }
   
   
@@ -59,7 +59,7 @@
   }
   sub,
   sup {
-    font-size: 75%;
+    font-size: 68%;
     line-height: 0;
     position: relative;
     vertical-align: baseline;
@@ -73,12 +73,6 @@
     top: -0.5em;
   }
   
-  /* Embedded content
-     ========================================================================== */
-  
-  /**
-   * Remove the border on images inside links in IE 10.
-   */
   
   img {
     border-style: none;
@@ -92,7 +86,7 @@
   textarea {
     font-family: inherit; 
     font-size: 100%; 
-    line-height: 1.15; 
+    line-height: 1.10; 
     margin: 0; 
   }
   
