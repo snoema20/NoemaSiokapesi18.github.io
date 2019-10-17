@@ -75,8 +75,15 @@
   
   
   img {
-    border-style: dotted;
-  }
+    border-style: none;
+      border-radius: 3px;    
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+      margin: 2px;
+      float: center;
+    }
+
+
+  
   
   
   button,
