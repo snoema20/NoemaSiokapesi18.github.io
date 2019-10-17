@@ -3,7 +3,7 @@ body {
     margin: 0 auto;
 }
 header, footer {
-    background-color: rgb(141, 6, 119);
+    background-color: yellow;
     display: flex;
     align-items: center;
     justify-content: center;
