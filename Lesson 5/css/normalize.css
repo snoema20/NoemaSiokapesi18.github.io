@@ -119,13 +119,13 @@
   [type="button"]:-moz-focusring,
   [type="reset"]:-moz-focusring,
   [type="submit"]:-moz-focusring {
-    outline: 1px dotted ButtonText;
+    outline: thin;
   }
   
 
   
   fieldset {
-    padding: 0.35em 0.75em 0.625em;
+    padding: 0.30em 0.70em 0.580em;
   }
   
   
