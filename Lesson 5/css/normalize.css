@@ -127,7 +127,7 @@
     box-sizing: border-box; 
     color: inherit; 
     display: table; 
-    max-width: 100%; 
+    max-width: 50%; 
     padding: 0; 
     white-space: normal; 
   }
