@@ -11,7 +11,7 @@ header, footer {
 }
 
 header img {
-	width: 50%;
+	width: 70%;
 }
 
 .headings {
@@ -20,13 +20,13 @@ header img {
 }
 
 h2 p{
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: black; 
    
 }
 .headings h1 {
 	font-size: 1rem;
-	margin: 0 0 0 5px;
+	margin: 0 0 0 3px;
 }
 
 main, footer {
