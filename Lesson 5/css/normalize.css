@@ -36,8 +36,8 @@
   
   abbr[title] {
     border-bottom: none; 
-    text-decoration: underline; 
-    text-decoration: underline dotted; 
+    text-decoration: none; 
+    text-decoration: none; 
   }
   
  
@@ -161,10 +161,6 @@
     padding: 0; 
   }
   
-  [type="number"]::-webkit-inner-spin-button,
-  [type="number"]::-webkit-outer-spin-button {
-    height: auto;
-  }
 
   [type="search"] {
     -webkit-appearance: textfield; 
