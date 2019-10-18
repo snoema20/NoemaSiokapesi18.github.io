@@ -23,7 +23,7 @@ footer {
 
 header,
 footer {
-    background-color: #3da5d9;
+    background-color: ;;
     display: flex;
     flex-direction: row;
     align-items: center;
