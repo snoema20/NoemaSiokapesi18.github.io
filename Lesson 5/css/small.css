@@ -1,269 +1,177 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
+@media (max-width: 500px) {
 
+    nav ul {
+        display: none;
+    }
 
+    article img {
+        float: right;
+        max-width: 100%;
+        height: auto;
+        margin: -50px 0 0 30px;
+    }
 
-* {
-    box-sizing: border-box;
-    line-height: 1.1em;
+    footer .footer-img {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+        margin: 1.2em;
+    }
+
 }
 
- body {
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    padding: 0;
-    background-color: #f1f5f7;
-    color: #000;
-    min-width: 360px;
-}
-
-header,
-nav,
-main,
-footer {
-    margin: 0 auto;     
-}
-
-header,
-footer {
-    background-color: #f3ed95;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-    border: 1px solid #000;
-}
-
-.header-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    max-width: 767px;
+body {
+    font-family: 'Muli', sans-serif;
+    font-size: 18px;
+    color: #036;
 }
 
 header {
-    font-family: fantasy;
-    padding-top: 10px;
-    padding-right: 15px;
+    background-color: #369;
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
 }
-    
-    
 
-header img{
-    max-width: 75px;
+header > img {
+    vertical-align: middle;
+}
+
+.header-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 4rem;
+}
+
+.header-text h4 {
+    font-style: italic;
+}
+
+.current-conditions {
+    background-color: #1ccad8;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 2px solid #036;
+    border-radius: .4em;
+    width: 3em;
+}
+
+.current-conditions img, .hero img {
+ 
+    max-width: 100%; 
     height: auto;
-    padding-right: 20px;
 }
 
-header h2 {
-    text-shadow: 2px 2px 2px rgb(7, 7, 7);
-    font-size: 1rem;
+.current-conditions p {
+    display: inline;
 }
-
 
 nav {
-    margin: 0 auto;
-    background-color: #fafc95;
-    text-align: center;
-    border: 1px solid #000;
-   
+    background-color: #036;
 }
 
 nav ul {
-    display: flex;
-    flex-direction: column;
+    list-style: none;
+    text-align: center;
+    padding: 0;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-
 }
 
-nav ul li {
-    flex: 1 1 100%;
-    color: #f3f315;
-    list-style-type: none;
-
+nav li {
+    display: inline-block;
+    font-size: 1.2em;
+    line-height: 1.8em;
 }
 
-
-
-nav ul li a {
+nav a {
     display: block;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.navigation{
-    list-style-type: none;
-    text-align: center;
-    padding: 0;
-    margin: .2rem auto;
-    max-width: 767px;
-}
-
-.navigation li:first-child {
-    display: block;
-}
-
-.navigation li{
-    display: none;
-}
-
-.navigation a {
-    display: block;
-    padding: 0.25rem;
-    text-align: center;
+    color: #fff;
+    padding: 1rem 1.5rem;
     text-decoration: none;
 }
 
-.navigation a:hover {
-    color: #f3f315;
-    background-color: #3da5d9;
-    font-weight: bold;
+nav a:hover {
+    background-color: #1ccad8;
 }
 
-.responsive li{
-    display: block;
+main, footer {
+    width: 52.5%;
+    margin: auto;
 }
 
-.active {
-    background-color: #f7f328;
-    color: #000;
+main h1 {
+    text-align: center;
 }
 
-main {
-    font-size: 0.8rem;
-    height: 100%;
+.hero {
+    width: 100%;
+  
+    position: relative;
+    color: #fff;
 }
 
-main h2 { 
-    color: #2364aa;
-    padding: 10px 0;
+.hero aside {
+    background-color: rgba(28, 202, 216, .9);
+    width: 25%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: 2px solid #036; 
+    border-radius: .4em;
+    padding: 1rem;
 }
 
-.rowImage img {
-    width: 100%
-    
+.hero aside h3 {
+    text-decoration: underline;
+}
+
+.hero aside ul {
+    list-style: none;
+    margin-left: -35px;
+}
+
+.hero aside ul li {
+    padding: 0 0 5px 0;
+}
+
+.cc-value {
+    color: #f4e04d;
 }
 
 article {
-    margin: 5px auto;
-    padding: 10px;
-    max-width: 1020px;
-    height: 100%;
-    border: 3px dodgerblue #3da5d9;
-    align-content: center;
-    font-style: italic;
-}
-article .row1 {
-    border: 0;
+    background-color: rgba(51, 102, 153, .9);
+    text-align: justify;
+    font-size: .9em;
+    padding: 1em;
+    margin: 1em 0;
+    color: #fff;
 }
 
-.row1, .row2, .row3 {
-    margin: 5px 5px 0;
+
+footer {
+    background-color: #96bbbf;
+    font-size: .75em;
+    margin-bottom: 2em;
 }
 
-.stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 15px;
-    background-color: #f3e458;
-    color: #f1f5f7;
-    font-size: 1rem;
-    box-align: right;
+
+footer .footer-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 4rem;
 }
 
-.stats div h2 {
-    grid-column: span 2;
-    }
-
-
-hr {
-    grid-column: span 2;   
-    color: #f1f5f7;
-    width: 90%;
-}
-
-.row2 {
-    display: none;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Roboto Slab', serif;
-    margin: 0;
-}
-
-h1 {
-    display: block;
-    font-size: 1.25rem;
-    color: #2364aa;
-    text-align: center;
-    text-shadow: 2px 2px 4px #fff;
-    white-space: nowrap;
-
-}
-
-h2 {
-    font-size: 1.25rem;
-    color: #9ec009;
-    text-align: center;
-}
-
-h3 {
-    font-size: 1rem;
-    color: #2e353b;
-}
-
-ul li a:link {
-    color: rgb(12, 143, 7);
-    text-decoration: none;
-}
-
-ul li a:visited {
-    color: rgb(8, 75, 41);
-}
-
-ul li a:hover {
-    background-color:  #3da5d9;
-    color: #f3f315;
+footer .footer-map {
+    display: inline-block;
+    vertical-align: middle;
    
 }
 
-a:link {
-    text-decoration: none;
-}
-
-footer {
-    padding: 5px;
-    flex-direction: column;
-    align-items: center;
-    
-    font-size: 13px;
-    text-align: center;  
-}
-
-footer p{
-    margin: 0;
-}
-
-body footer p:nth-child(1) {
-    margin-top: 15px;
-}
-
-body footer p:nth-child(2) {
-    margin-bottom: 15px;
-}
-
-#copyright {
-    color: #1a1deb;
-    font-size: 14px;
-}
-
-#currentDate {
-    color: #0f1cd3;
+footer .footer-disclosures {
+    background-color: #036 !important;
+    text-align: center;
+    color: #fff;
+    padding: .5em;
 }
