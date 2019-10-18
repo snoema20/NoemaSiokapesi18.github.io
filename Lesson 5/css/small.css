@@ -43,7 +43,7 @@ footer {
 }
 
 header {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
+    font-family: fantasy;
     padding-top: 10px;
     padding-right: 15px;
 }
@@ -57,7 +57,7 @@ header img{
 }
 
 header h2 {
-    text-shadow: 2px 2px 2px #fff;
+    text-shadow: 2px 2px 2px rgb(7, 7, 7);
     font-size: 1rem;
 }
 
@@ -128,7 +128,7 @@ nav ul li a {
 }
 
 .active {
-    background-color: #3da5d9;
+    background-color: #f7f328;
     color: #000;
 }
 
@@ -152,7 +152,7 @@ article {
     padding: 10px;
     max-width: 1020px;
     height: 100%;
-    border: 2px dotted #3da5d9;
+    border: 3px dodgerblue #3da5d9;
     align-content: center;
     font-style: italic;
 }
@@ -168,7 +168,7 @@ article .row1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 15px;
-    background-color: #3da5d9;
+    background-color: #f3e458;
     color: #f1f5f7;
     font-size: 1rem;
     box-align: right;
@@ -210,22 +210,22 @@ h1 {
 
 h2 {
     font-size: 1.25rem;
-    color: #2364aa;
+    color: #9ec009;
     text-align: center;
 }
 
 h3 {
     font-size: 1rem;
-    color: #2364aa;
+    color: #2e353b;
 }
 
 ul li a:link {
-    color: #fff;
+    color: rgb(12, 143, 7);
     text-decoration: none;
 }
 
 ul li a:visited {
-    color: #fff;
+    color: rgb(8, 75, 41);
 }
 
 ul li a:hover {
@@ -243,7 +243,7 @@ footer {
     flex-direction: column;
     align-items: center;
     
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;  
 }
 
@@ -260,10 +260,10 @@ body footer p:nth-child(2) {
 }
 
 #copyright {
-    color: #f1f5f7;
+    color: #1a1deb;
     font-size: 14px;
 }
 
 #currentDate {
-    color: #f1f5f7;
+    color: #0f1cd3;
 }
