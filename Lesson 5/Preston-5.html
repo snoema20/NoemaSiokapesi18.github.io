@@ -1,99 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
 
     <head>
-        <title>Preston Idaho</title>
-        <meta charset="utf-8">
-        <meta name="description" content="Assignment weather Siokapesi Noema, CIT 230: Web Frontend Development at Brigham Young University - Idaho">
-        <meta name="author" content="Siokapesi Noema">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-       
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, intial-scale=1, maximum-scale=1">
+        <meta name="description" content="Weather Web Site">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli">
         <link rel="stylesheet" href="css/small.css">
         <link rel="stylesheet" href="css/medium.css">
         <link rel="stylesheet" href="css/large.css">
-       
-        <link href="https://fonts.googleapis.com/css?family=Crete+Round%7cPatua+One&display=swap" rel="stylesheet">
+        <title>Weather or Not - Preston</title>
     </head>
+    
     <body>
         <header>
-            <div class="header-wrapper">
-                <img src="images/logo.jpg" alt="logo">
-             <div class="header-titles">   
-                <h1 class="title">Preston Idaho</h1>
-                <h2 class="subtitle">"Most Updated Weather Forecast"</h2>
-            </div> 
+            <img src="images/logo.jpg" alt="logo" class="logo">
+            <div class="header-text">
+                <h1>Preston</h1>
+                <h4>Most Updated Weather</h4>
+            </div>
+            <div class="current-conditions">
+                <img src="images/preston.jpg" alt="current conditions weather icon">
+                <p>Sunny 79&deg;</p>
             </div>
         </header>
-    
+
         <nav>
-            <ul class="navigation">
-                <li><a href="#" onclick="toggleMenu()">&#9776; Menu</a></li> 
-                <li><a href="../index.html">Home</a></li>
-                
-                <li><a class="active" href="Preston-5.html">Preston</a></li>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Preson</a></li>
                 <li><a href="#">Soda Springs</a></li>
                 <li><a href="#">Fish Haven</a></li>
                 <li><a href="#">Storm Center</a></li>
                 <li><a href="#">Gallery</a></li>
             </ul>
         </nav>
-    
+
         <main>
-            <h2>Preston Idaho</h2>
-                <article class="row1">
-                    <div class="herodiv">
-                        <div class="rowImage">
-                            <img src="images/use.jpg" alt="town">
-                        <div>
-                    <section class="stats">
-                        <div><h3>Weather Summary</h3></div>
-                        <hr>
-                        <div>Currently:</div>
-                        <div>Sunny</div>
-                        <div>High:</div> 
-                        <div>49&#8457;</div>
-                        <div>Windy:</div>
-                        <div>&#8457;</div>
-                        <div>Humidity:</div>
-                        <div>72</div>
-                        <div>Wind Speed:</div>
-                        <div>3 mph</div>
-                    </section>
-                </article>
-            
-                
-    
-            <article class="row2">  
-                <div class="rowImage">
-                    <h3>5 Day Forecast</h3>
-    
-    
-                </div>
-            </article>
-    
-            <article class="row3">     
-                <div class="rowImage"></div>
-                        <img src="images/iconfinder_15_Cloud_Raindrop_Sun_183424.png alt="cropland town clouds>
-                   
-                    <p></a></p>
-                </div>
-            </article>
-            <article class="row4">    
-                <div class="rowImage">
-                    <h3>Contact Information</h3>
-                </div>
+            <h1>The Town of Preston</h1>
+            <div class="hero">
+                <aside>
+                    <h3>Weather Summary</h3>
+                    <ul>
+                        <li>Currently: <span class="cc-value">Sunny</span></li>
+                        <li>Temperature: <span class="cc-value">77&deg; F</span></li>
+                        <li>Humidity: <span class="cc-value">69%</span></li>
+                        <li>Precipitation: <span class="cc-value">0 inches</span></li>
+                        <li>Wind Speed: <span class="cc-value">5 mph</span></li>
+                    </ul>
+                </aside>
+                <img src="images/preston.jpg" alt="valley image">
+            </div>
+            <article>
+                <h3 class="article-title">Founders Day Fresco</h3>
+                <p class="article-author">by Janica Juarez</p>
+                <p><img src="images/campfire-400x400.jpg" alt="campfire image">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus in mollis nunc sed. Cursus metus aliquam eleifend mi in nulla posuere sollicitudin. Tellus id interdum velit laoreet id donec ultrices. Pharetra vel turpis nunc eget lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus in mollis nunc sed. Cursus metus aliquam eleifend mi in nulla posuere sollicitudin. Tellus id interdum velit laoreet id donec ultrices. Pharetra vel turpis nunc eget lorem dolor. Cursus metus aliquam eleifend mi in nulla posuere sollicitudin. Tellus id interdum velit laoreet id donec ultrices. Pharetra vel turpis nunc eget lorem dolor.</p>
             </article>
         </main>
-           
-            <footer>
-                <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
-                | Last Updated: <span id="currentDate"></span>
-                    
-               </footer>
-           
-            <script src="js/myscript.js"></script>
-            <script src="js/hambmenul.js"> </script>
-  
-            
-</body>
+
+        <footer>
+            <img src="images/team-building.jpg" alt="Weather or Not Team" class="footer-img">
+            <div class="footer-text">
+                <h4>Weather or Not</h4>
+                <address>
+                    1122 Siokapes Noema<br>
+                    Anytown, UT 84015
+                </address>
+                <p>
+                    <a href="tel:8018889999">Phone: (801) 888-9999</a><br>
+                    <a href="mailto:someone@domain.com">Email: someone@domain.com</a>
+                </p>
+            </div>
+            <div class="footer-map">
+                <img src="images/preston-idaho-map.png" alt="Location Map" class="footer-map">
+            </div>
+            <div class="footer-disclosures">
+                <p>
+                    &copy;2018 Weather or Not | Attributions | Nate Petersen<br>
+                    Wednesday, 20 October 2018
+                </p>
+            </div>
+        </footer>
+
+    </body>
+
 </html>
