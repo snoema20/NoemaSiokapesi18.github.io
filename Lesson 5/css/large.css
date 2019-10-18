@@ -1,44 +1,94 @@
+@media only screen and (min-width: 32.5em) {
 
-@media only screen and (min-width: 60em) {
-	.menu-ul {
-		display: flex;
-	}
-	.menu-ul li:first-child {
-		display: none;
-	}
-	.menu-ul li {
-		display: block;
-		flex: 1 1 100%;
-	}
-	.menu-ul li a {
-		color: yellow;
-    }
-    footer, main {
-        width: 80%;
-	}
-	.headings h1{
-        font-size: 2.6em;
-	}
-	
-	.headings h2 {
-        font-size: 2.2em;
-    }
     
+
+    header,
+    nav,
+    main,
+    footer {
+        min-width: 32.5em;
+    }
+
+    header {
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    header img{
+        min-width: 100px;
+    }
+
+    footer {
+        border-radius: 0 0 10px 10px;
+    }
+
+    nav {
+        border-radius: 0 0 10px 10px;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+  
+    nav ul li a {
+        white-space: nowrap;
+    }
+
+    .navigation {
+        display: flex;
+    }
+
+    .navigation li:first-child {
+        display: none;
+    }
+
+    .navigation li {
+        display: block;
+        flex: 1 1 100%;
+    }
+
+    .navigation li a {
+        border-radius: 10px;
+
+    }
+
+
+    .rowimage {
+        width: 70%;
+    }
+
+    article:nth-child(2) {
+        display: block;
+    }
+
+    
+.herodiv {
+    margin: 10px auto;
+    position: relative;
+
+.stats {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+main h2 {
+    margin: 10px;
+}
+ 
+
+    h1 {
+        font-size: 1.75rem;
+        white-space: nowrap;
+      
+    }
+
     h2 {
-        font-size: 1.5em;
+        font-size: 1.50rem;
+        white-space: nowrap;
     }
-    
-    p, table, nav {
-        font-size: 1.8em;
-	}
-	img {
-		border-radius: 2px;    
-		box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.5);
-		margin: 2px;
-		float: left;
-}
-}
-ul {
-	font-size: medium;
-	font-display: center;
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
 }
