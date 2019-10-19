@@ -45,7 +45,7 @@ header img {
 .sec-company-info h1 {
 	font-size: 1.1rem;
     margin: 0 0 0 15px;
-    color: #f3de23;
+    color: #fcfcfc;
 }
 
 .motto {
@@ -200,7 +200,7 @@ h3 {
 	position: absolute;
 	top: 20px;
     left: 10px;
-	background: radial-gradient(#81d65f, #74cc52);
+	background: radial-gradient(#f5f22f, #d5e032);
 	border: 2px solid #ffc857;
 	padding: 0.5rem;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 2);
@@ -210,7 +210,7 @@ h3 {
 }
 
 hr {
-    border: 2px solid #65d356;
+    border: 2px solid #42290b;
 }
 
 .table-grid {
@@ -244,8 +244,8 @@ hr {
 .article, .contact-info {
     text-align: left;
     padding: 0 30px 30px 30px;
-    background-color: #73ff57;
-    color: gold;
+    background-color: #0e3399;
+    color: rgb(240, 240, 239);
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 2); 
 }
@@ -266,8 +266,8 @@ hr {
 }
 
 .btn {
-    color: #ffc857;
-    background-color: gold;
+    color: #2b1f07;
+    background-color: rgb(98, 233, 116);
     border-radius: 0.8em;
     margin: 5% auto;
     padding: 6px;
@@ -339,7 +339,7 @@ footer {
     font-size: 0.75em;  
     line-height: 1.5em;
 	background-color: #3488f7;  
-    color: #ceaa0a;
+    color: #0a0801;
 	display: flex;
     flex: 0 1 100%;
 	align-items:center;
@@ -348,5 +348,5 @@ footer {
 }
 
 footer a {
-    color: #ffc857;
+    color: #110c02;
 }
