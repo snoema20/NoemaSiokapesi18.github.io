@@ -4,19 +4,19 @@
 	}
 
     .sec-company-info h1 {
-		font-size: 2rem;
+		font-size: 2.2rem;
 	}
 
 	.motto {
-		font-size: 1.1rem;
+		font-size: 1.3rem;
     }   
     
     .main-nav li:first-child {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
     
     nav li a {
-        font-size: .9rem;
+        font-size: 1rem;
     }
 
     .hero-weather-info {
@@ -26,9 +26,9 @@
     }
 
     .btn {
-        border-radius: 1.5em;
+        border-radius: 1.6em;
         width: 150px;
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 
     table {
@@ -68,9 +68,9 @@
     }
 
     .contact-img, .social-media  {
-        width: 25px;
+        width: 27px;
         height: auto;
-        padding-right: 5px;
+        padding-right: 5.3px;
     }
 
     iframe {
