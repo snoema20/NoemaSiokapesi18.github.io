@@ -59,13 +59,13 @@ header img {
 nav {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    background-color: #c7e24d;
-    box-shadow: 0 5px 10px #cbe440;
+    background-color: #805319;
+    box-shadow: 0 5px 10px #3a068d;
 }
 
 .main-nav li:first-child {
     display: block;
-    background-color: #e7e42d;
+    background-color: #88451f;
     border: none;
     font-size: 1.3rem;
     padding: 10px;
@@ -172,7 +172,7 @@ h3 {
     display: block;
     margin: 10px auto;
     padding: 15px;
-    background-color: #d4ee41;
+    background-color: #5f3309;
     color: #ffffff;
     border-radius: 5px;    
     box-shadow: 0 10px 20px 0 rgba(43,11,11, 0.6);
@@ -229,7 +229,7 @@ hr {
 
 .head-value {
     text-align: left;
-    color: #7dd454;
+    color: #8d4533;
 }
 
 #article-container, #contact {
