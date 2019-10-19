@@ -110,7 +110,7 @@ nav ul li.active a {
 }
 
 nav ul li a:hover {
-    background-color: rgba(121, 212, 93, 0.849);
+    background-color: rgba(230, 208, 18, 0.849);
     color: rgba(255,255,255, 0.7);
     box-shadow: 5px 5px 5px #2b0b0b;
 }
@@ -172,7 +172,7 @@ h3 {
     display: block;
     margin: 10px auto;
     padding: 15px;
-    background-color: #5173bd;
+    background-color: #2e2002;
     color: #ffffff;
     border-radius: 5px;    
     box-shadow: 0 10px 20px 0 rgba(238, 190, 136, 0.6);
@@ -312,7 +312,7 @@ hr {
 }
   
 .fade {
-    background: linear-gradient(to bottom, rgba(122, 125, 206, 0) 0rgb(115, 171, 235) 1) 75%);
+    background: linear-gradient(to bottom, rgba(122, 125, 206, 0) 0rgb(115, 171, 235) 1, 75%);
     height: 70px;
     margin-top: 25px;
     position: relative;
