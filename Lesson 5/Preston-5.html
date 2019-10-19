@@ -13,74 +13,155 @@
         <link rel="stylesheet" href="css/large.css">
         <link href="https://fonts.googleapis.com/css?family=Crete+Round%7cPatua+One&display=swap" rel="stylesheet">
     </head>
-    <body>
-            <header>
+    <body>          
+            <!-- HEADER -->
+            <header id="main-header">     
+                <div id="friday-banner">
+                    <p>
+                        Saturday = Preston Pancakes in the Park!  9:00 a.m. Saturday at the city park pavilion
+                    </p>
+                </div>     
                 <picture>
-                    <img src="images/images.png" alt="logo" />
+                    <img src="images/ghanameteoagency.png" alt="Ghana Meteo Logo">
                 </picture>
-                
-                <section class = "headings">
-                    <h1>Preston Idaho</h1>
-                    <h2>Most Updated Weather Forecast</h2>
+                <section class="sec-company-info">
+                    <h1>Ghana Meteorological Agency</h1>
+                    <div class="motto">Your source for weather information</div>
                 </section>
-                
             </header>
+            <!-- NAVIGATION -->
             <nav>
-                <ul class="menu-ul">
-                    <li class="menu-li"><a href="#" onclick="toggleMenu()">&#9776; Menu</a></li>
-                    <li class="menu-li"><a href="#" target="_self">Home</a></li>
-                    <li class="menu-li active"><a href="Preston-5.html" target="_self">Preston</a></li>
-                    <li class="menu-li"><a href="#" target="_self">Soda Spiring</a></li>
-                    <li class="menu-li"><a href="#" target="_self">Fish Haven</a></li>
-                    <li class="menu-li"><a href="#" target="_self">Storm Center</a></li>
-                    <li class="menu-li"><a href="#" target="_self">Gallery</a></li>
+                <ul class="main-nav">
+                    <li><a href="#" onclick="toggleMenu()"><span class="exit-button">&#215;</span><span class="hamburger">&#9776; Menu</span></a></li>
+                    <li><a href="#">Home</a></li>
+                    <li class="active"><a href="preston-5.html" >Preston</a></li>
+                    <li><a href="#">Soda Springs</a></li>
+                    <li><a href="#">Fish Haven</a></li>
+                    <li><a href="#">Storm Center</a></li>
+                    <li><a href="#">Gallery</a></li>
                 </ul>
             </nav>
-            <main>
-                <h2>Preston Idaho</h2>
-                <div class = "contentbox">
-                  <p>Weather Summary</p> 
-            
-                  <section class="stats">
-                        
-                        <hr>
-                     
-                                <div>Currently:&nbsp; &nbsp;</div>
-                                <div>Sunny</div>
-                                <div>High:&nbsp; &nbsp;</div>
-                                <div>55 &#8457;</div>
-                                <div>Wind Chill:&nbsp; &nbsp;</div>
-                                <div>49 &#8457;</div>
-                                <div>Humidity:&nbsp; &nbsp;</div>
-                                <div>69%</div>
-                                <div>Wind Speed:&nbsp; &nbsp;</div>
-                                <div>5 mph</div>
-                            </section> 
-                  </p>   
-                </div>
-                <div class = "contentbox">
-                    <p>5 Day Forecast</p>
-                    <p>
+        
+            <div id="content-container">
+               <!-- MAIN -->
+                <main>
+                    <h2>Preston <span>Idaho</span></h2>            
+                    <section class="content-box">
+                        <div class="hero-container">
+                            <img class="hero-image" src="images/hero-image.jpg" alt="hero image">
+                            <div class="hero-weather-info">
+                                <h3>Weather Summary</h3>
+                                <hr>
+                                <div class="table-grid">
+                                    <span class="head-content">Currently:</span> 
+                                    <span class="head-value">Sunny</span>
+        
+                                    <span class="head-content">High:</span> 
+                                    <span class="head-value">76 &#8457;</span>
+        
+                                    <span class="head-content">Wind Chill:</span>
+                                    <span class="head-value">&#8457;</span>
+        
+                                    <span class="head-content">Humidity:</span>
+                                    <span class="head-value">69%</span>
+        
+                                    <span class="head-content">Wind Speed:</span>
+                                    <span class="head-value">5 mph</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+        
+                    <section class="content-box no-display">
+                        <h3>5 Day Forecast</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Sun</th>
+                                    <th>Mon</th>
+                                    <th>Tue</th>
+                                    <th>Wed</th>
+                                    <th>Thu</th>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/icons8-sun-50-2.png" alt="sunny day"></td>
+                                    <td><img src="images/icons8-sun-50-2.png" alt="sunny day"></td>
+                                    <td><img src="images/icons8-sun-50-2.png" alt="sunny day"></td>
+                                    <td><img src="images/icons8-sun-50-2.png" alt="sunny day"></td>
+                                    <td><img src="images/icons8-sun-50-2.png" alt="sunny day"></td>
+                                </tr>
+        
+                                <tr>
+                                    <td>76 &#8457;</td>
+                                    <td>89 &#8457;</td>
+                                    <td>63 &#8457;</td>
+                                    <td>71 &#8457;</td>
+                                    <td>93 &#8457;</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </section>
+        
+                    <section class="content-box">
+                        <h3 class="float">Founder's Day Fresco</h3>
+                        <div id="article-container">
+                            <div class="article panel-wrapper"> 
+                                <a href="#article-show" class="article-show btn" id="article-show">Show More</a>
+                                <a href="#article-hide" class="article-hide btn" id="article-hide">Show Less</a> 
+                                <div class="panel">                            
+                                    <h4 class="float">By Sunday Onwuchekwa</h4>
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex voluptas nesciunt nemo, harum tempora mollitia debitis distinctio veniam nam laboriosam modi alias dicta voluptate exercitationem dolorum, unde ad doloribus quae. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, omnis. Officiis porro necessitatibus ab provident? Eligendi nemo, vero reiciendis alias, dolorem, numquam officiis facere exercitationem at libero nesciunt. Quisquam, iure.<br /><br />
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex voluptas nesciunt nemo, harum tempora mollitia debitis distinctio veniam nam laboriosam modi alias dicta voluptate exercitationem dolorum, unde ad doloribus quae. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, omnis. Officiis porro necessitatibus ab provident? Eligendi nemo, vero reiciendis alias, dolorem, numquam officiis facere exercitationem at libero nesciunt. Quisquam, iure.
+                                    </p>
+                                </div> 
+                            </div>
                             <picture>
-                                    <img src="images/idaho fall summary.jpg" alt="summary" />
-                                </picture>
-                    </p>
-                    <p>
-                       
-                    </p>
-                </div>
-                <div class = "contentbox">
-                    <p>Article</p>
-                </div>
-                <div class = "contentbox">
-                    <p>Contact Informations</p>
-                    <p>125 Summit Ave S Preston ID 98089</p>
-                    <p>PH: 239-222-2323</p>
-                    <p>Email: prestonweatherforecast@hotmail.com</p>
-                </div>
-            </main>
-           
-
+                                <img class="img1" src="images/aside-image.jpg" alt="metro image">
+                            </picture>
+                        </div>
+                    </section>
+        
+                    <section class="content-box">
+                        <h3>Contact Information</h3>                
+                        <div id="contact">
+                            <div class="map no-display">
+                                <div class="mapouter">
+                                    <div class="gmap_canvas">
+                                        <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Preston%2C%20Idaho&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                                    </div>
+                                </div>
+                            </div>                
+                            <div class="contact-info">
+                                <h3>Ghana Meteorological Agency</h3>
+                                <div class="contact-detail">
+                                    <img class="contact-img" src="images/location.png" alt="location">&nbsp; <span>30&deg;N 1st E <br />Preston, ID 83263</span>
+                                </div>
+                                <div class="contact-detail">
+                                    <img class="contact-img" src="images/telephone.png" alt="location">&nbsp; <span>999.999.9999</span>
+                                </div>
+                                <div class="contact-detail">
+                                    <img class="contact-img" src="images/email.png" alt="location">&nbsp; <span>web@ghanameteo.org</span>
+                                </div>
+                                <br /><br />
+                                <div class="social">
+                                    <a href="https://www.facebook.com/" target="_blank"><img class="social-media" src="images/001-facebook.png" alt="facebook"></a>
+        
+                                    <a href="https://www.instagram.com/" target="_blank"><img class="social-media" src="images/003-instagram.png" alt="facebook"></a>
+        
+                                    <a href="https://www.instagram.com/" target="_blank"><img class="social-media" src="images/004-linkedin.png" alt="facebook"></a>
+        
+                                    <a href="https://www.youtube.com/" target="_blank"><img class="social-media" src="images/005-youtube.png" alt="facebook"></a>
+        
+                                    <a href="https://twitter.com/" target="_blank"><img class="social-media" src="images/002-twitter.png" alt="facebook"></a>
+        
+                                    <a href="https://www.pinterest.com/" target="_blank"><img class="social-media" src="images/006-pinterest.png" alt="facebook"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
             <footer>
                 <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
                 | Last Updated: <span id="currentDate"></span>
