@@ -60,7 +60,7 @@ nav {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     background-color: #805319;
-    box-shadow: 0 5px 10px #3a068d;
+    box-shadow: 0 5px 10px #ffc857;
 }
 
 .main-nav li:first-child {
@@ -172,7 +172,7 @@ h3 {
     display: block;
     margin: 10px auto;
     padding: 15px;
-    background-color: #5f3309;
+    background-color: #5173bd;
     color: #ffffff;
     border-radius: 5px;    
     box-shadow: 0 10px 20px 0 rgba(238, 190, 136, 0.6);
@@ -244,7 +244,7 @@ hr {
 .article, .contact-info {
     text-align: left;
     padding: 0 30px 30px 30px;
-    background-color: #3a97e4;
+    background-color: #ffc857;
     color: rgb(240, 240, 239);
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 2); 
@@ -267,7 +267,7 @@ hr {
 
 .btn {
     color: #fcfbfa;
-    background-color: rgb(72, 156, 235);
+    background-color: rgb(160, 122, 20);
     border-radius: 0.8em;
     margin: 5% auto;
     padding: 6px;
@@ -338,8 +338,8 @@ footer {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.75em;  
     line-height: 1.5em;
-	background-color: #3488f7;  
-    color: #0a0801;
+	background-color: #ffc857;  
+    color: #fffcf0;
 	display: flex;
     flex: 0 1 100%;
 	align-items:center;
@@ -348,5 +348,5 @@ footer {
 }
 
 footer a {
-    color: #110c02;
+    color: #ebe8e3;
 }
