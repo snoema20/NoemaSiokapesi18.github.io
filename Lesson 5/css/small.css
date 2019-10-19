@@ -172,7 +172,7 @@ h3 {
     display: block;
     margin: 10px auto;
     padding: 15px;
-    background-color: #1f2041;
+    background-color: #25e24e;
     color: #ffffff;
     border-radius: 5px;    
     box-shadow: 0 10px 20px 0 rgba(43,11,11, 0.6);
@@ -200,7 +200,7 @@ h3 {
 	position: absolute;
 	top: 20px;
     left: 10px;
-	background: radial-gradient(#1f2041, #2b0b0b);
+	background: radial-gradient(#81d65f, #74cc52);
 	border: 2px solid #ffc857;
 	padding: 0.5rem;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 2);
@@ -245,7 +245,7 @@ hr {
     text-align: left;
     padding: 0 30px 30px 30px;
     background-color: #73ff57;
-    color: #1f2041;
+    color: gold;
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 2); 
 }
@@ -267,7 +267,7 @@ hr {
 
 .btn {
     color: #ffc857;
-    background: #1f2041;
+    background-color: gold;
     border-radius: 0.8em;
     margin: 5% auto;
     padding: 6px;
