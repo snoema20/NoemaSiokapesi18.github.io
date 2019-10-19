@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
+
+/* yellow #f3f315 (243,242,21); dk blue #2364aa(35,100,70); med blue #3da5d9(61,165,217); aqua blue #73bfb8(115,191,184); orange #ea7317(234,115,23); light orange #f4b98b; very pale yellow #ffffe5;*/ 
+
+
+/* {
+    border: 1px solid red !important; /* demo for Box Model Presentation 
+ }*/
+
+* {
+    box-sizing: border-box;
+    line-height: 1.1em;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    background-color: #f1f5f7;
+    color: #000;
+    min-width: 360px;
+}
+
+.bannerad {
+    text-align: center;
+    padding: 5px 0;
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+}
+
+.bannerad p {
+    line-height: .5em;
+}
+
+.showbanner {
+    display: block;
+}
+
+.hidebanner {
+    display: none;
+}
+
+header,
+nav,
+main,
+footer {
+    margin: 0 auto;
+    /*0 auto; this centers the page*/
+}
+
+header,
+footer {
+    background-color: #3da5d9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+.header-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 767px;
+}
+
+
+
+header {
+    font-family: "Roboto Slab", sans-serif;
+    padding-top: 10px;
+    padding-right: 15px;
+}
+
+
+
+
+header img {
+    max-width: 75px;
+    height: auto;
+    padding-right: 20px;
+}
+
+header h2 {
+    text-shadow: 2px 2px 2px #fff;
+    font-size: 1rem;
+}
+
+
+nav {
+    margin: 0 auto;
+    background-color: #2364aa;
+    text-align: center;
+    border: 1px solid #000;
+    /*  text-align: center; not needed */
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+nav ul li {
+    flex: 1 1 100%;
+    color: #f3f315;
+    list-style-type: none;
+
+}
+
+/*header {height: 100px;} */
+/* removing this worked to allow the page elements to nest under each other properly! */
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.navigation {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: .2rem auto;
+    max-width: 767px;
+}
+
+.navigation li:first-child {
+    display: block;
+}
+
+.navigation li {
+    display: none;
+}
+
+.navigation a {
+    display: block;
+    padding: 0.25rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    color: #f3f315;
+    background-color: #3da5d9;
+    font-weight: bold;
+}
+
+.responsive li {
+    display: block;
+}
+
+.active {
+    background-color: #3da5d9;
+    color: #000;
+}
+
+main {
+    font-size: 0.8rem;
+    height: 100%;
+}
+
+main h2 {
+    color: #2364aa;
+    padding: 10px 0;
+}
+
+article, section {
+    margin: 5px auto;
+    height: 100%;
+}
+
+.row1,
+.row2,
+.row3 {
+    margin: 5px 5px 0;
+}
+
+
+.row2 {
+    display: none;
+}
+
+.row3 .rowImage3 img {
+    width: 100%;
+    border: 3px solid #2364aa;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    
+}
+
+.row4 {
+    background-color: #f4b98b; /*#ea7317; /*#ffffe5;*/ 
+}
+
+.herodiv {
+    margin: 10px auto;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 15px;
+    background-color: #3da5d9;
+    color: #f1f5f7;
+    font-size: 1rem;
+    text-align: right;
+    width: 100%;
+}
+
+.stats h3 {
+    text-align: center;
+}
+
+.stats h4 {
+    grid-column: span 2;
+}
+
+.stats div:nth-child(odd) {
+    text-align: right;
+}
+
+.stats div:nth-child(even) {
+    text-align: left;
+}
+
+hr {
+    grid-column: span 2;
+    color: #f1f5f7;
+    width: 90%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto Slab', serif;
+    margin: 0;
+}
+
+h1 {
+    display: block;
+    font-size: 1.25rem;
+    color: #2364aa;
+    text-align: center;
+    text-shadow: 2px 2px 4px #fff;
+    white-space: nowrap;
+    /*height: 7vh;*/
+}
+
+h2 {
+    font-size: 1.25rem;
+    color: #2364aa;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1rem;
+    color: #2364aa;
+}
+
+ul li a:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul li a:visited {
+    color: #fff;
+}
+
+ul li a:hover {
+    background-color: #3da5d9;
+    color: #f3f315;
+    /*border-radius: 10px;*/
+}
+
+a:link {
+    text-decoration: none;
+}
+
+footer {
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+    /*height: 60px; removing this worked to allow the page elements to nest under each other properly! */
+    font-size: 14px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+body footer p:nth-child(1) {
+    margin-top: 15px;
+}
+
+body footer p:nth-child(2) {
+    margin-bottom: 15px;
+}
+
+#copyright {
+    color: #f1f5f7;
+    font-size: 14px;
+}
+
+#currentDate {
+    color: #f1f5f7;
+}
