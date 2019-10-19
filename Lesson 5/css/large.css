@@ -1,34 +1,53 @@
-/* Media Query for medium + screens */
+  
 @media only screen and (min-width: 60em) {
-	.menu-ul {
+    header img {
+		width: 100%;
+	}
+
+	.sec-company-info h1 {
+		font-size: 2.5rem;
+	}
+
+	.motto {
+		letter-spacing: 2.5pt;
+		font-size: 1.2rem;
+		margin-left: 10px;
+    }
+
+    h3 {
+      font-size: 1.2em;
+  }
+
+    .main-nav {
 		display: flex;
-	}
-	.menu-ul li:first-child {
-		display: none;
-	}
-	.menu-ul li {
+    }
+    
+	.main-nav li:first-child {
+        font-size: 1.6rem;
+        display: none;
+    }
+    
+	.main-nav li {
 		display: block;
 		flex: 1 1 100%;
-	}
-	.menu-ul li a {
-		color: rgb(1, 6, 29);
     }
-    footer, main {
-        width: 80%;
-	}
-	.headings h1{
-        font-size: 4em;
-	}
-	
-	.headings h2 {
-        font-size: 2em;
+
+    nav li a {
+        font-size: 1rem;
     }
-    
-    h2 {
-        font-size: 1.8em;
+
+    .hero-weather-info {
+      left: 50px;
+      width: 30%;
     }
-    
-    p, table, nav {
-        font-size: 1.2em;
-    }
+
+    #article-container, #contact {
+      grid-template-columns: 1fr 1fr;
+  }
+
+  footer {
+      font-size: 0.9em;
+      width: 90%;
+      margin: 0 auto;
+  }    
 }
