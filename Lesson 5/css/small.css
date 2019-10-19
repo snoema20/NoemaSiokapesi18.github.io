@@ -4,7 +4,7 @@ body {
 	padding: 0;
 	margin: 0;
     font-family: fantasy;
-    font-size: 30px;  
+    font-size: 20px;  
     width: 100%;
 }
 
@@ -45,7 +45,7 @@ header img {
 .sec-company-info h1 {
 	font-size: 2rem;
     margin: 0 0 0 15px;
-    color: #2e1804;
+    color: #f0ebe7;
 }
 
 .motto {
@@ -173,7 +173,7 @@ h3 {
     margin: 10px auto;
     padding: 15px;
     background-color: #2e2002;
-    color: #4b2512;
+    color: #fff6f2;
     border-radius: 5px;    
     box-shadow: 0 10px 20px 0 rgba(238, 190, 136, 0.6);
 }
