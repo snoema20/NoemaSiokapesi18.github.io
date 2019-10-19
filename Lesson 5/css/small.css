@@ -59,7 +59,7 @@ header img {
 nav {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    background-color: #2b0b0b;
+    background-color: #c7e24d;
     box-shadow: 0 5px 10px #cbe440;
 }
 
@@ -95,7 +95,7 @@ nav ul {
 
 nav li a {
     display: block;
-    color: #77460e;
+    color: #5e94f7;
     text-align: center;
     padding: .8rem 2%;
     text-decoration: none;
