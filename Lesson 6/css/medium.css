@@ -89,7 +89,7 @@
     
     .gmap_canvas {
         overflow:hidden;
-        background:none !important;
+        background:none;
         height:300px;
         width:100%;
     }
