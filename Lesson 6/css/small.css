@@ -51,7 +51,7 @@ header img {
 .motto {
 	font-style: italic;
 	letter-spacing: 1pt;
-	color: #bd630f;
+	color: #0f0801;
 	margin: 8px 0;
 	font-size: 2rem;
 }
@@ -156,8 +156,8 @@ h1 {
 
 h2 {
     font-size: 1.9em;
-    color: #412e1f;
-    font-family: 'Times New Roman', Times, serif;
+    color: #110801;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 h2 span {
