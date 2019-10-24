@@ -1,4 +1,4 @@
-//WindChill calculator
+
 var WindChill = document.getElementById("wind-chill");
 
 function getWindChill(){
