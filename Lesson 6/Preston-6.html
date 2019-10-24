@@ -20,7 +20,7 @@
                    
                 </div>     
                 <picture>
-                    <img src="image/logo.jpg" alt="Weather">
+                    <img src="images/logo.jpg" alt="Weather">
                 </picture>
                 <section class="sec-company-info">
                     <h1>Preston Weather Forecast</h1>
@@ -32,7 +32,7 @@
                 <ul class="main-nav">
                     <li><a href="#" onclick="toggleMenu()"><span class="exit-button">&#215;</span><span class="hamburger">&#9776; Menu</span></a></li>
                     <li><a href="#">Home</a></li>
-                    <li class="active"><a href="Preston-6.html" >Preston</a></li>
+                    <li class="active"><a href="preston-5.html" >Preston</a></li>
                     <li><a href="#">Soda Springs</a></li>
                     <li><a href="#">Fish Haven</a></li>
                     <li><a href="#">Storm Center</a></li>
@@ -41,58 +41,34 @@
             </nav>
         
             <div id="content-container">
-                  
-                     <main>
-                         <h2>Preston <span>Idaho</span></h2>            
-                         <section class="content-box">
-                             <div class="hero-container">
-                                 <picture>
-                                     <source media="(min-width: 60em)" srcset="images/hero-image-1200.png">
-                                     <source media="(min-width: 37.5em)" srcset="images/hero-image-800.png">
-                                     <img class="hero-image" src="image/sunny day.jpg" alt="clear blue sky">
-                                 </picture>
-                                 <div class="hero-weather-info">
-                                     <h3>Weather Summary</h3>
-                                     <hr>
-                                     <div class="table-grid">
-                                         <span class="head-content">Currently:</span> 
-                                         <span class="head-value">Sunny</span>
-             
-                                         <span class="head-content">High:</span> 
-                                         <span class="head-value"><span id="temp">48</span>&#8457;</span>
-             
-                                         <span class="head-content">Wind Chill:</span>
-                                         <span class="head-value"><span id="wind-chill"></span></span>
-             
-                                         <span class="head-content">Humidity:</span>
-                                         <span class="head-value">69%</span>
-             
-                                         <span class="head-content">Wind Speed:</span>
-                                         <span class="head-value"><span id="wind-speed">5</span>mph</span>
-                                     </div>
-                                
-                             </div>
-                         </section>
-             
-                         <section class="content-box">
-                             <h3 class="float">Beautiful Sunny Day</h3>
-                             <div id="article-container">
-                                 <div class="article panel-wrapper"> 
-                                     
-                                     <div class="panel">                            
-                                        
-                                         <p>In Preston, the summers are warm and mostly clear, the winters are freezing and partly cloudy, and it is dry year round. Over the course of the year, the temperature typically varies from 15°F to 88°F and is rarely below 1°F or above 94°F.
-
-                                                Based on the tourism score, the best time of year to visit Preston for warm-weather activities is from late June to mid August.
-                                            <br /><br />
-                                     </div> 
-                                 </div>
-                                 <picture>
-                                     <img class="img1" src="image/courthouse.jpg" alt="Court House">
-                                 </picture>
-                             </div>
-                         </section>
-             
+               
+                <main>
+                    <h2>Preston <span>Idaho</span></h2>            
+                    <section class="content-box">
+                        <div class="hero-container">
+                            <img class="hero-image" src="images/preston.jpg" alt="town">
+                            <div class="hero-weather-info">
+                                <h3>Weather Summary</h3>
+                                <hr>
+                                <div class="table-grid">
+                                    <span class="head-content">Currently:</span> 
+                                    <span class="head-value">Sunny</span>
+        
+                                    <span class="head-content">High:</span> 
+                                    <span class="head-value">93 &#8457;</span>
+        
+                                    <span class="head-content">Wind Chill:</span>
+                                    <span class="head-value">&#8457;</span>
+        
+                                    <span class="head-content">Humidity:</span>
+                                    <span class="head-value">70%</span>
+        
+                                    <span class="head-content">Wind Speed:</span>
+                                    <span class="head-value">5 mph</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
         
                     <section class="content-box no-display">
                         <h3>5 Day Forecast</h3>
@@ -106,11 +82,11 @@
                                     <th>Thu</th>
                                 </tr>
                                 <tr>
-                                    <td><img src="image/sun logo.jpg" alt="sunny day"></td>
-                                    <td><img src="image/sun logo.jpg" alt="sunny day"></td>
-                                    <td><img src="image/sun logo.jpg" alt="sunny day"></td>
-                                    <td><img src="image/sun logo.jpg" alt="sunny day"></td>
-                                    <td><img src="image/sun logo.jpg" alt="sunny day"></td>
+                                    <td><img src="images/sun logo.jpg" alt="sunny day"></td>
+                                    <td><img src="images/sun logo.jpg" alt="sunny day"></td>
+                                    <td><img src="images/sun logo.jpg" alt="sunny day"></td>
+                                    <td><img src="images/sun logo.jpg" alt="sunny day"></td>
+                                    <td><img src="images/sun logo.jpg" alt="sunny day"></td>
                                 </tr>
         
                                 <tr>
@@ -124,10 +100,24 @@
                         </table>
                     </section>
         
-                     
+                    <section class="content-box">
+                        <h3 class="float">Weather Climate</h3>
+                        <div id="article-container">
+                            <div class="article panel-wrapper"> 
+                                <a href="#article-show" class="article-show btn" id="article-show">Show More</a>
+                                <a href="#article-hide" class="article-hide btn" id="article-hide">Show Less</a> 
+                                <div class="panel">                            
+                                   
+                                    <p>In Preston, the summers are warm and mostly clear, the winters are freezing and partly cloudy, and it is dry year round. Over the course of the year, the temperature typically varies from 15°F to 88°F and is rarely below 1°F or above 94°F.
+
+                                            Based on the tourism score, the best time of year to visit Preston for warm-weather activities is from late June to mid August.
+                                        <br /><br />
+                                       
+                                    
+                                </div> 
                             </div>
                             <picture>
-                                <img class="img1" src="image/courthouse.jpg" alt="sunny day">
+                                <img class="img1" src="images/sunny day.jpg" alt="sunny day">
                             </picture>
                         </div>
                     </section>
@@ -162,9 +152,9 @@
                     
                </footer>
            
-            <script src="https://fonts.google.com/specimen/Titan+One"></script>
-            <script src="js/webfont.js"></script>
-            <script src="js/windchill.js"></script>
+            <script src="js/myscript.js"></script>
+            <script src="js/hambmenul.js"></script>
+            <script src="js/banners.js"></script>
             
 </body>
 </html>
