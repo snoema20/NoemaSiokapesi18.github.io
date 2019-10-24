@@ -1,7 +1,7 @@
   
 @media only screen and (min-width: 60em) {
     header img {
-		width: 100%;
+		width: 80%;
 	}
 
 	.sec-company-info h1 {
@@ -47,7 +47,7 @@
 
   footer {
       font-size: 1em;
-      width: 100%;
+      width: 80%;
       margin: 0 auto;
   }    
 }
