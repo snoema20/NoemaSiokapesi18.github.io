@@ -1,9 +1,11 @@
-//WebFont Js
 WebFont.load({
-    WebFont: {
-       families: [
-         'Bungee Inline',
-        'cursive'
+    google: {
+      families: [
+         'Ubuntu',
+         'Montserrat',
+         'Roboto',
+         'Share Tech Mono',
+         'Open Sans'
       ]
     }
 });
