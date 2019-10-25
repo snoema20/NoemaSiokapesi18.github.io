@@ -45,7 +45,7 @@ header img {
 .sec-company-info h1 {
 	font-size: 3rem;
     margin: 0 0 0 15px;
-    color: #69630a;
+    color: #f3f2e7;
 }
 
 .motto {
@@ -95,7 +95,7 @@ nav ul {
 
 nav li a {
     display: block;
-    color: #69630a;
+    color: #f5f5f1;
     text-align: center;
     padding: .8rem 2%;
     text-decoration: none;
@@ -156,12 +156,12 @@ h1 {
 
 h2 {
     font-size: 1.9em;
-    color: #69630a;
+    color: #ecece7;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 h2 span {
-    color: #69630a;
+    color: #f8f8ef;
 }
 
 h3 {
