@@ -1,8 +1,8 @@
 //WebFont Js
 WebFont.load({
-    google: {
-      families: [
-         'Fugaz One',
+    WebFont: {
+       families: [
+         'Bungee Inline',
         'cursive'
       ]
     }
