@@ -201,8 +201,8 @@ h3 {
 	position: absolute;
 	top: 20px;
     left: 10px;
-	background: radial-gradient(#ffc857, #ffc857);
-	border: 2px solid #ffc857;
+	background: radial-gradient(#69630a, #69630a);
+	border: 2px solid #69630a ;
 	padding: 0.5rem;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 2);
     opacity: 0.9;
@@ -245,7 +245,7 @@ hr {
 .article, .contact-info {
     text-align: left;
     padding: 0 30px 30px 30px;
-    background-color: #ffc857;
+    background-color: #69630a;
     color: #f8f6f4;
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 2); 
