@@ -1,12 +1,7 @@
 //WebFont Js
-WebFont.load({
-    google: {
-      families: [
-         'Ubuntu',
-         'Montserrat',
-         'Roboto',
-         'Share Tech Mono',
-         'Open Sans'
-      ]
-    }
-});
+WebFont.load
+    google: ({
+        https://fonts.google.com/specimen/Gochi+Hand 
+    )}
+      
+    

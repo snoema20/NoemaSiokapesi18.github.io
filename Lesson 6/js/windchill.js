@@ -1,22 +1,11 @@
+// INPUT VARIABLES
+var ws = parseFloat(document.getElementById("wind").innerHTML);     //Wind Speed
+var th =  parseInt(document.getElementById("temph").innerHTML);   //Air Temparature
+var tl =  parseInt(document.getElementById("templ").innerHTML);   //Air Temparature
 
-var WindChill = document.getElementById("wind-chill");
+// MATH PORTION
+var t  =  (th + tl) / 2;
+var s = Math.pow(ws, 0.16); 
+var f = 35.74 + (0.6215 * t - 35.75 * s) + (0.4275 * t * s); //Wind Chill Factor Formula
 
-function getWindChill(){
-    var tempF = parseFloat(document.getElementById("temp").innerHTML);
-    var speed = parseFloat(document.getElementById("wind-speed").innerHTML);
-    if(tempF <= 50 && speed > 3)
-        return Math.floor(calculateWindChill(tempF, speed)) + "&#8457;";
-    else 
-        return 'N/A';
-}
-
-function calculateWindChill(tempF, speed){
-    var powerSpeed = Math.pow(speed, 0.16);
-    var mtempF = 0.6215 * tempF;
-    var mpowerSpeed = 35.75 * powerSpeed;
-    var mtempF_mpowerSpeed = 0.4275 * tempF * powerSpeed;
-    var wChillFomula = 35.74 + mtempF - mpowerSpeed + mtempF_mpowerSpeed;
-    return wChillFomula;
-}
-
-WindChill.innerHTML = getWindChill();
+document.getElementById("windChill").innerHTML = Math.round(f * 10) / 10 + '°F';
