@@ -45,7 +45,7 @@ header img {
 .sec-company-info h1 {
 	font-size: 3rem;
     margin: 0 0 0 15px;
-    color: #0e0701;
+    color: #69630a;
 }
 
 .motto {
@@ -95,7 +95,7 @@ nav ul {
 
 nav li a {
     display: block;
-    color: #ffc857;
+    color: #69630a;
     text-align: center;
     padding: .8rem 2%;
     text-decoration: none;
