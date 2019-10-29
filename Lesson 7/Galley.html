@@ -13,52 +13,94 @@
 </head>
 <body>
 
-  <header>
-    <img src="Images/logo.jpg" alt="logo" class="logo">
-    <div>
-      <h1>Preston Weather Forecast</h1>
-      <div class="subheading">Most Updated Weather Forecast</div>
-    </div>
-  </header>
+  
+    <header>
+        <div id="logo">
+            <img src="Images/logo.jpg" 
+                alt="logo">
+        </div>
+       
+        </div>
+        <div class="headings">
+            <h1 id="title">Preston Weather Forecast</h1>
+            <h5 id="motto">Most Updated Weather Forecast</h5>
+        </div>
+    </header>
+    <nav>
+        <ul class="navigation">
+            <li><a href="#" onclick="toggleMenu()">&#9776; Menu</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="Preston-6.html">Preston</a></li>
+            <li><a href="#">Soda Springs</a></li>
+            <li><a href="#">Fish Haven</a></li>
+            <li><a href="#">Storm Center</a></li>
+            <li><a href="Galley.html" class="current">Gallery</a></li>
 
- 
-  <nav>
-    <button onclick="toggleNavMenu()" class="hamburguer" >&#9776;</button>
-    <ul class="horizontal gray hide" id="menu">
-    	<li><a href="#">Home</a></li>
-    	<li><a href="#">Preston</a></li>
-    	<li><a href="#">Greenville</a></li>
-    	<li><a href="#">Springfield</a></li>
-    	<li><a href="#">Storm Center</a></li>
-    	<li class="active"><a href="Galley.html">Gallery</a></li>
-    </ul>		
-  </nav>
-    
-  <main class="clearfix">
- 
-      <div class="grid">
-        <div>
-          <img src="Images/heavy rain and thunderstorms.jpg" alt="Rain">
-          <figcaption>Heavy Rainr</figcaption></div>
-        <div>
-          <img src="Images/Red Lightning.jpg" alt="Lightning">
-          <figcaption>Red Lightning</figcaption></div>
-        <div>
-          <img src="Images/snowballs in Idaho.jpg" alt="snow">
-          <figcaption>Snowball</figcaption></div>
-         <div>
-          <img src="Images/summer fun in Idaho.jpg" alt="Sunset in the spring">
-          <figcaption>Sunset in the spring</figcaption></div>
-        <div>
-          <img src="Images/Sun Valley Idaho.jpg" alt="Beautiful day">
-          <figcaption>Beautiful Day</figcaption></div>
-        <div>
-          <img src="Images/Typhoon weather.jpg" alt="Typhoon">
-          <figcaption>Typhoon</figcaption></div>
-       
+        </ul>
+    </nav>
+    <main>
+        <h2 class="page-name">Weather Gallery</h2>
+        <div class="gallery">
+            <figure class="galleryimage">
+                <img class="norm" src="Images/heavy rain and thunderstorms.jpg" alt="Idaho Landscape">
+                <figcaption>Partly Cloudy - All Beautiful</figcaption>
+            </figure>
+            <figure class="galleryimage">
+                <img class="norm" src="Images/Red Lightning.jpg" alt="lightning image">
+                <figcaption>Spectacular Lightning Display</figcaption>
+            </figure>
+            <figure class="galleryimage">
+                <img class="norm" src="Images/snowballs in Idaho.jpg" alt="Overcast Sky">
+                <figcaption>Overcast Sky</figcaption>
+            </figure>
+            <figure class="galleryimage">
+                <img class="norm" src="Images/summer fun in Idaho.jpg" alt="Light Breaking through Clouds">
+                <figcaption>Light Breaks through the Clouds</figcaption>
+            </figure>
+            <figure class="galleryimage">
+                <img class="norm" src="Images/Sun Valley Idaho.jpg" alt="Cyclone">
+                <figcaption>Cyclone</figcaption>
+            </figure>
+            <figure class="galleryimage">
+                <img class="norm" src="Images/Typhoon weather.jpg" alt="Cloudy Sky over Hillside">
+                <figcaption>Cloudy Sky over Hillside</figcaption>
+            </figure>   
+        </div>
         
-       
+        <div class="article">
+            <img id="academypic"
+                src="images/Oneida_Stake_Academy_Preston_Idaho.jpg"
+                alt="Oneida Academy" width="200">
+            <h3>Oneida Academy Building</h3>
+            <pre class="author">Mormon Historic Sites</pre>
+            <div id="academy">
+                The Mormon Historic Sites Foundation helped raise the money
+                necessary, $1.3 million, to allow the moving of the Academy.
+                The Academy was moved to Benson Park in November 2003 to
+                land donated by The Church of Jesus Christ of Latter-day
+                Saints.
+
+                Currently, the Mormon Historic Sites Foundation and the
+                Oneida Stake Academy Foundation are gathering donations to
+                allow the restoration of the Academy.
+            </div>
+
+        </div>
     </main>
+    <footer>
+        <div class="contact">
+            <img id="map" src="images/preston-map.JPG" alt="Map of Preston"
+                width="120">
+                
+            <h4>Southeastern Idaho Front Porch</h4>
+            <p>30 N 1st E<br>
+                Preston, ID 83263<br><br>
+                999.999.9999<br>
+                contact@seidfrontporch.com
+            </p>
+
+        </div>
+  
      
   <footer>
     <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
