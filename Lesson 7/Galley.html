@@ -36,32 +36,36 @@
     
   <main>
     <h2>Gallery</h2>
-    <div class="grid">
-        <div> <img src="Images/cloudy day.jpg" alt="gallery-1">
-            <span>Cloudy Day.</span>
-        </div>
-        <div> <img src="Images/cool weather.jpg" alt="gallery-2">
-            <span>Cool Weather.</span>
-        </div>
-        <div> <img src="Images/heavey rain.jpg" alt="gallery-3">
-            <span>Heavy Rain.</span>
-        </div>
-        <div> <img src="Images/Sun Valley Idaho.jpg" alt="gallery-4">
-            <span>Sunny Day.</span>
-        </div>
-        <div> <img src="Images/Red Lightning.jpg" alt="gallery-5">
-            <span>Red Lightning.</span>
-        </div>
-        <div> <img src="Images/snowballs in Idaho.jpg" alt="gallery-6">
-            <span>Snowball.</span>
-        </div>
-    </div>
-   </main>
-
-  <br />
-  <br />
-  <br />
-
+   
+    <main>
+        <section class="gallery">
+            <div class="galleryImages">
+                <figure>
+                    <img id="image1" src="Images/heavy rain and thunderstorms.jpg" alt="rain" onclick="img(1)">
+                    <figcaption id="cap1">Heavy Rain</figcaption>
+                </figure>
+                <figure>
+                    <img id="image2" src="Images/Red Lightning.jpg" alt="lighning" onclick="img(2)">
+                    <figcaption id="cap2">Red Lighning</figcaption>
+                </figure>
+                <figure>
+                    <img id="image3" src="Images/snowballs in Idaho.jpg" alt="snow" onclick="img(3)">
+                    <figcaption id="cap3">snowball</figcaption>
+                </figure>
+                <figure onclick="onClick(this)">
+                    <img id="image4" src="Images/summer fun in Idaho.jpg" alt="summer" onclick="img(4)">
+                    <figcaption id="cap4">Summer fun in Idaho</figcaption>
+                </figure>
+                <figure onclick="onClick(this)">
+                    <img id="image5" src="Images/Sun Valley Idaho.jpg" alt="Sunny Field" onclick="img(5)">
+                    <figcaption id="cap5">Beautiful day</figcaption>
+                </figure>
+                <figure onclick="onClick(this)">    
+                    <img id="image6" src="Images/Typhoon weather.jpg" alt="typhoon" onclick="img(6)">
+                    <figcaption id="cap6">Typhoon weather</figcaption>
+                </figure>
+            </div>
+        </section>
   <footer>
 
       <aside>
