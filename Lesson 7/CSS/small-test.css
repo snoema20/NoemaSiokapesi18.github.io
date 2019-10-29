@@ -88,7 +88,7 @@ nav ul li:last-child a {
    border-right:0px;
 }
 
-main { }
+
 main h2 {width:100%;}
 main figure {  margin: 0%; }
 main figure img { width:100%;}
@@ -125,4 +125,5 @@ section.history div {
 section.history img{ width:100%; height:auto;align-self: center;border-radius:10px; margin-bottom:5px}
 
 footer{width:100%;margin-top:30px!important; background:#f2f2f2;border-top:2px solid #929292}
-footer div.section-copyright{width:100%; background-color: #002f5f; color:#FFF;padding:5px 0px;text-align:center;color:#FFF}
+footer div.section-copyright{width:100%; background-color: #002f5f; color:#FFF;padding:5px 0px;text-align:center;color:#FFF
+}
