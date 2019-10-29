@@ -1,0 +1,41 @@
+@media only screen and (min-width: 37.5em) {
+
+  
+    header, nav, main, footer { 
+      margin: 0% 5%;
+      width: 90%;
+    }
+    
+    header div h1 {width: calc(100% - 200px); font-size:28px;   margin: 30px 0px 10px 0px;}
+    header div img { width:190px }
+  
+   .gallery {
+    display: grid;
+    grid-template-columns: auto auto;
+    }
+  
+    section.section-half{padding:0% 2%;width:46%}
+    section.section-half img{width:200px;}
+    
+    section.history img{ width:250px }
+   
+  section.history div {
+      -webkit-flex-flow: wrap;
+      flex-flow: wrap;
+  }
+    nav ul li {
+      padding: 10px 0px;
+      width:100%;
+    }
+    nav ul li a{
+         border-right: 1px solid #000;
+    }
+    
+    
+    
+    nav button { display:none; } 
+    nav ul { display: flex; }
+      
+     section.forecast {display:block!important} 
+  
+    }

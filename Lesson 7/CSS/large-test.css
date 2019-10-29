@@ -1,0 +1,18 @@
+@media only screen and (min-width: 64em ) {
+    section.history div{-webkit-flex-flow: nowrap; flex-flow: nowrap; }
+   
+    footer div{-webkit-flex-flow: nowrap; flex-flow: nowrap; }
+   
+     header, nav, main, footer { 
+       margin: 0% 10%;
+       width: 80%;
+     }
+   
+    .gallery {
+     display: grid;
+     grid-template-columns: auto auto auto;
+     }
+   .gallery div:hover{ box-shadow: 3px 2px 50px 1px rgba(0, 0, 0, 0.76);
+   opacity: 0.8 }
+     
+    }
