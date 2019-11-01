@@ -59,13 +59,13 @@ header img {
 nav {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    background-color: #051830;
+    background-color: #acc424;
     box-shadow: 0 5px 10px #dd5454;
 }
 
 .main-nav li:first-child {
     display: block;
-    background-color: #051636;
+    background-color: #e9dd36;
     border: none;
     font-size: 1.3rem;
     padding: 10px;
