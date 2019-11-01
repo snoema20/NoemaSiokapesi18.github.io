@@ -14,68 +14,32 @@
         <link rel="stylesheet"
         href="https://fonts.typonine.com/WF-000000-001254.css">
         
-    </head>
-    <body>          
-            
-            <header id="main-header">     
-                <div id="friday-banner">
-                   
-                </div>     
-                <picture>
-                    <img src="Images/logo.jpg" alt="Weather">
-                </picture>
-                <section class="sec-company-info">
-                    <h1>Preston Weather Forecast</h1>
-                    <div class="motto">Most Updated Weather Forecast</div>
-                </section>
-            </header>
-           
-            <nav>
-                <ul class="main-nav">
-                    <li><a href="#" onclick="toggleMenu()"><span class="exit-button">&#215;</span><span class="hamburger">&#9776; Menu</span></a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="Preston-6.html" >Preston</a></li>
-                    <li><a href="#">Soda Springs</a></li>
-                    <li><a href="#">Fish Haven</a></li>
-                    <li><a href="#">Storm Center</a></li>
-                    <li class="menu-li active"><a href="text.html">Gallery</a></li>
-                </ul>
-            </nav>
         
-           
-                    <section class="content-box">
-                        <h3>Contact Information</h3>                
-                        <div id="contact">
-                            <div class="map no-display">
-                                <div class="mapouter">
-                                    <div class="gmap_canvas">
-                                        <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Preston%2C%20Idaho&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
-                                    </div>
-                                </div>
-                            </div>                
-                            <div class="contact-info">
-                            
-                               
-                        
-                 <p>Address: 125 Summit Ave S Preston Idaho 98089</p>
-                   <p>Phone Number: 231-232-4534</p>         
-                                    <p>Email: prestonweather@hotmail.org</p>
-                                </div>
-                                <br /><br />
-                            
-                        </div>
-                    </section>
-                </main>
-            </div>
-            <footer>
-                <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
-                | Last Updated: <span id="currentDate"></span>
-                    
-               </footer>
-           
-            <script src="js/myscript.js"></script>
-            <script src="js/webfont.js"></script>
-            <script src="js/windchill.js"></script>
-            
-</body>
+        <link rel="stylesheet" href="CSS/normal-test.css">
+        <link rel="stylesheet" href="CSS/lazyload.css">
+    </head>
+    <body>
+        <main>
+            <h1>Image Handling (Lazyloading)</h1>
+            <picture>
+                <img src="Images/cloudy day.jpg" data-src="images/img1.png" alt="cloudy weather">
+            </picture>
+            <picture>
+                <img src="Images/cool weather.jpg" data-src="images/img2.png" alt="cool weather">
+            </picture>
+            <picture>
+                <img src="Images/heavey rain.jpg" data-src="images/img3.png" alt="heavy rain">
+            </picture>
+            <picture>
+                <img src="Images/Red Lightning.jpg" data-src="images/img4.png" alt="red lighning">
+            </picture>
+            <picture>
+                <img src="Images/snowballs in Idaho.jpg" data-src="images/img5.png" alt="snowballs">
+            </picture>
+            <picture>
+                <img src="Images/Sun Valley Idaho.jpg" data-src="images/img6.png" alt="sunny day">
+            </picture>
+        </main>    
+        <script src="js/lazyload.js"></script>
+    </body>
 </html>
