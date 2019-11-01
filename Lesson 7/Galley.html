@@ -6,9 +6,10 @@
     <meta name="description" content="Assignment weather Siokapesi Noema, CIT 230: Web Frontend Development at Brigham Young University - Idaho">
     <meta name="author" content="Siokapesi Noema">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="CSS/small-test.css">
-    <link rel="stylesheet" href="CSS/medium-test.css">
-    <link rel="stylesheet" href="CSS/large-test.css">
+    <link rel="stylesheet" href="css/normal-test.css">
+    <link rel="stylesheet" href="CSS/small.css">
+    <link rel="stylesheet" href="CSS/medium.css">
+    <link rel="stylesheet" href="CSS/large.css">
     
     <link rel="stylesheet" href="https://fonts.typonine.com/WF-000000-001254.css">
 </head>
@@ -40,42 +41,61 @@
         </ul>
     </nav>
     <main>
-        <h2 class="page-name">Weather Gallery</h2>
-        <div class="gallery">
-            <figure class="galleryimage">
-                <img class="norm" src="Images/heavy rain and thunderstorms.jpg" alt="Rain">
-                <figcaption>Rainy day</figcaption>
-            </figure>
-            <figure class="galleryimage">
-                <img class="norm" src="Images/Red Lightning.jpg" alt="lightning image">
-                <figcaption>Spectacular Lightning Display</figcaption>
-            </figure>
-            <figure class="galleryimage">
-                <img class="norm" src="Images/snowballs in Idaho.jpg" alt="snow">
-                <figcaption>Snowball</figcaption>
-            </figure>
-            <figure class="galleryimage">
-                <img class="norm" src="Images/cloudy day.jpg" alt="Sunny">
-                <figcaption>Cloudy day</figcaption>
-            </figure>
-            <figure class="galleryimage">
-                <img class="norm" src="Images/beautiful day.jpg" alt="Beautiful day">
-                <figcaption>Beautiful day</figcaption>
-            </figure>
-            <figure class="galleryimage">
-                <img class="norm" src="Images/Typhoon weather.jpg" alt="bad weather">
-                <figcaption>Typhoon weather</figcaption>
-            </figure>   
-        </div>
-        
        
-        </div>
+            <h2>Gal<span>lery</span></h2>            
+            <div class="gallery-container">
+                <div class="picture">
+                    <img src="Images/heavy rain and thunderstorms.jpg" data-src="images/blue-sky.jpg" alt="rain">
+                    <div class="caption">Heavy Rain</div>
+                </div>
+
+                <div class="picture">
+                    <img src="Images/beautiful day.jpg" data-src="images/clear-sky.jpg" alt="clear sky">
+                    <div class="caption">Beautiful day</div>
+                </div>
+
+                <div class="picture">
+                    <img src="Images/cloudy day.jpg" data-src="images/cyclone.jpg" alt="cloudy day">
+                    <div class="caption">Cloudy day</div>
+                </div>
+
+                <div class="picture">
+                    <img src="Images/cool weather.jpg" data-src="images/dark-cloud.jpg" alt="cool weather">
+                    <div class="caption">Cool Weather</div>
+                </div>
+
+                <div class="picture">
+                    <img src="Images/heavy rain and thunderstorms.jpg" data-src="images/rain.jpg" alt="storm rain">
+                    <div class="caption">thunderstorms</div>
+                </div>
+
+                <div class="picture">
+                    <img src="Images/Red Lightning.jpg" data-src="images/lightening.jpg" alt="lightning">
+                    <div class="caption">Red Lightning</div>
+                </div>
+
+                <div class="picture">
+                    <img src="Images/snowballs in Idaho.jpg" data-src="images/snowy.jpg" alt="snow">
+                    <div class="caption">Snowballs</div>
+                </div>
+
+                <div class="picture">
+                    <img src="Images/Sun Valley Idaho.jpg" data-src="images/storm.jpg" alt="nice day">
+                    <div class="caption">Sunny Day</div>
+                </div>
+
+                <div class="picture">
+                    <img src="Images/Typhoon weather.jpg" data-src="images/fog.jpg" alt="bad weather">
+                    <div class="caption">Typhoon</div>
+                </div>
+            </div> 
     </main>
     
   <footer>
     <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
-    | Last Updated: <span id="currentDate"></span>
+    |   <span id="todayDate"></span><br>
     </footer>  
+    <script src="https://fonts.google.com/specimen/Indie+Flower"></script>
   <script src="js/myscript.js"></script>
   <script src="js/hamb-test.js"></script>
 </body>
