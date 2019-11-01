@@ -172,7 +172,7 @@ h3 {
     display: block;
     margin: 10px auto;
     padding: 15px;
-    background-color: #1f2041;
+    background-color: #ddf034;
     color: #ffffff;
     border-radius: 5px;    
     box-shadow: 0 10px 20px 0 rgba(182, 223, 35, 0.6);
@@ -245,7 +245,7 @@ hr {
     text-align: left;
     padding: 0 30px 30px 30px;
     background-color: #ffc857;
-    color: #1f2041;
+    color: #cdd645;
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1); 
 }
@@ -372,7 +372,7 @@ footer a {
     height: auto;
     filter: blur(0em);
     transition: filter 0.5s;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 1);
+    box-shadow: 0 5px 10px 0 rgb(253, 153, 153);
 }
 
 .gallery-container img[data-src] {
@@ -384,7 +384,7 @@ footer a {
     visibility: hidden;
     font-size: small;
     padding: 10px 0 10px 0;
-    color: #1f2041;
+    color: #eeeef1;
 }
 
 .gallery-container .picture:hover {
