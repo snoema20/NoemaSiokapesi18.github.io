@@ -13,7 +13,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #ffc857;
+    background-color: #ee62db;
     display: none;
 }
 
@@ -21,11 +21,11 @@ body {
     width: 80%;
     margin: 0 auto;
     padding: 10px;
-    color: #1f2041;
+    color: #c5d859;
 }
 
 header {
-	background-color: #1f2041;
+	background-color: #cf2d2d;
 	display: flex;
 	align-items:center;
     justify-content:center;
@@ -45,7 +45,7 @@ header img {
 .sec-company-info h1 {
 	font-size: 1.1rem;
     margin: 0 0 0 15px;
-    color: #ffc857;
+    color: #3445d6;
 }
 
 .motto {
@@ -59,13 +59,13 @@ header img {
 nav {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    background-color: #2b0b0b;
-    box-shadow: 0 5px 10px #2b0b0b;
+    background-color: #051830;
+    box-shadow: 0 5px 10px #dd5454;
 }
 
 .main-nav li:first-child {
     display: block;
-    background-color: #2b0b0b;
+    background-color: #051636;
     border: none;
     font-size: 1.3rem;
     padding: 10px;
