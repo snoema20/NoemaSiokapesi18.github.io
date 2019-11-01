@@ -121,7 +121,7 @@ nav ul li a:hover {
 }
 
 .main-nav li:first-child a:hover {
-    background-color: rgba(43,11,11, 0.6);
+    background-color: rgba(159, 207, 26, 0.6);
 }
 
 .responsive li {
@@ -161,7 +161,7 @@ h2 {
 }
 
 h2 span {
-    color: #a50404;
+    color: #9aa504;
 }
 
 h3 {
@@ -175,7 +175,7 @@ h3 {
     background-color: #1f2041;
     color: #ffffff;
     border-radius: 5px;    
-    box-shadow: 0 10px 20px 0 rgba(43,11,11, 0.6);
+    box-shadow: 0 10px 20px 0 rgba(182, 223, 35, 0.6);
 }
 
 .hero-image {
