@@ -1,13 +1,10 @@
-var date =  new Date();
-var weekdayList = [ "Sunday", "Monday", "Tuesday", 
-                "Wednesday", "Thursday", "Friday", "Saturday" ];
-var monthList = [ "January", "February", "March", "April", "May", "June", "July",
-                "August", "September", "October", "November", "December" ];
+var options = {
+    weekday: 'long', 
+    day: 'numeric', 
+    month: 'long', 
+    year: 'numeric',
+}
 
-var day = weekdayList[ date.getDay() ];
-var month = monthList[ date.getMonth() ];
-var year = date.getFullYear();
-var dayNumber = date.getDate(); // Get day number in the Month
+document.getElementById('currentDate').innerHTML = new Date().toLocaleDateString('en-gb', options);
 
-document.getElementById("currentdate").innerHTML = day + ", " + dayNumber + " " + 
-                                                    month + " " + year;
+//document.getElementById('copyright').textContent = new Date(document.lastModified).getFullYear();
