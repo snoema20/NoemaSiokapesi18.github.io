@@ -155,7 +155,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 2.9em;
     color: #1f2041;
     font-family: 'Open Sans', sans-serif;
 }
@@ -165,7 +165,7 @@ h2 span {
 }
 
 h3 {
-    font-size: 1em;
+    font-size: 2em;
 }
 
 .content-box {
@@ -351,9 +351,6 @@ footer a {
     color: #ffc857;
 }
 
-/*
-    Gallery Styles
-*/
 
 .gallery-container {
     display: grid;
