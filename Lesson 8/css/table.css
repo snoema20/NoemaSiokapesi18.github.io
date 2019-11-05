@@ -1,48 +1,60 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    color: #000;
+    text-align: center;
+}
 
-  td body{
-        border: 1px solid #bbbbbb;
-        padding: 10px;
-  }
-  tr:nth-child(odd){
-      background-color: #e7ffed;
-  }
-  tr:nth-child(even){
-      background-color: #e7f0ed;
-  }
-  table {
-      font-family: 'Ubuntu', 'sans-serif';
-      border: 1px solid #bbbbbb;
-      box-shadow: 23px 22px 20px -16px rgba(113,151,174,1);
-      border-collapse: collapse;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    
-  }
-  table thead:first-child tr th {
-      background-color: #7fb9c2;
-      font-size: 28px;
-      font-weight: bold;
-      padding: 10px;
-  }
-  table tbody tr:first-child td {
-      background-color: #628ca6;
-      color: white;
-      font-weight: bold;
-      padding: 10px;
-      font-size: 20px;
-  }
-  tfoot tr:first-child {
-      background-color: #7fb9c2;
-      font-size: 12px;
-      text-align:center;
-  }
-  table tbody tr:nth-child(6) td:nth-child(1) {
-      font-style: italic;
-  }
-  table tbody tr:nth-child(5) td:nth-child(3) {
-      background-color: #628ca6;
-      color: white;
-  }
+table {
+    width: 400px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
 
+table,
+table caption {
+    box-shadow: 5px 10px 15px #628ca6;
+    margin-top: 20px;
+}
+
+table td,
+table th,
+table caption {
+    border: solid 1px #FFF;
+    padding: 10px;
+}
+
+table caption {
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+table th {
+    color: #FFF;
+}
+
+table th {
+    background-color: #628ca6;
+}
+
+table tr {
+    background-color: #e7ffed;
+}
+
+table tr:nth-child(odd):not(:last-child) {
+    background-color: #e7f0ed;
+}
+
+table tfoot tr,
+table caption {
+    background-color: #7fb9c2;
+}
+
+.special-td {
+    background-color: #628ca6;
+}
+
+table tfoot {
+    font-size: 12px;
+}
  
