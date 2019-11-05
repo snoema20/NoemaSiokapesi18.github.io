@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+        <title>Preston Idaho</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Assignment weather Siokapesi Noema, CIT 230: Web Frontend Development at Brigham Young University - Idaho">
+        <meta name="author" content="Siokapesi Noema">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/small.css">
+        <link rel="stylesheet" href="css/medium.css">
+        <link rel="stylesheet" href="css/storm.css">
+        <link rel="stylesheet"
+        href="https://fonts.typonine.com/WF-000000-001254.css">
+        
+    </head>
+    <body>
+        <picture class="backImg">
+            <source media="(min-width:2201px)" srcset="images/storm/tornado-original.jpg">
+            <source media="(max-width:2200px) and (min-width:1801px)" srcset="images/storm/tornado-large.jpg">
+            <source media="(max-width:1800px) and (min-width:901px)" srcset="images/storm/tornado-medium.jpg">
+            <source media="(max-width:900px)" srcset="images/storm/tornado-small.jpg">
+            <img src="images/tornado-large.jpg" alt="Background">
+        </picture>
+        
+        <header class="headBack">
+            <img src="#" width="200" height="273" alt="Cloudy">
+            <h1 class="heading">Storm Center</h1>
+            <span class="icon" onclick="openNav()">&#9776; &nbsp;</span>
+        </header>
+
+        <nav id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id=”content-mobile”>&times;</a>
+                <a href="">Home</a> 
+                <a href="franklin-8.html">Franklin</a> 
+                <a href="">Greenville</a> 
+                <a href="">Springfield</a>
+                <a href="stormcenter.html"  style="color: aqua">Storm Center</a> 
+                <a href="gallery.html">Gallery</a>
+            </nav>
+        
+        <nav id=”nav” class="navBar">
+            <a href="">Home</a> 
+            <a href="franklin-8.html">Franklin</a> 
+            <a href="">Greenville</a> 
+            <a href="">Springfield</a>
+            <a href="stormcenter.html" style="color: aqua">Storm Center</a> 
+            <a href="gallery.html" >Gallery</a>
+        </nav>
+
+        <main class="main">
+            <section class="story">
+     
+            <form name="processedForm" method="get" id="Form1" action="thankyou.html">
+                <h2>Report a Storm</h2>                
+                
+                Your Full Name:<br>
+                <input type="text" id="name" name="name" pattern="[A-za-z ]{5}" title="Please enter a valid name"><br>
+                Email Address:<br>
+                <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="xxxxx@xxx.xx">
+                <span class="gridIn"><span>Phone Number:</span><span>Zip Code:</span>
+                <input id="bar" placeholder="(123) 456-7890" type="text" name="txtInput" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);">
+                <input type="number" id="zip" name="zip" onKeyDown="limitText(this,5)" required>
+                <span>Storm Date:</span><span>Storm Severity [1-10]</span>
+                <input type="date" id="dateEntry" name="date" required >
+                <input type="range" name="Severity" min="1" max="10" value="1">
+                <span>Storm Type</span><span>Storm Region</span>
+                <span class="myarrow"><input type="text" list="typeSelect" placeholder="Storm Type ..."></span>
+                <span class="myarrow"><input type="text" list="location" placeholder="Select Region ..."></span>
+                </span> 
+                Are you safe?
+                <fieldset>
+                  <div class="some-class">
+                    <input type="radio" class="radio" name="x" value="y" id="y" />
+                    <label for="y">Yes</label>
+                    <input type="radio" class="radio" name="x" value="z" id="z" />
+                    <label for="z">No</label>
+                  </div>
+                </fieldset>
+                Additional Comments<br>
+                <textarea name="comment" form="Form1" rows="4" cols="50" class="forms">Enter text here...</textarea>
+                
+                <datalist id="typeSelect">
+                    <option value="Flash Flood">
+                    <option value="Hail">
+                    <option value="Hurricane">
+                    <option value="Thunderstorm">
+                    <option value="Tornado">
+                </datalist>
+                <datalist id="location">
+                    <option value="Select Regiom ..." selected disabled>
+                    <option value="Franklin">
+                    <option value="Greenville">
+                    <option value="Springfield">
+                </datalist>
+                <input id="Submit" type="submit" value="Submit" name="Submit1" class="submit">
+
+            </form>
+                
+            </section>   
+
+
+        </main>
+        <footer>  
+            <section class="contact">
+                <p>Preston Weather Forecast</p>
+                <p>123 Main St, Franklin, MU, 83454<br>
+                (999) 999 999 contact@theurl.com<br>
+                </p>
+            </section>
+            <footer>
+                <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
+                | Last Updated: <span id="currentDate"></span>
+                    
+               </footer>
+           
+            <script src="js/myscript.js"></script>
+            <script src="js/webfont.js"></script>
+            <script src="js/windchill.js"></script>
+            
+</body>
+</html>
