@@ -16,6 +16,7 @@
         box-shadow: 23px 22px 20px -16px rgba(113,151,174,1);
         border-collapse: collapse;
         text-align: center;
+        table-layout: auto;
      
     }
     table thead:first-child tr th {
