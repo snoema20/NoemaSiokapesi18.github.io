@@ -1,87 +1,32 @@
-<!doctype html>
-<html lang="en-us">
-<head>
-
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Table Build Assignment</title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
   
-</head>
-<style>
-    body {
-        font-family: Ubuntu, sans-serif;
-    }
-    
-    table {
-        text-align: center;
-        table-layout: auto;
-        width: 300px;
-        border-collapse: collapse;
-        box-shadow: 10px 10px 29px 0px rgba(98, 140, 166, 1);
-    }
-    
-    table,
-    th,
-    td {
-        padding: 10px;
-        border: 1px solid #ccc;
-    }
-    
-    caption {
-        padding: 10px;
-        caption-side: top;
-        font-size: 2em;
-        font-weight: bold;
-        box-shadow: 10px 10px 29px 0px rgba(98, 140, 166, 1);
-    }
-    
-    caption,
-    tfoot {
-        color: #000;
-        background-color: #7fb9c2;
-    }
-    
-    thead {
-        background-color: #628ca6;
-        color: #fff;
-    }
-    
-    tbody tr:nth-child(odd) {
-        background-color: #e7f0ed;
-    }
-    
-    tbody tr:nth-child(even) {
-        background-color: #e7ffed;
-    }
-    
-    tbody tr:nth-child(5) td:nth-child(1) {
-        font-style: italic;
-    }
-    
-    tbody tr:nth-child(4) td:nth-child(3) {
-        background-color: #628ca6;
-        color: #fff;
-    }
-    
-    tfoot {
-        font-size: smaller;
-    }
-</style>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="author" content=" Siokapesi Noema">
+  <meta name="description" content="CIT 230 lesson 8 assignment">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/table.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+  
+  
 </head>
 
 <body>
 <main>
     <table>
-        <caption>ACME Wildwest</caption>
         <thead>
-            <tr>
-                <th>Period</th>
-                <th>Sales</th>
-                <th>Sales Goal</th>
-            </tr>
+          <tr>
+             <th colspan="3">ACME Wildwest</th>
+          </tr>
         </thead>
         <tbody>
+            <tr>
+                <td>Period</td>
+                <td>Sales</td>
+                <td>Sales Goal</td>
+            </tr>
             <tr>
                 <td>August</td>
                 <td>$3,590</td>
@@ -112,9 +57,9 @@
                 <td>$7,500</td>
             </tr>
         </tbody>
-        <tfoot>
-            <tr>
-                   <td colspan="3">Compiled 11.04.2019 by sNoema</td>
+            <tfoot>
+                <tr>
+                   <td colspan="3">Compiled 12.20.2020 by bRauls</td>
                 </tr>
             </tfoot>
     </table>
