@@ -16,7 +16,7 @@
         box-shadow: 23px 22px 20px -16px rgba(113,151,174,1);
         border-collapse: collapse;
         text-align: center;
-        table-layout: center;
+     
     }
     table thead:first-child tr th {
         background-color: #7fb9c2;
@@ -44,6 +44,7 @@
         color: white;
     }
     
-    table {
-      position: center;
+    table style {
+        left: auto;
+        right: auto;
     }
