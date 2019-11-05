@@ -1,60 +1,57 @@
-body {
-    font-family: 'Ubuntu', sans-serif;
-    color: #000;
-    text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
+body {    
+    font-family: 'Ubuntu', san-serif;
 }
 
-table {
-    width: 400px;
+main {
     margin: 0 auto;
+    text-align: center;
+    line-height: 1.5em;
+    align-items: center;
+}
+
+table, caption, th, td {
+    border: 1px solid #bbbbbb;
     border-collapse: collapse;
+    padding: 8px;
 }
 
-table,
-table caption {
-    box-shadow: 5px 10px 15px #628ca6;
-    margin-top: 20px;
+caption {
+    font-size: 1.5rem;
+    font-weight: bolder;
 }
 
-table td,
-table th,
-table caption {
-    border: solid 1px #FFF;
-    padding: 10px;
+table, caption {
+    box-sizing: border-box;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(127,185,194,0.5);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(127,185,194,0.5);
+    box-shadow: 10px 10px 5px 0px rgba(127,185,194,0.5); 
+    margin: auto;
 }
 
-table caption {
-    border-bottom: none;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-table th {
-    color: #FFF;
-}
-
-table th {
-    background-color: #628ca6;
-}
-
-table tr {
-    background-color: #e7ffed;
-}
-
-table tr:nth-child(odd):not(:last-child) {
-    background-color: #e7f0ed;
-}
-
-table tfoot tr,
-table caption {
+caption, tfoot {
     background-color: #7fb9c2;
 }
 
-.special-td {
-    background-color: #628ca6;
+th {
+    font-size: 1.2rem;
 }
 
-table tfoot {
-    font-size: 12px;
+thead th, .selected {
+    background-color: #628ca6;
+    color: #ffffff;
 }
- 
+
+tbody tr {
+    background-color: #e7f0ed;
+    font-size: 1rem;
+}
+
+tr:nth-child(even) {
+    background-color: #e7ffed;
+} 
+
+tfoot {
+    font-size: 0.8rem;
+}
