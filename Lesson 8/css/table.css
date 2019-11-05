@@ -44,7 +44,9 @@
         color: white;
     }
     
-    table style {
-        left: auto;
-        right: auto;
-    }
+    <table style="text-align:center;">
+    <table>
+    ...
+    </table>
+    </div>
+    
