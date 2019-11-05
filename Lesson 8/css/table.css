@@ -44,5 +44,5 @@
         color: white;
     }
     
-    <table style="text-align:center;">
+    .centerTable { margin: 0px auto; }
     
