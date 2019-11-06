@@ -51,7 +51,7 @@ h3 {
 footer { /* Fixed footer, stays on bottom where I want it.  */
     font-size: 24px;
     background-color: #5d6808;
-    position: fixed;
+    position: inherit;
     left: 0;
     bottom: 0;
     width: 100%;
