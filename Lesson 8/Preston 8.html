@@ -12,99 +12,90 @@
   <link href="css/small.css" rel="stylesheet">    <!-- default styles - small/phone views -->
   <link href="css/medium.css" rel="stylesheet">  <!-- medium/tablet views -->
   <link href="css/large.css" rel="stylesheet">   <!-- large/wide/desktop views --> 
-  <style>
-  form {
-    padding: 20px;
-  }
-  form label {
-    display: block;
-  }
-  form input {
-    margin-bottom: 10px;
-  }
-  form div label {
-    display: inline;
-  }
-  </style>
-</head>
-<body>
+  
+  <body>
+    <picture class="backImg">
+        <source media="(min-width:2201px)" srcset="images/storm/tornado-original.jpg">
+        <source media="(max-width:2200px) and (min-width:1801px)" srcset="images/storm/tornado-large.jpg">
+        <source media="(max-width:1800px) and (min-width:901px)" srcset="images/storm/tornado-medium.jpg">
+        <source media="(max-width:900px)" srcset="images/storm/tornado-small.jpg">
+        <img src="images/Cloudy_day_without_rain.jpg" alt="Background">
+    </picture>
 
-  <header>
-    <img src="images/image-preston/sun logo.jpg" alt="The site logo" class="logo">
-    <div>
-      <h1>Crazy Weather</h1>
-      <div class="subheading">We understand it!</div>
-    </div>
-  </header>
+    <header class="headBack">
+        <img src="images/cloud.png" alt="Cloudy">
+        <h1 class="heading">Storm Center</h1>
+        <span class="icon" onclick="openNav()">&#9776; &nbsp;</span>
+    </header>
 
-  <!-- site navigation use placeholder references -->
-  <nav>
-    <button onclick="toggleNavMenu()" class="hamburguer" >&#9776;</button>
-    <ul class="horizontal gray hide" id="menu">
-    	<li><a href="#">Home</a></li>
-    	<li><a class="" href="Preston 8.html">Franklin</a></li>
-    	<li><a href="#">Greenville</a></li>
-    	<li><a href="#">Springfield</a></li>
-    	<li><a  class="active" href="Preston 8.html">Storm Center</a></li>
-    	<li><a href="Galley.html">Gallery</a></li>
-    </ul>		
-  </nav>
     
-  <main>
-    <form action="thanks.html" method="GET">
-        <label>Full name</label>
-        <input type="text" name="fullname" required pattern="[a-zA-Z0-9_]{5,}">
-        <br>
-        <label>Email</label>
-        <input type="email" name="email" placeholder="me@myhouse.cl">
-        <br>
-        <label>Phone Number</label>
-        <input type="tel" name="tel" required >
-        <br>
-        <label>Zip Code</label>
-        <input type="number" name="zipCode" required >
-        <br>
-        <label>Storm Date</label>
-        <input type="date" name="stormDate">
-        <br>
-        <label>Storm Type</label>
-        <input list="stormType" name="stormType">
-        <datalist id="stormType">
-            <option value="Flash Flood">
-            <option value="Hail">
-            <option value="Hurricane">
-            <option value="Thuderstorm">
-            <option value="Tornado">
-        </datalist>
-        <br>
-        <label>Storm Severity</label>
-        <input type="range" name="severity" min="1" max="10">
-        <br>
-        <label>Storm Region</label>
-        <select name="stormRegion">
-            <option value="0">Select Region ...</option>
-            <option value="Franklin">Preston</option>
-            <option value="Greenville">Sugar City</option>
-            <option value="Springfield">Fish Haven</option>
-        </select>
-        <br><br>
-        <label>In-danger Level</label>
-        <div>
-          <label>Yes</label>
-          <input type="radio" name="in-dangerLevel" value="yes">
-          <label>Maybe</label>
-          <input type="radio" name="in-dangerLevel" value="maybe">
-          <label>No</label>
-          <input type="radio" name="in-dangerLevel" value="no">
-        </div>
-        <br>
-        <textarea name="comments"></textarea>
-        <br>
-        <input type="submit" name="submit" value="Submit">
-        <br><br>
-    </form>
-  </main>
-    
+    <nav id=”nav” class="navBar">
+        <a href="javascript:redirect('home');">Home</a>
+        <a href="javascript:redirect('franklin');">Franklin</a>
+        <a href="javascript:redirect('greenville');">Greenville</a>
+        <a href="javascript:redirect('springfield');">Springfield</a>
+        <a href="javascript:redirect('storm');" style="color: aqua">Storm Center</a>
+        <a href="javascript:redirect('gallery');">Galley</a>
+    </nav>
+
+    <main class="main">
+        <section class="story">
+
+            <form name="processedForm" method="get" id="Form1" action="thankyou.html">
+                <h2>Report a Storm</h2>
+
+                Your Full Name:<br>
+                <input type="text" id="name" name="name" pattern="[A-za-z ]{5}" title="Please enter a valid name"><br> Email Address:<br>
+                <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="xxxxx@xxx.xx">
+                <span class="gridIn"><span>Phone Number:</span><span>Zip Code:</span>
+                <input id="bar" placeholder="(123) 456-7890" type="text" name="txtInput" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);">
+                <input type="number" id="zip" name="zip" onKeyDown="limitText(this,5)" required>
+                <span>Storm Date:</span><span>Storm Severity [1-10]</span>
+                <input type="date" id="dateEntry" name="date" required>
+                <input type="range" name="Severity" min="1" max="10" value="1">
+                <span>Storm Type</span><span>Storm Region</span>
+                <span class="myarrow"><input type="text" list="typeSelect" placeholder="Storm Type ..."></span>
+                <span class="myarrow"><input type="text" list="location" placeholder="Select Region ..."></span>
+                </span>
+                Are you safe?
+                <fieldset>
+                    <div class="some-class">
+                        <input type="radio" class="radio" name="x" value="y" id="y" />
+                        <label for="y">Yes</label>
+                        <input type="radio" class="radio" name="x" value="z" id="z" />
+                        <label for="z">No</label>
+                    </div>
+                </fieldset>
+                Additional Comments<br>
+                <textarea name="comment" form="Form1" rows="4" cols="50" class="forms">Enter text here...</textarea>
+
+                <datalist id="typeSelect">
+                    <option value="Flash Flood">
+                    <option value="Hail">
+                    <option value="Hurricane">
+                    <option value="Thunderstorm">
+                    <option value="Tornado">
+                </datalist>
+                <datalist id="location">
+                    <option value="Select Regiom ..." selected disabled>
+                    <option value="Franklin">
+                    <option value="Greenville">
+                    <option value="Springfield">
+                </datalist>
+                <input id="Submit" type="submit" value="Submit" name="Submit1" class="submit">
+
+            </form>
+
+        </section>
+
+        <!--            <section class="endSpace"><p>&nbsp;<br></p></section>Extra space below if Last so that footer doesn't hide text-->
+    </main>
+    <footer>
+        <section class="contact">
+            <p>The Weather Site</p>
+            <p>123 Main St, Franklin, MU, 65250<br> (999) 999 999 contact@theurl.com<br>
+            </p>
+        </section>  
   <footer>
    
     <p class="footer-bar">&copy;2019 All Rights Reserved | Preston Weather | <span id="currentdate"> </span></p>
