@@ -49,13 +49,13 @@ h3 {
 /* --------------- FOOTER ------------------------*/
 
 footer { /* Fixed footer, stays on bottom where I want it.  */
-    font-size: 17px;
+    font-size: 24px;
     background-color: #5d6808;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    font-size: 14px;
+    font-size: 24px;
 }
 
 footer a{
@@ -276,6 +276,6 @@ header img {
     left: 90px;
     position: relative;
     width: 120px;
-    height: 75px;
+    height: 95px;
     opacity: 0.8;
 }
