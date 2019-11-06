@@ -12,16 +12,16 @@
 
 h1 {
     font-family: 'Rajdhani', sans-serif;
-    padding-top: 70px;
+    padding-top: 50px;
     font-size:  4rem /* (rem is a unit of measure) */;
     color:  #000 ;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     text-align: center;
 }
 
 h2, h3 {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 2.5rem ;
+    font-size: 1.3rem ;
     text-align: center;
     border-bottom: 3px solid #000;
 }
@@ -31,7 +31,7 @@ h3 {
 }
 
 .heading {
-    margin-top: -19px;
+    margin-top: -10px;
     font-size:  4rem;
     color:  #000 ;
     width: 100%;
@@ -49,13 +49,13 @@ h3 {
 /* --------------- FOOTER ------------------------*/
 
 footer { /* Fixed footer, stays on bottom where I want it.  */
-    font-size: 24px;
-    background-color: #5d6808;
-    position: inherit;
+    font-size: 12px;
+    background-color: #21314f;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    font-size: 24px;
+    font-size: 14px;
 }
 
 footer a{
@@ -64,7 +64,7 @@ footer a{
 }
 
 .contact { /* Fixed above footer */
-    font-size: 17px;
+    font-size: 12px;
     background-color: #4465a2;
     position: fixed;
     left: 0;
@@ -78,7 +78,7 @@ footer a{
 /* --------------- MULTIPLE ----------------------*/
 
 header, main, footer {
-    max-width:  100% /*(px = pixel is a unit of measure)  */;
+    max-width:  100%;
 }
 
 header, footer, footer a {
@@ -92,13 +92,11 @@ header, footer, footer a {
 
 body { 
     display: grid;
-    padding-top: 70px; /* compensates for fixed header/nav bar */
-    margin-top: 100px;
-    font-size: 20px; 
+    padding-top: 40px; /* compensates for fixed header/nav bar */
+    font-size: 16px; 
     line-height: 32px;
     font-family: Ubuntu, sans-serif ;
     color: #000 ;
-    padding-bottom: 120px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -123,7 +121,7 @@ article{
     display: grid;
     grid-template-rows: 1fr 0fr;
     grid-gap: 0px;
-    z-index: -3;
+    z-index: 0;
 }
 
 .endSpace{
@@ -160,6 +158,10 @@ aside {
     border-color: rgba(0,0,0,0);
 }
 
+.center{
+    text-align: center;
+}
+
 section { 
     border-bottom-color: rgba(0,0,0,0);
     z-index: -12;
@@ -174,7 +176,7 @@ details {
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 /* --------------- TABLES & Forms -----------------------*/
@@ -217,13 +219,29 @@ form input{
 
 form .L50{
     width: 49%;
-    text-align: left
+    text-align: left;
+}
+
+form .L25{
+    width: 24%;
+    text-align: left;
 }
 
 form .gridIn{
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+form .gridIn4, .forms{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    text-align: left;
+}
+
+input[type="radio"] {
+  margin-top: -1px;
 }
 
 .submit {
@@ -233,11 +251,53 @@ form .gridIn{
     color: #fff;
 }
 
+input::-webkit-calendar-picker-indicator {
+    opacity: 1;
+}
+
+.myarrow:after {
+    content: url(http://s25.postimg.org/6k40u5hcr/arrow.png);
+    margin-left: -20px; 
+    padding: .1em;
+    pointer-events:none;
+}
+
+fieldset {
+    overflow: hidden
+}
+
+.some-class {
+    float: left;
+    clear: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+}
+
+label {
+    float: left;
+    clear: none;
+    display: block;
+    padding: 2px 1em 0 0;
+}
+
+input[type=radio],
+input.radio {
+    float: left;
+    clear: none;
+    margin: 2px 0 0 2px;
+}
+
+.forms{
+    width: 100%;
+    opacity: 0.7;
+}
+
+
 /* --------------- BACKGROUND -------------------*/
 
 .backImg{
     height: 100%;
-    background-size: auto;
+    background-size: cover;
     background-repeat:repeat-y;
     background-position: center center;
     
@@ -250,7 +310,7 @@ form .gridIn{
 }
 
 .headBack {
-    background-color: #5d6808; 
+    background-color: rgba(154, 215, 215, 1); /* light blue (#CCFFFF) with opacity/alpha level (a) at the end */
     height: 85px;
     width: 100%;
     left: 0;
@@ -276,6 +336,6 @@ header img {
     left: 90px;
     position: relative;
     width: 120px;
-    height: 95px;
+    height: 75px;
     opacity: 0.8;
 }
