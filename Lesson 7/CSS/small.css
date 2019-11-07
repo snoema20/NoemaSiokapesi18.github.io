@@ -5,14 +5,6 @@ body {
   font-family: 'Merriweather Sans', sans-serif;
   color: #01172d;
   font-style: italic;
-background: rgba(255,255,255,1);
-background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,252,255,1) 20%, rgba(0,83,138,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(20%, rgba(255,252,255,1)), color-stop(100%, rgba(0,83,138,1)));
-background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,252,255,1) 20%, rgba(0,83,138,1) 100%);
-background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,252,255,1) 20%, rgba(0,83,138,1) 100%);
-background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,252,255,1) 20%, rgba(0,83,138,1) 100%);
-background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,252,255,1) 20%, rgba(0,83,138,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00538a', GradientType=0 );
 }
 
 header, nav, main, footer { 
@@ -68,7 +60,6 @@ nav ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-border-radius:5px
 }
 
 nav ul li {
@@ -97,8 +88,7 @@ nav ul li:last-child a {
    border-right:0px;
 }
 
-main { background:#FFF; border-radius:5px; padding-bottom:50px}
-main h1 {margin-top:15px;}
+
 main h2 {width:100%;}
 main figure {  margin: 0%; }
 main figure img { width:100%;}
@@ -124,6 +114,7 @@ section.forecast table th {
     text-align: left;
     background-color: #929292;
     color: #000;
+ 
 }
 
 section.history{margin-top:30px; width:100%;}
@@ -133,13 +124,5 @@ section.history div {
 }
 section.history img{ width:100%; height:auto;align-self: center;border-radius:10px; margin-bottom:5px}
 
-#stormCenter {	width:90%;min-width:250px;margin:0 auto;}
-#stormCenter input, select { margin: 15px 30px; font-size:.8em; color: #3377bb; padding: .5rem; vertical-align: middle;}
-#stormCenter label { width: 400px; text-align:right;}
-#stormCenter fieldset {margin:20px 0px; padding:0px; border:0px}
-#stormCenter textarea{width:90%;height:200px}
-#stormCenter .submit{background-color: #002f5f; color:#FFF; border:0px; border-radius:4px;font-size:22px}
-.required{color:red}
-
-footer{width:100%;margin-top:30px!important;  background:#FFF; border-radius:5px}
+footer{width:100%;margin-top:30px!important; background:#f2f2f2;border-top:2px solid #929292}
 footer div.section-copyright{width:100%; background-color: #002f5f; color:#FFF;padding:5px 0px;text-align:center;color:#FFF}
