@@ -121,7 +121,7 @@ nav ul li a:hover {
 }
 
 .main-nav li:first-child a:hover {
-    background-color: rgba(43,11,11, 0.6);
+    background-color: rgba(194, 68, 68, 0.6);
 }
 
 .responsive li {
@@ -388,7 +388,7 @@ figcaption {
     display: none;
     font-size: small;
     padding: 10px 0 10px 0;
-    color: #1f2041;
+    color: #e3e4ff;
 }
 
 figure:hover {
