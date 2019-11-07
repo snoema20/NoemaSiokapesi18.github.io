@@ -3,9 +3,9 @@
 body {
   font-size: 16px;
   font-family: 'Merriweather Sans', sans-serif;
-  color: #01172d;
+  color: #f3f3ec;
   font-style: italic;
-background: rgba(255,255,255,1);
+background: rgb(107, 106, 13);
 background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,252,255,1) 20%, rgba(0,83,138,1) 100%);
 background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(20%, rgba(255,252,255,1)), color-stop(100%, rgba(0,83,138,1)));
 background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,252,255,1) 20%, rgba(0,83,138,1) 100%);
@@ -18,7 +18,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 header, nav, main, footer { 
    	 max-width: 100%; 
    	 margin: 0% 0.5%;
-    	width: 99%;
+        width: 99%;
 }
 
  section.section-half{ padding:0% 10%; width:80%}
@@ -28,7 +28,7 @@ header div h1 {  width: calc(100% - 150px);  font-size:24px; font-style: italic;
 header div img { margin-right:10px; width:110px }
 header div .subheading { margin:0px;  font-size:16px;  font-style: italic;}
 
-nav { background-color: #002f5f}
+nav { background-color: #002c5f}
 nav button { width:100%; color:#FFF;border:0px; font-size: 20px;padding:5px 0px;text-align:left; background-color: #929292;}
 nav button i{margin-left:5px;color:#FFF;}
 
