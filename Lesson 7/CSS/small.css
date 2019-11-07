@@ -21,11 +21,11 @@ body {
     width: 80%;
     margin: 0 auto;
     padding: 10px;
-    color: #1f2041;
+    color: #eaeaf1;
 }
 
 header {
-	background-color: #1f2041;
+	background-color: #e4a228;
 	display: flex;
 	align-items:center;
     justify-content:center;
