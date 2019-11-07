@@ -175,7 +175,7 @@ h3 {
     background-color: #1f2041;
     color: #ffffff;
     border-radius: 5px;    
-    box-shadow: 0 10px 20px 0 rgba(43,11,11, 0.6);
+    box-shadow: 0 10px 20px 0 rgba(177, 34, 34, 0.6);
 }
 
 .hero-image {
@@ -245,7 +245,7 @@ hr {
     text-align: left;
     padding: 0 30px 30px 30px;
     background-color: #ffc857;
-    color: #1f2041;
+    color: #f5f5fd;
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1); 
 }
@@ -337,8 +337,8 @@ footer {
     width: 100%;
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.75em;  
-    line-height: 2em;
-	background-color: #bd971c;  
+    line-height: 4em;
+	background-color: #e4a228 ;  
     color: #eeedeb;
 	display: flex;
     flex: 0 1 100%;
