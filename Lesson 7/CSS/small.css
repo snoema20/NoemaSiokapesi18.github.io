@@ -337,9 +337,9 @@ footer {
     width: 100%;
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.75em;  
-    line-height: 1.5em;
-	background-color: #1f2041;  
-    color: #ffc857;
+    line-height: 2em;
+	background-color: #bd971c;  
+    color: #eeedeb;
 	display: flex;
     flex: 0 1 100%;
 	align-items:center;
