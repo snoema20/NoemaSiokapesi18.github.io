@@ -9,17 +9,17 @@
 }
 
 h1 {
-    color: rgb(103, 68, 255);
+    color: rgb(145, 168, 132);
     text-align: center;
 }
 
 h2 {
-    color: rgb(103, 68, 255);
+    color: rgb(145, 168, 132);
 }
 
 section {
-    border: 1px solid rgb(52, 34, 129);
-    background-color: rgba(120, 96, 226, 0.473);
+    border: 1px solid rgb(72, 73, 14);
+    background-color: rgba(250, 190, 121, 0.473);
     text-align: center;
 }
 
