@@ -26,22 +26,19 @@
         grid-template-columns: 1fr 1fr;
     }
 
-    .cards{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    .cards section:nth-child(2) div:nth-child(2) {
+        grid-column-start: 1;
     }
 
-    .cards section:nth-child(3){
-        grid-column: 1/ span 2;
-        text-align: center;
-        vertical-align: middle; 
-    }
-
-    .cards img:nth-child(3) {
-        max-width: 600px;
+    .cards section:nth-child(2) div:nth-child(1){
+        grid-column-start: 2;
     }
 
     .cards em {
         font-size: 0.7em ;
+    }
+    .cards section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
