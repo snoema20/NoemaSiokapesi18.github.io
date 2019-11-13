@@ -1,0 +1,120 @@
+/* Media Query for medium + screens */
+@media only screen and (min-width: 60em) {
+    .menu-ul {
+            display: flex;
+        }
+        .menu-ul li:first-child {
+            display: none;
+        }
+        .menu-ul li {
+            display: block;
+            flex: 1 1 100%;
+        }
+        .menu-ul li a {
+            color: yellow;
+        }
+        footer, main {
+            width: 80%;
+        }
+        .headings h1{
+            font-size: 3em;
+        }
+        
+        .headings h2 {
+            font-size: 1em;
+        }
+        
+        h2 {
+            font-size: 1.5em;
+        }
+        
+        p, table, nav {
+            font-size: 1em;
+        }
+        
+        .cards em {
+            font-size: 1em;
+        }
+    
+        .bannerSummary {
+            min-height: 350px;
+        }
+    
+        .bannerSummary img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            min-height: 350px;
+        }
+    
+        .weather-summary {
+            top: 50px;
+            left: 50px;
+        }
+    
+        .five-day-forecast {
+            text-align: center;
+            display: block;
+        }
+    
+        .google-map {
+            display: block;
+        }
+    
+        .google-map iframe {
+            border: 0;
+            width: 100%;
+            height: 400px;
+        }
+    
+        .google-map {
+            order: 1;
+        }
+    
+        .main-contact-info {
+            order: 2;
+        }
+    
+        footer {
+            margin: auto;
+            padding: 20px;
+            width: 80%;
+        }
+    
+        .gallery-div {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    
+        .gallery-div picture img:hover {
+            box-shadow: 5px 10px 20px 5px rgba(233, 10, 10, 0.445);
+        }
+    
+        .gallery-div picture p {
+            visibility: visible;
+        }
+    
+        .form-label-top {
+            font-size: 1rem;
+        }
+        .form-label-top-input, .form-label-top-select {
+            font-size: 1rem;
+        }
+        .cards{
+            display: flex;
+            margin: 10px auto;
+        }
+        
+        .cards section {
+            margin: 10px;
+        }
+    
+        .cards img {
+            float: none;
+            display: block;
+            margin: 0 auto;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+    }
