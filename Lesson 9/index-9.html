@@ -1,67 +1,94 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-    <head>
-        <title>Preston Idaho</title>
-        <meta charset="utf-8">
-        <meta name="description" content="Assignment weather Siokapesi Noema, CIT 230: Web Frontend Development at Brigham Young University - Idaho">
-        <meta name="author" content="Siokapesi Noema">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/css/small-preston9.css">
-        <link rel="stylesheet" href="css/css/medium-preston 9.css">
-        <link rel="stylesheet" href="css/css/large-preston9.css">
-        <link rel="stylesheet"
-        href="https://fonts.typonine.com/WF-000000-001254.css">
-        
-    </head>
-    <body>          
+<head>
+    <title>Italy's Weather|Home</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Assignment weather page Giacomo Draghi, CIT 230: Web Frontend Development at Brigham Young University - Idaho">
+    <meta name="author" content="Giacomo Draghi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="static/images/LogoFav.ico">
+    
+    <link rel="stylesheet" href="css/small-9.css">
+    <link rel="stylesheet" href="css/css-preston/medium-9.css">
+    <link rel="stylesheet" href="css/large-9.css">
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round%7cPatua+One&display=swap" rel="stylesheet">
+</head>
+<body>
+        <header id= "headerElement">
+            <div id="friday-banner">Saturday = Preston Pancakes in the Park! 9:00 a.m. Saturday at the city park pavilion.
+            </div>
+            <picture>
+                <img src="static/images/logo_format.png" alt="logo" />
+            </picture>
             
-            <header id="main-header">     
-                <div id="friday-banner">
-                   
-                </div>     
-                <picture>
-                    <img src="image/logo.jpg" alt="Weather">
-                </picture>
-                <section class="sec-company-info">
-                    <h1>Preston Weather Forecast</h1>
-                    <div class="motto">Most Updated Weather Forecast</div>
-                </section>
-            </header>
-           
-            <nav>
-                <ul class="main-nav">
-                    <li><a href="#" onclick="toggleMenu()"><span class="exit-button">&#215;</span><span class="hamburger">&#9776; Menu</span></a></li>
-                    <li><a href="index-9.html">Home</a></li>
-                    <li><a href="Lesson 8/Preston-6.html" >Preston</a></li>
-                    <li><a href="#">Soda Springs</a></li>
-                    <li><a href="#">Fish Haven</a></li>
-                    <li><a href="Lesson 8/Preston 8 - storm.html">Storm Center</a></li>
-                    <li><a href="Lesson 8/Galley.html">Gallery</a></li>
-                </ul>
-            </nav>
-            <div id="content-container">
-               
-                <main>
-                    <h2>Preston <span>Idaho</span></h2>            
-                    <section class="content-box">
-                        <div class="hero-container">
-                        <picture>
-                        <source media="(min-width: 60em)" srcset="image/hero-image-1200.png">
-                        <source media="(min-width: 37.5em)" srcset="images/hero-image-800.png">
-                        <img class="hero-image" src="images/image-preston/hero-image-400.png" alt="beautiful day">
-                        </picture>
+            <section class = "headings">
+                <h1>Italy's weather</h1>
+                <h2>Your weather 24H</h2>
+            </section>
+            
+        </header>
+        <nav>
+            <ul class="menu-ul">
+                <li class="menu-li"><a href="#" onclick="toggleMenu()">&#9776; Menu</a></li>
+                <li class="menu-li active"><a href="index-9.html" target="_self">Home</a></li>
+                <li class="menu-li"><a href="Preston-6.html" target="_self">Preston</a></li>
+                <li class="menu-li"><a href="#" target="_self">Soda Spiring</a></li>
+                <li class="menu-li"><a href="#" target="_self">Fish Haven</a></li>
+                <li class="menu-li"><a href="storm-9.html" target="_self">Storm Center</a></li>
+                <li class="menu-li"><a href="gallery-9.html" target="_self">Gallery</a></li>
+            </ul>
+        </nav>
+        <main>
+            <picture id="hero">
+                <source media="(min-width: 60em)" srcset="static/images/idaho-landscape-mountains.jpg">
+                <source media="(min-width: 37.5em)" srcset="static/images/idaho-landscape-mountains-medium.jpg">
+                <img src="static/images/idaho-landscape-mountains-small.jpg" alt="Preston River">
+            </picture>
+            <div class="cards">
+
+            </div>
+            <div class="contentBox">
+                <div class="bannerSummary-content-row">
+                    <div class="bannerSummary-content-col google-map"><iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47365.77385347071!2d-111.9153445750597!3d42.09974162634671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8754f78c7cda6c31%3A0xf1b3b4fc465a4a3f!2sPreston%2C%20ID%2083263%2C%20USA!5e0!3m2!1sen!2sph!4v1570894327447!5m2!1sen!2sph"
+                            allowfullscreen=""></iframe></div>
+                    <div class="bannerSummary-content-col main-contact-info">
+                        <div class="contact-info">
+                            <h3>The Weather Bureau</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> W 8th N</p>
+                            <p>Preston, ID</p>
+                            <p>&nbsp;</p>
+                            <p><i class="fas fa-phone-square-alt"></i> 0541 79 74 753</p>
+                            <p><i class="fas fa-at"></i>italisweather@info.it</p>
+                            <p>
+                                <span><img src="static/images/icons8-facebook-cerchiato-100.png" alt="Facebook"></span>
+                                <span><img src="static/images/icons8-pinterest-100.png" alt="Pinterest"></span>
+                                <span><img src="static/images/icons8-twitter-100.png" alt="Twitter"></span>
+                                <span><img src="static/images/icons8-whatsapp-100.png" alt="Whatsapp"></span>
+                            </p>
                         </div>
-         
-            <footer>
-                <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
-                | Last Updated: <span id="currentDate"></span>
-                    
-               </footer>
-           
-            <script src="js/myscript.js"></script>
-            <script src="js/webfont.js"></script>
-            <script src="js/windchill.js"></script>
+                    </div>
+                </div>
+            </div>
             
+        </main>
+        <footer>
+          <p>&copy; <span id="Year"></span> | Giacomo Draghi | Rimini, Italy | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a><br><span id="date"></span></p>
+        </footer>
+    <script src="js/index.js"></script>
+    <script src="static/js/lazyload.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: [
+                'Patua One',
+                'Crete Round',
+                ]
+            }
+        });
+    </script>
+    <script src="static/js/index.js"></script>
 </body>
 </html>
