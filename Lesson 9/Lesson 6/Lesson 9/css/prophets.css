@@ -1,0 +1,45 @@
+/*---Small---*/
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: rgb(67, 155, 13);
+    text-align: center;
+}
+
+h2 {
+    color: rgb(67, 155, 13);
+}
+
+section {
+    border: 1px solid rgb(72, 73, 14);
+    background-color: rgba(250, 190, 121, 0.473);
+    text-align: center;
+}
+
+img {
+    width: 80%;
+    height: auto;
+}
+
+/*---Medium---*/
+@media only screen and (min-width: 37.5em) {
+    .cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+/*---Large---*/
+@media only screen and (min-width: 60em){
+    .cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
