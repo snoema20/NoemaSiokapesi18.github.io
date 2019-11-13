@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>Assignment|Prophets</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel= "stylesheet" href="css/normal-test.css">
+    <link rel= "stylesheet" href="css/css/small-preston9.css">
+    <link rel= "stylesheet" href="css/css/medium-preston 9.css">
+    <link rel= "stylesheet" href="css/css/large-preston9.css">
+    <link href="https://fonts.googleapis.com/css?family=Lilita+One&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+      
+        <header id="main-header">     
+            <div id="friday-banner">
+               
+            </div>     
+            <picture>
+                <img src="image/sun logo.jpg" alt="Weather">
+            </picture>
+            <section class="sec-company-info">
+                <h1>Preston Weather Forecast</h1>
+                <div class="motto">Most Updated Weather Forecast</div>
+            </section>
+        </header>
+        <nav>
+            <ul class="menu-ul">
+                <li class="menu-li"><a href="#" onclick="toggleMenu()">&#9776; Menu</a></li>
+                <li class="menu-li active"><a href="Index-9 preston.html" target="_self">Home</a></li>
+                <li class="menu-li"><a href="Lesson 8/Preston-6.html" target="_self">Preston</a></li>
+                <li class="menu-li"><a href="#" target="_self">Soda Spiring</a></li>
+                <li class="menu-li"><a href="#" target="_self">Fish Haven</a></li>
+                <li class="menu-li"><a href="Lesson 8/Preston 8 - storm.html" target="_self">Storm Center</a></li>
+                <li class="menu-li"><a href="Lesson 8/Galley.html" target="_self">Gallery</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <h2 class="text-align-center">Preston Idaho</h2>
+        <div class="bannerSummary">
+            <picture>
+                    <source media="(min-width: 60em)" srcset="static/images/heroLarge.jpg">
+                    <source media="(min-width: 37.5em)" srcset="static/images/heroMedium.jpg">
+                    <img src="static/images/heroSmall.jpg" alt="Preston River">
+            </picture>
+            <section class="weather-summary">
+                <h3 class="text-align-center">Weather Summary</h3>
+                <div class="bannerSummary-content">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Currently: </td>
+                                <td>Sunny</td>
+                            </tr>
+                            <tr>
+                                <td>High: </td>
+                                <td><span id= "temperature">50</span> &#8457;</td>
+                            </tr>
+                            <tr>
+                                <td>Wind Chill: </td>
+                                <td><span id= "chill">78</span> &#8457;</td>
+                            </tr>
+                            <tr>
+                                <td>Humidity: </td>
+                                <td>79%</td>
+                            </tr>
+                            <tr>
+                                <td>Wind Speed: </td>
+                                <td><span id= "speed">150</span> mph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <div class="contentBox five-day-forecast">
+            <div class="bannerSummary-content-row">
+                <div class="bannerSummary-content-col">
+                    <h3 class="text-align-center">Five Day Forecast</h3>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="contentBox">
+            <div class="bannerSummary-content-row">
+                <div class="bannerSummary-content-col article-content">
+                    <h3>Preston, Idaho</h3>
+                    <p>Weather in Preston, Idaho is normally really nice, and really warm. It is perfect for picknicks and a all lot of fun outside activiti. We strongly racomandt to take some time to stay out ans chill with friends and family.</p>
+                </div>
+                <div class="bannerSummary-content-col article-image"><img src="static/images/idaho-landscape-mountains-1694642.jpg"
+                        alt="Idaho"></div>
+            </div>
+        </div>
+        <div class="contentBox">
+            <div class="bannerSummary-content-row">
+                <div class="bannerSummary-content-col google-map"><iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47365.77385347071!2d-111.9153445750597!3d42.09974162634671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8754f78c7cda6c31%3A0xf1b3b4fc465a4a3f!2sPreston%2C%20ID%2083263%2C%20USA!5e0!3m2!1sen!2sph!4v1570894327447!5m2!1sen!2sph"
+                        allowfullscreen=""></iframe></div>
+                <div class="bannerSummary-content-col main-contact-info">
+                    <div class="contact-info">
+                        <h3>The Weather Bureau</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> W 8th N</p>
+                        <p>Preston, ID</p>
+                        <p>&nbsp;</p>
+                        <p><i class="fas fa-phone-square-alt"></i> 0541 79 74 753</p>
+                        <p><i class="fas fa-at"></i>italisweather@info.it</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        </main>
+                
+        <footer>
+            <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
+            |  <span id="currentDate"></span>
+                
+           </footer>
+       
+        <script src="js/currentdate.js"></script>
+        
+        <script src="js/windchill.js"></script>
+        
+</body>
+</html
+
