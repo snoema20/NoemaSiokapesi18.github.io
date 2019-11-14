@@ -7,6 +7,8 @@ fetch(requestURL) .then(function (response) {
     for (let i = 0; i < towns.length; i++ ) {
         if (i==1 || i == 4 || i ==5) {
             let card = document.createElement('section');
+            let div1 = document.createElement('div');
+            let div2 = document.createElement('div');
             let h2 = document.createElement('h2');
             let em = document.createElement('em');
             let p1 = document.createElement('p');
@@ -22,12 +24,14 @@ fetch(requestURL) .then(function (response) {
             image.setAttribute('src', 'static/images/'+towns[i].photo);
             image.setAttribute('alt',towns[i].name);
 
-            card.appendChild(h2);
-            card.appendChild(em);
-            card.appendChild(image);
-            card.appendChild(p1);
-            card.appendChild(p2);
-            card.appendChild(p3);
+            card.appendChild(div1);
+            card.appendChild(div2);
+            div1.appendChild(h2);
+            div1.appendChild(em);
+            div1.appendChild(p1);
+            div1.appendChild(p2);
+            div1.appendChild(p3);
+            div2.appendChild(image);
 
             document.querySelector('div.cards').appendChild(card);
         }
