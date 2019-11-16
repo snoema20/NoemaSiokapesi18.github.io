@@ -112,10 +112,23 @@
     */
 
     .towns {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns : 1fr; 
     }
 
+    .town-card,  .town-card:nth-child(1), .town-card:nth-child(2) {
+        flex-flow : row nowrap;
+    }
+
+    .town-card:nth-child(3) {
+        flex-flow : row-reverse nowrap;
+    }
+
+    .town-card img {
+        max-width : 50%;
+    } 
+
     .text-container p {
-      font-size: 1.05rem;
+      font-size: 1.05rem;      
+      box-sizing: border-box;
   }
 }
