@@ -8,27 +8,27 @@
 	}
 
 	.motto {
-		font-size: 2rem;
+		font-size: 1.1rem;
     }   
     
     .main-nav li:first-child {
-        font-size: 2rem;
+        font-size: 1.4rem;
     }
     
     nav li a {
-        font-size: 2rem;
+        font-size: .9rem;
     }
 
     .hero-weather-info {
         left: 30px;
         width: 40%;
-        font-size: 2rem;
+        font-size: 0.90rem;
     }
 
     .btn {
-        border-radius: 1.6em;
+        border-radius: 1.5em;
         width: 150px;
-        font-size: 2em;
+        font-size: 1.2em;
     }
 
     table {
@@ -37,6 +37,7 @@
         border:none;
         border-collapse: collapse;    
         box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 2); 
+        margin-bottom: 1.5rem;
     }
 
     th {
@@ -68,9 +69,9 @@
     }
 
     .contact-img, .social-media  {
-        width: 27px;
+        width: 25px;
         height: auto;
-        padding-right: 5.3px;
+        padding-right: 5px;
     }
 
     iframe {
