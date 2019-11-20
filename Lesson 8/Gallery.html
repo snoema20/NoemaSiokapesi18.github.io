@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+        <title>Preston Idaho</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Assignment weather Siokapesi Noema, CIT 230: Web Frontend Development at Brigham Young University - Idaho">
+        <meta name="author" content="Siokapesi Noema">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/small.css">
+        <link rel="stylesheet" href="css/medium.css">
+        <link rel="stylesheet" href="css/large.css">
+        <link href="https://fonts.google.com/specimen/Martel" rel="stylesheet">
+    </head>
+<body>          
+    <!-- HEADER -->
+    <header id="main-header">     
+           
+        <picture>
+            <img src="Image/logo.jpg" alt="Ghana Meteo Logo">
+        </picture>
+        <section class="sec-company-info">
+            <h1></h1>Preston Weather Forecast
+            <div class="motto">Most Updated Forecast</div>
+        </section>
+    </header>
+    <!-- NAVIGATION -->
+    <nav>
+        <ul class="main-nav">
+            <li><a href="#" onclick="toggleMenu()"><span class="exit-button">&#215;</span><span class="hamburger">&#9776; Menu</span></a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="preston-7.html" >Preston</a></li>
+            <li><a href="#">Soda Springs</a></li>
+            <li><a href="#">Fish Haven</a></li>
+            <li><a href="#">Storm Center</a></li>
+            <li class="active"><a href="gallery-7.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <div id="content-container">
+       <!-- MAIN -->
+        <main>
+            <h2>Gal<span>lery</span></h2>            
+            <section class="gallery-container">
+                <figure>
+                    <img src="Image/beautiful day-galley.jpg" data-src="images/blue-sky.jpg" alt="blue sky">
+                    <figcaption>Blue Sky</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/summer fun in Idaho.jpg" data-src="images/clear-sky.jpg" alt="clear sky">
+                    <figcaption>Clear Sky</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/Typhoon weather.jpg" data-src="images/cyclone.jpg" alt="cyclone">
+                    <figcaption>Cyclone</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/cloudy day (2).jpg" data-src="images/dark-cloud.jpg" alt="dark">
+                    <figcaption>Dark and Raining</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/Red Lightning.jpg" data-src="images/rain.jpg" alt="storm rain">
+                    <figcaption>Storm Rain</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/heavy rain and thunderstorms-galley.jpg" data-src="images/lightening.jpg" alt="lightning">
+                    <figcaption>Thunder and Lightning</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/snoeball-galley.jpg" data-src="images/snowy.jpg" alt="snow">
+                    <figcaption>Snow</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/day out.jpg" data-src="images/storm.jpg" alt="day out">
+                    <figcaption>Day out</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/cool day-7gallery.jpg" data-src="images/fog.jpg" alt="cool day">
+                    <figcaption>Cool Day</figcaption>
+                </figure>
+            </section>
+
+            <section class="content-box">
+                <h3>Contact Information</h3>                
+                <div id="contact">
+                    <div class="map no-display">
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Preston%2C%20Idaho&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                            </div>
+                        </div>
+                    </div>                
+                    <div class="contact-info">
+                        <h3>Preston Weather Forecast</h3>
+                        <div class="contact-info">
+                                
+                                   
+                            
+                            <p>Address: 125 Summit Ave S Preston Idaho 98089</p>
+                              <p>Phone Number: 231-232-4534</p>         
+                                               <p>Email: prestonweather@hotmail.org</p>
+                                           </div>
+                                           <br /><br />
+                                       
+                                   </div>
+                               </section>
+                           </main>
+                       </div>
+                       <footer>
+                           <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>  |
+                           <span id="currentDate"></span>
+                               
+                          </footer>
+                      
+                       <script src="js/myscript.js"></script>
+                       <script src="js/windchill.js"></script>
+                       <script src="js/banners.js"></script>
+                       
+           </body>
