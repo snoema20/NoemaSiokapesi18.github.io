@@ -13,7 +13,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #ffc857;
+    background-color: #632811;
     display: none;
 }
 
@@ -21,11 +21,11 @@ body {
     width: 80%;
     margin: 0 auto;
     padding: 10px;
-    color: #1f2041;
+    color: #632811;
 }
 
 header {
-	background-color: #1f2041;
+	background-color: #c29f06;
 	display: flex;
 	align-items:center;
     justify-content:center;
@@ -45,7 +45,7 @@ header img {
 .sec-company-info h1 {
 	font-size: 1.1rem;
     margin: 0 0 0 15px;
-    color: #ffc857;
+    color: #fffdfa;
 }
 
 .motto {
@@ -172,10 +172,10 @@ h3 {
     display: block;
     margin: 10px auto;
     padding: 15px;
-    background-color: #1f2041;
+    background-color: #6c831b;
     color: #ffffff;
     border-radius: 5px;    
-    box-shadow: 0 10px 20px 0 rgba(43,11,11, 0.6);
+    box-shadow: 0 10px 20px 0 rgba(173, 111, 111, 0.6);
 }
 
 .hero-image {
