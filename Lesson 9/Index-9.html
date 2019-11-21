@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+        <title>Preston Idaho</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Assignment weather Siokapesi Noema, CIT 230: Web Frontend Development at Brigham Young University - Idaho">
+        <meta name="author" content="Siokapesi Noema">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/small.css">
+        <link rel="stylesheet" href="css/medium.css">
+        <link rel="stylesheet" href="css/large.css">
+        <link href="https://fonts.google.com/specimen/Martel" rel="stylesheet">
+    </head>
+    <body>          
+            
+            <header id="main-header">     
+                <div id="friday-banner">
+                   
+                </div>     
+                <picture>
+                    <img src="L9 image/images/image/logo.jpg" alt="Weather">
+                </picture>
+                <section class="sec-company-info">
+                    <h1>Preston Weather Forecast</h1>
+                    <div class="motto">Most Updated Weather Forecast</div>
+                </section>
+            </header>
+           
+    <nav>
+        <ul class="main-nav">
+            <li><a href="#" onclick="toggleMenu()"><span class="exit-button">&#215;</span><span class="hamburger">&#9776; Menu</span></a></li>
+            <li class="active"><a href="Index-9.html">Home</a></li>
+            <li><a href="Preston 9.html" >Preston</a></li>
+            <li><a href="#">Soda Springs</a></li>
+            <li><a href="#">Fish Haven</a></li>
+            <li><a href="storm.html">Storm Center</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <div id="content-container">
+       <!-- MAIN -->
+        <main>
+            <h2>Welcome <span>to Preston</span> Idaho</h2>            
+            <section class="content-box">
+                <div class="hero-container"> 
+                    <picture>
+                        <source media="(min-width: 60em)" srcset="images/index-cover1200.jpg">
+                        <source media="(min-width: 37.5em)" srcset="images/index-cover800.jpg">
+                        <img class="hero-image" src="L9 image/images/image/hero-image-400.png" alt="clear blue sky">
+                    </picture>
+                </div>
+                <div>
+                    <h3>US weather News</h3>
+                   <p class="general-info">
+                        An Arctic blast sweeping across the eastern United States could break nearly 400 records as it brings below-freezing temperatures, according to America's National Weather Service. The treacherous conditions have already caused a plane to slide across the runway at Chicago's O'Hare International Airport, where more than 1,000 flights have been cancelled after as much as six inches of snow fell. The unusually cold air mass came from Siberia — a phenomenon known as a “Siberian Express”. It is predicted to bring temperatures 15 to 25 degrees below average for this time of year until Wednesday... <a href="https://www.independent.co.uk/us/us-weather-live-temperature-snow-cold-record-texas-michigan-chicago-plane-forecast-a9199641.html" target="_blank">read more</a>
+                    </p> 
+                </div>
+            </section>
+
+            <section class="town-container">
+                <h3>Towns We Cover</h3>
+                <div class="towns"></div>
+            </section>
+
+            <section class="content-box">
+                <h3>Contact Information</h3>              
+                <div id="contact">
+                    <div class="map no-display">
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Preston%2C%20Idaho&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                            </div>
+                        </div>
+                    </div>                
+                    <div class="contact-info">
+                                
+                                   
+                            
+                        <p>Address: 125 Summit Ave S Preston Idaho 98089</p>
+                          <p>Phone Number: 231-232-4534</p>         
+                                           <p>Email: prestonweather@hotmail.org</p>
+                                       </div>
+                                       <br /><br />
+                                   
+                               </div>
+                           </section>
+                       </main>
+                   </div>
+                   <footer>
+                       <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p> 
+                       <span id="currentDate"></span>
+                           
+                      </footer>
+                                 
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="js/myscript.js"></script>
+    <script src="js/webfont.js"></script>
+    <script src="js/windchill.js"></script>
+</body>
+</html>
