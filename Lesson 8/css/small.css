@@ -13,7 +13,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #632811;
+    background-color: #57ddff;
     display: none;
 }
 
@@ -21,11 +21,11 @@ body {
     width: 80%;
     margin: 0 auto;
     padding: 10px;
-    color: #632811;
+    color: #acaa37;
 }
 
 header {
-	background-color: #c29f06;
+	background-color: #22411f;
 	display: flex;
 	align-items:center;
     justify-content:center;
@@ -45,7 +45,7 @@ header img {
 .sec-company-info h1 {
 	font-size: 1.1rem;
     margin: 0 0 0 15px;
-    color: #fffdfa;
+    color: #ffc857;
 }
 
 .motto {
@@ -59,13 +59,13 @@ header img {
 nav {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    background-color: #2b0b0b;
-    box-shadow: 0 5px 10px #2b0b0b;
+    background-color: #ac4141;
+    box-shadow: 0 5px 10px #0b112b;
 }
 
 .main-nav li:first-child {
     display: block;
-    background-color: #2b0b0b;
+    background-color: #be4242;
     border: none;
     font-size: 1.3rem;
     padding: 10px;
@@ -95,7 +95,7 @@ nav ul {
 
 nav li a {
     display: block;
-    color: #ffc857;
+    color: #95c942;
     text-align: center;
     padding: .8rem 2%;
     text-decoration: none;
@@ -112,7 +112,7 @@ nav ul li.active a {
 nav ul li a:hover {
     background-color: rgba(255,200,87, 0.4);
     color: rgba(255,255,255, 0.7);
-    box-shadow: 5px 5px 5px #2b0b0b;
+    box-shadow: 5px 5px 5px #c56060;
 }
 
 .main-nav li:first-child a {
@@ -121,7 +121,7 @@ nav ul li a:hover {
 }
 
 .main-nav li:first-child a:hover {
-    background-color: rgba(43,11,11, 0.6);
+    background-color: rgba(230, 111, 111, 0.6);
 }
 
 .responsive li {
@@ -139,12 +139,14 @@ main {
     padding: 5px;
     text-align: center;
     line-height: 1.5em;
+    display: block;
+    box-sizing: border-box;
 }
 
 #content-container {
     width: 85%;
     margin: 0 auto;
-    background-color: #ffc857;
+    background-color: #ce9b36;
     padding: 10px;
 }
 
@@ -172,10 +174,11 @@ h3 {
     display: block;
     margin: 10px auto;
     padding: 15px;
-    background-color: #6c831b;
+    background-color: #5457b3;
     color: #ffffff;
     border-radius: 5px;    
-    box-shadow: 0 10px 20px 0 rgba(173, 111, 111, 0.6);
+    box-shadow: 0 10px 20px 0 rgba(204, 21, 21, 0.6);
+    box-sizing: border-box;
 }
 
 .hero-image {
@@ -200,7 +203,7 @@ h3 {
 	position: absolute;
 	top: 20px;
     left: 10px;
-	background: radial-gradient(#1f2041, #2b0b0b);
+	background: radial-gradient(#6f73f5, #d13d3d);
 	border: 2px solid #ffc857;
 	padding: 0.5rem;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1);
@@ -210,7 +213,7 @@ h3 {
 }
 
 hr {
-    border: 2px solid #ffc857;
+    border: 2px solid #614204;
 }
 
 .table-grid {
@@ -244,10 +247,11 @@ hr {
 .article, .contact-info {
     text-align: left;
     padding: 0 30px 30px 30px;
-    background-color: #ffc857;
+    background-color: #cc9424;
     color: #1f2041;
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1); 
+    box-sizing: border-box;
 }
 
 .img1 {
@@ -323,14 +327,16 @@ hr {
 }
 
 .contact-detail {
-    display: flex;
+    display: block;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .contact-img, .social-media  {
     width: 23px;
     height: auto;
     padding-right: 5px;
+    box-sizing: border-box;
 }
 
 footer {
@@ -339,7 +345,7 @@ footer {
     font-size: 0.75em;  
     line-height: 1.5em;
 	background-color: #1f2041;  
-    color: #ffc857;
+    color: #2d0983;
 	display: flex;
     flex: 0 1 100%;
 	align-items:center;
@@ -348,7 +354,7 @@ footer {
 }
 
 footer a {
-    color: #ffc857;
+    color: #e0dff0;
 }
 
 /*
@@ -393,4 +399,161 @@ figcaption {
 
 figure:hover {
     box-shadow: none;
+}
+
+/*
+    Storm Center Forms
+*/
+
+.form-container {
+    width: 450px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+form fieldset {
+    margin: 2rem 0;
+    border: 1px solid #1f2041;
+    border-radius: 10px;
+    padding: .5rem 2%;    
+    box-sizing: border-box;
+}
+
+form legend {
+    color: #1f2041;
+    margin: 0 1rem;
+    padding: 0 .5rem;  
+}
+
+form label.top, form div {
+    display: block;
+    padding-top: 1rem;
+    color: #a50404;
+    font-size: 1rem;
+    text-align: left;
+}
+
+form label.top input, form label.top select, form label.top textarea {
+    display: block;
+    font-size: .85rem;
+    border: 1px solid #2b0b0b;
+    border-radius: 5px;
+    padding: .75rem;
+    color: #1f2041;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);    
+    box-sizing: border-box;
+}
+
+form label.sbs {
+    display: block;
+    padding: .5rem 0;
+    color: #1f2041;
+    text-align: left;
+}
+
+form input.submitBtn {
+    border: none;
+    background-color: #a50404;
+    color: #fff;
+    border-radius: 1rem;
+    padding: .75rem 1.5rem;
+    margin: 0 0 2rem 2%;     
+    width: 96%;
+    max-width: 20rem;
+    box-sizing: border-box;
+    /*display: block;
+    margin-right: auto;*/
+}
+
+form label.top input:required {
+    border-left: 6px solid #a50404;
+}
+
+form label.top input:required:valid {
+    border-left: 6px solid #004c00;
+}
+
+/*
+    Index Styles
+*/
+
+.general-info {
+    text-align: left;
+}
+
+.general-info a {
+    text-decoration: none;
+    color: #ffc857;
+}
+
+.town-container {
+    background-color: #1f2041;
+    color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1);
+    padding: 10px 20px 20px 20px;
+    box-sizing: border-box;
+}
+
+
+.towns { 
+    margin : 25px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    box-sizing: border-box;
+    
+}
+
+.town-card {   
+    padding : 0;
+    overflow : hidden;
+    display : flex;
+    flex-flow : column nowrap;
+    background-color: #afa01b;
+    color: #1f2041;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 1); 
+}
+
+.text-container h3 {
+    font-size: 2rem;
+    text-shadow: 2px 2px #ffffff;
+}
+
+.text-container h4 {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top : -0.8em;
+}
+
+.text-container p {
+    font-size: 1rem;
+}
+
+.town-card div, .town-card img {
+    display : block; 
+    width: 100%;
+    height: auto;
+}
+
+.town-card:nth-child(1) {
+    order: 3;
+    -webkit-order: 3;
+}
+
+.town-card:nth-child(2) {
+    order: 1;
+    -webkit-order: 1;
+}
+
+.town-card:nth-child(3) {
+    order: 2;
+    -webkit-order: 2;
 }
