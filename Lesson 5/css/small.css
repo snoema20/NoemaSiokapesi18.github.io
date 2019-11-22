@@ -25,7 +25,7 @@ body {
 }
 
 header {
-	background-color: #22411f;
+	background-color: #c9444b;
 	display: flex;
 	align-items:center;
     justify-content:center;
@@ -45,7 +45,7 @@ header img {
 .sec-company-info h1 {
 	font-size: 1.1rem;
     margin: 0 0 0 15px;
-    color: #ffc857;
+    color: #faeced;
 }
 
 .motto {
@@ -117,7 +117,7 @@ nav ul li a:hover {
 
 .main-nav li:first-child a {
     border-top: none;
-    color: #ffc857;
+    color: #f1c150;
 }
 
 .main-nav li:first-child a:hover {
@@ -163,7 +163,7 @@ h2 {
 }
 
 h2 span {
-    color: #a50404;
+    color: #f5ecec;
 }
 
 h3 {
@@ -232,7 +232,7 @@ hr {
 
 .head-value {
     text-align: left;
-    color: #ffc857;
+    color: #faf8f4;
 }
 
 #article-container, #contact {
@@ -344,7 +344,7 @@ footer {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.75em;  
     line-height: 1.5em;
-	background-color: #1f2041;  
+	background-color: #c9444b;  
     color: #2d0983;
 	display: flex;
     flex: 0 1 100%;
