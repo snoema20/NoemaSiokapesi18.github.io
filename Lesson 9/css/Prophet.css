@@ -14,7 +14,7 @@ header h1 {
 }
 
 main {
-    background-color: #1f2041;
+    background-color: #d8222b;
     width: 95%;
     margin: 0 auto;
     padding: 20px 20px 20px 20px;
@@ -34,7 +34,7 @@ main {
 
 section { 
     display: block;
-    background-color: #ffc857;  
+    background-color: #39e7ad;  
     box-sizing: border-box;
     padding: 10px;
     box-shadow: 0 10px 20px 0 rgba(255,200,87, 0.2);
@@ -43,7 +43,7 @@ section {
 section h2 {
     font-family: 'Ubuntu', serif;
     font-size: 1.6rem;
-    color: #a50404;
+    color: #bed114;
 }
 
 section p {
