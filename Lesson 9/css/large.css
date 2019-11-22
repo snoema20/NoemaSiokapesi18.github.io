@@ -71,11 +71,11 @@
   }
 
   figure {    
-      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 1);
+      box-shadow: 0 5px 10px 0 rgb(226, 84, 84);
   }
 
   figure:hover {
-    box-shadow: 0 10px 20px 0 #a50404;
+    box-shadow: 0 10px 20px 0 #67a521;
   }
 
   form label.sps {
