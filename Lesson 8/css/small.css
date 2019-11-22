@@ -344,7 +344,7 @@ footer {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.75em;  
     line-height: 1.5em;
-	background-color: rgb(223, 44, 44;  
+	background-color: rgb(223, 44, 44);  
     color: #e3e0e9;
 	display: flex;
     flex: 0 1 100%;
@@ -357,9 +357,7 @@ footer a {
     color: #e0dff0;
 }
 
-/*
-    Gallery Styles
-*/
+
 
 .gallery-container {
     display: grid;
