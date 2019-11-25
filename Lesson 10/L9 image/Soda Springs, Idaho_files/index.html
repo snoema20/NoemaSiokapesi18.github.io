@@ -1,0 +1,2360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0092)http://www.sodaspringsid.com/calendar_app/index.html#-mini,css=calendar_mini_sodasprings.css -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Event Calendar</title>
+
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script>location; //can breakpoint before include /revize/work/_sodasprings/calendar_app/calendar_app.jsp</script>
+<!--
+//--------------------------------------------------------------\\
+//BEG of .../plugins/calendar/calendar3.head_version_include.jsp \\
+//----------------------------------------------------------------\\
+--><!-- webspace_config.calendar_options: webspace_config does not have calendar_options field -->
+
+<script language="JavaScript" type="text/JavaScript">
+var g = {};		//global object (use for new global variables to identify them as such)
+g.revizeDomain = 'http://cms5.revize.com';	//no trailing slash
+g.isRefreshData = false;
+g.savereturn = '';
+g.recordDeleted = false;
+
+// RZ or at least RZ.calendar, usually over-ridden on popup windows by RZloadResources()
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = {};
+if (!RZ.calendar) RZ.calendar = {};
+RZ.isEditPage = false;
+
+RZ.calendar.version = 'Version 3.2<br>(released: 01-20-2014)';
+RZ.calendar.options = 'webspace_config does not have calendar_options field';
+RZ.calendar.isRepeatContentOverride = true
+RZ.calendar.warnings = false;
+RZ.debug = false;	//only valid on jsp pages (always false on templates)
+RZ.debugOptions = {};
+RZ.calendar.setDebug = '<a href="javascript:setDebug()" class="debug">&nbsp;&nbsp;&nbsp;</a>';
+RZ.calendar.debugLink = '<a href="javascript:debugger" class="debug">&nbsp;&nbsp;&nbsp;</a>';
+RZ.calendar.cancelButton = '';
+
+RZ.devmode = false;
+RZ.calendar.pluginsFolder = '/revize/plugins/calendar/';
+if (RZ.devmode) RZ.calendar.pluginsFolder = '';
+RZ.calendar.editpages = RZ.calendar.pluginsFolder + 'editpages/';
+
+//----- Prevent js error when referenced inside tinymce
+if (!(top.location + '')	//no access
+|| top.RZ && top.RZ.pagetype && top.RZ.pagetype == 'editform')	// if inside editform...
+	RZ.calendarDisabled = true;									// ...mark disabled
+
+function setup() //stub used if js syntax errors before real setup()
+{
+	if (RZloadingDone) RZloadingDone('corrupt');
+}
+</script><script language="JavaScript" type="text/JavaScript">
+RZ.calendar.javascript_version_loading = '08-22-2015';
+/*
+_________________________________________________________________________________________________
+
+Bootstrap script to load home page resources into popup window -OR-
+if standalone page (e.g. calendar_main_signup.html),
+load calendar_app_published.js and specified or default css (calendar_style.css)
+
+calendar_app_published.js is combination of calendar_app_view_common.js and
+calendar_app_view_common.js from ...plugins/calendar/js (NOT webSpace folders)
+
+In DEVMODE, all resources loaded from webSpace folder for every page (Revize Server only)
+EXCEPT: calendar3.head_version_include.jsp (always loaded from .../plugins/calendar)
+
+Following done before page onLoad() event (required by some legacy inline script in html):
+	RZ.MSIE, RZ.browserVersion	(may need before snippet_helper.js runs)
+	isStandAlone, homeframe, topframe, mainframe
+_________________________________________________________________________________________________
+*/
+var e;
+var homeframe, topframe;
+var isStandalone = true;
+var homeframePattern = /calendar_app\/(index.html)?$/m
+//if (/calendar_app\/(index.html)?$/m.test(location.pathname))
+if (homeframePattern.test(location.pathname))	//if main page
+	isStandalone = false;
+
+var offset = navigator.appVersion.indexOf('MSIE')
+RZ.MSIE = offset != -1;
+if (RZ.MSIE)
+	RZ.browserVersion = parseFloat(navigator.appVersion.substr(offset+5));
+
+if (!window.EZ) EZ = {isFeature:function() {return false}}
+
+/********************************************************/
+/*BOOKMARK -----(1) Define global convenience variables*/
+/******************************************************/
+//-----------------------------------------------------------------------------------
+// check for calendar in parent or other frame (e.g. detail iframe layer)
+// should move inside RZloadResources() but not sure every page always calls.
+//-----------------------------------------------------------------------------------
+try
+{
+	homeframe = window;
+	while (homeframe.opener && isStandalone)
+	{
+		homeframe = homeframe.opener;
+		if (homeframe.RZ && homeframe.RZ.calendar)
+		{
+			isStandalone = false;
+			if (homeframe.RZ.calendar.home) break;
+		}
+	}
+}
+// May occur if no access to opener depending on browser (i.e. IE9?)
+catch (e)
+{
+	if (RZ.debug) debugger;		//for additional research
+}
+
+//----- For legacy script; some pages still use and may override
+topframe = homeframe;
+
+/*-----------------------------------------------------------------------------------------------
+RZloadResources for all pages:
+
+1. Define global convenience variables (done above as script loads)
+2. RZ set to homeframe.RZ if not an editform (i.e. options contains "form"
+3. Copy Javascript functions (i.e. script objects) from home page
+4. Load RZ.calendar.css (standard or custom) styles from home page document DOM
+
+Eliminates the need to manually push (i.e. ftp) copies of these resources to live server.
+Browser performance is also greatly enhanced as a result.
+
+---------
+Arguments:	Non-positional: callback if function otherwise options
+---------
+options		(optional) String with keys or key=value options separated by commas
+			"key=form" -or- "form" to retain RZ rather than using homeframe RZ object
+			but always uses homeframe.RZ.calendar
+
+			DCO 08-22-2015: not used to retain RZ.* uses RZ.isEditPage
+
+callback	(optional) function to call when all resources are loaded
+
+returns		true if all files loaded (caller can proceed)
+			-OR-
+			false if caller must wait for resources to load (e.g. css and/or javascript files)
+			caller can specify callback function to be called when all files are loaded;
+			otherwise if callback not specified, RZloadingDone() is called.
+
+			If callback is specified, RZloadingDone() must be called to hide "Loading..." layers
+			and display all div & form tags with class="loadingHide"
+-----------------------------------------------------------------------------------------------*/
+function RZloadResources() //arguments: options,callback (see above description)
+{
+	var i, results;
+	var files = '';
+	var options = '';
+	var callback = null;
+	var caller = arguments.callee.caller;
+	RZ.calendar.title = 'calendar loading';
+
+	//DCO 08-22-2015: chrome hack to ignore redundant body onload when loading js file
+	if (RZloadjscssfile.isProcessing 								//not persistant on chrome...
+	|| (window.frameElement && window.title == RZ.calendar.title))	//...workaround hack
+		return log('onload ignored for RZloadcssjsfile()');
+
+	//DCO 08-22-2015: chrome hack to ignore redundant body onload after window onload
+	if (caller.name == 'onload' && arguments.callee.onload_processed)
+		return log('onload already processed')
+	arguments.callee.onload_processed = true;
+
+	//DCO 08-22-2015:  log 1st call -- arguments.callee not persistant if js onload
+	if (!arguments.callee.isCalled && !arguments.callee.isJavascriptLoaded)
+		log('calendar loading starting: ' + new Date());
+
+	//DCO 08-22-2015: check for calendar in other iframe when detail iframe loaded
+	if (isStandalone)
+	{
+		RZloadResources.status = 'checking for open calendar in iframe';
+		for (var f=0; f<top.frames.length; f++)
+		{
+			try
+			{
+				var frm = top.frames[f]
+				if (!homeframePattern.test(frm.location.pathname)) continue;
+				isStandalone = false;
+				homeframe = frm;
+				break;
+			}
+			catch (e) {};	//igmore cross domain frame
+		}
+	}
+
+	//----- Put function arguments into args array
+	RZloadResources.status = 'process arguments';
+	var args = [];
+	for (var i=0;typeof(RZloadResources.arguments[i])!='undefined';i++)
+		if (!isNaN(i)) args.push(RZloadResources.arguments[i]);
+
+	// get callback and options arguments if specified
+	while (args.length)
+	{
+		var arg = args.shift();
+		if (arg.constructor == Function)
+			callback = arg;
+		else
+			options = arg;
+	}
+	//var isCallbackRequired = (callback != null);	//true if callback exists
+
+	//----- On home page (non-devmode), get common javascript 1st time called
+	//		(better done here so Loading... message appears more quickly)
+	if (!RZ.devmode && !RZloadResources.isJavascriptLoaded && window == homeframe)
+	{
+		RZloadResources.isJavascriptLoaded = true;
+		RZloadjscssfile('js/calendar_app_javascript.js',callback);
+		return false;
+	}
+
+	//----- Edit form script loading (may be redundant)
+	else if (!RZ.devmode && RZ.isEditPage	//for non-dev editform
+	&& !RZloadResources.isJavascriptLoaded	//and if not already done
+	&& !homeframe.RZ.scriptLoaded.calendar_app_javascript)
+	{
+		RZloadResources.isJavascriptLoaded = true;
+		files = [RZ.calendar.pluginsFolder + 'js/calendar_app_view_common.js',
+				 RZ.calendar.pluginsFolder + 'js/calendar_app_view_full.js',
+				 RZ.calendar.pluginsFolder + 'js/calendar_app_view_mini.js'
+		];
+		log('load scripts for edit page -- probably redundant');
+		RZloadjscssfile(files,callback);
+
+		// scripts loaded directly, nothing to clone below
+		homeframe.RZ.calendar.functionListCommon = [];
+		homeframe.RZ.calendar.functionListFullView = [];
+		return false;
+	}
+	RZloadResources.status = '';
+
+	if (RZloadResources.isCalled) return true;		//resources already loaded
+	RZloadResources.isCalled = true;
+
+	/**************************************************/
+	/*BOOKMARK -----Processing after script(s) loaded*/
+	/************************************************/
+	RZloadResources.status = 'Processing after script(s) loaded';
+	try
+	{
+		//----- Grab resources from homeframe
+		while (true)
+		{
+			if (isStandalone) break;			//quit if homeframe NOT found
+			if (window == homeframe) break;		//OR page is homeframe
+
+			/********************************************************/
+			/*BOOKMARK -----(2) Link to homeframe RZ or RZ.calendar*/
+			/******************************************************/
+			if (!RZ.isEditPage)
+			{
+				RZloadResources.status = 'loading home page RZ data'
+				RZ = homeframe.RZ;
+			}
+			// always get these homeframe objects
+			else
+			{
+				RZloadResources.status = 'loading home page RZ.calendar data'
+				RZ.calendar = homeframe.RZ.calendar;
+				RZ.debug = homeframe.RZ.debug;
+			}
+
+			/**********************************************************/
+			/*BOOKMARK -----(3a) Link to home page resident functions*/
+			/********************************************************/
+			RZloadResources.status = 'linking homeframe resident functions';
+			var residentFunctions = [
+				'RZdate',			//all RZdate objects must reside in homeframe
+				'RZpopupUrl',		//all windows must be opened from homeframe
+				'setView',
+				''
+			];
+			for (i=0;i<residentFunctions.length-1;i++)
+			{
+				var funcName = residentFunctions[i];
+				if (!window[funcName] && homeframe[funcName])
+					window[funcName] = homeframe[funcName];
+			}
+
+			//----- Quit if devmode, functions are loaded with normal script tags
+			if (RZ.devmode)
+			{
+				/*DCO 08-22-2015: files been loaded by setupView() for quite some time
+				//----- Get css and either mini or full js
+				var path = RZ.isEditPage ? "../" : "";
+				files = [path + RZ.calendar.css];
+				if (RZ.isEditPage || RZ.calendar.view != 'mini')
+					files.push(path + "js/calendar_app_view_full.js");
+				else
+					files.push(path + 'js/calendar_app_view_mini.js');
+				RZloadjscssfile(files);	//don't bother to wait
+				*/
+				break;
+			}
+
+			/**********************************************************/
+			  /*BOOKMARK -----(3b) Link or Clone non-resident functions*/
+			/********************************************************/
+			RZloadResources.status = 'linking and cloning home page functions';
+
+			var patternFunction = /function\s*(\w*)\s*\((.*?)\)[^{]*{([\s\S]*)}/
+			var cloneFunctions = 'RZtrace,RZtrim,RZwinaccess,RZeventadd,RZeventremove,'
+							   + 'RZrefreshcapture,RZisadmin,RZdup,RZaddUrlParameter,'
+							   + 'RZedit,RZeditform,RZeditlist,RZdelete,'
+							   + 'RZgetEditPageUrl,RZisAbsoluteUrl,RZsetEditParameters,'
+							   + 'RZsaveReturnUrl,RZsetCookieValue,RZsetcookie,RZgetcookie,'
+							   + 'RZgetfileinfo,RZright,RZparseDate,'
+							   + 'RZsetParameter,RZsetEditRecordParameter,RZpermissionWarning,RZsubstring,'
+							   + 'RZcheckoptions,RZabsoluteUrl,RZactionReset,RZistrue,'
+							   + 'RZgetoption,RZgetoptionvalue,RZcheckoption,'
+							   + 'RZdisplayCaller,RZclearTimeout,'
+							   + 'closeWindow,closeWindowDispatcher,RZsetFocusAndClose';
+
+			var js = [RZ.calendar.functionListCommon,RZ.calendar.functionListFullView];
+			for (var s=0;s<js.length;s++)
+			{
+				var resultsList = js[s] || [];	//null if detail view fullview.js not loaded
+				for (i=0;i<resultsList.length;i++)
+				{
+					var funcName = resultsList[i];
+					if (!window[funcName] && homeframe[funcName])
+					{
+						// link function by default
+						// TODO: consider wrapping these functions with try/catch in case
+						//		 they are called after homeframe gets closed prematurely.
+						var funcCode = homeframe[funcName];
+
+						// clone if script contains "document." or "window." or in clone list
+						if (homeframe.RZcheckoptions(cloneFunctions,funcName)
+						|| homeframe[funcName].toString().search(/(alert\(|document\.|window\.)/) != -1)
+						{
+							var funcScript = homeframe[funcName].toString();
+							var results = funcScript.match(patternFunction);
+							if (results)
+							{
+								var name = results[1];
+								var args = results[2];
+								var code = '//clone of: ' + name + '\n'
+										 + results[3];
+								funcCode = new Function(args,code);
+							}
+						}
+						window[funcName] = funcCode;
+					}
+				}
+			}
+
+			/**********************************************************/
+			/*BOOKMARK -----(3c) Link or Clone non-resident functions*/
+			/* Backward compatibility with beta version 3.1  */
+			/* scan page for scripts functions & link to home page */
+			/******************************************************/
+			/*
+			if (RZ.calendar.version.indexOf('3.1') != -1)
+			{
+				status = 'getting other referenced home page functions';
+				var patternFunctionCall = '[^\\.](RZ\\w+)\\s*\\(';
+				var pattern = new RegExp('(RZ\\w+)\\s*\\(','i');
+				var js = document.getElementsByTagName('script');
+				for (var s=0;s<js.length;s++)
+				{
+					if (js[s].src) continue;	//skip include files (no innerHTML)
+					var resultsList = js[s].innerHTML.match(new RegExp(patternFunctionCall,'gi'));
+					if (resultsList)
+					{
+						for (i=0;i<resultsList.length;i++)
+						{
+							var results = resultsList[i].match(pattern);
+							var name = results[1];
+							if (!window[name] && homeframe[name])
+								window[name] = homeframe[name];
+						}
+					}
+				}
+			}
+			*/
+
+			/*******************************************/
+			/*BOOKMARK -----(4) Clone home page styles*/
+			/*****************************************/
+
+			/***** DCO 12-08-2012: disable and activate cooresponding code below
+			// Real slow on IE8, much quicker & less risk to just reread css file
+
+			status = 'getting homeframe styles';
+			var s, r, styleSheet, styleElement, rule, cssText, selectorText='';
+			var rules = homeframe.document.all ? 'rules' : 'cssRules';
+			var styleSheets = homeframe.document.styleSheets;
+
+			// Find RZ.calendar.css styleSheet in home page document object
+			for (s=0;s<styleSheets.length;s++)
+			{
+				styleSheet = styleSheets[s];
+				if (!styleSheet.href
+				|| styleSheet.href.indexOf(RZ.calendar.css) == -1)	//full screen (standard or custom)
+					continue;
+
+				// create browser dependent style object
+				if (RZ.MSIE)
+					styleElement = document.createStyleSheet();
+
+				// Standard compliant browsers: Firefox, Chrome, Safari
+				else
+				{
+					styleElement = document.createElement("style");
+					document.getElementsByTagName("head")[0].appendChild(styleElement);
+					styleElement = document.styleSheets[document.styleSheets.length-1];
+				}
+
+				// copy all rules
+				var ruleIndex = 0;
+				for (r=0;r<styleSheet[rules].length;r++)
+				{
+					var rule = styleSheet[rules][r];
+					// skip directives (e.g. @charset "utf-8")
+					// rule.constructor undefined for IE8
+					//if (rule.constructor != CSSStyleRule) continue;
+
+					cssText = rule.style.cssText;
+					if (!cssText)
+						continue;
+
+					if (RZ.MSIE)
+					{
+						if (cssText.substr(0,1) == '-')
+							continue;
+						var selectors = rule.selectorText.split(',');
+						for (var k=0;k<selectors.length;k++)
+						{
+							selectorText = RZtrim(selectors[k]);
+							if (/not\(/.test(selectorText))
+								continue;
+							if (/(canvas|audio|video|not\()/.test(selectorText))
+								continue;
+							styleElement.addRule(selectorText, cssText);
+						}
+					}
+					else
+					{
+						selectorText = rule.selectorText;
+						styleElement.insertRule(selectorText + ' {' + cssText + '}',ruleIndex++);
+					}
+				}
+			}
+			*****/
+
+			break;
+		}	//end homeframe grabbing
+	}
+	catch (e) 	// no access to opener, error copying css or functions
+	{
+		if (RZ.debug) debugger;
+		RZloadingDone(e)
+	}
+	RZloadResources.status = 'Additional setup for all pages';
+
+	/***********************************************/
+	/*BOOKMARK -----Additional setup for all pages*/
+	/*********************************************/
+	if (RZ.debug) setDebug(true);
+
+	//----- Activate Pause/Break (debug mode) key
+	RZeventadd(document, "keyup", function(e)
+	{
+		var keycode = (window.event) ? event.keyCode : e.keyCode;
+		if (keycode == 19) setDebug();
+	});
+
+	/************************************************************/
+	/*BOOKMARK -----Initialize additional RZ variables for page*/
+	/**********************************************************/
+	RZ.calendar.isStandalone = isStandalone;
+	var helpButton = document.getElementById('help');
+	if (helpButton) RZ.calendar.helpButton = helpButton.outerHTML;
+
+	// Must be logged in on edit pages
+	RZ.calendar.isLogin = true;
+	if (typeof RZcheckoptions != 'undefined' 	//standalone page (e.g. signup form)
+	&& RZcheckoptions(RZ.pagetype,'editlist,editform'))
+	{
+		RZ.calendar.loginWebspace = RZgetcookie('RZlogin', homeframe.RZ.page.domain);
+		RZ.calendar.eventsPermission = homeframe.RZlogin('','calendar_events','c|u','editform');
+		RZ.calendar.isLogin = (RZ.calendar.loginWebspace == RZ.webspace && RZ.calendar.eventsPermission);
+	}
+
+	// if refreshdata on url, mark data stale (safety call - probably already done)
+	if (g.isRefreshData) setDataStale();
+
+	/************************************************/
+	/*BOOKMARK -----Load any css or js files needed*/
+	/**********************************************/
+	RZloadResources.status = 'Load any css or js files needed';
+	var files = [];
+
+	//----- On homepage, css loaded when grid drawn, after RZ.calendar.css initialized
+	//		below code loads specified css for other pages except if mini view
+	//		e.g. detail, signup, config or any other editform or editlist
+	if (window != homeframe)
+	{
+		var siteFolder = RZgetfileinfo(RZ.calendar.home).pathname + '/';
+
+		//DCO 08-22-2015: get here when upcoming event clicked in mini view
+		if (RZ.calendar.view != 'mini')		//mini css already loaded
+			files.push(siteFolder + RZ.calendar.css);
+
+		if (RZ.devmode)		//always get freshest js files in devmode
+		{
+			files.push('/revize/util/snippet_helper.js');
+
+			//DCO 08-22-2015: file been loaded by setupView() for quite some time
+			//files.push('js/calendar_app_view_full.js');
+		}
+	}
+
+	// If files to load, do it and wait for them
+	if (files.length > 0)
+	{
+		RZloadResources.status = 'loading ' + files.join(',');
+//		isCallbackRequired = false;		//callback handled by RZloadjscssfile()
+		RZloadjscssfile(files,callback);
+
+		return !callback;		//return true if no callback
+//		return false;			//caller waits for callback after files load e.g. setup()
+	}
+
+	//----- callback (may not be caller) or RZloadingDone() if there is no callback
+	if (callback)	// && isCallbackRequired)
+	{							//callback not called by RZloadjscssfile()...
+		callback();				//...so call it here simulating wait for files
+		return false;			//caller will quit and wait for callback
+	}
+	else if (!callback)			//no callback specified...
+		RZloadingDone();		//run if no callback function
+	return true;
+}
+/*-----------------------------------------------------------------------------
+First time called the following occures:
+1. Hide Loading... div's and make class="loadingHide" div and form tags visible
+2. Add onunload handler that gives focus to the caller
+3. Display debug mode if running in debug mode
+
+if arg is string or error object, it is displayed as error message via Loading layer
+if arg is object and not error object or null, visibility set to visible
+-----------------------------------------------------------------------------*/
+RZloadingDone.LOADING = 'Difficulty Loading Page <br>'
+				      + 'Clear browser cache or Try again later<br>'
+					  + ' Contact Tech Support if Persistant'
+function RZloadingDone(arg,LOADING)
+{
+	if (LOADING) 	//disable detail iframe unload event handler -- signup Send
+		RZloadingDone.onbeforeunloadIgnore = true;
+
+	//----- Parse arguments
+	var errorMsg = null;
+	var elementId = null;
+	var isShow = false;
+
+	if (arg == 'show')
+		isShow = true;
+
+	else if (arg == 'corrupt')
+		errorMsg = 'Page Script Corrupt';
+
+	else if (typeof(arg) == 'string' && arg)
+		errorMsg = arg;
+
+	else if (typeof(arg) == 'object' && arg != null)
+	{
+		if (arg.name)	//error object from catch(e)
+		{
+			errorMsg = arg.message;
+			if (RZloadResources.status)
+				errorMsg = 'Error while ' + RZloadResources.status + '<br><br>' + errorMsg;
+
+			if (arg.stack)
+			{
+				var stackTrace = EZformatStack(arg.stack).join('\n');
+				stackTrace = stackTrace.replace(/http:.*?\/calendar_app\//g, '.../calendar_app');
+				errorMsg += '<br/><br/><div align="left"><pre>&nbsp;' + stackTrace + '<pre></div>';
+			}
+			else		//IE11 supports stack but msg below still good for IE11-
+				errorMsg += '<br/><br/>Use Chrome to get stack trace';
+		}
+		else			//layer to turn on
+			elementId = arg;
+	}
+	else if (errorMsg != null)
+		errorMsg = errorMsg.replace(/\n/g,'<br>');
+
+	var loading = document.getElementById('loading');
+	var waiting = document.getElementById('waiting');
+
+	//----- If not errorMsg and first call, hide loading layer
+	while (!RZloadingDone.isCalled && errorMsg == null)
+	{
+		var cancel = document.getElementById('cancel');
+		if (cancel && cancel.parentNode && cancel.parentNode)
+			RZ.calendar.cancelButton = cancel.parentNode.innerHTML;
+
+		if (!RZ.calendar.isLogin)
+		{
+			RZloadingDone.LOADING = 'Login Required to Update Calendar Data';
+			errorMsg = '';
+			if (RZ.calendar.loginWebspace != RZ.webspace)
+				errorMsg += '<p> Currently logged into webspace: ' + RZ.login + '</p>';
+
+			if (RZ.calendar.helpButton)
+				errorMsg += ' <p>' + RZ.calendar.helpButton;
+			if (RZ.calendar.cancelButton)
+				errorMsg += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + RZ.calendar.cancelButton;
+			break;
+		}
+		RZloadingDone.LOADING = '';		//clear so future messages do not display
+
+		// Give window focus (and turn on elementId if passed)
+		setTimeout(function()
+		{
+			window.focus();
+			if (elementId) elementId.style.visibility = 'visible';
+		},1000);
+
+		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+		 * lower priority tasks that should not keep page hidden if errors *
+		 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+		//----- Create onunload event if opener (homeframe == window if standalone or home page)
+		//if (window.name != RZ.calendar.winNames.home || RZisPopupCall())
+		/*DCO 11-24-2014: disable unload event until done properly
+			RZeventadd(window, 'unload', function closeWindow_unload()
+			{
+				closeWindow('unload')
+			});
+		*/
+		//RZrefreshcapture()
+
+		//----- show debug status when page first loads
+		if (!RZ.debug && window.name == RZ.calendar.winNames.home)
+			RZ.debug = RZgetcookie('calendar_debug') == 'true';
+
+		setDebug(RZ.debug);
+		break;
+	}
+
+	// Show page, hide loading message
+	if (!RZloadingDone.isCalled || isShow)
+	{
+		loading.style.display = 'none';
+		waiting.style.visibility = 'hidden';
+	}
+
+	//----- For all div & form tags with class="loadingHide"...
+	//		Make visible if not errorMsg; if errorMsg dim or hide
+	var bodyTag = document.getElementsByTagName('body')[0];
+	/* moved to end of outer function
+	function ...RZloadingDoneDisplay(tags)
+	{
+
+	}
+	*/
+	// unhide loadinghidden
+	RZloadingDoneDisplay(bodyTag.getElementsByTagName('div'));		//start with div tags
+	RZloadingDoneDisplay(bodyTag.getElementsByTagName('form'));		//then check form tags
+
+	//----- If errorMsg, update and display loading layers
+	if (errorMsg != null)
+	{
+		if (LOADING) RZloadingDone.LOADING = LOADING;
+		var el = loading.getElementsByTagName('span')[0];
+		if (el)
+			el.innerHTML = RZloadingDone.LOADING;
+
+		waiting.innerHTML = errorMsg;
+		if (errorMsg.length > 200)
+			loading.style.top = '15px';
+		loading.style.display = 'block';
+		waiting.style.display = 'block';
+
+		waiting.style.visibility = 'visible';
+		if (arg.stack)
+		{
+			waiting.style.visibility = 'hidden';
+			waiting.style.fontSize = '12px';
+			waiting.style.textAlign = 'left';
+			window.scrollTo(0,0);
+
+			var tags = [];
+			tags.push(loading.getElementsByTagName('a')[0]);
+			tags.push(document.getElementById('welcome_text'));
+
+			var showErrorMsg = function(evt)
+			{
+				EZeventCancel(evt, true);
+				waiting.style.visibility = waiting.style.visibility == 'visible' ? 'hidden' : 'visible';
+			};
+			tags.forEach(function(el,idx)		//add showErrorMsg tags that can show
+			{
+				if (el)
+				{
+					if (idx > 0)
+						el.style.color = '#C00';
+					else
+						el.style.fontSize = '12px';
+
+					if (el.addEventListener) el.addEventListener('click', showErrorMsg, false);
+					else if (el.attachEvent) el.attachEvent('click', showErrorMsg);
+				}
+			});
+		}
+	}
+	//----- Give focus to first form field
+	else if (!RZloadingDone.isCalled && RZ.pagetype == 'editform')
+	{
+		if (window.RZsetfieldfocus)			//v199 snippet_helper.js
+			RZsetfieldfocus(true);
+		else if (window.RZsetFieldFocus)	//calendar_app_view_common.js
+			RZsetFieldFocus(true);
+	}
+
+	RZloadingDone.isCalled = true;
+
+	//----- If iframe, give focus to parent so break key opens adminpanel
+	//		by default not calendar debug unless it gets focus
+	if (homeframe != parent.homeframe)
+	{
+		if (RZ.calendar.view != 'mini'
+		&& window.frameElement && window.frameElement.parentNode.id == 'RZcalendar_detail')
+		{
+			setFrameSize.call(top, window.frameElement);
+		}
+		else
+			setTimeout(function() {homeframe.parent.focus()}, 1000);
+	}
+
+	//----- Calling resize a second time after displayed in container gets
+	//		the correct height of the window. Resize just once after setup
+	//		is always too small and once here gets an absurdley tall frame
+	//		height. Using together creates a well fitting frame - DJO 06/19/17
+	if( typeof resize !== "undefined" ) {
+		resize();
+	}
+
+	log('calendar loading finished: ' + new Date());
+	//-------------------------------\\
+	return errorMsg == null;
+	//-------------------------------//
+	/**
+	 *
+	*/
+	function RZloadingDoneDisplay(tags)
+	{
+		for (var i=0;i<tags.length;i++)
+		{
+			var tag = tags[i];
+			if (tag.className.indexOf("loadingHide") != -1)
+			{
+				if (errorMsg == null)
+				{
+					if (!RZloadingDone.isCalled || isShow)
+						tag.style.visibility = 'visible';
+				}
+				//DCO 08-22-2015 keep calendar displayed if stacktrace
+				else if (tag.style.visibility = 'visible' && !arg.stack)
+				{
+					tag.style.visibility = 'hidden';
+				}
+			}
+		}
+	}
+}
+/*-----------------------------------------------------------------------------------
+close popup error
+-----------------------------------------------------------------------------------*/
+function RZloadingContinue(isDone)
+{
+	if (document.getElementById('popupErrorMessage'))		//DCO 08-22-2015
+	{
+		document.getElementById('popupErrorMessage').style.display = 'none'
+		document.getElementById('popupErrorMessageDetail').innerHTML = '';
+	}
+	if (isDone !== false)
+		RZloadingDone('show');
+}
+/*-----------------------------------------------------------------------------------
+RZloadjscssfile(...)
+
+original credit:
+	http://stackoverflow.com/questions/3765364/javascript-how-to-inject-external-html-file-on-same-domain
+
+callback credit:
+	http://www.ejeliot.com/blog/109 however nogo for firefox
+
+Arguments:
+	doc 		(optional) document where file appended (default document)
+	filepath(s)	(required) string or string array containing filepath(s) to load
+	type		(optional) type of file (css or js)
+	callback 	(optional)	callback function
+
+-----------------------------------------------------------------------------------*/
+function RZloadjscssfile()
+{
+	var type,fileref;
+	if (RZloadjscssfile.isProcessing)	//will probably work with multiple instances
+		return RZloadingDone('RZloadjscssfile called before prior files processed');
+	RZloadjscssfile.isProcessing = true;
+	RZfileloaded.startTime = new Date().getTime();
+
+	if (!RZloadjscssfile.waitInterval) RZloadjscssfile.waitInterval = 500;
+	if (!RZloadjscssfile.waitShowFiles) RZloadjscssfile.waitShowFiles = 5000;
+	if (!RZloadjscssfile.waitTryLater) RZloadjscssfile.waitTryLater = 30000;
+
+	if (!RZloadjscssfile.filesLoading) RZloadjscssfile.filesLoading = [];
+	if (!RZ.scriptLoaded) RZ.scriptLoaded = {};
+
+	//----- Get arguments
+	var arg = 0;
+	var doc = arguments[0];
+	//DCO 08-22-2015: never worked but was not used
+	//if (doc == 'object' && doc != null && doc.constructor != Function)
+	if (typeof doc == 'object' && doc != null && doc.constructor != Array)
+		arg = 1;
+	else
+		doc = document;
+
+	var filepaths = arguments[arg];
+	if (filepaths.constructor != Array)
+		filepaths = [filepaths];
+
+	var filetypes = arguments[arg+1];
+
+	var callback = null;
+	if (filetypes == null || filetypes.constructor == Function)
+	{
+		callback = filetypes;
+		filetypes = '';
+	}
+	else if (arguments.length > arg+2)
+		callback = arguments[arg+2];
+	RZloadjscssfile.callback = callback;
+
+	//----- load each file...
+	for (var i=0;i<filepaths.length;i++)
+	{
+		var filepath = filepaths[i];
+		var filetype = filetypes;	//if single type for all files
+		if (filetypes.constructor == Array)
+		{
+			if (i<filetypes.length)
+				filetype = filetypes[i];
+			else
+				filetype = ''
+		}
+
+		//----- if type not specified, use file extension to determine type
+		if (!filetype && filepath.lastIndexOf('.') != -1)
+			filetype = filepath.substring(filepath.lastIndexOf('.')+1);
+		if (!filetype) continue;	//no extension, ignore this file
+
+		//----- get just filename (no path, no extension)
+		var filename = filepath.substring(0,filepath.lastIndexOf('.'));
+		if (filename.lastIndexOf('/') != -1)
+			filename = filename.substring(filename.lastIndexOf('/')+1)
+
+		// change to index of to allow for cache busting of resources
+		if (filetype.indexOf('css') == 0 )
+		{
+			type = "text/css";
+			fileref = doc.createElement("link")
+			fileref.setAttribute("rel", "stylesheet")
+			fileref.setAttribute("type", type)
+			fileref.setAttribute("href", filepath)
+		}
+		else if (filetype.indexOf('js') == 0 )
+		{
+			type = "text/javascript";
+			fileref = doc.createElement('script');
+			fileref.setAttribute("type","text/javascript");
+			//fileref.setAttribute("defer",true);		//don't think so, script must run
+			fileref.setAttribute("src", filepath)
+
+			//-----	FF and Chrome trigger onload but script may still be running; useful
+			//		to shorten initial wait time; not sure if triggered when file not found
+			if (typeof(fileref.onload) != 'undefined')
+				fileref.onload = function() {RZfileloaded(fileref)};
+			//fileref.onload = function() {RZfileloaded(fileref,true)};	//FF only
+		}
+		else	//will display error message
+		{
+			type = "unknown";
+			fileref = {type:type, href:filepath};
+		}
+
+		//----- IE7 (plus ??) triggers loaded & complete events for js files
+		//		Firefox / Chrome trigger onload BUT script may not have completed.
+		//
+		//		IE triggers event regardless of whether file is found (useful to stop waiting)
+		//
+		//		Don't believe any browser triggers events for css; If necessary, could probably
+		//		wait for last selector to get applied (similar to javascript strategy).
+		if (typeof(fileref.onreadystatechange) != 'undefined')
+		{
+			fileref.onreadystatechange = function() 	//IE 6 & 7 ??
+			{
+				if (this.readyState == 'complete' || this.readyState == 'loaded')
+				{
+					//debugger;
+					RZfileloaded(fileref);
+				}
+			}
+		}
+		//----- Add the link or script tag to head to load the file
+		if (type != 'unknown')
+			doc.getElementsByTagName("head")[0].appendChild(fileref);
+
+		RZloadjscssfile.filesLoading.push( {fileref:fileref,
+											type:type,
+											missing: false,
+											waiting: false,
+											filepath: filepath,
+											filename: filename,
+											callback:callback}
+										 );
+	}
+	//DCO 08-22-2015: chrome hack to ignore redundant body onload when loading js file
+	if (window.frameElement)
+		window.title = RZ.calendar.title;
+	log('loading ' + filepaths);
+
+	// Initially for Firefox CSS because no event triggered,
+	// but now used to wait for all files to load.
+	RZfileloaded();
+	//setTimeout('RZfileloaded()',0);
+	return false;
+
+	/*---------------------------------------------------------------------------------------------
+	Hide loading layer after all files loaded
+		check for file loaded every RZloadjscssfile.waitInterval seconds (default .5)
+		after RZloadjscssfile.waitShowFiles seconds (default 5) display "waiting for..."
+		after RZloadjscssfile.waitTryLater seconds (default 60) clear loading message,
+			do not display calendar, put dim message to try later
+	---------------------------------------------------------------------------------------------*/
+	function RZfileloaded(filerefArg,isLoaded)
+	{
+		if (RZloadjscssfile.filesLoading.length == 0) return;
+
+		var br = '<br/>';
+		var file,fileref;
+		var delayTime = 0;		//milliseconds before calling ourself (=0 no call to ourself);
+		var now = new Date().getTime();
+		var loading = document.getElementById('loading');
+		var waiting = document.getElementById('waiting');
+		var rules = document.all ? 'rules' : 'cssRules';
+		var styleSheet = document.all ? 'styleSheet' : 'sheet';	//FF fileref property is sheet
+
+		// All files are queued so when list is empty, call the callback
+		if (typeof(filerefArg) != 'object') 	//FF quirk
+		{
+			filerefArg = null;
+			isLoaded = false;
+		}
+
+		var isFilesDisplayed = false;
+		var type;
+		var filesWaiting = {};
+		var filesMissing = {};
+
+		//----- For files still loading...
+		for (var f=RZloadjscssfile.filesLoading.length-1;f>=0;f--)
+		{
+			var isFileLoaded = false;
+			file = RZloadjscssfile.filesLoading[f];
+			fileref = file.fileref;
+
+			// check if css file loaded
+			var e;
+			try
+			{
+				if (file.type == 'text/css' && fileref && fileref[styleSheet])
+				{
+					// FF will throw exception if loading is incomplete
+					if (fileref[styleSheet][rules] && fileref[styleSheet][rules].length > 0)
+						isFileLoaded = true;
+				}
+			}
+			catch(e)
+			{
+				filerefArg = null;
+				//debugger;
+			}
+
+			// check if js file loaded
+			if (file.type == 'text/javascript' && (isLoaded || RZ.scriptLoaded[file.filename]))
+				isFileLoaded = true;
+
+			if (isFileLoaded)
+			{
+				log('file loaded: ' + file.filepath);
+				RZloadjscssfile.filesLoading.splice(f,1);	//remove loaded file from loading list
+			}
+			// display files after waiting waitShowFiles milliseconds (default 5 seconds)
+			else
+			{
+				if (file.missing
+				|| (filerefArg === fileref && file.type != 'text/javascript')
+				|| now - RZfileloaded.startTime > RZloadjscssfile.waitTryLater)
+				{
+					isFilesDisplayed = true;
+					if (!file.missing)
+					{
+						RZfileloaded.startTime = now;
+						//if (file.waiting)	//if previously waiting, only show for half time
+						//	RZfileloaded.startTime -= RZloadjscssfile.waitTryLater / 2;
+					}
+					file.missing = true;
+					if (!filesMissing[file.type]) filesMissing[file.type] = [];
+					filesMissing[file.type].push({type:file.type, filepath:file.filepath});
+				}
+				else if (file.waiting
+				|| now - RZfileloaded.startTime > RZloadjscssfile.waitShowFiles)
+				{
+					isFilesDisplayed = true;
+					if (!file.waiting)
+						RZfileloaded.startTime = now;
+					file.waiting = true;
+					if (!filesWaiting[file.type]) filesWaiting[file.type] = [];
+					filesWaiting[file.type].push({type:file.type, filepath:file.filepath});
+				}
+			}
+		}
+
+		//----- If all files loaded, call callback function
+		if (RZloadjscssfile.filesLoading.length == 0)
+		{
+			//DCO 08-22-2015: clear message if any
+			if (RZloadjscssfile.waiting)
+			{
+				waiting.style.display = 'none';
+				RZloadjscssfile.waiting = false;
+			}
+			RZloadjscssfile.isProcessing = false;
+			if (window.frameElement)
+				window.title = '';
+
+			if (RZloadjscssfile.callback)
+			{
+				log('all files loaded -- callback: ' + RZloadjscssfile.callback.name + '(...)');
+				RZloadjscssfile.callback();
+			}
+			else
+			{
+				log('all files loaded -- no callback using RZloadingDone()');
+				RZloadingDone();
+			}
+			RZ.calendar.loaded = true;
+			setTimeout(function(){ calResize("Common: RZfileloaded - All files finished"); }, 200);
+		}
+
+		//----- After waitTryLater (default one minute), display try later
+		else if (now - RZfileloaded.startTime > RZloadjscssfile.waitTryLater)
+		{
+			RZloadjscssfile.isProcessing = false;
+			waiting.style.display = 'block';
+			waiting.className = 'unavailable';
+			waiting.innerHTML = 'Calendar ' + RZ.calendar.version + br + br
+							  + 'Some resources did not load' + br
+							  + 'Clear browser cache or Try again later;' + br
+							  + 'Contact Tech Support if this Persists';
+			loading.getElementsByTagName('span')[0].innerHTML = '';
+		}
+
+		//----- After RZloadjscssfile.waitShowFiles seconds or 404 error, display waiting or unavailable
+		else if (isFilesDisplayed)
+		{
+			var html = '';
+			delayTime = RZloadjscssfile.waitInterval;
+
+			// t=0 for waiting files; t=1 for missing files (i.e. 404 error)
+			for (var t=0;t<=1;t++)
+			{
+				var files = t==0 ? filesWaiting : filesMissing;
+				for (type in files)
+				{
+					if (files[type].length == 0) continue;
+					if (type == 'text/css')
+					{
+						if (t==1)
+							html += br + '<b>Following Styles Unavailable:</b>' + br;
+						else
+							html += br + 'Waiting for following styles:' + br;
+					}
+					else
+					{
+						if (t==1)	//should not occur because no callback for script files??
+							html += br + '<b>Following script file(s) unavailable:</b>' + br;
+						else
+							html += br + 'Waiting for following script file(s):' + br;
+					}
+					for (f=0;f<files[type].length;f++)
+						html += files[type][f].filepath + br;
+				}
+			}
+			if (html)
+			{
+				RZloadjscssfile.waiting = true;
+				waiting.style.display = 'block';
+				html = 'Calendar ' + RZ.calendar.version + br + html;
+			}
+			waiting.innerHTML = html;
+		}
+		else
+			delayTime = RZloadjscssfile.waitInterval;
+
+		//----- Keep waiting if not called for specific file...
+		if (delayTime > 0 && !filerefArg)
+			setTimeout(RZfileloaded, delayTime);
+	}
+}
+/*-----------------------------------------------------------------------------
+Display msg in loading container; also copy in calendar_app_edit.js to
+use w/o republishing javascript templates with (ver 12-18-2012) update.
+-----------------------------------------------------------------------------*/
+function RZloadingMessage(msg)
+{
+	var loading = document.getElementById('loading');
+	if (loading)
+	{
+		var divs = document.getElementsByTagName('div');
+		for (var i=0;i<divs.length;i++)
+			if (divs[i].className == 'loadingHide')
+				divs[i].style.display = 'none';
+		if (!msg) return;
+		loading.style.display = 'block';
+		window.scrollTo(0,0);
+		RZdisplayLoading(loading,msg,30);
+	}
+}
+/*-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------*/
+function RZsetWindowName(winName)
+{
+	window.name = winName;
+	homeframe.RZ.calendar.openWins[winName] = window;
+}
+/*-----------------------------------------------------------------------------------
+set iframe and container to browser window size
+
+		if (location.href.indexOf('signup') != -1)	//hack for signup page
+		{
+			//opts.width = body.clientWidth + 260;
+			//opts.height = body.clientHeight + 100;
+		}
+	wrap.style.visibility = 'hidden';	//hide while size -- now done popupDetailIframeLayer
+	wrap.style.display = 'block';		//set display = block to get full body height/width
+-----------------------------------------------------------------------------------*/
+function setFrameSize(iframe)
+{
+	if (!iframe) return;
+	var body = iframe.contentDocument.getElementsByTagName('body')[0];
+	var wrap = iframe.parentNode;
+
+	//----- Create onbeforeunload event handler to catch back and forward actions
+	// 		http://www.hunlock.com/blogs/Mastering_The_Back_Button_With_Javascript
+	iframe.contentWindow.onbeforeunload = function (evt)
+	{
+		var ignore = RZloadingDone.onbeforeunloadIgnore;
+		RZloadingDone.onbeforeunloadIgnore = false;
+		if (ignore) return;
+
+	 	wrap.style.visibility = 'hidden';
+		//EZeventCancel(evt,true);	//does not cancel leave page warning on IE11
+		setTimeout('top.focus()', 500);
+	 	this.onbeforeunload = null;
+		return void(0)
+	}
+/*
+	if (!EZgetCurrentStyle(wrap, 'z-index'))
+		wrap.style.zIndex = '9999';
+
+	var bodyBgColor = EZgetCurrentStyle(body, 'background-Color');
+	var wrapBgColor = EZgetCurrentStyle(wrap, 'background-Color');
+	if (!wrapBgColor)
+	{									//default styles if no BG color on div
+		wrap.style.boxShadow = 'navy';
+		wrap.style.backgroundColor = 'rgba(0, 0, 128, 0.40)';	//dim navy
+		iframe.style.borderColor = 'rgba(0, 0, 128, 0.40)';
+		iframe.style.borderRadius = '5px';
+		if (!bodyBgColor)
+			body.style.backgroundColor = 'wheat';
+	}
+*/
+
+	//----- Max iframe layer width and height is browser window width/hieght - 50 pixels
+	if (EZgetCurrentStyle(wrap, 'position') == 'fixed')
+	{
+		var anchor = RZ.calendar.popupAnchorFrame || window.frameElement;
+		var opts = {top:anchor, right:anchor, minWidth: 580}
+		EZsetFrameSize.call(this,iframe, opts);
+	}
+	wrap.style.visibility = 'visible';
+	wrap.style.display = 'block';
+}
+/*--------------------------------------------------------------------------------------------------
+EZ.setFrameSize(iframe, options)
+
+Sets iframe and immediate container size to size of iframe body -- limited to browser window size.
+Positions iframe at specified top, right, bottom, left if iframe is fixed position.
+
+ARGUMENTS:
+	iframe		iframe element
+	options		(optional) object containing one or more of the following properties:
+				top, right, bottom, left: specifies iframe position relative to browser window
+					as number or element (uses offsetTop/offsetLeft/offsetWidth/offsetHeight)
+				width, height: if not specified body width and/or height used
+				minWidth, minHeight: default: 400, 300
+				margin: top, right, bottom, left margin for iframe
+RETURNS:
+	Array containing iframe [top, right, bottom, left] pixels as numbers --
+	If iframe not specified or invalid, Array has Browser window [scrollY,width,height,scrollY]
+-------------------------------------------------------------------------------------------------*/
+function EZsetFrameSize(iframe, options)
+{
+	options = options || {};
+	var top = options.top || '';
+	var right = options.right || '';
+	var bottom = options.right || '';
+	var left = options.right || '';
+	var width = options.width || '';
+	var height = options.height || '';
+	var minWidth = options.minWidth || 400;
+	var minHeight = options.minHeight || 300;
+	var margin = options.margin != undefined ? options.margin : 25;
+
+	// get browser window sizes
+	var browserHeight, browserWidth
+	var browserOffsets = [0,0];			//scroll offsets
+	if (!this.innerWidth)	//IE...
+	{
+		if (!(this.document.documentElement.clientWidth == 0))
+		{					//...strict mode
+			browserWidth = this.document.documentElement.clientWidth;
+			browserHeight = this.document.documentElement.clientHeight;
+			browserOffsets = {left: this.document.documentElement.pageXOffset,
+							  top: this.document.documentElement.pageYOffset};
+		}
+		else
+		{					//...quirks mode
+			browserWidth = this.document.body.clientWidth;
+			browserHeight = this.document.body.clientHeight;
+			browserOffsets = {left: this.document.body.pageXOffset,
+							  top: this.document.body.pageYOffset};
+		}
+	}
+	else					//WC3...
+	{
+		browserWidth = this.innerWidth;
+		browserHeight = this.innerHeight;
+		browserOffsets = {left: this.pageXOffset,
+						  top: this.pageYOffset}
+	}
+	var rtnValue = [browserOffsets.top, browserWidth, browserHeight, browserOffsets.left];
+
+	//----- iframe not specified or invalid
+	if (!iframe || !iframe.childNodes)
+		return rtnValue;
+
+	var body = iframe.contentDocument.getElementsByTagName('body')[0];
+	var wrap = iframe.parentNode;
+	if (!body || !wrap)
+		return rtnValue;
+
+	wrap.style.width = minWidth + 'px';
+	iframe.width = minWidth + 'px';
+
+	var bodyWidth = width || body.clientWidth; 		//+ body.scrollWidth;
+	var bodyHeight = height || body.clientHeight; 	//+ body.scrollHeight;
+
+	// min margins of 25 px -- min height
+	height = Math.min(browserHeight-margin*2, Math.max(minHeight, bodyHeight+10));
+	width = Math.min(browserWidth-margin*2, Math.max(bodyWidth, minWidth));
+
+	//----- Set iframe and wrapper height/width
+	wrap.style.width = width + 'px';
+	wrap.style.height = height + 'px';
+
+	iframe.width = width;
+	iframe.height = height;
+
+	//----- position iframe / wrapper
+	var offsets;
+	if (top.childNodes)
+	{
+		offsets = getOffsets(top, browserOffsets);
+		top = offsets.top;
+	}
+	if (right.childNodes)
+	{
+		offsets = getOffsets(right, browserOffsets);
+		right = browserWidth - (offsets.left + right.offsetWidth);
+	}
+
+	// ----- adj top/right to position inside browser window
+	if ((top+bottom) === '') top = 0;
+	if ((right+left) === '') left = 0;
+
+	if (top)
+	{
+		top = Math.min(Math.max(margin,top), browserHeight - height - margin);
+		bottom = browserHeight - height - top;
+	}
+	else if (bottom)
+	{
+		bottom = Math.min(Math.max(margin,bottom), browserHeight + height - margin);
+		top = browserHeight - height - bottom;
+	}
+	if (right)
+	{
+		right = Math.max(right, margin);
+		left = browserWidth - width - right;
+	}
+	else if (left)
+	{
+		left = Math.min(Math.max(margin,left), browserHeight - width - margin);
+		right = browserWidth - width - left;
+	}
+	wrap.style.top = top + 'px';
+	wrap.style.right = right + 'px';
+	wrap.style.left = '';
+
+	//================================
+	return [top, right, bottom, left];
+	//================================
+	/**
+	 *	return absolute offsets for el by traversing up dom tree.
+	 */
+	function getOffsets(el, browserOffsets)
+	{
+		browserOffsets = browserOffsets || {left:0, top:0};
+		var offsetLeft = el.offsetLeft - browserOffsets.left
+		var offsetTop = el.offsetTop - browserOffsets.top;
+		while (el = el.offsetParent)
+		{
+			offsetLeft += el.offsetLeft;
+			offsetTop += el.offsetTop;
+		}
+		return {left:offsetLeft, top:offsetTop};
+	}
+}
+/*---------------------------------------------------------------------------------------------
+EZ.isArray(arg, allowNaN) -- DW and IE10 need.
+
+---------------------------------------------------------------------------------------------*/
+function EZisArray(arg, allowNaN)
+{
+	if (!arg || typeof(arg) != 'object' || arg.constructor != Array)
+		return false;
+
+	if (allowNaN !== false)	//default is true
+		return true;
+
+	return Object.keys(arg).every(function(p)
+	{
+		if (isNaN(p)) return false;
+	});
+}
+/*---------------------------------------------------------------------------------------------
+String.format(args)
+
+Format String by replacing parameters contained within the string of the form {0}, {1} ... {n}
+with cooresponding arguments. Parameters outside the range of arguments ignored allowing multiple
+formats to be applied to String.  Calling format with no arguments removes all parameters.
+
+If the argument cooresponding to a parameter is an Array, its json representation replaces the
+parameter -- Example:
+
+	for argument value: [1,'abc',true] --> replacement value is: 1,'abc',true
+
+Of course, if array.toString() is passed as the argument, replacement value is: 1,abc,true
+
+EXAMPLE:
+	"Today is {0} with high temperature {1} and low {2}".format('sunny',80);
+		returns-->  "Today is sunny with high temperature 80 and low {2}"
+	"Today is sunny with high temperature 80 and low {2}".format()
+		returns-->  "Today is sunny with high temperature 80 and low"
+
+ARGUMENTS:
+	Any number of arguments can be specified cooresponding to parameters in string.
+	If only one argument is supplied and its an array, it specifies the arguments values.
+	if no arguments are supplied, any remaining parameters in string are cleared
+
+RETURNS:
+	string with parameters replaced by cooresponding arguments
+
+REFERENCE:
+	http://stackoverflow.com/questions/1353408/messageformat-in-javascript-parameters-in-localized-ui-strings
+---------------------------------------------------------------------------------------------*/
+String.prototype.format = function formatEZprototypeString()
+{
+	if (!arguments.length)	//if no arguments supplied, clear all parameters from string
+		return this.replace(/( ?\{(\d+)\} ?)/g, '$1'.replace(/  /,' ') );
+
+	var args = [].slice.call(arguments,0);
+	if (arguments.length == 1 && EZisArray(args[0]))
+		args = args[0];					//if only argument is array, args passed as array
+
+
+	// replace all parameters in string with supplied argument value
+	return this.replace(/(( ?)\{(\d+):?(\d*)\}( ?))/g,
+	function(str,param,leadindSpaces,idx,size,trailingSpaces)
+	{
+		if (idx >= args.length)			//if no more values, return single leading space if any
+			return param;
+
+		var value = '';
+		if (EZisArray(args[idx]))		//if value is array of items return as quoted string...
+		{								//...of array items keeping leading/trailing spaces
+			value = ("'" + args[idx].join("','") + "'").replace(/'(\d+|true|false)'/g,'$1')
+		}
+		else							//otherwise replace and compress spaces
+		{
+			value = (leadindSpaces + args[idx] + trailingSpaces).replace(/  /,' ');
+		}
+		if (!isNaN(size) && size > 0)				//if size specified, pad or truncate value
+		{
+			value = (value + ' '.repeat(size)).substr(0,size);
+		}
+		return value;
+    });
+}
+/*---------------------------------------------------------------------------------------------
+returns formatted stack as array cleaned up text lines
+1st item is message, 2nd is first non-EZ function if any
+---------------------------------------------------------------------------------------------*/
+function EZformatStack(stack, skipCount)
+{
+	if (!stack) return [];
+	skipCount = skipCount || 0;
+
+	stack = stack.replace(/#?(:\d*):\d*/g, '$1');
+	stack = stack.replace(/(\w*:).*(\/.*Configuration(\.\d)?)/g, '...$2');
+	stack = stack.split('\n');
+
+	var funcMaxSize = 15;
+	[true,false].forEach(function(maxSizePass)	//pre-process to determine funcMaxSize
+	{
+		var skip = skipCount;
+		var offset = - skipCount;
+		var stackLine = -1;
+		var funcInserted = false;
+		stack.slice().forEach(function(item, i)
+		{										//reformat & put 1st non-EZ function on top
+			if (stackLine < 0)
+			{
+				if (!/^\s*at/i.test(item)) return;
+				stackLine = i;
+			}
+			if (skip-- > 0)
+				return maxSizePass || stack.splice(stackLine,1);
+
+			// groups:    1       2   3         4                5         6
+			var labels = 'spaces, at, funcname, pathfile_lineno, filename, lineno';
+			var groups = item.match(/\n?(\s*?)(at)\s*([ \w.]+)\s*.*?(\((.*)(:[<>\d]*).*)?/, labels);
+
+			groups[3] = groups[3].trim() + (groups[6] || '');
+			groups[4] = unescape(groups[4] + '');
+
+			if (!groups[5])
+				groups[4] = '(...)'
+
+			if (maxSizePass)
+				return (funcMaxSize = Math.max(funcMaxSize, groups[3].length+2));
+
+			var format = ('{1}{2} {3:' + funcMaxSize + '} {4}').format(groups);
+			stack[i+offset] = format;
+		});
+	});
+	return stack;
+}
+/*---------------------------------------------------------------------------------------------
+cancel event propogation / bubble and optionally prevent default browser default action such as
+going to href link or running href:javascript:...
+
+http://stackoverflow.com/questions/5963669/whats-the-difference-between-event-stoppropagation-and-event-preventdefault
+---------------------------------------------------------------------------------------------*/
+function EZeventCancel(evt, isPreventDefault)
+{
+    if (!evt) return false;
+
+    if (evt.stopPropagation)
+      evt.stopPropagation();		//IE9 & Other Browsers
+    else if (evt.cancelBubble)
+      evt.cancelBubble = true;		//IE8 and Lower
+
+	if (isPreventDefault)
+	{
+		if (evt.preventDefault)
+		  evt.preventDefault();		//IE9 & Other Browsers
+		else if (evt.returnValue)
+		  evt.returnValue = true;	//IE8 and Lower
+	}
+	return false;					//convenience allowing return EZ.event.cancel(evt)
+}
+/*--------------------------------------------------------------------------------------------------
+EZ.getCurrentStyle(el, style)
+
+Get specified element(s) current style(s)
+
+ARGUMENTS:
+	arg			(*) blah blah
+	...			blah blah
+
+RETURNS:
+	true if ... otherwise ...
+--------------------------------------------------------------------------------------------------*/
+function EZgetCurrentStyle(el, style)
+{
+	if (!style) return '';
+	var css = style.replace(/([A-Z])/g, '-$1'.toLowerCase());	//e.g. fontSize --> font-size
+	var key = style.replace(/(-.)/g, '$1'.toUpperCase());		//e.g. font-size --> fontSize
+
+	var value = '';
+	if (document.all && el.currentStyle)
+	{
+		value = el.currentStyle[key];
+	}
+	else if (document.defaultView)
+	{
+		value = document.defaultView.getComputedStyle(el,'').getPropertyValue(css);
+	}
+	if (css.indexOf('color') != -1)
+	{
+		if (/rgba(0, 0, 0, 0)/.test(value))
+			value = '';		//transparent
+	}
+	return value;
+}
+/*--------------------------------------------------------------------------------------------------
+Display message in javascript console if available.
+
+RETURNS:
+	false as convenience for: return log(...)
+--------------------------------------------------------------------------------------------------*/
+function log(msg)
+{
+	return;
+	if (!msg)
+	{
+		if (window.console && console.clear) console.clear();
+		return '';
+	}
+	var callerName = arguments && arguments.callee && arguments.callee.caller
+				   ? arguments.callee.caller.name : '';
+	if (window.console && console.log)
+		console.log({caller:callerName, msg:msg});
+	return false;
+}
+/*---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------*/
+
+</script>
+
+<style type="text/css">
+/* @charset "utf-8"; javascript error in loadResources()
+___________________________________________________________________________________
+
+Bootstrap styles for Loading... html while view specific xml data, css & javascript
+loads and html the initial view is dyamically generated.
+
+Used for "Calendar Loading..." and error message if any html resources not found.
+The xml data files are not required to display the initial view since they may not
+exist or be up-to-date especially when calendar app is first installed on site.
+
+Loaded from: calendar3.head.version_include.jsp
+
+For DEVMODE: uses standard <link .../> tag
+For non DEVMODE: uses jsp include
+___________________________________________________________________________________
+*/
+.calendar_loading_css, .marker {color:orange} /* use marker to test CSS priority */
+.RZhidden, .marker {display:none;}
+
+#debugLayer {	/* properties until displayed */
+	position: absolute;
+	width:100%;
+	height:50px;
+	z-index:99;
+	top: 12px;
+	left: 0px;
+	display: none;
+}
+#debugLayer iframe {
+	width: 95%;
+	height: 300px;
+	border: 2px solid;
+	background-color: #F8F8E2;
+	width: 100%;
+	overflow: scroll;
+	margin: 0;
+	padding: 0;
+}
+#debugLayer input {	/* shrinks witdh of IE buttons */
+	padding: 0px 4px;
+	overflow: visible;
+	width: auto;
+	height: 22px;
+}
+#debugOptions {
+	color:red;
+}
+
+body.adminPage {
+	margin: 10px 5px 0px 5px;
+	font-size: 12px;
+}
+.adminPage .debugMode, .adminPage .errorMsg,
+.adminPage #debugMode, .frameless #debugMode {
+	color: #C00;
+	font-weight: bold;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.adminPage .debugMode, #debugMode {
+	font-size: 11px;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	text-align:center;
+}
+#debugModeCenter  {
+	background: #D5D5D5;
+	width: 400px;
+}
+#loading, #loading a, #waiting, .unavailable {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	text-decoration: none;
+	color:#999;
+}
+#waiting p {
+	font-weight: bold;
+	color: #909090;
+}
+#loading {
+	top: 20%;
+	left: -4px;
+	width:100%;
+	font-size:24px;
+	position: absolute;
+}
+#waiting {
+	font-size: 12px;
+	display: none;
+	padding: 10px;
+}
+#waiting.unavailable {
+	/* color: #CCC; */
+}
+/* hidden until loading complete (assumes body child) */
+.loadingHide {
+	visibility: hidden;
+}
+a.debug {	/* hidden debugger link */
+	text-decoration:none !IMPORTANT;
+	color: #FFF;
+}
+.errorMsg, #popupErrorMessage {	/* admincenter BG */
+	color: #C00;
+	font-weight: bold;
+}
+.noteBox {	/* adminpanel style */
+	background-color: #F5F5DC;
+	border: 2px solid red;
+}
+#popupErrorMessage {
+	position:fixed;
+	z-index: 999;
+	top: 30%;
+	left: 10%;
+	width: 80%;
+}
+#waiting, #popupErrorMessageInner {
+	background-color: #FBFBC6;
+	padding:10px;
+	margin: 10px 10px 0px 14px;
+	border: 2px red solid;
+}
+#popupErrorMessageDetail {
+	font-weight: normal;
+	color: gray;
+}
+</style><!--
+//----------------------------------------------------------------//
+//END of .../plugins/calendar/calendar3.head_version_include.jsp //
+//--------------------------------------------------------------//
+-->
+
+
+
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = ''
+RZ.baseurlpath = ''
+RZ.protocolRelativeRevizeBaseUrl='//cms5.revize.com'
+
+RZ.pagetemplatename = 'calendar_app'
+RZ.pagetemplateid = '26'
+RZ.pagemodule = ''
+RZ.pagemoduleid = ''
+RZ.pagerecordid = '';
+
+RZ.pageid = 'calendar_app';
+RZ.pageparentid = '';
+RZ.pagesectionid = '0';
+RZ.pagesectionname = 'Home Page';
+RZ.pagesectionlevel = '0';
+RZ.pagesectionfolder = '';
+RZ.pagesectionfilter = 'sectionid=0';
+RZ.pagelinkfilter = 'linklevel=0 and linksectionid=0';
+RZ.pagelinklevel = '0';
+RZ.pagelinkid = '-1';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '';
+RZ.editrecordversion = '';
+RZ.editversion = '';		//same as editrecordversion
+RZ.editaction = '';
+
+//----- Permission data
+RZ.page_roles = ''
+RZ.page_users = ''
+RZ.page_key = 'calendar_app[]'
+RZ.parent_key = ''
+RZ.inherit_key = ''
+RZ.workflowname = ''
+RZ.permissions_options = 'warningsOFF'
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'sodasprings'
+RZ.webspacedesc = "tinymce";
+
+RZ.featurespattern = '(EZ)';
+null
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = ''
+RZ.revizeserverurl = 'http://cms5.revize.com/revize/sodasprings';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+//----- Field values from webspace_config module
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "subscribers@sodaspringsid.com";
+RZ.webspace_config.form_captcha = "yes";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "xxx";
+RZ.webspace_config.formwizard_smtp_server = "xxx";
+RZ.webspace_config.formwizard_smtp_user = "xxx";
+RZ.webspace_config.google_analytics = "";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "1200";
+RZ.webspace_config.image_maxwidth = "1200";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.livesite_url = "";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.notify_return_url = "enotify/index.php";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.to_email = "subscribers@sodaspringsid.com";
+RZ.webspace_config.use_folders = "1";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'Production,revize';
+RZ.jsversion = 1.2//--><!]]></script>
+<script type="text/javascript" src="./snippet_helper.js.download"></script>
+
+
+<script src="./jstz.min.js.download"></script>
+<script type="text/javascript">
+RZ.calendar.html_version = '08-22-2015';
+/*-----------------------------------------------------------------------------------
+Called from page/body onload
+-----------------------------------------------------------------------------------*/
+function setup()	//index.html (calendar_app) (shows in callback)
+{
+	//----- If opened as index.jsp, login required
+	if (location.href.indexOf('index.jsp') != -1 && (!RZ.webspace || RZ.webspace == 'REVIZE'))
+	{
+		document.getElementById('fragment').style.display = 'none';
+		document.getElementById('xmlValidate').style.display = 'block';
+		document.getElementById('openAdmincenterWrap').style.display = 'block';
+		return;
+	}
+	if (!RZloadResources(setup)) return;	//wait for callback
+
+	RZ.calendar.home = location.pathname;
+	RZsetWindowName(RZ.calendar.winNames.home);
+	document.getElementById('VERSION').innerHTML = RZ.calendar.version;
+
+	// set login url (height set in drawCalendarGrid() after layer is displayed)
+	var revizeLogin = g.revizeDomain + '/revize/security/index.jsp?webspace=' + RZ.webspace
+					+ '&filename=calendar_app/index.html';
+	document.getElementById('loginlink').href = revizeLogin;
+
+	//DCO 08-22-2015: use common setup function if defined
+	if (window.calendarSetup) return calendarSetup();
+
+	// look up parameters on hash: e.g. calendar name, date and default view
+	RZcalendarParameters();
+
+	// load global data, groups and calendar names / properties ...
+	if (!isGlobalDataCurrent(updateData)) return;
+}
+/*-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------*/
+function homeFocus()
+{
+	setTimeout('window.focus()',1000);
+}
+/*-----------------------------------------------------------------------------------
+Create onfocus event to refresh page whenever data changes
+-----------------------------------------------------------------------------------*/
+function refreshHomePage(caller)
+{
+	//------------------------------------------------------\\
+	if (RZdisplayCaller('','debug=refresh') === true) debugger;
+	//------------------------------------------------------//
+
+	var isCalled = refreshHomePage.isCalled;
+	refreshHomePage.isCalled = true;
+
+	// kiil event
+	var isEventActive = isHomeRefreshEventActive();
+	setHomeRefreshEventActive(false);
+	if (isCalled) return;
+
+	RZlog('Home page onFocus handler: called (eventActive ' + isEventActive + ')','');
+
+	// if data loading or up-to-date, quit
+	if (isGlobalDataLoading() || isEventDataLoading()		//if data loading
+	|| (isGlobalDataCurrent() && isEventDataCurrent()))		//or everything current
+		return;		//if data current
+
+	RZlog('Home page onFocus handler: refreshing page')
+
+	//otherwise start update
+	setEventDataCurrent(false);
+	updateData();
+}
+/*-----------------------------------------------------------------------------------
+Permissions button: allows values to be assigned after page loads
+-----------------------------------------------------------------------------------*/
+function editHeader()
+{
+	var args = {
+		nexturl: RZ.calendar.editpages + "calendar_config_logo_text-editform.jsp",
+ 		windowname: RZ.calendar.winNames.configMain,
+        module: 'calendar_config',
+		recordid: '',
+		popupwidth: 580,
+		popupheight: 400,
+		popupscroll: 'no'
+	}
+	return RZeditform(args);
+}
+/*-----------------------------------------------------------------------------------
+Permissions button: allows values to be assigned after page loads
+-----------------------------------------------------------------------------------*/
+function editPermissions()
+{
+	var args = {
+		nexturl: RZ.calendar.editpages + 'calendar_names-editform.jsp',
+ 		windowname: RZ.calendar.winNames.configMain,
+        module: 'calendar_names',
+		recordid: RZ.calendar.id,
+		popupwidth: 700,
+		popupheight: 600,
+		popupscroll: 'yes'
+	}
+	return RZeditform(args);
+}
+/*-----------------------------------------------------------------------------------
+New Event button: allows values to be assigned after page loads
+-----------------------------------------------------------------------------------*/
+function editNewEvent()
+{
+	var url = RZ.calendar.editpages
+			+ 'calendar_events-editform.jsp?calendarid=' + RZ.calendar.id
+			+ '&xmlDataVersion=' + RZ.calendar.xmlDataVersion;	//DCO 09-02-2014
+	var args = {
+        module: 'calendar_events',
+		recordid: 'new',
+		template: '*none*',
+		nexturl: url,											//DCO 09-02-2014
+		//nexturl: RZ.calendar.editpages + 'calendar_events-editform.jsp?calendarid=' + RZ.calendar.id,
+		windowname: RZ.calendar.winNames.eventDetailEditForm,
+		set: 'calendar_events.calendarid='+RZ.calendar.id,
+		popupwidth: 700,
+		popupheight: 600,
+		popupscroll: 'yes'
+	}
+	return RZeditform(args);
+}
+/*-----------------------------------------------------------------------------------
+Configure button: allows values to be assigned after page loads
+-----------------------------------------------------------------------------------*/
+function editConfig()
+{
+	var args = {
+		nexturl: RZ.calendar.editpages + 'calendar_names-editlist.jsp?groupid=1',
+		windowname: RZ.calendar.winNames.configMain,
+		popupwidth: 700,
+		popupheight: 600,
+		popupscroll: 'yes'
+	}
+	return RZeditlist(args);
+}
+
+/*-----------------------------------------------------------------------------------
+Export Calendar button: calls the url that exports the calendar to .ics
+-----------------------------------------------------------------------------------*/
+function exportCalendar(theObj){
+	var tz = jstz.determine();
+    //alert('1='+tz.name());
+	var url = RZ.protocolRelativeRevizeBaseUrl.replace("http:","")+'/revize/plugins/calendar/editpages/export_events.jsp?webspaceId='+RZ.webspace+'&CAL_ID='+RZ.calendar.id+'&timezoneid='+tz.name();
+	theObj.href = url;
+}
+
+/*-----------------------------------------------------------------------------------
+End of Page Specific Javascript
+-----------------------------------------------------------------------------------*/
+</script>
+
+
+<style type="text/css">
+.RZhidden {display:none;}
+
+/****************************************/
+/*BOOKMARK page specific inline styles */
+/**************************************/
+
+/* kill borders, padding & margin on fullview */
+#fullView_body #calenderGridTable td.calendarMiniCompatible {
+	height: auto;
+	border: 0px none;
+	padding: 0;
+	margin: 0;
+}
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * mini view embedded styles                                         *
+ * Required to disable (by default) additional html added over time  *
+ * NOT in original custom css release (e.g. long/short form dates);  *
+ * (the older custom css did not have rules for the newer html).     *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* UL LI format for upcoming events */
+.eventUL {
+	padding: 0;
+	margin: 0;
+}
+.eventLI {
+	display: block;
+}
+/* New expanded detail spans */
+.eventExpanded h3 {
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 0 10px;
+}
+/* New upcoming or expanded detail spans */
+.eventExpanded .eventExpandedTitle {
+	/* can't change color by default (effects event name) e.g. genessecounty NY */
+	/* color: #990000; */
+	margin: 0;
+}
+/* New upcoming or expanded detail continued... */
+/* (keep as separate selectors for testing)     */
+.eventDateHeading {
+	display: none;
+}
+.eventLink {
+	display: inline;
+}
+.eventTitle {
+	display: none;
+}
+.eventDayOfWeek {
+	display: none;
+}
+.eventDayOfWeekLong {
+	display: none;
+}
+.eventDateMonthLong {
+	display: none;
+}
+.eventDaySuffix {
+	display: none;
+}
+/* Disable alternative prior and next month spans added for full view calendar */
+#bodyMini .priorMonthText, #bodyMini .nextMonthText {
+	display: none;
+}
+/* Disable debugger links now using class (earlier version used inline styles) */
+#detail a.debug {
+	text-decoration:none;
+}
+/* 04-18-2013: hide calender grid 6th week row if not needed for current month */
+.otherMonthRow {
+	display: none;
+}
+/* 04-18-2013: cancel calenderGridTable td padding for calendarMiniCompatible */
+#calenderGridTable td.calendarMiniCompatible {
+	padding: 0;
+}
+/*DCO 08-22-2015: Added event time wrapped in <b> tags hidden by default */
+/* 			   am/pm wrapped in <i> tags default is display with time */
+.eventLink cite, .eventTitle cite, .eventDatePrefix cite {
+	display: none;
+}
+</style><!--[if IE]>
+<style type="text/css" class="calendar_clone">
+.IEpageSpecificStyles,.marker {color:blue}/* use marker to test CSS priority */
+
+/* IMPORTANT retains values when calendar_style.css loaded during page setup */
+/* (these MAY only be needed for IE 7) */
+
+#fullView_body #topControlHeader {
+	margin-top: 4px !IMPORTANT;
+}
+#bodyRightTopCalendar {
+	margin-top: -2px !IMPORTANT;
+}
+</style>
+<![endif]-->
+<script type="text/javascript" src="./calendar_app_javascript.js.download"></script><link rel="stylesheet" type="text/css" href="./calendar_mini_sodasprings.css"><script type="text/javascript" src="./calendar_app_javascript_miniview.js.download"></script></head>
+<body class="frameless" onload="setup()" style="margin:0">
+
+<div id="debugMode" class="debugMode RZhidden"><div id="debugModeCenter">
+&nbsp;Debug Mode&nbsp;window.name=<span id="windowName">RZcalendar_home</span></div></div>
+<div id="debugLayer" align="center"></div>
+<div id="loading" align="center" style="display: none;">
+<a href="javascript:void RZloadingDone(&#39;show&#39;)"><span>Calendar Loading...</span></a>
+<div id="waiting" style="visibility: hidden;"></div></div>
+<div id="popupErrorMessage" class="RZhidden" style="display: none;">
+  <div id="popupErrorMessageInner" align="center">
+    <a href="javascript:RZloadingContinue()">close</a>
+    <div align="center" id="popupErrorMessageDetail" class=""></div>
+  </div>
+</div>
+<div id="fullview_header" class="RZhidden loadingHide" style="visibility: visible;">
+  <form name="calendar_heading" style="display:inline">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody><tr>
+        <td valign="top">
+          <table width="100%" id="headerContainer" border="0" cellpadding="0" cellspacing="0" style="height: 15px;">
+            <tbody><tr>
+              <td width="23%" rowspan="2" align="left" valign="middle"><img id="logo" src="./calendar_app_noimage.gif"></td>
+              <td width="26%" rowspan="2" align="center" valign="middle">
+                <div id="RZcalendar-editTopButtons" class="RZhidden">
+				  <a href="javascript:editPermissions()"><img src="./permissions.png" title="Permissions" border="0"></a>
+				  <br>
+				  <a href="javascript:editHeader()"><img src="./edit_header.png" title="Edit Header" border="0"></a>
+				  <a id="help" href="javascript:void RZpopupUrl(&#39;helpWin&#39;,&#39;/revize/plugins/calendar/calendar3_admin_help.html&#39;,&#39;700&#39;,&#39;600&#39;,&#39;yes&#39;)"><img src="./help.gif" title="Help"></a>
+      			</div>
+              </td>
+              <td width="51%" align="right" valign="TOP">
+                <font size="4" face="Arial, Helvetica, sans-serif" id="welcome_text">
+      Events Calendar
+    </font>
+              </td>
+            </tr>
+            <tr>
+              <td align="right" valign="bottom">
+                <a href="javascript:debugger;" class="debug"><font id="VERSION" color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">Version 3.3<br>(codebase: 08-22-2015)</font></a>
+              </td>
+            </tr>
+    	  </tbody></table>
+        </td>
+      </tr>
+      <tr class="darkBlue">
+        <td align="center" class="currentView" height="20">
+          <span class="currentView">Currently
+          Viewing: </span><span class="deptName" id="headerCalendarName">&nbsp;</span>
+          for <span class="views" id="headerDate">&nbsp;</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="100%" height="8" border="0" cellpadding="0" cellspacing="0">
+            <tbody><tr valign="middle">
+              <td>
+                <table width="100%" height="0" border="0" cellpadding="0" cellspacing="0">
+                  <tbody><tr valign="middle">
+                    <td valign="TOP">
+                      <table border="0" cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                          <td valign="TOP">
+                            <select name="monthName" onchange="setCalendar();" id="headerMonth"></select>
+                          </td>
+                          <td valign="TOP">
+                            <select name="yearName" onchange="setCalendar();" id="headerYear"></select>
+                          </td>
+                          <td valign="TOP"> <a href="javascript:changeView(&#39;&#39;,&#39;Month&#39;)"><img title="Month View" src="./month_view_up.png" border="0"></a>
+                          </td>
+                          <td valign="TOP"> <a href="javascript:changeView(&#39;&#39;,&#39;Week&#39;)"><img title="Week View" src="./week_view_up.png" border="0"></a>
+                          </td>
+                          <td valign="TOP"> <a href="javascript:changeView(&#39;&#39;,&#39;Day&#39;)"><img id="dayButton" title="Day View" src="./day_view_up.png" border="0"></a>
+                          </td>
+                          <td valign="TOP"> <a href="http://www.sodaspringsid.com/calendar_app/index.html#" onclick="javascript:exportCalendar(this);"><img id="exportButton" title="Export Calendar" src="./ical.png" border="0"></a>
+                          </td>
+                          <td valign="TOP" class="RZhidden" id="RZcalendar-new-button">
+                            <a href="javascript:editNewEvent()"><img title="New Event" src="./new_event_calendar.png" border="0"></a>
+                          </td>
+                          <td valign="TOP" class="RZhidden" id="RZcalendar-config-button">
+                            <a href="javascript:editConfig()"><img src="./config_calendar.gif" title="Configure Calendar" border="0"></a>
+                          </td>
+                          <td valign="TOP" class="RZhidden" id="RZcalendar-close-button"><a href="javascript:void closeWindow(&#39;close&#39;);"><img title="Close" src="./close_calendar.png" border="0"></a>
+                          </td>
+                          <td valign="TOP"><a id="loginlink" target="_top" href="http://cms5.revize.com/revize/security/index.jsp?webspace=sodasprings&amp;filename=calendar_app/index.html"><img id="loginButton" title="Login" src="./calendar_app_noimage.gif" width="15" height="29" border="0"></a>
+                          </td>
+                          <td valign="TOP"><a href="javascript:RZshowlayer(&#39;popupErrorMessage&#39;)"><img title="Notes" src="./calendar_app_noimage.gif" width="25" height="25" border="0"></a>
+                          </td>
+			            </tr>
+ 			         </tbody></table>
+      			    </td>
+                    <td align="RIGHT" valign="TOP">
+                      <table border="0" cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                          <td valign="TOP">
+                            <select name="calendarName" onchange="setCalendar(document.calendar_heading.calendarName,&#39;calendar&#39;)">
+                            <option value="7">Chamber</option><option value="3">Library</option><option value="1">Master</option><option value="5">Public Meetings</option><option value="4">Recreational Sports</option></select>
+                          </td>
+                        </tr>
+                      </tbody></table>
+                    </td>
+                  </tr>
+                </tbody></table>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+  </form>
+</div>
+<div id="fullView_body" class="loadingHide" style="visibility: visible;">
+  <div id="calendar_monthView" class="RZhidden">
+    <div id="monthHeading" class="view_subhead"></div><!-- innerHTML generated by js -->
+    <div id="monthBody"></div><!-- ***** (2) innerHTML copied from calendar_miniView div ***** -->
+  </div>
+  <div id="calendar_weekView" class="RZhidden loadingHide" style="visibility: visible;">
+    <div id="weekHeading" class="view_subhead">
+      <table width="100%" border="0" cellpadding="0">
+        <tbody><tr>
+          <td width="33%" align="center" class="month">
+            <a href="javascript:setNextPrev(&#39;setPrevious&#39;,RZ.calendar.date,&#39;week&#39;);" class="nextPrevMonth">Prior Week</a>
+          </td>
+          <td width="33%" align="center" class="month" id="calendarWeekHeading">Week of</td>
+          <td width="33%" align="center" class="month">
+          	<a href="javascript:setNextPrev(&#39;setNext&#39;,RZ.calendar.date, &#39;week&#39;);" class="nextPrevMonth">Next Week</a>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+    <div id="weekBody">
+      <div id="weekBodyLeft">Events for Week</div><!-- innerHTML generated by js -->
+      <div id="weekBodyRight">Calendar &amp; Notable Events</div><!-- ***** (1) innerHTML copied from dayBodyRight div ***** -->
+    </div>
+    <div style="clear:both"></div>
+  </div>
+  <div id="calendar_dayView" class="RZhidden loadingHide" style="visibility: visible;">
+    <div id="dayHeading" class="view_subhead">
+      <table class="dayWeekHeading" width="100%" border="0" cellpadding="0">
+        <tbody><tr>
+          <td width="33%">
+            <div align="center">
+              <a href="javascript:setNextPrev(&#39;setPrevious&#39;, RZ.calendar.date, &#39;day&#39;);" class="nextPrevMonth">Prior Day</a>
+            </div>
+          </td>
+          <td width="33%" class="month" align="center" id="calendarDayHeading">Day</td>
+          <td width="33%" class="nextPrevMonth">
+            <div align="center">
+              <a href="javascript:setNextPrev(&#39;setNext&#39;, RZ.calendar.date, &#39;day&#39;);" class="nextPrevMonth">Next Day</a>
+            </div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+    <div id="dayBody">
+      <div id="dayBodyLeft">Events for Day</div><!-- innerHTML generated by js -->
+      <div id="dayBodyRight">
+	    <!-- ********** (1) dayBodyRight innerHTML (thumbnail calendar controls) SHARED by day/week view >>>>>>>>>> -->
+        <div class="bodyRight">
+          <div id="bodyRightTop" class="bodyRightTop">
+            <div id="bodyRightTopControls">
+              <div id="calendarTopControlsContainer">
+                <div>
+                  <div id="topControlLastYear"><a href="javascript:setNextPrev(&#39;back&#39;,&#39;year&#39;)"></a></div>
+                  <div id="topControlLast"><a href="javascript:setNextPrev(&#39;back&#39;,&#39;month&#39;)"></a></div>
+                  <div id="topControlHeader">November&nbsp;2019</div>
+                  <div id="topControlNext"><a href="javascript:setNextMonth(&#39;next&#39;,&#39;month&#39;)"></a></div>
+                  <div id="topControlNextYear"><a href="javascript:setNextMonth(&#39;next&#39;,&#39;year&#39;)"></a></div>
+                  <div style="clear:both;float:none"></div>
+                </div>
+              </div>
+            </div>
+          <div id="bodyRightTopCalendar"></div><!-- <<<<< (2) innerHTML copied from calendar_miniView div >>>>> -->
+        </div>
+          <!-- notable events container -->
+          <div id="bodyRightBottom" class="notableEvent">Notable Events for
+            <span id="notableHeading">notable heading</span>
+            <div id="notableDiv"></div><!-- innerHTML generated by js -->
+          </div>
+        </div>
+  		<div style="clear:both"></div>
+      </div><!-- <<<<<<<<<< end of SHARE (1) -->
+    <div style="clear:both"></div>
+    </div>
+  </div>
+</div>
+<div id="bodyMini" class="RZhidden loadingHide" style="display: block; visibility: visible;"><!-- bodyMini for backward compatibility with prior body class -->
+  <div id="calendar_miniView">
+    <!-- ********** 2) calendar_miniView innerHTML SHARED with monthBody & bodyRightTopCalendar (day/week) >>>>>>>>>> -->
+    <div id="topImage"></div>
+    <div id="calendarAndDetail">
+	  <div id="calendar">
+        <table id="calendarTable" border="0" cellspacing="0" cellpadding="0">
+          <tbody><tr>
+            <td colspan="3">
+              <table id="calendarContent" align="center" cellpadding="0" cellspacing="0" border="0">
+                  <tbody><tr>
+                    <td>
+                      <div id="calendarContentTopImage"></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table id="calendarControl" width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody><tr><!-- thumb & mini use class priorMonthArrow & nextMonthArrow; full uses class priorMonthText & nextMonthText -->
+                          <th id="calendarControlLast">&nbsp;&nbsp;<a id="priorMonth" class="nextPrevMonth" href="javascript:setPriorMonth()"><span class="priorMonthArrow">«</span><span class="priorMonthText">Prior Month</span></a></th>
+                          <th align="center" id="calendarMonthYear">November&nbsp;2019</th><!-- innerHTML  generated by js -->
+                          <th id="calendarControlNext">
+                          <a id="nextMonth" class="nextPrevMonth" href="javascript:setNextMonth()"><span class="nextMonthText">Next Month</span><span class="nextMonthArrow">»</span></a>&nbsp;&nbsp;</th>
+                        </tr>
+                      </tbody></table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table id="calenderGridTable" width="100%" cellspacing="0" cellpadding="0" border="0">
+					  	<tbody><tr>
+						  <td class="calendarMiniCompatible">
+					  		<table id="daysHeader" class="daysHeader" width="100%" cellspacing="0" cellpadding="0" border="0">
+                              <tbody><tr class="gridHeaderRow daysRow"><td class="topTD">S</td><td class="topTD">M</td><td class="topTD">T</td><td class="topTD">W</td><td class="topTD">T</td><td class="topTD">F</td><td class="topTD rightTD">S</td></tr></tbody></table>
+						  </td>
+						</tr>
+						<tr>
+						  <td class="calendarMiniCompatible"><!--  below table backward compatibility -->
+							<table id="daysOuterTable" width="100%" cellspacing="0" cellpadding="0" border="0">
+							  <tbody><tr>
+                                <td class="calendarMiniCompatible"><!--  below table backward compatibility -->
+                                  <table id="daysInnerTable" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody><tr class="gridDataTop gridDays" valign="top"><td class="weekEnd otherMonth gridDataLeftTD">27</td><td class="weekDay otherMonth">28</td><td class="weekDay otherMonth">29</td><td class="weekDay otherMonth">30</td><td class="weekDay otherMonth">31</td><td class="weekDay">1</td><td class="weekEnd rightTD gridDataRightTD">2</td></tr><tr valign="top" class="gridDays"><td class="weekEnd gridDataLeftTD">3</td><td class="weekDay">4</td><td class="weekDay eventDay"><a href="javascript:changeDate(2019,11,5)" class="dateNumbers">5</a></td><td class="weekDay">6</td><td class="weekDay">7</td><td class="weekDay">8</td><td class="weekEnd rightTD gridDataRightTD">9</td></tr><tr valign="top" class="gridDays"><td class="weekEnd gridDataLeftTD">10</td><td class="weekDay">11</td><td class="weekDay eventDay"><a href="javascript:changeDate(2019,11,12)" class="dateNumbers">12</a></td><td class="weekDay">13</td><td class="weekDay">14</td><td class="weekDay">15</td><td class="weekEnd rightTD gridDataRightTD">16</td></tr><tr valign="top" class="gridDays"><td class="weekEnd gridDataLeftTD">17</td><td class="weekDay">18</td><td class="weekDay eventDay"><a href="javascript:changeDate(2019,11,19)" class="dateNumbers">19</a></td><td class="weekDay">20</td><td class="weekDay">21</td><td class="weekDay">22</td><td class="weekEnd rightTD gridDataRightTD">23</td></tr><tr class="selectRow gridDays" valign="top"><td class="selectDay today gridDataLeftTD">24</td><td class="weekDay">25</td><td class="weekDay">26</td><td class="weekDay">27</td><td class="weekDay">28</td><td class="weekDay">29</td><td class="weekEnd rightTD gridDataRightTD">30</td></tr><tr valign="top" class="gridDays"><td class="weekEnd bottomTD otherMonth gridDataLeftTD">1</td><td class="weekDay bottomTD otherMonth">2</td><td class="weekDay bottomTD otherMonth eventDay"><a href="javascript:changeDate(2019,12,3)" class="dateNumbers other">3</a></td><td class="weekDay bottomTD otherMonth">4</td><td class="weekDay bottomTD otherMonth">5</td><td class="weekDay bottomTD otherMonth">6</td><td class="weekEnd bottomTD otherMonth rightTD gridDataRightTD">7</td></tr></tbody></table>
+                                </td>
+                              </tr>
+							</tbody></table>
+						  </td>
+						</tr>
+					  </tbody></table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div id="calendarContentBottomImage"></div>
+                    </td>
+                  </tr>
+              </tbody></table>
+            </td>
+          </tr>
+        </tbody></table>
+      </div>
+        <div id="detailAndUpdateButton">
+          <div id="detailSpace"></div>
+          <div id="detail">
+            <div id="detailTop"></div>
+            <div id="detailContent"><h2 class="upcoming-events">Upcoming Events<a href="javascript:debugger" class="debug">&nbsp;&nbsp;&nbsp;</a></h2><div class="aEvent"><div class="eventHtml"><h2 class="eventDateHeading"><span class="eventDayOfWeek"><span class="eventDayOfWeekLong">Tuesday, </span><span class="eventeventDayOfWeekShort">Tue, </span></span><span class="eventDateMonthLong">December </span><span class="eventDateMonthShort">Dec </span>3<span class="eventDaySuffix">rd</span><span class="eventYear">, 2019</span></h2></div><ul class="eventUL"><div class="eventItem">
+<li class="eventLI">
+<span class="eventDatePrefix">  <span class="eventDatePrefixShort">
+12-03<span class="eventYear">-19</span>
+  </span>
+  <span class="eventDatePrefixLong">
+<span class="eventDayOfWeek"><span class="eventDayOfWeekLong">Tuesday, </span><span class="eventeventDayOfWeekShort">Tue, </span></span><span class="eventDateMonthLong">December </span><span class="eventDateMonthShort">Dec </span>3<span class="eventDaySuffix">rd</span><span class="eventYear">, 2019</span>  </span>
+ <cite>05:00<i> pm</i></cite> </span>
+<a class="eventLink" href="javascript:displayDetail(1,137,0,&#39;12-03-19&#39;)"><cite>05:00<i> pm</i></cite> City Council</a><span class="eventTitle"><cite>05:00<i> pm</i></cite> City Council</span></li></div></ul></div><div class="aEvent"><div class="eventHtml"><h2 class="eventDateHeading"><span class="eventDayOfWeek"><span class="eventDayOfWeekLong">Tuesday, </span><span class="eventeventDayOfWeekShort">Tue, </span></span><span class="eventDateMonthLong">December </span><span class="eventDateMonthShort">Dec </span>10<span class="eventDaySuffix">th</span><span class="eventYear">, 2019</span></h2></div><ul class="eventUL"><div class="eventItem">
+<li class="eventLI">
+<span class="eventDatePrefix">  <span class="eventDatePrefixShort">
+12-10<span class="eventYear">-19</span>
+  </span>
+  <span class="eventDatePrefixLong">
+<span class="eventDayOfWeek"><span class="eventDayOfWeekLong">Tuesday, </span><span class="eventeventDayOfWeekShort">Tue, </span></span><span class="eventDateMonthLong">December </span><span class="eventDateMonthShort">Dec </span>10<span class="eventDaySuffix">th</span><span class="eventYear">, 2019</span>  </span>
+ <cite>06:00<i> pm</i></cite> </span>
+<a class="eventLink" href="javascript:displayDetail(5,28,0,&#39;12-10-19&#39;)"><cite>06:00<i> pm</i></cite> Planning &amp; Zoning Meeting</a><span class="eventTitle"><cite>06:00<i> pm</i></cite> Planning &amp; Zoning Meeting</span></li></div></ul></div><div class="aEvent"><div class="eventHtml"><h2 class="eventDateHeading"><span class="eventDayOfWeek"><span class="eventDayOfWeekLong">Tuesday, </span><span class="eventeventDayOfWeekShort">Tue, </span></span><span class="eventDateMonthLong">December </span><span class="eventDateMonthShort">Dec </span>17<span class="eventDaySuffix">th</span><span class="eventYear">, 2019</span></h2></div><ul class="eventUL"><div class="eventItem">
+<li class="eventLI">
+<span class="eventDatePrefix">  <span class="eventDatePrefixShort">
+12-17<span class="eventYear">-19</span>
+  </span>
+  <span class="eventDatePrefixLong">
+<span class="eventDayOfWeek"><span class="eventDayOfWeekLong">Tuesday, </span><span class="eventeventDayOfWeekShort">Tue, </span></span><span class="eventDateMonthLong">December </span><span class="eventDateMonthShort">Dec </span>17<span class="eventDaySuffix">th</span><span class="eventYear">, 2019</span>  </span>
+ <cite>05:15<i> pm</i></cite> </span>
+<a class="eventLink" href="javascript:displayDetail(1,151,0,&#39;12-17-19&#39;)"><cite>05:15<i> pm</i></cite> GSSCDC</a><span class="eventTitle"><cite>05:15<i> pm</i></cite> GSSCDC</span></li></div></ul></div></div>
+            <div id="updateDiv" class="RZhidden" style="display: none;">
+              <form id="updateForm" method="post" action="http://www.sodaspringsid.com/calendar_app/index.html" onsubmit="return editCalendar()" target="_blank">
+              <input type="submit" name="Submit" value="Update"></form>
+            </div>
+            <div id="detailBottom"></div>
+          </div>
+        </div>
+    </div><!-- <<<<<<<<<< end of SHARE (2) -->
+  </div>
+</div>
+<!-- just used to get display value for otherMonthRow class -->
+<div id="otherMonthRow" class="otherMonthRow" style="display:none">
+</div>
+<form action="https://validator.w3.org/check#source" method="post" enctype="application/x-www-form-urlencoded" id="xmlValidate" name="xmlValidate" target="_blank" style="display:none" class="noteBox">
+<input type="hidden" name="doctype" value="Inline">
+<input type="hidden" name="ss" value="1">
+<input type="hidden" name="group" value="0">
+<textarea id="fragment" name="fragment" rows="12" cols="80"></textarea>
+<div id="openAdmincenterWrap" align="center" class="hidden ">
+  <br>
+  Login Required for jsp page - Login and Reload Page<br>
+  <br>
+  <input type="button" name="openAdminCenter" id="openAdminCenter" value="AdminCenter" onclick="window.open(&#39;/revize/admincenter/&#39;,&#39;RZadmincenter&#39;,&#39;width=1000,height=700&#39;);">
+  <br>
+  <br>
+</div>
+</form>
+
+
+</body></html>

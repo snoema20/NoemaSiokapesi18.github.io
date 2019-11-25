@@ -1,0 +1,497 @@
+
+
+RZ.calendar.javascript_version_mini = '08-22-2015';
+/*_________________________________________________________________________________
+
+calendar_app_mini.js
+_________________________________________________________________________________*/
+
+function updateStyles()
+{
+	var bodyMini = document.getElementById('bodyMini');
+	var updateDiv = document.getElementById('updateDiv');
+	var updateForm = document.getElementById('updateForm');
+	var calendarTable = document.getElementById('calendarAndDetail');
+
+	if (updateDiv && !RZlogin())					//if not logged in
+	{
+		updateDiv.style.display = 'none';
+		return;
+	}
+
+	if (!bodyMini || !updateDiv || !updateForm || !calendarTable)
+		return;										//should not happen
+
+	var height = calendarTable.clientHeight;		//default height (should not happen)
+	if (window.frameElement && window.frameElement.clientHeight)
+		height = window.frameElement.clientHeight;	//iframe height
+
+	if (height)
+		bodyMini.style.height = height + 'px';		//set height to iframe height
+	updateDiv.style.width = '100%';					//set width (cross browser compatible)
+
+	//older approach that was not fully IE compatible
+	//updateDiv.style.width = calendarTable.clientWidth + 'px';
+
+	updateDiv.style.top = (height-25) + 'px';		//puts update button 25px above bottom
+	updateDiv.style.display = 'block';
+
+	//prevented scroll on IE at one time (now handled by cross browser compatible css)
+	//document.getElementById('detail').style.height = height + 'px';
+}
+/*-----------------------------------------------------------------------------------------------
+Display detail: type='day' to show detail for the day; otherwise upcoming events are shown
+-----------------------------------------------------------------------------------------------*/
+function showDetail(dayDate,eventIndex)
+{
+	/* NOT working
+	//----- Check for CSS selectors not supported (e.g. midland styles)
+	var values = RZselectorValues(['.eventDayOfWeekShort']);
+	var selectors = [];
+	for (var i in values)
+		selectors.push(i);
+	if (selectors.length > 0)
+		alert('Following CSS selectors NOT supported in this version of calendar:\n'
+			  + selectors.join(', '));
+	*/
+	RZclearTimeout();
+	var html = '';
+	var day, i, e, eventHtml, dateHtml, eventCount, eventArr;
+
+	var caldate = topframe.RZ.calendar.date;
+	if (dayDate) caldate = dayDate;
+	var calday = caldate.getDate();
+
+	var linkBreak = '<br /><br />';
+	var isTimeDetailIframe = window.isDeployDate && isDeployDate('08-22-2015');
+
+	if (dayDate)
+	{
+		var year = caldate.getFullYear();
+		var month = caldate.getMonth();
+		showEventDetail(year,month,calday,eventIndex);	//single date or event
+	}
+	else
+		showUpcomingEvents();	//all future events
+	return html;
+
+	/*--------------------------------------------------------------------------------
+	Show upcoming events
+	--------------------------------------------------------------------------------*/
+	function showUpcomingEvents()
+	{
+		//----- Display name and summary for each event on selected day
+		html += '<h2 class="upcoming-events">Upcoming Events'
+			  + RZ.calendar.debugLink
+			  + '</h2>';
+
+		// build array of upcoming events for current and next month
+		eventArr = new Array();
+		var foundEvents = {};		//only show repeated events once
+
+		var month = 0;											//used for sortKey
+		var upcoming_date = homeframe.RZdate(RZ.calendar.date); //start with current date
+		var daysInMonth = upcoming_date.getDaysInMonth();
+		for (var day=1;day<=daysInMonth;day++)
+		{
+			if (day >= calday)
+			{
+				upcoming_date.setDate(day)
+				showDayEvent(upcoming_date);
+			}
+		}
+
+		if (topframe.RZ.calendar.isCurrentMonth)
+		{
+			month = 1;
+			upcoming_date.addMonth();							//advance to next month
+			daysInMonth = upcoming_date.getDaysInMonth();
+			for (day=1;day<=daysInMonth;day++)
+			{
+				//frameless: don't limit upcoming events to current date of next month
+				//if (day < calday)
+				{
+					upcoming_date.setDate(day)
+					showDayEvent(upcoming_date);
+				}
+			}
+		}
+
+		// display array of upcoming events by date
+		if (eventArr.length > 0)
+		{
+			topframe.sortOnTime(eventArr, 0, eventArr.length);
+			eventHtml = '';
+			var lastDate = '';
+			var max_events = RZgetoptionvalue(RZ.webspace_config.calendar_options,'max_events');
+			if (max_events == '') max_events = 3;
+			max_events = Math.min(max_events,eventArr.length);
+			for (var i=0; i<max_events; i++)
+			{
+				if (eventArr[i][2] != lastDate)
+				{
+					if (lastDate != '') eventHtml += '</ul></div>';
+					eventHtml += '<div class="aEvent"><div class="eventHtml">' + eventArr[i][2] + '</div><ul class="eventUL">'
+					lastDate = eventArr[i][2];
+				}
+				eventHtml += eventArr[i][1];
+			}
+			if (lastDate != '') eventHtml += '</ul></div>';
+			html += eventHtml;
+		}
+		else
+			html = '<span id="noEvents">No upcoming events in next 30 days</span>';
+		/*--------------------------------------------------------------------------------
+		Display upcoming events
+		----------------------------------------------------------------------------------
+		Examples:
+			Pinellas Park (http://www.pinellas-park.com/)
+			(dashs only shown for illustration purposes in lieu of diff colors & underline)
+				Tuesday, August 7th, 2012
+				-No Workshop - No Items
+				-National Night Out
+				Thursday, August 9th, 2012
+				-Agenda Session
+
+			Wylie (http://www.wylietexas.gov/index.php):
+				08-07-12 Cancelled...Planning & Zoning Board Meeting
+				08-13-12 Library Board Meeting
+				08-14-12 City Council Meeting
+				08-16-12 PAAB Meeting
+				08-17-12 WEDC Board Meeting
+				08-27-12 Parks & Recreation Board Meeting
+				08-28-12 City Council Meeting
+
+			Clawson (http://www.cityofclawson.com/):
+				Tuesday, August 7th, 2012
+				* City Council Meeting
+				* Downtown Development Board Meeting
+				Friday, August 10th, 2012
+				* City Hall & DPW Offices Closed
+
+			Midland (http://voyager.midland.edu/)
+				Aug	Walk-In Registration Begins Walk-In Registration Begins
+				 6
+				Mon
+
+				Aug	FREE Tickets Available at Chaparral Center Lyle Lovett
+				 6
+				Mon
+
+				Aug	Student Services Open until 8:00 p.m.
+				 7
+				Tue
+		--------------------------------------------------------------------------------*/
+		//////////////////////////////////////////////////////////////////////////////
+		function showDayEvent(upcoming_date)
+		{
+			//var events = getEvents(upcoming_date,'begin');
+			var events = getEvents(upcoming_date);
+			for (eventIdx=0;eventIdx<events.length;eventIdx++)
+			{
+				e = getEvent(events[eventIdx])
+				//04-18-2013 DCO: next skips additional dates for repeating or multi-day
+				//if (!foundEvents[e.recordid])	//if event already added
+				{
+					var eventid = e.recordid;
+					var event_calendarid = e.calendarid;
+					var eventName = e.name;
+					var eventTime = '';
+					if (isTimeDetailIframe)					//codebase @ 08-22-2015+
+					{
+						eventName = e.name.trim();
+						eventTime = e.time_begin ? formatEventTime(e.time_begin) : '';
+					}
+
+					foundEvents[e.recordid] = true;
+					var repeatImg = '';
+					/* 03-01-2013 recurring icon is clutter
+					if (e.repeat)
+						repeatImg += '<img class="eventExpandedRepeat"'
+								   + ' src="images/' + RZ.calendar.constants.eventRepeatSrc + '"'
+								   + ' border="0" title="' + repeatDescAlt(e.repeatDesc) + '" />';
+					*/
+					//-----	html for date heading commonto all events on this day
+					var date = upcoming_date;
+					dateHtml = '<h2 class="eventDateHeading">'
+							   // day of week
+							 + '<span class="eventDayOfWeek">'
+									// long day of week: e.g. Monday
+							 +      '<span class="eventDayOfWeekLong">'
+							 +      topframe.RZdayName(date) + ', '
+							 +      '</span>'
+									// short day of week: e.g. Mon
+							 +      '<span class="eventeventDayOfWeekShort">'
+							 +      topframe.RZdayName(date).substr(0,3) + ', '
+							 +      '</span>'
+							 + '</span>'
+
+							   // long month name e.g. January
+							 + '<span class="eventDateMonthLong">'
+							 + topframe.RZmonthNameArr[date.getMonth()] + ' '
+							 + '</span>'
+
+								// short month name e.g. Jan
+							 + '<span class="eventDateMonthShort">'
+							 + topframe.RZmonthNameArr[date.getMonth()].substr(0,3) + ' '
+							 + '</span>'
+
+								// day with suffix e.g. 1st
+							 + topframe.RZdaySuffix(date)
+
+								// year e.g. yyyy
+							 + '<span class="eventYear">, ' + date.getFullYear() + '</span>'
+							 + '</h2>';
+
+					//----- html for event with date prefix
+					eventHtml = ''
+							  + '<div class="eventItem">\n'
+							  + '<li class="eventLI">\n'
+
+							 //----- container for event prefixed with date
+							  + '<span class="eventDatePrefix">'
+
+							  // short date: mm-dd-yy
+							  + '  <span class="eventDatePrefixShort">\n'
+							  +      topframe.RZright('00' + (date.getMonth()+1),2) + '-'
+							  +      topframe.RZright('00' + date.getDate(),2)
+							  +      '<span class="eventYear">-' 	//optional year
+							  +        topframe.RZright('00' + date.getYear(),2)
+							  +       '</span>\n'
+							  + '  </span>\n'
+
+							  // long date format(s)
+							  + '  <span class="eventDatePrefixLong">\n' + eventDateLong(date) + '  </span>\n'
+
+							  // time after date prefix on each event
+							  + (eventTime ? ' ' + eventTime + ' ' : '')
+
+							  + '</span>\n';	//end eventDatePrefix
+
+					// legacy href for event link or heading
+					var href = 'javascript:changeDate(' + formatEventClick(date,eventIdx) + ')';
+
+					// href to show detail in iframe layer -OR- tiny upcoming events container
+					if (isTimeDetailIframe)
+					{										//deployDate & codebase @ ver 08-22-2015+
+						href = 'javascript:displayDetail(' + event_calendarid + ',' + eventid
+								 + ',' + eventIdx + ",'" + date.getFormatted().briefDate + "')";
+					}
+					//----- html for event link or heading w/o time -- event name not trimmed
+					if (!isTimeDetailIframe)
+					{										//deployDate or codebase before 08-22-2015
+						eventHtml += '<a class="eventLink" href="' + href + '">' + e.name + repeatImg + '</a>'
+								   + '<span class="eventTitle">' + e.name + repeatImg + '</span>';
+					}
+					//----- html for event link or heading (time prefix part of link)
+					// 		used with common date heading for all events on same day
+					else
+					{
+						var timeHtml = (eventTime + ' ' + eventName).trim() + repeatImg;
+						eventHtml += '<a class="eventLink" href="' + href + '">' + timeHtml + '</a>'
+								   + '<span class="eventTitle">' + timeHtml + '</span>';
+					}
+
+					eventHtml += '</li>';		//end of eventItem
+					eventHtml += '</div>';		//end of eventItem day of month
+
+					// get time for sort
+					var firstSplit = e.time_begin ? (e.time_begin + '').split(":") : ['',''];
+					firstSplit = firstSplit[0] + "." + firstSplit[1];
+					if(firstSplit == ".")
+						firstSplit = "0.0";
+
+					var sortKey = parseFloat(firstSplit) + day * 100 + month * 10000;
+					eventArr[eventArr.length] = [sortKey,eventHtml,dateHtml];
+
+				}	// end not foundEvent
+			}	// end for eventIdx
+		}	// end function showDayEvent
+		/*--------------------------------------------------------------------------------
+		--------------------------------------------------------------------------------*/
+		function formatEventTime(str)
+		{
+		   	while (str)
+			{
+				var date = homeframe.RZdate();
+				var time = homeframe.RZdate(date.getFormatted().longDate + ' ' + str);
+				if (!time) break;
+
+				return '<cite>' + time.getFormatted().ampmTime.substr(0,5)
+					 + '<i> ' + time.getFormatted().ampm + '</i></cite>';
+			}
+			return  '';
+		}
+		/*--------------------------------------------------------------------------------
+		--------------------------------------------------------------------------------*/
+		function eventDateLong(date)
+		{
+			var dateStr = ''
+						// day of week
+						+ '<span class="eventDayOfWeek">'
+
+						  // Long format: e.g. Monday
+						+   '<span class="eventDayOfWeekLong">'
+						+      topframe.RZdayName(date) + ', '
+						+      '</span>'
+
+						  // Short format: e.g. Mon
+						+      '<span class="eventeventDayOfWeekShort">'
+						+      topframe.RZdayName(date).substr(0,3) + ', '
+						+      '</span>'
+						+    '</span>'
+						// day of week end
+
+						// long month name e.g. January
+						+ '<span class="eventDateMonthLong">'
+						+ topframe.RZmonthNameArr[date.getMonth()] + ' '
+						+ '</span>'
+
+						// short month name e.g. Jan
+						+ '<span class="eventDateMonthShort">'
+						+ topframe.RZmonthNameArr[date.getMonth()].substr(0,3) + ' '
+						+ '</span>'
+
+						// day with suffix e.g. 1st
+						+ topframe.RZdaySuffix(date)
+
+						// year e.g. yyyy
+						+ '<span class="eventYear">, ' + date.getFullYear() + '</span>';
+			return dateStr;
+		}
+		//////////////////////////////////////////////////////////////////////////////
+	}	// end function showUpcomingEvents
+
+	/*--------------------------------------------------------------------------------
+	Display detail for specific event (eventIndex) or all events for specific date.
+	called when day clicked in calendar grid or upcoming event clicked when layer not defined
+	--------------------------------------------------------------------------------*/
+	function showEventDetail(year,month,day,eventIndex)
+	{
+		var detail_date = homeframe.RZdate(year,month,day);
+		var events = getEvents(detail_date,'begin');
+		eventCount = events.length;
+
+		html += '<span class="eventExpanded">'
+			  + '<h2 class="back-to-event-list"><a href="javascript:changeMonth()">Back to Event List</a>'
+			  + '</h2><h3 class="eventExpandedDateHeading">'
+			  + '<span class="eventDayOfWeek">'
+			  + topframe.RZdayName(caldate) + ', '				//DCO redmine #1853
+			  //+ topframe.RZdayArr[caldate.getDay()+1] + ', ' 	//	''		''
+			  + '</span>'
+			  + topframe.RZmonthName(caldate) + ' '
+			  + topframe.RZdaySuffix(caldate)
+			  + '<span class="eventYear">, ' + caldate.getFullYear() + '</span>'
+			  + RZ.calendar.debugLink
+			  + '</h3>';
+
+		// clear list, check for single event
+		eventArr = new Array();
+		var start = 0;
+		if (typeof(eventIndex) != 'undefined')	//single event
+		{
+			start = eventIndex;
+			eventCount = eventIndex+1;
+		}
+
+		for (i=start; i<eventCount; i++)
+		{
+			e = getEvent(detail_date, i)
+			eventHtml = '<h3 class="eventExpandedTitle">';
+
+			if (e.time_begin != ':' && e.time_begin != '')
+				eventHtml += '<span class="eventExpandedTime">'
+				           + topframe.RZgetTimeInAmPm(e.time_begin)+': </span>';
+			eventHtml += e.name;
+
+			if (e.signup_form == "yes")
+			{
+				eventHtml += '<span class="eventExpandedSignup">\n'
+						   + '<a href="' + buildPopupEventSignupHref(e,detail_date) + '"\n'
+						   + '><img src="images/sign_up_icon.gif" border="0" title="Signup Form" /></a>\n'
+						   + '</span>';
+			}
+			var repeatImg = '';
+			if (e.repeat)
+				eventHtml += '<img class="eventExpandedRepeat"'
+						   + ' src="images/' + RZ.calendar.constants.eventRepeatSrc + '"'
+						   + ' border="0" title="' + repeatDescAlt(e.repeatDesc) + '" />';
+			eventHtml += '</h3>';
+
+			if (e.detail != '')
+				eventHtml += '<div class="eventExpandedDetails">' + e.detail + '</div>';
+
+			// get time for sort
+			var firstSplit = (e.time_begin).split(":");
+			firstSplit = firstSplit[0] + "." + firstSplit[1];
+			if(firstSplit == ".")
+				firstSplit = "0.0";
+
+			eventArr[eventArr.length] = [parseFloat(firstSplit),eventHtml];
+		}
+
+		//----- Get here from click in calendar grid date
+		if (eventCount > 0)
+		{
+			if (typeof(eventIndex) == 'undefined')	//NOT single event
+				topframe.sortOnTime(eventArr, 0, eventCount);
+			eventHtml = topframe.getHtmlOfDayEvents(eventArr);
+
+			//DCO redmine 1853: lineBreak no longer added & was truncating event name
+			//eventHtml = eventHtml.substring(0,eventHtml.length-(linkBreak.length));
+			html += eventHtml + '</span>';
+		}
+
+		return html;
+	}
+}
+/*--------------------------------------------------------------------------------
+called when upcoming event clicked, if RZcalendar_events div found containing
+iframe, set src to event detail -- otherwise show event detail in mini iframe.
+--------------------------------------------------------------------------------*/
+function displayDetail(cid, eid, idx, date)
+{
+	var url = 'calendar_app/'
+
+			+ (RZ.calendar.detail_iframe_template == 'true'
+			? 'calendar_event_detail_iframe.html'
+			: 'calendar_event_detail.html')
+
+			+ '?cid=' + cid + ' eid=' + eid + " date='" + date + "'"
+
+	if (!popupDetailIframeLayer(url, window.frameElement))
+		changeDate(formatEventClick(homeframe.RZdate(date),idx));
+}
+/*-----------------------------------------------------------------------------
+Open full view calendar in new window; same size as iframe top window
+-----------------------------------------------------------------------------*/
+function editCalendar()
+{
+	var calDate = topframe.RZ.calendar.date;
+	var url = 'index.html#'
+			+ RZ.calendar.name
+			+ ','
+			+ (calDate.getMonth() + 1) + '/'
+			+ calDate.getDate() + '/'
+			+ calDate.getFullYear();
+
+	var winW = 1000, winH = 700;
+	if (RZwinaccess(top))
+	{
+		var sizes = homeframe.top.RZscreensizes(winW,winH);
+		winW = sizes.width; winH = sizes.height;
+	}
+	RZ.editWindow = RZpopupUrl( 'EditWindow', url, winW, winH, 'yes')
+	//window.open(url);
+	return false;
+}
+/*-----------------------------------------------------------------------------
+RZ.scriptLoaded.filename == true indicates the script loaded
+-----------------------------------------------------------------------------*/
+if (!RZ.scriptLoaded) RZ.scriptLoaded = {};
+RZ.scriptLoaded.calendar_app_view_mini = true;
+/*-----------------------------------------------------------------------------
+RZ.scriptLoaded.filename == true indicates the script loaded
+-----------------------------------------------------------------------------*/
+if (RZ.scriptLoaded)
+	RZ.scriptLoaded.calendar_app_javascript_miniview = true;

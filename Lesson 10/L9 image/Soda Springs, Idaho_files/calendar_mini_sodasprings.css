@@ -1,0 +1,500 @@
+/* CSS Document */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,100italic,100,400italic,700,700italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
+#bodyMini {
+	margin: 0;
+
+	font-family:'Lato',Verdana,Geneva,sans-serif;
+	font-size: 12px;	/***** default bg color for everything   *****/
+							/* usually covered by calendar grid so only shows on detail */
+							/* if #calendar width is less than iframe it may show which */
+							/* is clue to adjust the iframe size.                       */
+							/* TIP: match to td.eventDay background color */
+}
+#calendarControlLast,#calendarControlNext{font-size:20px}
+#calendarMonthYear{font-size:16px;color:#1d3353;line-height:18px;font-weight:900;text-transform:uppercase;letter-spacing:1px;padding-bottom:10px}
+#bodyMini, #bodyMini a {	/* height set by javascript to match iframe height */
+	color:black;			/* default color for everything usually overridden everywhere */
+	overflow: hidden;
+}
+#calendar {					/* top container for calendar grid */
+	/***** activate float:left; below for detail on right *****/
+	float:left;
+	overflow: hidden;
+	margin-right:55px;
+	/* display: none; */	/* TIP: use to hide calendar grid */
+
+	/* TIP: if bg color for calendar grid SAME as body, DELETE */
+}
+#calendar, #calendar a {
+	/* TIP: shows everywhere in calendar grid unless overridden */
+	/* if text color SAME as body, DELETE.  */
+	color: red;
+}
+#topImage {
+	/* use when an image used at top of calendar (full width) */
+	/* if image is at top of calendar grid, put under calendarContentTopImage */
+	/* background:url(images/cal_up.jpg) no-repeat; */
+	/* height set to height of img or portion that should be displayed */
+	/* height: 12px; */
+}
+
+/***** This includes << month/year >>, the days header (M T ...) and individual days *****/
+#calendarTable {
+	/* if using bg image behind the entire inner calendar grid */
+	/* background:url(images/melissa/mini-melissa-bg.jpg) no-repeat OR repeat-x or repeat-y; */
+
+	width: 90%;
+
+	/* use to define height & width of calendar grid container more percisely */
+	/* width: 180px; */
+	/* height: 163px; */
+
+	/* center calendar grid inside calendar container */
+	margin: 5px auto;
+	
+	/* Consider width: 100%; margin: 5px 0; if detail to right of grid */
+	/* width: 100%; */
+	/* margin: 0 5px 0 0; */
+}
+
+#calendarContentTopImage {
+	/* use when an image used at top of calendar (usually for rounded corners) */
+	/* background:url(images/cal_up.jpg) no-repeat; */
+	/* height set to height of img or portion that should be displayed */
+	/* height: 12px; */
+	background-color: #384A1C;	/* used if no image or image partly transparent */
+	background-position:center;	/* uses center portion of bg */
+
+	/* if image, must specify height & width because div is empty
+	background-image: url(images/okmulgee/cal-top.png);
+	background-position:center;
+	height: 36px;
+	width: 210px;
+	*/
+}
+#calendarContentBottomImage {
+	/* use when an image used at bottom of calendar (usually for rounded corners) */
+	/* height set to height (and perhaps width) of img or portion that should be displayed */
+	/* background:url(images/cal_down.jpg) no-repeat; */
+	/* height: 12px; */
+}
+
+
+#calendarContent {	/* this is month heading, day heading (M T) and days */
+	/* override body for for month heading, day heading & days */
+	/* background-color:red; */
+	border:1px solid #d2d6dd;
+	width:290px;
+	padding:18px;
+}
+
+/***** this is days heading (M T ...) and specific days ******/
+#calenderGridTable {
+
+	/* table only wide and high enough to display days with default padding   */
+	/* you can specify a larger height and width here or change the padding specified */
+	/* in the "#calenderGridTable .gridHeaderRow td" selector below with is preferred */
+	/*
+	height: 100px;
+	width: 270px;
+	*/
+
+	/* override for body and #calendarContent setting */
+	/* if bg color diff from body and #calendarContent */
+}
+
+/***** days header only (i.e. M T W ...) ******/
+#calenderGridTable .gridHeaderRow td {	/* .gridHeaderRow set by javascript not html */
+	text-align: center;
+	font-weight: bold;
+	color:#2f2834;
+	font-size: 14px;line-height:20px;
+
+	/* height: 32px; */	/* define height of days header */
+
+	/* if bg color diff from body and #calendarContent */
+
+	/* if dayHeader uses bg image */
+	/* background:url(images/date_bg.jpg) repeat-x; */
+}
+
+/***** applies to all day heading and specific day table cells *****/
+#calenderGridTable td {
+	text-align: center;
+	height:28px;
+	padding: 1px 4px;
+	vertical-align: middle;
+	/* must be at least size of "#calenderGridTable td.today" border size */
+	 /* 1st number is top/bottom; 2nd is left/right */
+
+	/* padding is preferred method of controlling height and width */
+	/* height: 24px; */
+}
+
+/***** put border around today - overriden by grid borders belos *****/
+/* "#calenderGridTable td" padding above should be at least size of border */
+#calenderGridTable td.today {
+	background:#3c9ab9;
+	font-size:14px;
+	line-height:20px;
+}
+
+
+/***** if not 0px, puts outside border around day header and day grid *****/
+#calenderGridTable {
+	
+}
+
+
+/***** put borders around day grid (including outside edges) *****/
+/* comment out when not using
+#calendar #calenderGridTable td {
+	border: 1px solid #000000;
+	border-top-style: none;
+	border-right-style: none;
+}
+#calendar #calenderGridTable .topTD {
+	border-top-style: solid;
+}
+#calendar #calenderGridTable .rightTD {
+	border-right-style: solid;
+}
+*/
+
+/***** put borders around day grid (but not outside table edges) *****/
+/* comment out when not using
+#calendar #calenderGridTable td {
+	border: 2px solid red;
+	border-top-style: none;
+	border-left-style: none;
+}
+#calendar #calenderGridTable .rightTD {
+	border-right-style: none;
+}
+#calendar #calenderGridTable .bottomTD {
+	border-bottom-style: none;
+}
+*/
+
+/***** kill all or some borders on day header row (inside or outside borders) *****/
+#calendar #calenderGridTable .gridHeaderRow td {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom: none;
+	border-left-style: none;
+}
+
+
+/***** over-ride background colors for weekEnd, weekDay, selectRow, SelectDay *****/
+
+.weekEnd {
+	color:#252120;
+	font-size:14px;
+	line-height:20px;
+	/* if different from body, #calenderGridTable or #calendarContent */
+}
+.weekDay {
+	color:#252120;
+	font-size:14px;
+	line-height:20px;
+	/* if different from body, #calenderGridTable or #calendarContent */
+	/* background:#FFFFFF; */
+}
+.selectRow .weekDay {
+	/* if different from body, #calenderGridTable or #calendarContent */
+	/* background: #D8B88F; */
+}
+.selectRow .weekEnd {
+	/* if different from body, #calenderGridTable or #calendarContent */
+	/* background: #CC9E6A; */
+}
+.selectDay  {
+	/* if different from body, #calenderGridTable or #calendarContent */
+	/* background: #854613; */
+	color:#fff;
+	vertical-align:middle;
+}
+
+/***** applies to table cells to over-ride text colors  *****/
+
+#calenderGridTable td.today {
+	/* background:url(images/date_bg.jpg); */
+}
+#calenderGridTable td.today a { 
+	vertical-align:middle;
+	color:#fff!important;
+	text-decoration:none;
+}
+
+#calendarControl { /* << month - year >> */
+	/* use if font or color different than body */
+	/* font:16px/32px; */
+	/* color:#fff; */
+	font-weight:bold;
+	/*Don't believe is needed: text-align:center; */
+}
+#calendarControl th, #calendarControl th a{
+	/* use if font or color different than body */
+	/* color:#fff; */
+	/* font-size:16px; */
+	text-decoration:none;
+}
+#calenderGridTable .eventDay a {
+	/* use background or color to highlight dayss with events */
+	/* background:url(images/date_bg.jpg); */
+	/* color:#C63200; */
+}
+#calenderGridTable .otherMonth, #calenderGridTable .otherMonth a {
+	color:#b3b3b3;
+	font-size:14px;
+	line-height:20px;
+}
+
+#calenderGridTable td a { 			/* default day text color */
+	/* color:#fff; */
+}
+#calenderGridTable td.eventDay {
+	/* background:url(images/date_bg.jpg) repeat-x; */
+}
+#calenderGridTable .eventDay a {
+	/* color:#C63200; */		/* use if eventDay has diff text color */
+	color:#3c9ab9 !important;
+	text-decoration:underline;
+}
+#calenderGridTable .eventDay a.other {	/* overrides .eventDay for other months */
+	font-weight: normal;
+}
+#calenderGridTable .selectDay, #calendar .selectDay a {
+	/* color:#FFFFFF; */		/* overrides eventDay (detail will show events) */
+}
+
+/***** always apply to days on hover or active *****/
+#calenderGridTable td a:hover, #calenderGridTable td a:active {
+	color:#FFF;
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+/********************************************************************************/
+#detailSpace {	/* blank space between calendar and detail */
+	/* background-color:#0E1505; */
+	height: 0px;		/* TIP: 5px if #calendar float:left; otherwise 0px */
+}
+#detail {				/* TIP: set font, color, size, etc further down */
+						/* background usually inherited from #bodymini */
+	overflow: hidden;
+
+	/* if bg image; width and margins center if not full width
+	background-image:url(images/okmulgee/event-body.png);
+	width: 210px;
+	margin-left:auto;
+	margin-right:auto;
+	*/
+}
+#detailTop {
+	/* if bg image above content container
+	background-image:url(images/okmulgee/event-top.png);
+	height: 10px;
+	*/
+}
+#detailBottom {
+	/* use if bg image below content container
+	background-image:url(images/okmulgee/event-bottom.png);
+	height: 10px;
+	*/
+}
+#detailContent,				/* TIP: ALL detail content styles except color */
+#detailContent font {
+	font-weight: normal;	/* TIP: normal is best use of limited space  */
+	font-size:12px;
+}
+#detailContent {			/* TIP: only set margins & padding for detail container */
+	padding-left: 5px;
+	padding-right: 5px;
+}
+#detailContent, 			/* ALL detail content default settings */
+#detailContent a {
+	color: #663333;			/* default color headings, text & links */
+}
+#detailContent a {			/* link overrides from above default setting */
+	/* color: blue; */		/* color if different from default */
+	text-decoration:none;
+}
+#detailContent a:hover {
+	text-decoration:underline;
+	/* add color:???? to SHOW different color when when hovering over event links */
+}
+#detailContent h2,			/* ALL h2 and h3 default settings */
+#detailContent h3 {
+	color: #005a99;			/* does not apply to embedded links */
+	margin: 0;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: italic;
+	text-align: left;
+}
+#detailContent h2 a,		/* h2 and h3 embedded links settings */
+#detailContent h3 a {
+	/* color: red; */		/* color if different from default */
+}
+#detailContent h2.upcoming-events {
+	/* display:none; to hide "Upcoming Events" heading */
+	margin: 2px;
+	text-align: center;
+	font-weight: bold;
+	display:none;
+}
+#detailContent h2.back-to-event-list {
+	/* "Back to Event List" heading TIP: do not hide */
+	margin-bottom: 2px;
+	font-weight: normal;	/* TIP: keeps focus on details not back link */
+	text-align:  center;
+}
+#detailContent h2.eventDateHeading, #detailContent h3.eventExpandedDateHeading {
+	/* date heading style for upcoming events and expanded event detail */
+	/* there are selector settings below to hide either heading */
+	color:#ffa84c;
+	font-weight:900;
+	font-size:12px;
+	font-style:normal;
+	line-height:26px;
+	text-transform:uppercase;
+	letter-spacing:1px;
+}
+#detailContent a, #detailContent .eventTitle, #detailContent .eventExpandedTitle {
+	/* settings for event name which is can be link or span  */
+}
+
+#detailContent .eventDayOfWeek {
+	/* display:inline; */ 	/* show day of week; short or long form specified below:  */
+}
+#detailContent .eventDayOfWeekShort {
+	/* display:none; */ 	/* hide short form day of week (e.g. Mon, Tue, Wed, etc)  */
+	display:none;			/* show short form (set .eventDayOfWeekLong display:none) */
+}
+#detailContent .eventDayOfWeekLong {
+	display:none; 			/* hide long form day of week (e.g. Monday, Tuesday, etc) */
+	/* display:inline; */ 	/* show long form (set .eventDayOfWeekShort display:none) */
+}
+
+#detailContent .eventDateHeading {
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * display:block; to SHOW long form of date above events; else display:none                *
+	 * if displayed then .eventDatePrefix below should have display:none                       *
+	 *                                                                                         *
+	 * Example: Thursday, August 4th, 2011                                                     *
+     * -date only displayed once for all event on same day                                     * 
+	 * -day name, day suffix and year can be hidden with classes below)                        *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	display: block;
+}
+/*  //------------------------------------------------------------------------------------\\  */
+/*    Selectors below up to .eventDatePrefix NA if above .eventDateHeading is display:none    */
+/*    ------------------------------------------------------------------------------------    */
+#detailContent .eventDayOfWeek {
+	/* display:inline; Shows day of week in long form (e.g. Monday, Tuesday, etc)  */
+    display: inline;
+}
+#detailContent .eventDaySuffix {
+	/* display:inline; Shows suffix after day not just number (e.g. 1st vs 1)      */
+	/* display:none to omit if real estate really tight using .eventDatePrefix     */
+    display: none;
+}
+#detailContent .eventDateMonthShort {
+	/* display:inline; to SHOW short form of month above events; else display:none */
+	/* if displayed then .eventDateMonthLong below should have display:none        */
+	display: none;
+}
+#detailContent .eventDateMonthLong {
+	/* display:inline; to SHOW long form of month above events; else display:none  */
+	/* if displayed then .eventDateMonthShort above should have display:none       */
+}
+/*  \\------------------------------------------------------------------------------------//  */
+
+#detailContent .eventDatePrefix {
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * display:inline; to SHOW short date in front of event                                    *
+	 * if displayed then .eventDateHeading above should have display:none                      *
+	 *                                                                                         *
+	 * Example: 08-04-11 Swimming Lessons                                                      *
+	 *          08-04-11 Cardio Tennis                                                         *
+     * -date shows for every event (even if same day as prior event)                           * 
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    display: none;
+}
+#detailContent .eventYear {
+	/* display:inline; to SHOW year on both short and long form dates; else (display:none) */
+    display: inline;
+}
+#detailContent .eventUL {
+
+	/* use following if events displayed as bullets */
+	*padding: 0 0 2px 18px;		/* IE, Safari */
+	padding:0 0 2px 14px;		/* Firefox */
+	/* padding:0 if events NOT displayed in list format overrides above */
+	padding: 0;
+}
+#detailContent .eventLI {
+    /* display:list-item; */	/* to SHOW upcoming events as bullets otherwise display:block  */
+    display: block;
+}
+#detailContent .eventLink {
+	/* display:none; if event name NOT displayed as link to detail (if displayed, hide .eventTitle) */
+	font-size:20px;line-height:26px;color:#000;font-family: 'Oswald', sans-serif;
+}
+#detailContent .eventTitle {
+	/* display:none; if event name SHOWS as .eventLink above (if displayed, hide .eventLink above)  */
+	display: none;
+}
+
+#detailContent>div:last-child{border:none}
+
+.aEvent{padding:10px 0;border-bottom:1px solid #e8eaed}
+
+/***** Following classes for tweaking on expanded detail (not upcoming events) TIP: review text-align *****/
+#detailContent .eventExpanded {
+	/* entire event expanded detail outer container */
+
+}
+#detailContent h3.eventExpandedDateHeading {
+	/* display:none; to hide date heading on event expanded detail */
+	text-align: left;
+}
+#detailContent .eventExpandedTime {
+	/* display:inline; to SHOW time which prefixes expanded event detail */
+	display:none;
+}
+#detailContent h3.eventExpandedTitle {
+	/* settings for event name on event expanded detail  */
+	margin-top: 3px;
+	margin-bottom: -1px;
+	font-size:20px;line-height:26px;color:#000;font-family: 'Oswald', sans-serif;font-style:normal;
+}
+#detailContent .eventExpandedSignup, #detailContent .eventExpandedSignup a {
+	/* settings for event signup link on event expanded detail  */
+}
+#detailContent .eventExpandedDetails {
+	/* settings for event details on event expanded detail  */
+}
+
+/***** style for debug link and update button *****/
+#detailContent #detail a.debug {		/* hidden debugger link */
+	text-decoration:none;
+}
+#updateDiv {	/* top & width set by javascript to center at bottom of window */
+	position:absolute;
+	text-align:center;
+	display:none;
+	z-index:1;
+	height:25px;
+	left: 0px;
+
+}#updateDiv form {
+	display:inline;
+}
+.calendarMonthDayEvent img{display:none}
+
+@media only screen and (max-width:600px){
+	#calendar{float:none;margin:0}
+}

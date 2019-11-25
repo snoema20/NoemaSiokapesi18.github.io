@@ -1,0 +1,68 @@
+/*-----------------------------------------------------------------------------------
+
+	Description: Isotope Photo Gallery   
+	Author: Samir Alley @samiralley
+	Version: 1 / May 2, 2013
+
+	Table of content
+	#Hover image effects
+	#prettyPhoto
+	#Isotope
+
+-----------------------------------------------------------------------------------*/ 
+
+/*-----------------------------------------------
+
+#Hover image effects 
+
+------------------------------------------------*/
+(function($){
+
+	$(document).ready(function(){
+		
+			// first opacity item-overlay set to 0
+			$(".item-overlay").css("opacity","0");
+			
+			// When We hover
+			$(".item-overlay").hover(function () {
+			
+			// set the opacity to 80%
+			$(this).stop().animate({
+			opacity: .8
+				}, "slow");
+			},
+			
+			// When we mouse out
+			function () {
+			
+			// Set opacity back to 0%
+			$(this).stop().animate({
+			opacity: 0
+			}, "slow");
+		});
+	
+	/*-----------------------------------------------
+	
+	#prettyPhoto
+	
+	------------------------------------------------*/ 
+		$("a[data-rel^='prettyPhoto']").prettyPhoto();
+	
+	/*-----------------------------------------------
+	
+	#Isotope
+	
+	------------------------------------------------*/ 
+	
+	  var $container = $('#isotope-container');
+	
+	  $container.imagesLoaded( function(){
+	    $container.isotope({
+	      itemSelector : '.isotop-element',
+	      layoutMode : 'masonry'   
+	    });
+	  });
+	
+	});
+	
+})(jQuery);

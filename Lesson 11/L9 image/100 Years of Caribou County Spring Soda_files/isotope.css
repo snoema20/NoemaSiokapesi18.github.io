@@ -1,0 +1,33 @@
+/*-----------------------------------------------------------------------------------
+
+	Description: Isotope Photo Gallery   
+	Author: Samir Alley @samiralley
+	Version: 1 / May 2, 2013
+
+-----------------------------------------------------------------------------------*/ 
+.isotope-wrap *{margin:0;padding:0}
+.isotope-wrap{clear:both;position:relative;z-index:3}
+.pp_description{font-family:sans-serif}
+.isotope-item{z-index:2}
+.isotope-hidden.isotope-item{pointer-events:none;z-index:1}
+.isotope, 
+.isotope .isotope-item{position:relative;z-index:2;-webkit-transition-duration:0.8s;-moz-transition-duration:0.8s;-ms-transition-duration:0.8s;-o-transition-duration:0.8s;transition-duration:0.8s}
+.isotope{-webkit-transition-property:height,width;-moz-transition-property:height,width;-ms-transition-property:height,width;-o-transition-property:height,width;transition-property:height,width}
+.isotope .isotope-item{-webkit-transition-property:-webkit-transform,opacity;-moz-transition-property:-moz-transform,opacity;-ms-transition-property:-ms-transform,opacity;-o-transition-property:-o-transform,opacity;transition-property:transform,opacity}
+.isotope.no-transition, 
+.isotope.no-transition .isotope-item, 
+.isotope .isotope-item.no-transition{-webkit-transition-duration:0s;-moz-transition-duration:0s;-ms-transition-duration:0s;-o-transition-duration:0s;transition-duration:0s}
+.isotope.infinite-scrolling{-webkit-transition:none;-moz-transition:none;-ms-transition:none;-o-transition:none;transition:none}
+#isotope-container{padding-bottom:20px;clear:both;overflow:hidden}
+#isotope-container .isotop-element{overflow:hidden;background:#f5f5f5;text-align:center;padding:0;position:relative;max-width:215px;float:left;display:inline;margin:10px;opacity:.8}
+#isotope-container .isotop-element:hover{opacity:1}
+#isotope-container .isotop-element img{max-width:100%!important;height:auto!important;float:left}
+.isotope-hidden.isotope-item{pointer-events:none;z-index:1}
+.item-overlay .more-icon{position:absolute;top:50%;margin-top:-32px;left:-50%;margin-left:-32px;-webkit-transition-duration:0.8s;-moz-transition-duration:0.8s;-ms-transition-duration:0.8s;-o-transition-duration:0.8s;transition-duration:0.8s;border:none}
+.item-overlay:hover .more-icon{left:50%;z-index:99}
+.item-overlay{position:absolute;top:0;left:0;bottom:0;right:0;text-align:center;background:#000;z-index:99;display:none}
+.isotop-element:hover .item-overlay{display:block}
+.item-overlay a{text-decoration:none}
+.clearfix:before, .clearfix:after{content:"";display:table}
+.clearfix:after{clear:both}
+.clearfix{zoom:1}

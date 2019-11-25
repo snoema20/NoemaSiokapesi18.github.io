@@ -1,0 +1,8 @@
+/*
+This file should be installed on any non-Revize servers in the following
+directory:  WEBSITE VIRTUAL DIRECTORY/revize/util/snippet_helper.js
+
+It is normally created by Dreamweaver during Revize webSpace creation
+For more info, click on help after selecting "Setup Idetix webSpace"
+*/
+if (typeof RZ == 'undefined') var RZ = new Object();
