@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+        <title>Preston Idaho</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Assignment weather Siokapesi Noema, CIT 230: Web Frontend Development at Brigham Young University - Idaho">
+        <meta name="author" content="Siokapesi Noema">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+</head>
+<body>          
+                
+    <header id="main-header">     
+        <div id="friday-banner">
+           
+        </div>     
+        <picture>
+            <img src="L9 image/images/image/logo.jpg" alt="Weather">
+        </picture>
+        <section class="sec-company-info">
+            <h1>Preston Weather Forecast</h1>
+            <div class="motto">Most Updated Weather Forecast</div>
+        </section>
+    </header>
+    <nav>
+        <ul class="main-nav">
+            <li><a href="#" onclick="toggleMenu()"><span class="exit-button">&#215;</span><span class="hamburger">&#9776; Menu</span></a></li>
+            <li class="active"><a href="Index-9.html">Home</a></li>
+            <li><a href="Preston 11.html" >Preston</a></li>
+            <li><a href="#">Soda Springs</a></li>
+            <li><a href="#">Fish Haven</a></li>
+            <li><a href="storm.html">Storm Center</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <div id="content-container">
+       <!-- MAIN -->
+        <main>
+            <h2>Preston <span>Idaho</span></h2>            
+            <section class="content-box">
+                <div class="hero-container">
+                    <picture>
+                        <source media="(min-width: 60em)" srcset="L9 image/heroMedium.jpg">
+                        <source media="(min-width: 37.5em)" srcset="L9 image/heroSmall.jpg">
+                        <img class="hero-image" src="L9 image/heroLarge.jpg" alt="beautiful day">
+                    </picture>
+                    <div class="hero-weather-info">
+                        <h3>Weather Summary</h3>
+                        <hr>
+                        <div class="table-grid">
+                            <span class="head-content">Currently:</span> 
+                            <span class="head-value"><span id="current-weather"></span></span>
+
+                            <span class="head-content">High:</span> 
+                            <span class="head-value"><span id="temp"></span>&#8457;</span>
+
+                            <span class="head-content">Wind Chill:</span>
+                            <span class="head-value"><span id="wind-chill"></span></span>
+
+                            <span class="head-content">Humidity:</span>
+                            <span class="head-value"><span id="humid-percent"></span>%</span>
+
+                            <span class="head-content">Wind Speed:</span>
+                            <span class="head-value"><span id="wind-speed"></span>mph</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-box no-display">
+                <h3>5 Day Forecast</h3>
+                <table>
+                    <thead class="table-header"></thead>
+                </table>
+            </section>
+
+            <section class="content-box">
+                <h3 class="float">Wide stretch of Heartland to see significant snow on Halloween</h3>
+                <div id="article-container">
+                    <div class="article panel-wrapper"> 
+                        <a href="#article-show" class="article-show btn" id="article-show">Show More</a>
+                        <a href="#article-hide" class="article-hide btn" id="article-hide">Show Less</a> 
+                        <div class="panel">                            
+                                       
+                            <p>In Preston, the summers are warm and mostly clear, the winters are freezing and partly cloudy, and it is dry year round. Over the course of the year, the temperature typically varies from 15°F to 88°F and is rarely below 1°F or above 94°F.
+
+                                    Based on the tourism score, the best time of year to visit Preston for warm-weather activities is from late June to mid August.
+                                <br /><br />
+                               
+                            
+                        </div> 
+                    </div>
+                    <picture>
+                        <img class="img1" src="L9 image/images/image/courthouse.jpg" alt="court house">
+                    </picture>
+                </div>
+            </section>
+
+            <section class="content-box">
+                <h3>Contact Information</h3>                
+                <div id="contact">
+                    <div class="map no-display">
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Preston%2C%20Idaho&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                            </div>
+                        </div>
+                    </div>                
+                    <div class="contact-info">
+                    
+                       
+                
+         <p>Address: 125 Summit Ave S Preston Idaho 98089</p>
+           <p>Phone Number: 231-232-4534</p>         
+                            <p>Email: prestonweather@hotmail.org</p>
+                        </div>
+                        <br /><br />
+                    
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p> 
+        <span id="currentDate"></span>
+            
+       </footer>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="js/date.js"></script>
+    <script src="js/webfont.js"></script>
+    <script src="js/windchill.js"></script>
+</body>
+</html
