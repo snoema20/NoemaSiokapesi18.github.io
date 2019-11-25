@@ -25,7 +25,7 @@ body {
 }
 
 header {
-	background-color: #c9444b;
+	background-color: #62c6ee;
 	display: flex;
 	align-items:center;
     justify-content:center;
@@ -344,8 +344,8 @@ footer {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.75em;  
     line-height: 1.5em;
-	background-color: #c9444b;  
-    color: #2d0983;
+	background-color: #62c6ee;  
+    color: #72570e;
 	display: flex;
     flex: 0 1 100%;
 	align-items:center;
