@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto|Share+Tech+Mono|Ubuntu&display=swap');
+@import url('https://fonts.google.com/specimen/Calistoga');
 body {
 	background-color: #ffffff;
 	padding: 0;
@@ -100,7 +100,7 @@ nav li a {
     padding: .8rem 2%;
     text-decoration: none;
     font-size: .8em;
-    font-family: 'Montserrat', sans-serif;    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
     border-top: 1px solid rgba(255,255,255, 0.3)
 }
 
@@ -146,7 +146,7 @@ main {
 #content-container {
     width: 85%;
     margin: 0 auto;
-    background-color: #3bbaec;
+    background-color: #5f3f03;
     padding: 10px;
 }
 
@@ -247,8 +247,8 @@ hr {
 .article, .contact-info {
     text-align: left;
     padding: 0 30px 30px 30px;
-    background-color: #cc8924;
-    color: #1f2041;
+    background-color: #5f3f03;
+    color: #f5f5ff;
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1); 
     box-sizing: border-box;
@@ -345,7 +345,7 @@ footer {
     font-size: 0.75em;  
     line-height: 1.5em;
 	background-color: #5f3f03;  
-    color: #2e14c2;
+    color: #f2f1f8;
 	display: flex;
     flex: 0 1 100%;
 	align-items:center;
