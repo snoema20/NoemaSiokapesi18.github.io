@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto|Share+Tech+Mono|Ubuntu&display=swap');
+@import url('https://fonts.google.com/specimen/Calistoga');
 body {
 	background-color: #ffffff;
 	padding: 0;
@@ -13,7 +13,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #57ddff;
+    background-color: #5f3f03;
     display: none;
 }
 
@@ -25,7 +25,7 @@ body {
 }
 
 header {
-	background-color: #c9444b;
+	background-color: #5f3f03;
 	display: flex;
 	align-items:center;
     justify-content:center;
@@ -59,13 +59,13 @@ header img {
 nav {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    background-color: #ac4141;
-    box-shadow: 0 5px 10px #0b112b;
+    background-color: #633c09;
+    box-shadow: 0 5px 10px #e4e5ec;
 }
 
 .main-nav li:first-child {
     display: block;
-    background-color: #be4242;
+    background-color: #633c09;
     border: none;
     font-size: 1.3rem;
     padding: 10px;
@@ -95,12 +95,12 @@ nav ul {
 
 nav li a {
     display: block;
-    color: #95c942;
+    color: #1d21ec;
     text-align: center;
     padding: .8rem 2%;
     text-decoration: none;
     font-size: .8em;
-    font-family: 'Montserrat', sans-serif;    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
     border-top: 1px solid rgba(255,255,255, 0.3)
 }
 
@@ -121,7 +121,7 @@ nav ul li a:hover {
 }
 
 .main-nav li:first-child a:hover {
-    background-color: rgba(230, 111, 111, 0.6);
+    background-color: #633c09;
 }
 
 .responsive li {
@@ -146,7 +146,7 @@ main {
 #content-container {
     width: 85%;
     margin: 0 auto;
-    background-color: #ce9b36;
+    background-color: #5f3f03;
     padding: 10px;
 }
 
@@ -174,10 +174,10 @@ h3 {
     display: block;
     margin: 10px auto;
     padding: 15px;
-    background-color: #5457b3;
+    background-color: #1116aa;
     color: #ffffff;
     border-radius: 5px;    
-    box-shadow: 0 10px 20px 0 rgba(204, 21, 21, 0.6);
+    box-shadow: 0 10px 20px 0 rgba(216, 124, 124, 0.6);
     box-sizing: border-box;
 }
 
@@ -203,10 +203,10 @@ h3 {
 	position: absolute;
 	top: 20px;
     left: 10px;
-	background: radial-gradient(#6f73f5, #d13d3d);
+	background: #633c09;
 	border: 2px solid #ffc857;
 	padding: 0.5rem;
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1);
+    box-shadow: 0 10px 20px 0 rgb(235, 233, 233);
     opacity: 0.9;
     width: 55%;
     font-size: 0.7rem;
@@ -247,8 +247,8 @@ hr {
 .article, .contact-info {
     text-align: left;
     padding: 0 30px 30px 30px;
-    background-color: #cc9424;
-    color: #1f2041;
+    background-color: #5f3f03;
+    color: #f5f5ff;
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1); 
     box-sizing: border-box;
@@ -344,8 +344,8 @@ footer {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.75em;  
     line-height: 1.5em;
-	background-color: #c9444b;  
-    color: #2d0983;
+	background-color: #5f3f03;  
+    color: #f2f1f8;
 	display: flex;
     flex: 0 1 100%;
 	align-items:center;
