@@ -163,7 +163,7 @@ h2 {
 }
 
 h2 span {
-    color: #131212;
+    color: #ebe1e1;
 }
 
 h3 {
@@ -247,8 +247,8 @@ hr {
 .article, .contact-info {
     text-align: left;
     padding: 0 30px 30px 30px;
-    background-color: #f8f5f0;
-    color: #1a1a1b;
+    background-color: #1727b9;
+    color: #e0e0e9;
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1); 
     box-sizing: border-box;
@@ -441,7 +441,7 @@ form label.top input, form label.top select, form label.top textarea {
     border: 1px solid #2b0b0b;
     border-radius: 5px;
     padding: .75rem;
-    color: #dcdcee;
+    color: #0c0c0c;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.7);    
     box-sizing: border-box;
@@ -450,14 +450,14 @@ form label.top input, form label.top select, form label.top textarea {
 form label.sbs {
     display: block;
     padding: .5rem 0;
-    color: #f7f8fd;
+    color: #0b0c0c;
     text-align: left;
 }
 
 form input.submitBtn {
     border: none;
     background-color: #a50404;
-    color: #fff;
+    color: rgb(15, 15, 15);
     border-radius: 1rem;
     padding: .75rem 1.5rem;
     margin: 0 0 2rem 2%;     
