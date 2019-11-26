@@ -344,7 +344,7 @@ footer {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.75em;  
     line-height: 1.5em;
-	background-color: #ca880e;  
+	background-color:#5f3f03 ;  
     color: #f2f1f8;
 	display: flex;
     flex: 0 1 100%;
@@ -430,7 +430,7 @@ form legend {
 form label.top, form div {
     display: block;
     padding-top: 1rem;
-    color: #310792;
+    color: #f6f5f7;
     font-size: 1rem;
     text-align: left;
 }
@@ -441,7 +441,7 @@ form label.top input, form label.top select, form label.top textarea {
     border: 1px solid #2b0b0b;
     border-radius: 5px;
     padding: .75rem;
-    color: #1f2041;
+    color: #dcdcee;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.7);    
     box-sizing: border-box;
@@ -450,7 +450,7 @@ form label.top input, form label.top select, form label.top textarea {
 form label.sbs {
     display: block;
     padding: .5rem 0;
-    color: #1f2041;
+    color: #f7f8fd;
     text-align: left;
 }
 
