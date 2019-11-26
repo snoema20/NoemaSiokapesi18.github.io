@@ -247,8 +247,8 @@ hr {
 .article, .contact-info {
     text-align: left;
     padding: 0 30px 30px 30px;
-    background-color: #1727b9;
-    color: #e0e0e9;
+    background-color: #f1f2fc;
+    color: #080808;
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1); 
     box-sizing: border-box;
