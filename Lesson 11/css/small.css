@@ -45,7 +45,7 @@ header img {
 .sec-company-info h1 {
 	font-size: 1.1rem;
     margin: 0 0 0 15px;
-    color: #faeced;
+    color: #0a0a0a;
 }
 
 .motto {
@@ -158,12 +158,12 @@ h1 {
 
 h2 {
     font-size: 1.5em;
-    color: #f0f0fa;
+    color: #0a0a0a;
     font-family: 'Open Sans', sans-serif;
 }
 
 h2 span {
-    color: #ebe1e1;
+    color: #eee4e4;
 }
 
 h3 {
