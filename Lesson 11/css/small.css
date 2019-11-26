@@ -25,7 +25,7 @@ body {
 }
 
 header {
-	background-color: #62c6ee;
+	background-color: #5f3f03;
 	display: flex;
 	align-items:center;
     justify-content:center;
@@ -59,13 +59,13 @@ header img {
 nav {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    background-color: #ac4141;
-    box-shadow: 0 5px 10px #0b112b;
+    background-color: #633c09;
+    box-shadow: 0 5px 10px #e4e5ec;
 }
 
 .main-nav li:first-child {
     display: block;
-    background-color: #be4242;
+    background-color: #633c09;
     border: none;
     font-size: 1.3rem;
     padding: 10px;
@@ -95,7 +95,7 @@ nav ul {
 
 nav li a {
     display: block;
-    color: #95c942;
+    color: #1d21ec;
     text-align: center;
     padding: .8rem 2%;
     text-decoration: none;
@@ -121,7 +121,7 @@ nav ul li a:hover {
 }
 
 .main-nav li:first-child a:hover {
-    background-color: rgba(230, 111, 111, 0.6);
+    background-color: #633c09);
 }
 
 .responsive li {
@@ -203,10 +203,10 @@ h3 {
 	position: absolute;
 	top: 20px;
     left: 10px;
-	background: radial-gradient(#6f73f5, #d13d3d);
+	background: #633c09;
 	border: 2px solid #ffc857;
 	padding: 0.5rem;
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1);
+    box-shadow: 0 10px 20px 0 rgb(235, 233, 233);
     opacity: 0.9;
     width: 55%;
     font-size: 0.7rem;
@@ -344,8 +344,8 @@ footer {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.75em;  
     line-height: 1.5em;
-	background-color: #62c6ee;  
-    color: #72570e;
+	background-color: #1225ce;  
+    color: #dfa917;
 	display: flex;
     flex: 0 1 100%;
 	align-items:center;
