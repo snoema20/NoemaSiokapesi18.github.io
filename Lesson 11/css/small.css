@@ -13,7 +13,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #1225ce;
+    background-color: #5f3f03;
     display: none;
 }
 
@@ -146,7 +146,7 @@ main {
 #content-container {
     width: 85%;
     margin: 0 auto;
-    background-color: #ce9b36;
+    background-color: #3bbaec;
     padding: 10px;
 }
 
@@ -344,8 +344,8 @@ footer {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.75em;  
     line-height: 1.5em;
-	background-color: #1225ce;  
-    color: #dfa917;
+	background-color: #5f3f03;  
+    color: #2e14c2;
 	display: flex;
     flex: 0 1 100%;
 	align-items:center;
