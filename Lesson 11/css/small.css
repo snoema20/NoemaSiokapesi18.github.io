@@ -111,13 +111,13 @@ nav ul li.active a {
 
 nav ul li a:hover {
     background-color: rgba(255,200,87, 0.4);
-    color: rgba(255,255,255, 0.7);
+    color: rgba(241, 232, 232, 0.7);
     box-shadow: 5px 5px 5px #c56060;
 }
 
 .main-nav li:first-child a {
     border-top: none;
-    color: #f7e8e8;
+    color: #111111;
 }
 
 .main-nav li:first-child a:hover {
