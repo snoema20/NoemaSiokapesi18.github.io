@@ -1,23 +1,45 @@
+// Get Page Name
+var pagePath=window.location.pathname;
+var pageName = pagePath.substring(pagePath.lastIndexOf('/') + 1);
+var cityID, apiForecastURL, apiWeatherURL, lat, lon;
+var unitCode = "imperial";
+var appID = "ec4187e2c652e5e5e31629577f8c5a74";
 //Preston Weather information
-const cityID = "5604473";
-const unitCode = "imperial";
-const appID = "ec4187e2c652e5e5e31629577f8c5a74";
-const apiResponseURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&units=" + unitCode + "&APPID=" + appID;
+if (pageName == "preston.html") {
+    cityID = "5604473";
+    apiForecastURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&units=" + unitCode + "&APPID=" + appID;
+    apiWeatherURL = "https://api.openweathermap.org/data/2.5/weather?id=" + cityID + "&units=" + unitCode + "&APPID=" + appID;
+} else if (pageName == "sodasprings.html"){
+    cityID = "5607916";
+    apiForecastURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&units=" + unitCode + "&APPID=" + appID;
+    apiWeatherURL = "https://api.openweathermap.org/data/2.5/weather?id=" + cityID + "&units=" + unitCode + "&APPID=" + appID;
+} else {
+    lat = "42.037147";
+    lon = "-111.395942";
+    apiForecastURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=" + unitCode + "&APPID=" + appID;
+    apiWeatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=" + unitCode + "&APPID=" + appID;
+}
 
-fetch(apiResponseURL)
+fetch(apiWeatherURL)
+    .then((responseURL) => responseURL.json())
+    .then((jsonWeatherObject) => {
+        const jsonCurrentWeatherObject = jsonWeatherObject;
+        const weatherJsonRoot = jsonCurrentWeatherObject.weather[0];
+    
+        // Get Weather Summary
+        document.getElementById('current-weather').textContent = weatherJsonRoot.main;
+        document.getElementById('temp').textContent = jsonCurrentWeatherObject.main.temp_max;
+        document.getElementById('humid-percent').textContent = jsonCurrentWeatherObject.main.humidity;
+        document.getElementById('wind-speed').textContent = jsonCurrentWeatherObject.wind.speed;
+    
+    });
+
+fetch(apiForecastURL)
   .then((httpResponse) => httpResponse.json())
   .then((weatherJsonObject) => {
     //console.log(weatherJsonObject.list);
     
     const jsonObject = weatherJsonObject.list;
-    const weatherJsonRoot = jsonObject[0].weather[0];
-
-    // Get Weather Summary
-    document.getElementById('current-weather').textContent = weatherJsonRoot.main;
-    document.getElementById('temp').textContent = jsonObject[0].main.temp_max;
-    document.getElementById('humid-percent').textContent = jsonObject[0].main.humidity;
-    document.getElementById('wind-speed').textContent = jsonObject[0].wind.speed;
-
     //Generate Week Days Dynamically
     function weekDays(date){
         const days = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat');
@@ -29,8 +51,8 @@ fetch(apiResponseURL)
     const weatherIcon = document.createElement('tr');
     const weatherTemp = document.createElement('tr');
     
-    for(var i = 0; i <= jsonObject.length; i++){
-        const dt_txt_field = jsonObject[i].dt_txt;
+    for(var i = 0; i < jsonObject.length; i++){
+        let dt_txt_field = jsonObject[i].dt_txt;
         if (dt_txt_field.includes("18:00:00")){  
             // Generate table headers
             const nextDay = new Date(dt_txt_field);
@@ -60,41 +82,6 @@ fetch(apiResponseURL)
         }
     }
 });
-
-
-//Get Town Event
-fetch(requestURL)
-.then(function(responseEvent) {
-  return responseEvent.json();
-})
-.then(function(townJsonEvent) {
-  //console.table(townJsonEvent);
-
-  const eventObj = townJsonEvent['towns'];
-  const fTownEventName = document.getElementById('fish-town-header');
-  for(let i = 0; i < eventObj.length; i++) {
-    //fish Springs Event
-    if (eventObj[i].name == 'Fish Haven'){
-      fTownEventName.innerHTML = eventObj[i].name + '&#39;s Upcoming Event:';
-      for (let j = 0; j < eventObj[i].events.length; j++){
-        const fEvent = document.createElement('p');
-        fEvent.setAttribute('class', 'para-event');
-        fEvent.textContent = eventObj[i].events[j];
-        document.querySelector('div.fish-event-panel').appendChild(fEvent);
-      }
-      const fTownEventImage = document.createElement('picture');
-      fTownEventImage.setAttribute('class', 'event-image');
-
-      const fEventImage = document.createElement('img');
-      fEventImage.setAttribute('class', 'img1');
-      fEventImage.setAttribute('src', 'images/fish-event.jpg');
-      fEventImage.setAttribute('alt', eventObj[i].name + ' events');
-      fTownEventImage.appendChild(fEventImage);
-      document.querySelector('div.fish-article-container').appendChild(fTownEventImage);
-    }
-  }
-});
-
 
 //WindChill calculator
 var WindChill = document.getElementById("wind-chill");
