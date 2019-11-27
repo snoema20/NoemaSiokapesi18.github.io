@@ -95,7 +95,7 @@ nav ul {
 
 nav li a {
     display: block;
-    color: #efeff5;
+    color: #0c0c0c;
     text-align: center;
     padding: .8rem 2%;
     text-decoration: none;
@@ -117,7 +117,7 @@ nav ul li a:hover {
 
 .main-nav li:first-child a {
     border-top: none;
-    color: #111111;
+    color: #0c0b0b;
 }
 
 .main-nav li:first-child a:hover {
@@ -395,7 +395,7 @@ figcaption {
     display: none;
     font-size: small;
     padding: 10px 0 10px 0;
-    color: #f3eaea;
+    color: #111010;
 }
 
 figure:hover {
