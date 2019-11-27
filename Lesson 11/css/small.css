@@ -197,14 +197,14 @@ h3 {
 
 .hero-container h3 {
     margin: 0;
-    color: #080808;
+    color: #f0eaea;
 }
 
 .hero-weather-info {
 	position: absolute;
 	top: 20px;
     left: 10px;
-	background: #f1f0ee;
+	background: #614204;
 	border: 2px solid #ffc857;
 	padding: 0.5rem;
     box-shadow: 0 10px 20px 0 rgb(235, 233, 233);
