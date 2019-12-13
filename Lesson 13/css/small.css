@@ -1,0 +1,725 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Germania+One|Source+Sans+Pro');
+
+
+
+    /*-----------------------------Temple Styles--------------------------*/
+
+    h3 {
+
+        font-family: 'Indie Flower', cursive;
+
+    }
+
+
+
+    .reception h3 {
+
+        text-align: center;
+
+    }
+
+
+
+    p {
+
+        font-family: 'Arimo', sans-serif;
+
+        margin: 20px;
+
+    }
+
+
+
+    .templemain {
+
+        padding-right: 10px;
+
+        padding-left: 10px;
+
+    } 
+
+
+
+    .temples {
+
+        border-style: dashed;
+
+        border-width: 2px;
+
+        border-color: #dda15e;
+
+    }
+
+
+
+    .temples img {
+
+        display: block;
+
+        margin: 0 auto;
+
+        margin-top: 10px;
+
+    }
+
+    /*-----------------------------------------------------------------------*/
+
+    
+
+    .call {
+
+        display: block;
+
+        width: 150px;
+
+        background-color: #bc6c25;
+
+        color: white;
+
+        text-align: center;
+
+        font-weight: bold;
+
+        border-radius: 20px;
+
+        text-decoration: none;
+
+        position: relative;
+
+        z-index: 1;
+
+        top: 150px;
+
+        left: 200px;
+
+        padding: 5px;
+
+    }
+
+
+
+    figcaption {
+
+        font-family: 'Indie Flower', cursive;
+
+        font-size: 12px;
+
+        padding: 5px;
+
+    }
+
+    /*----------------------------------------Heading-------------------------------------------*/
+
+    body {
+
+        background-color: #fefae0;
+
+    }
+
+
+
+    header {
+
+        display: flex;
+
+        flex-flow: row wrap;
+
+        justify-content: flex-start;
+
+        background-color: #606c38;
+
+        text-align: center;
+
+        padding: 5px;
+
+        /* position: fixed; */
+
+        top: 0;
+
+        z-index: 99;
+
+        width: 100%;
+
+    }
+
+
+
+    .headerimage {
+
+        margin-left: 10px;
+
+        padding: 8px;
+
+    }
+
+
+
+    .headings {
+
+        vertical-align: middle;
+
+    }
+
+
+
+    .motto{
+
+        color:white;
+
+        font-size: 16px;
+
+        font-style: italic;
+
+        font-family: 'Indie Flower', cursive;
+
+        position: relative;
+
+        top: 10px;
+
+        left: 25px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+
+    header h1{
+
+        color: white;
+
+        font-size: 40px;
+
+        margin: 0 auto;
+
+        padding: 5px;
+
+        margin-top: 10px;
+
+        text-align: left;
+
+        font-family: 'Germania One', cursive;
+
+        position: absolute;
+
+        top: 2px;
+
+        left: 150px;
+
+    }
+
+
+
+/*-----------------------------------------Navigation Menu----------------------------------------*/
+
+    nav {
+
+        font-family: 'Arimo', sans-serif;
+
+        color: white;
+
+        margin-left: 20px;
+
+    }
+
+
+
+    .active {
+
+        background-color: #283618;
+
+    }
+
+
+
+    .menu {
+
+        list-style-type: none;
+
+        display: flex;
+
+        flex-direction: column;
+
+    }
+
+
+
+    .menu li {
+
+        display: none;
+
+    }
+
+
+
+    .menu li:first-child {
+
+        display: block;
+
+    }
+
+
+
+    .menu li a {
+
+        display: block;
+
+        color: white;
+
+        text-align: left;
+
+        padding: 8px;
+
+        text-decoration: none;
+
+        font-size: 20px;
+
+        width: 100%;
+
+        position: relative;
+
+        right: 40px;
+
+    }
+
+
+
+    .menu li a:hover {
+
+        color: #f1f1f1;
+
+    }
+
+
+
+    .responsive li {
+
+        display: block;
+
+    }
+
+/*---------------------------------------------Main Section-------------------------------------*/
+
+    main h2{
+
+        text-align: center;
+
+        font-size: 32px;
+
+        padding: 5px;
+
+        margin-bottom: 10px;
+
+        margin-top: 10px;
+
+        font-family: 'Germania One', cursive;
+
+    }
+
+
+
+    .label {
+
+        font-size: 14px;
+
+    }
+
+    /*-----------------------------------Contact Section-------------------------------------*/
+
+
+
+    .contactinfo {
+
+        background-color: #dda15e;
+
+        padding: 15px;
+
+        margin: 0 auto;
+
+    }
+
+
+
+    .contactinfo h4 {
+
+        font-family: 'Indie Flower', cursive;
+
+        font-size: 20px;
+
+    }
+
+
+
+    .contactinfo p {
+
+        font-family: 'Arimo', sans-serif;
+
+        font-size: 14px;
+
+        margin-bottom: 10px;
+
+    }
+
+
+
+    .map {
+
+        width: 350px;
+
+    }
+
+
+
+    /*----------------------------------Images-----------------------------------*/
+
+
+
+    .heroimage{
+
+        display: block;
+
+        margin: 0 auto;
+
+        margin-bottom: 10px;
+
+    }
+
+
+
+    /*----------------------------------Footer-------------------------*/
+
+
+
+    footer{
+
+        background-color: #283618;
+
+        text-align: center;
+
+        height: 50px;
+
+        font-size: 12px;
+
+        margin: 0 auto;
+
+        color: #f1f1f1;
+
+    }
+
+
+
+    footer p {
+
+        margin: 0 auto;
+
+        padding-top: 8px;
+
+    }
+
+
+
+    footer div {
+
+        margin: 0 auto;
+
+        padding-bottom: 8px;
+
+    }
+
+
+
+    /*-----------------------------Hidden Items-------------------------*/
+
+    .menu.responsive .icon {
+
+        display: none;
+
+    }
+
+
+
+    .container {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        grid-gap: 10px;
+
+        margin-bottom: 20px;
+
+        margin-top: 20px;
+
+    }
+
+
+
+    /*--------------------------------Thank You HTML-----------------------------------*/
+
+    .title {
+
+        font-size: 20px;
+
+        display: block;
+
+    }
+
+
+
+    .form {
+
+        display: flex;
+
+        flex-direction: column;
+
+        padding: 20px;
+
+        width: 90%;
+
+    }
+
+
+
+    legend {
+
+        padding: 5px;
+
+        font-family: "Comic Sans MS", cursive, sans-serif;
+
+    }
+
+
+
+    textarea {
+
+        width: 100%;
+
+        height: 100px;
+
+        border-radius: 8px;
+
+    }
+
+
+
+    .personal {
+
+        border-style: inset;
+
+        border-width: 4px;
+
+        border-color: #bc6c25;
+
+        border-radius: 30px;
+
+        margin: 0 auto;
+
+        width: 80%;
+
+        margin-bottom: 20px;
+
+        margin-top: 20px;
+
+        padding: 10px;
+
+    }
+
+
+
+    .info {
+
+        padding: 10px;
+
+        display: block;
+
+        margin: 0 auto;
+
+        width: 90%;
+
+    }
+
+
+
+    .info2 {
+
+        padding-left: 20px;
+
+        margin: 5px;
+
+    }
+
+
+
+    .data {
+
+        font-family: "Comic Sans MS", cursive, sans-serif;
+
+        font-size: 15px;
+
+        padding-bottom: 2px;
+
+        width: 70%;
+
+    }
+
+
+
+    .button {
+
+        width: 50%;
+
+        display: block;
+
+        margin: 0 auto;
+
+        margin-top: 10px;
+
+    }
+
+
+
+    .right {
+
+        width: 100%;
+
+    }
+
+
+
+    .title {
+
+        text-align: center;
+
+        margin: 8px;
+
+        font-size: 20px;
+
+    }
+
+
+
+    /*-------------------------------Home Page--------------------------------*/
+
+
+
+    .homepage {
+
+        width: 300px;
+
+        padding: 15px;
+
+        padding-top: 0;
+
+    }
+
+
+
+    .mySlides {
+
+        display: block;
+
+        margin: 0 auto;
+
+    }
+
+
+
+    .services {
+
+        border-style: inset;
+
+        border-width: 5px;
+
+        border-color: #bc6c25;
+
+        display: block;
+
+        margin: 0 auto;
+
+        margin-bottom: 10px;
+
+        padding: 20px;
+
+    }
+
+
+
+    .amenities {
+
+        border-style: inset;
+
+        border-width: 5px;
+
+        border-color: #bc6c25;
+
+        display: block;
+
+        margin: 0 auto;
+
+        margin-bottom: 10px;
+
+        padding: 20px;
+
+    }
+
+
+
+    .reception img {
+
+        display: block;
+
+        margin: 0 auto;
+
+    }
+
+
+
+    .meridian {
+
+        display: grid;
+
+        grid-template-columns: 80px 80px 80px 80px;
+
+        grid-gap: 0;
+
+        grid-area: auto;
+
+    }
+
+
+
+    .jordan {
+
+        display: grid;
+
+        grid-template-columns: 80px 80px 80px 80px;
+
+    }
+
+
+
+    .seattle {
+
+        display: grid;
+
+        grid-template-columns: 80px 80px 80px 80px;
+
+    }
+
+
+
+    .snowflake {
+
+        display: grid;
+
+        grid-template-columns: 80px 80px 80px 80px;
+
+    }
+
+
+
+    .missionform {
+
+        margin: 20px;
+
+    }

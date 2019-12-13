@@ -1,0 +1,194 @@
+
+@media only screen and (min-width: 460px){
+
+    /*-----------------------------Gallery Page--------------------------------*/
+
+    .container {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    /*------------------------Navigation Menu----------------------------*/    
+
+    nav {
+
+        max-width: 100%; 
+
+    }
+
+
+
+    .menu {
+
+        flex-direction: row;
+
+        justify-content: center; 
+
+    }
+
+
+
+    .menu li a {
+
+        font-size: 17px;
+
+    }
+
+
+
+    .menu li:first-child {
+
+        display: none;
+
+    }
+
+
+
+    nav .dropdown {
+
+        display: inline-block;
+
+    }
+
+
+
+    nav li:first-child {
+
+        display: none;
+
+    }
+
+
+
+    /*---------------------Article Section-----------------------*/
+
+    .newsarticle h2 {
+
+        text-align: left;
+
+    }
+
+
+
+    /*------------------------Storm Form-----------------------*/
+
+    .button {
+
+        width: 30%;
+
+        margin-top: 15px;
+
+    }
+
+
+
+    textarea {
+
+        width: 100%;
+
+    }
+
+
+
+    .personal {
+
+        width: 60%;
+
+    }
+
+
+
+    .info2 {
+
+        padding-left: 8px;
+
+    }
+
+
+
+    .storminfo {
+
+        width: 60%;
+
+    }
+
+
+
+    .right {
+
+        width: 80%;
+
+    }
+
+    /*------------------------Weather Forecast-----------------*/
+
+    .weatherreport {
+
+        position: absolute;
+
+        left: 50px;
+
+        bottom: 140px;
+
+        width: 22%;
+
+    }
+
+
+
+    /* .motto {
+
+        font-size: 20px;
+
+    } */
+
+
+
+    /*---------------------Contact Section------------------*/
+
+    .contactinfo h4 {
+
+        text-align: right;
+
+    }
+
+
+
+    .contactinfo p {
+
+        float: right;
+
+        margin: 10px;
+
+    }
+
+
+
+    footer {
+
+        padding: 8px;
+
+    }
+
+
+
+    footer p {
+
+        padding: 3px;
+
+        font-size: 16px;
+
+    }
+
+
+
+    footer div {
+
+        padding: 3px;
+
+        font-size: 16px;
+
+    }
+
+}
