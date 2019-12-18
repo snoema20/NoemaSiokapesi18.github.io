@@ -14,7 +14,7 @@
     }
 
     h3 {
-      font-size: 1.2em;
+      font-size: 1.6em;
   }
 
     .main-nav {
@@ -22,7 +22,7 @@
     }
     
 	.main-nav li:first-child {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         display: none;
     }
     
@@ -54,9 +54,6 @@
       margin: 0 auto;
   }    
 
-  /*
-    Gallery Styles
-  */
 
   .gallery-container {
     grid-template-columns: 1fr 1fr 1fr;
@@ -75,16 +72,14 @@
   }
 
   figure:hover {
-    box-shadow: 0 10px 20px 0 #67a521;
+    box-shadow: 0 10px 20px 0 #152502;
   }
 
   form label.sps {
     padding: .4rem 0;
   }
 
-  /*
-      Index Styles
-  */
+
 
     .towns {
         grid-template-columns: 1fr 1fr 1fr;

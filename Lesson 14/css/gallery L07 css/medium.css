@@ -8,15 +8,15 @@
 	}
 
 	.motto {
-		font-size: 1.1rem;
+		font-size: 1.4rem;
     }   
     
     .main-nav li:first-child {
-        font-size: 1.4rem;
+        font-size: 1.7rem;
     }
     
     nav li a {
-        font-size: .9rem;
+        font-size: 1rem;
     }
 
     .hero-weather-info {
@@ -28,7 +28,7 @@
     .btn {
         border-radius: 1.5em;
         width: 150px;
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     table {
@@ -50,7 +50,7 @@
 
     td {
         background-color: #2b0b0b;
-        color: #ffc857; 
+        color: #3b2903; 
         border-left: 2px solid #ffffff;
         border-right: 2px solid #ffffff;
         padding: 15px;
@@ -99,17 +99,10 @@
         font-size: 0.8rem;
     }
 
-    /*
-        Gallery Styles
-    */
-
+  
     .gallery-container {
         grid-template-columns: 1fr 1fr;
     }
-
-    /*
-        Index Styles
-    */
 
     .towns {
         grid-template-columns : 1fr; 
