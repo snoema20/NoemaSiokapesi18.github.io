@@ -51,7 +51,7 @@ header img {
 .motto {
 	font-style: italic;
 	letter-spacing: 1pt;
-	color: #faf5f5;
+	color: #0e0d0d;
 	margin: 8px 0;
 	font-size: .7rem;
 }
@@ -59,13 +59,13 @@ header img {
 nav {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    background-color: #f8f6f5;
+    background-color: #1a1919;
     box-shadow: 0 5px 10px #e4e5ec;
 }
 
 .main-nav li:first-child {
     display: block;
-    background-color: #fff4f4;
+    background-color: #131212;
     border: none;
     font-size: 1.3rem;
     padding: 10px;
