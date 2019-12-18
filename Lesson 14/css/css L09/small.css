@@ -45,13 +45,13 @@ header img {
 .sec-company-info h1 {
 	font-size: 1.1rem;
     margin: 0 0 0 15px;
-    color: #faeced;
+    color: #1b1b1b;
 }
 
 .motto {
 	font-style: italic;
 	letter-spacing: 1pt;
-	color: #f8f7f7;
+	color: #fff9f9;
 	margin: 8px 0;
 	font-size: .7rem;
 }
@@ -59,7 +59,7 @@ header img {
 nav {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    background-color: #0e0d0c;
+    background-color: #f8f6f5;
     box-shadow: 0 5px 10px #e4e5ec;
 }
 
