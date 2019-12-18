@@ -174,7 +174,7 @@ h3 {
     display: block;
     margin: 10px auto;
     padding: 15px;
-    background-color: #1116aa;
+    background-color: #eeeef5;
     color: #ffffff;
     border-radius: 5px;    
     box-shadow: 0 10px 20px 0 rgba(216, 124, 124, 0.6);
@@ -203,7 +203,7 @@ h3 {
 	position: absolute;
 	top: 20px;
     left: 10px;
-	background: #633c09;
+	background: #f1efec;
 	border: 2px solid #ffc857;
 	padding: 0.5rem;
     box-shadow: 0 10px 20px 0 rgb(235, 233, 233);
@@ -247,8 +247,8 @@ hr {
 .article, .contact-info {
     text-align: left;
     padding: 0 30px 30px 30px;
-    background-color: #5f3f03;
-    color: #f5f5ff;
+    background-color: #f7f4f0;
+    color: #141414;
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1); 
     box-sizing: border-box;
@@ -357,9 +357,6 @@ footer a {
     color: #e0dff0;
 }
 
-/*
-    Gallery Styles
-*/
 
 .gallery-container {
     display: grid;
@@ -387,7 +384,7 @@ figure img {
 
 figure img[data-src] {
     filter: blur(0);
-    /*filter: blur(0.2em);*/
+   
 }
 
 figcaption {
@@ -401,9 +398,7 @@ figure:hover {
     box-shadow: none;
 }
 
-/*
-    Storm Center Forms
-*/
+
 
 .form-container {
     width: 450px;
@@ -464,8 +459,7 @@ form input.submitBtn {
     width: 96%;
     max-width: 20rem;
     box-sizing: border-box;
-    /*display: block;
-    margin-right: auto;*/
+
 }
 
 form label.top input:required {
@@ -476,9 +470,6 @@ form label.top input:required:valid {
     border-left: 6px solid #004c00;
 }
 
-/*
-    Index Styles
-*/
 
 .general-info {
     text-align: left;
