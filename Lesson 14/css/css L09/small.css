@@ -45,13 +45,13 @@ header img {
 .sec-company-info h1 {
 	font-size: 1.1rem;
     margin: 0 0 0 15px;
-    color: #1b1b1b;
+    color: #ebe2e2;
 }
 
 .motto {
 	font-style: italic;
 	letter-spacing: 1pt;
-	color: #0e0d0d;
+	color: #fffdfd;
 	margin: 8px 0;
 	font-size: .7rem;
 }
