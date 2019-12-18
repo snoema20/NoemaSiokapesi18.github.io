@@ -41,7 +41,7 @@
     }
 
     th {
-        background-color: #ffc857;
+        background-color: #faf8f5;
         color: #2b0b0b;
         padding: 15px;
         border-left: 2px solid #ffffff;
@@ -49,8 +49,8 @@
     }
 
     td {
-        background-color: #2b0b0b;
-        color: #ffc857; 
+        background-color: #faf0f0;
+        color: #161615; 
         border-left: 2px solid #ffffff;
         border-right: 2px solid #ffffff;
         padding: 15px;

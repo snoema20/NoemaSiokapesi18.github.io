@@ -95,7 +95,7 @@ nav ul {
 
 nav li a {
     display: block;
-    color: #1d21ec;
+    color: #e7e7ec;
     text-align: center;
     padding: .8rem 2%;
     text-decoration: none;
@@ -117,7 +117,7 @@ nav ul li a:hover {
 
 .main-nav li:first-child a {
     border-top: none;
-    color: #f1c150;
+    color: #141413;
 }
 
 .main-nav li:first-child a:hover {
@@ -174,8 +174,8 @@ h3 {
     display: block;
     margin: 10px auto;
     padding: 15px;
-    background-color: #1116aa;
-    color: #ffffff;
+    background-color: #f3f3f7;
+    color: #0f0f0f;
     border-radius: 5px;    
     box-shadow: 0 10px 20px 0 rgba(216, 124, 124, 0.6);
     box-sizing: border-box;
@@ -357,9 +357,6 @@ footer a {
     color: #e0dff0;
 }
 
-/*
-    Gallery Styles
-*/
 
 .gallery-container {
     display: grid;
@@ -484,8 +481,8 @@ form label.top input:required:valid {
 }
 
 .town-container {
-    background-color: #1f2041;
-    color: #ffffff;
+    background-color: #e3e4e9;
+    color: #111010;
     border-radius: 5px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1);
     padding: 10px 20px 20px 20px;
