@@ -522,13 +522,13 @@ form label.top input:required:valid {
 }
 
 .text-container h4 {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-style: italic;
     margin-top : -0.8em;
 }
 
 .text-container p {
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .town-card div, .town-card img {

@@ -9,7 +9,7 @@
 
 	.motto {
 		letter-spacing: 2.4pt;
-		font-size: 2rem;
+		font-size: 2.2rem;
 		margin-left: 10px;
     }
 
@@ -22,7 +22,7 @@
     }
     
 	.main-nav li:first-child {
-        font-size: 2rem;
+        font-size: 2.3rem;
         display: none;
     }
     
@@ -32,7 +32,7 @@
     }
 
     nav li a {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
     .hero-weather-info {
@@ -49,7 +49,7 @@
     }
 
   footer {
-      font-size: 0.9em;
+      font-size: 1em;
       width: 90%;
       margin: 0 auto;
   }    
