@@ -1,380 +1,127 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en-us">
 
-
-
-<head>
-
-    <meta charset="utf-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>The Temple Inn & Suites | Supporting those who serve others!</title>
-
-    <meta name="description" content="local events around temple sites, temple hours and sessions information, and hotel accommodations for families and temple workers">
-    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet"> 
-
-
-    <link rel="stylesheet" href="css/normal.css">
-
-    <link rel="stylesheet" href="css/small.css">
-
-    <link rel="stylesheet" href="css/medium.css">
-
-    <link rel="stylesheet" href="css/large.css">
-
-    <link rel="shortcut icon" type="image/png" href="image/icon.png">
-
-</head>
-
-
-
-<body>
-
-    <header>
-
-        <img src="image/icon.png" class="headerimage" alt="header logo">
-
-        <section class="headings">
-
-            <h1>The Temple Inn & Suites</h1>
-
-            <div class="motto">Where we support those who serve others!</div>
-
+    <head>
+        <title>Preston Idaho</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Assignment weather Siokapesi Noema, CIT 230: Web Frontend Development at Brigham Young University - Idaho">
+        <meta name="author" content="Siokapesi Noema">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/small.css">
+        <link rel="stylesheet" href="css/medium.css">
+        <link rel="stylesheet" href="css/large.css">
+        <link href="https://fonts.google.com/specimen/Martel" rel="stylesheet">
+    </head>
+<body>          
+    <!-- HEADER -->
+    <header id="main-header">     
+           
+        <picture>
+            <img src="Image/logo.jpg" alt="Ghana Meteo Logo">
+        </picture>
+        <section class="sec-company-info">
+            <h1></h1>Preston Weather Forecast
+            <div class="motto">Most Updated Forecast</div>
         </section>
-
-        <nav>
-
-            <ul class="menu" id="navmenu">
-
-                <li class="dropdown">
-
-                    <a href="#" class="dropbtn" onclick="toggleMenu()">&#9776; Menu</a>
-
-                </li>
-
-                <li class="dropdown">
-
-                    <a href="index.html">Home</a>
-
-                </li>
-
-                <li class="dropdown">
-
-                    <a href="Temple.html" class="active">Temples</a>
-
-                    <div class="dropdown-content">
-
-                            <a href="New Zealand-temple.html">New Zealand Temple</a>
-
-                            <a href="Tonga-temple.html">Tonga Temple</a>
-
-                            <a href="Seattle.html">Seattle Temple</a>
-
-                            <a href="Snowflake.html">Snowflake Temple</a>
-
-                    </div>
-
-                </li>
-
-                <li class="dropdown">
-
-                    <a href="Reservation.html">Hotel Reservations</a>
-
-                </li>
-
-                <li class="dropdown">
-
-                    <a href="Service.html">Hotel Services</a>
-
-                    <div class="dropdown-content">
-
-                        <a href="Missionary.html">Full-Time Missionaries</a>
-
-                        <a href="Reception.html">Wedding Receptions</a>
-
-                    </div>
-
-                </li>
-
-                <li class="dropdown">
-
-                    <a href="Contact.html">Contact</a>
-
-                </li>
-
-            </ul>
-
-        </nav>
-
     </header>
-
-
-
-    <main class="templemain">
-
-        <h2>We provide the contact information and schedules for the temples that are nearby our hotels below!</h2> <h2>Click on the temple
-
-            that you are interested in visiting to look at their Session Schedules and Closing Dates</h2>
-
-        <section class="container">
-
-            <div class="temples" onclick="location.href='New Zealand-temple';">
-
-                <img src="image/nz temple.jpg" alt="New Zealand temple">
-
-                <figcaption class="templeinfo">
-
-                    <h3><u>New Zealand Temple</u></h3>
-
-                    <h4>The Temple Inn & Suite</h4>
-
-                    <p>509 Tuhikaramea Rd, Temple View,
-            
-                        <br> Hailton,new Zealand</p>
-            
-                    <p>Phone: 6478462750
-                    <div>509 Tuhikaramea Road
-
-                        <br> Temple View, Hamilton 3218,
-
-                        <br> New Zealand
-
-                        <br> 208-957-7300</div>
-
-                    <br> Services Include:
-
-                    <br> -Baptisms
-
-                    <br> -Initiatories
-
-                    <br> -Endowments
-
-                    <br> -Sealings
-
-                    <div>
-
-                        <br> History:
-
-                        <br> -Announced: 2 April 2011
-
-                        <br> -Groundbreaking: 23 August 2014
-
-                        <br> -Dedicated — dedicatory prayer: 19 November 2017</div>
-
-                    <br>
-
-                    <div id="new zealand"></div>
-
-                    <div id="forecast1"></div>
-
-                </figcaption>
-
-            </div>
-
-            <div class="temples" onclick="location.href='Tonga-temple.html';">
-
-                <img src="image/tongan temple.jpg" alt="Tonga temple">
-
-                <figcaption class="templeinfo">
-
-                    <h3><u>Nukualofa Tonga Temple</u></h3>
-                   
-                    Loto Rd, Tongatapu 0000, Tonga
-                    
-                    <div>Nukualofa 
-
-                        <br> Tongatapu
-
-                        <br> 676-20-300</div>
-
-                    <br> Services Include:
-
-                    <br> -Baptisms
-
-                    <br> -Initiatories
-
-                    <br> -Endowments
-
-                    <br> -Sealings
-
-                    <div>
-
-                        <br> History:
-
-                        <br> -Announced: 3 February 1978
-
-                        <br> -Groundbreaking: 9 June 1979
-
-                        <br> -Dedicated — dedicatory prayer: 16 November 1981
-
-                        <br> -Rededicated — dedicatory prayer: 20 May 2018</div>
-
-                    <br>
-
-                    <div id="tonga"></div>
-
-                    <div id="forecast2"></div>
-
-                    <br>
-
-                </figcaption>
-
-            </div>
-
-            <div class="temples" onclick="location.href='seattle.html';">
-
-                <img src="image/seattle.jpg" alt="seattle temple">
-
-                <figcaption class="templeinfo">
-
-                    <h3><u>Seattle, Washington Temple</u></h3>
-
-                    <div>2808 148th Ave SE
-
-                        <br> Bellevue WA 98007-6453
-
-                        <br> United States
-
-                        <br> 425-643-5144</div>
-
-                    <br> Services Include:
-
-                    <br> -Baptisms
-
-                    <br> -Initiatories
-
-                    <br> -Endowments
-
-                    <br> -Sealings
-
-                    <div>
-
-                        <br> History:
-
-                        <br> -Announced: 15 November 1975
-
-                        <br> -Groundbreaking: 27 May 1978
-
-                        <br> -Dedicated — dedicatory prayer: 17 November 1980</div>
-
-                    <br>
-
-                    <div id="seattle"></div>
-
-                    <div id="forecast3"></div>
-
-                    <br>
-
-                </figcaption>
-
-            </div>
-
-            <div class="temples" onclick="location.href='snowflake.html';">
-
-                <img src="image/snowflake.jpg" alt="snowflake temple">
-
-                <figcaption class="templeinfo">
-
-                    <h3><u>Snowflake, Arizona Temple</u></h3>
-
-                    <div>1875 W Canyon Dr
-
-                        <br> Snowflake AZ 85937-6014
-
-                        <br> United States
-
-                        <br> 928-536-6626</div>
-
-                    <br> Services Include:
-
-                    <br> -Baptisms
-
-                    <br> -Initiatories
-
-                    <br> -Endowments
-
-                    <br> -Sealings
-
-                    <div>
-
-                        <br> History:
-
-                        <br> -Announced: 2 April 2000
-
-                        <br> -Groundbreaking: 23 September 2000
-
-                        <br> -Dedicated — dedicatory prayer: 3 March 2002</div>
-
-                    <br>
-
-                    <div id="snowflake"></div>
-
-                    <div id="forecast4"></div>
-
-                    <br>
-
-                </figcaption>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <article class="contactinfo">
-
-            <h4>The Temple Inn & Suite</h4>
-
-            <p>4800 Montgomery Ln #300
-
-                <br> Bethesda, MD 20814</p>
-
-            <p>Phone: 208-555-5555
-
-                <br> Email: templehotels@gmail.com</p>
-
-            <div class="map">
-
-                <iframe src="https://www.google.com/maps/embed/v1/view?zoom=15&center=38.9847%2C-77.0947&key=AIzaSyBraCrN9eDxKmBetKaWsMejLTV6sKG3WDs"
-
-                    style="border:0" allowfullscreen title="Google Map"></iframe>
-
-            </div>
-
-        </article>
-
-        
-
-    <footer>
-
-        <p>&copy;2019 The Temple Inn & Suites |
-
-            <a href="Reference.html" class="reference">Reference Page</a> | Siokapesi Noema</p>
-
-        <div id="currentdate"></div>
-
-    </footer>
-
-
-
-    <script src="script/currentdate.js"></script>
-
-    <script src="script/hymburger.js"></script>
-
-    <script src="script/meridianweather.js"></script>
-
-    <script src="script/seattleweather.js"></script>
-
-    <script src="script/jordanweather.js"></script>
-
-    <script src="script/snowflakeweather.js"></script>
-
-</body>
-
-
-
-</html>
+    <!-- NAVIGATION -->
+    <nav>
+        <ul class="main-nav">
+            <li><a href="#" onclick="toggleMenu()"><span class="exit-button">&#215;</span><span class="hamburger">&#9776; Menu</span></a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="preston-7.html" >Preston</a></li>
+            <li><a href="#">Soda Springs</a></li>
+            <li><a href="#">Fish Haven</a></li>
+            <li><a href="#">Storm Center</a></li>
+            <li class="active"><a href="gallery-7.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <div id="content-container">
+       <!-- MAIN -->
+        <main>
+            <h2>Gal<span>lery</span></h2>            
+            <section class="gallery-container">
+                <figure>
+                    <img src="Image/beautiful day-galley.jpg" data-src="images/blue-sky.jpg" alt="blue sky">
+                    <figcaption>Blue Sky</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/summer fun in Idaho.jpg" data-src="images/clear-sky.jpg" alt="clear sky">
+                    <figcaption>Clear Sky</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/Typhoon weather.jpg" data-src="images/cyclone.jpg" alt="cyclone">
+                    <figcaption>Cyclone</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/cloudy day (2).jpg" data-src="images/dark-cloud.jpg" alt="dark">
+                    <figcaption>Dark and Raining</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/Red Lightning.jpg" data-src="images/rain.jpg" alt="storm rain">
+                    <figcaption>Storm Rain</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/heavy rain and thunderstorms-galley.jpg" data-src="images/lightening.jpg" alt="lightning">
+                    <figcaption>Thunder and Lightning</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/snoeball-galley.jpg" data-src="images/snowy.jpg" alt="snow">
+                    <figcaption>Snow</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/day out.jpg" data-src="images/storm.jpg" alt="day out">
+                    <figcaption>Day out</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Image/cool day-7gallery.jpg" data-src="images/fog.jpg" alt="cool day">
+                    <figcaption>Cool Day</figcaption>
+                </figure>
+            </section>
+
+            <section class="content-box">
+                <h3>Contact Information</h3>                
+                <div id="contact">
+                    <div class="map no-display">
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Preston%2C%20Idaho&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                            </div>
+                        </div>
+                    </div>                
+                    <div class="contact-info">
+                        <h3>Preston Weather Forecast</h3>
+                        <div class="contact-info">
+                                
+                                   
+                            
+                            <p>Address: 125 Summit Ave S Preston Idaho 98089</p>
+                              <p>Phone Number: 231-232-4534</p>         
+                                               <p>Email: prestonweather@hotmail.org</p>
+                                           </div>
+                                           <br /><br />
+                                       
+                                   </div>
+                               </section>
+                           </main>
+                       </div>
+                       <footer>
+                           <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>  |
+                           <span id="currentDate"></span>
+                               
+                          </footer>
+                      
+                       <script src="js/myscript.js"></script>
+                       <script src="js/windchill.js"></script>
+                       <script src="js/banners.js"></script>
+                       
+           </body>
