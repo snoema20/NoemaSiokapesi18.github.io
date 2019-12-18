@@ -203,8 +203,8 @@ h3 {
 	position: absolute;
 	top: 20px;
     left: 10px;
-	background: #633c09;
-	border: 2px solid #ffc857;
+	background: #faf9f7;
+	border: 2px solid #f8f5ee;
 	padding: 0.5rem;
     box-shadow: 0 10px 20px 0 rgb(235, 233, 233);
     opacity: 0.9;
@@ -387,7 +387,7 @@ figure img {
 
 figure img[data-src] {
     filter: blur(0);
-    /*filter: blur(0.2em);*/
+  
 }
 
 figcaption {
@@ -401,9 +401,6 @@ figure:hover {
     box-shadow: none;
 }
 
-/*
-    Storm Center Forms
-*/
 
 .form-container {
     width: 450px;
@@ -464,8 +461,7 @@ form input.submitBtn {
     width: 96%;
     max-width: 20rem;
     box-sizing: border-box;
-    /*display: block;
-    margin-right: auto;*/
+
 }
 
 form label.top input:required {
@@ -476,9 +472,7 @@ form label.top input:required:valid {
     border-left: 6px solid #004c00;
 }
 
-/*
-    Index Styles
-*/
+
 
 .general-info {
     text-align: left;
@@ -486,7 +480,7 @@ form label.top input:required:valid {
 
 .general-info a {
     text-decoration: none;
-    color: #ffc857;
+    color: #f5f4f3;
 }
 
 .town-container {
