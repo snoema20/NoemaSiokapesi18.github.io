@@ -21,7 +21,7 @@ body {
     width: 80%;
     margin: 0 auto;
     padding: 10px;
-    color: #f8f8f2;
+    color: #0a0a0a;
 }
 
 header {
@@ -51,9 +51,9 @@ header img {
 .motto {
 	font-style: italic;
 	letter-spacing: 1pt;
-	color: #ffffff;
+	color: #161616;
 	margin: 8px 0;
-	font-size: .7rem;
+	font-size: 1.1px;
 }
 
 nav {
@@ -106,7 +106,7 @@ nav li a {
 
 nav ul li.active a {
     background-color: rgba(255,200,87, 0.3);
-    color: #ffffff;
+    color: #141414;
 }
 
 nav ul li a:hover {
@@ -117,7 +117,7 @@ nav ul li a:hover {
 
 .main-nav li:first-child a {
     border-top: none;
-    color: #f1c150;
+    color: #1d1c1c;
 }
 
 .main-nav li:first-child a:hover {
@@ -153,7 +153,7 @@ main {
 
 h1 {
     font-family: 'Roboto', sans-serif;
-    font-size: 2em;
+    font-size: 2.5px;
 }
 
 h2 {
