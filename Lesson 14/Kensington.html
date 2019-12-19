@@ -1,192 +1,126 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en-us">
 
-
-
-<head>
-
-    <meta charset="utf-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>The Temple Inn & Suites | Supporting those who serve others!</title>
-
-    <meta name="description" content="local events around temple sites, temple hours and sessions information, and hotel accommodations for families and temple workers">
-    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet"> 
+    <head>
+        <title>The Temple Inn & Suites</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Assignment weather Siokapesi Noema, CIT 230: Web Frontend Development at Brigham Young University - Idaho">
+        <meta name="author" content="Siokapesi Noema">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     
-
-    <link rel="stylesheet" href="css/css L08/small.css">
-
-    <link rel="stylesheet" href="css/css L08/medium.css">
-
-    <link rel="stylesheet" href="css/css L08/large.css">
-
   
-    <link rel="shortcut icon" type="image/png" href="image/logo temple.png">
-
+    <link rel="stylesheet" href="css/css L09/small.css">
+    <link rel="stylesheet" href="css/css L09/medium.css">
+    <link rel="stylesheet" href="css/css L09/large.css">
 </head>
-
-
-
-<body>
-
-    <header>
-
-        <img src="image/Temple Inn.jpg" class="headerimage" alt="header logo">
-
-        <section class="headings">
-
-            <h1>The Temple Inn & Suites</h1>
-
-            <div class="motto">Family can be together forever</div>
-
-        </section>
-
-        <nav>
-
-            <ul class="menu" id="navmenu">
-
-                <li class="dropdown">
-
-                    <a href="#" class="dropbtn" onclick="toggleMenu()">&#9776; Menu</a>
-
-                </li>
-
-                <li class="dropdown">
-
-                    <a href="index.html">Home</a>
-
-                </li>
-
-                <li class="dropdown">
-
-                    <a href="Temple.html" class="active">Temples</a>
-
-                    <div class="dropdown-content">
-
-                        <a href="Kensington.html" class="active">Tonga Temple</a>
-
-                        <a href="Washington-DC.html">New Zealand Temple</a>
-
-                        <a href="Kensington.html">Seattle Temple</a>
-
-                        <a href="Reservation.html">Reservation</a>
-
-                    </div>
-
-                </li>
-
-                <li class="dropdown">
-
-                    <a href="Reservation.html">Hotel Reservations</a>
-
-                </li>
-
-                <li class="dropdown">
-
-                    <a href="Service.html">Hotel Services</a>
-
-                    <div class="dropdown-content">
-
-                        <a href="Missionary.html">Full-Time Missionaries</a>
-
-                        <a href="Reception.html">Wedding Receptions</a>
-
-                    </div>
-
-                </li>
-
-                <li class="dropdown">
-
-                    <a href="Contact.html">Contact</a>
-
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </header>
-
-
-
-    <main class="meridianmain">
-
-        <h2>Tonga Temple</h2>
+<body>          
+                
+    <header id="main-header">     
+      
+           
+        </div>     
         <picture>
-            <source media="(min-width: 60em)" srcset="image/tongan templeMedium.jpg">
-            <source media="(min-width: 37.5em)" srcset="image/tongan templeSmall.jpg">
-            <img class="hero-image" src="image/cbk.jpg" alt="tonga temple">
+            <img src="image/temple logo.png" alt="hotel">
         </picture>
-       
+        <section class="sec-company-info">
+            <h1>Kensington Temple</h1>
+            <div class="motto">House of the Lord</div>
+        </section>
+    </header>
+    <nav>
+        <ul class="main-nav">
+            <li><a href="#" onclick="toggleMenu()"><span class="exit-button">&#215;</span><span class="hamburger">&#9776; Menu</span></a></li>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="Temple.html">Temple</a></li>
+            <li><a href="#">Seattle</a></li>
+            <li><a href="Kensington.html">Kensington</a></li>
+            <li><a href="#">Washington dc</a></li>
+            <li><a href="#">Reservation</a></li>
+        </ul>
+    </nav>
 
-        <div>
-
-        <article id="closed" class="homepage">
-
-            <h3>Session Times for Ordinances:</h3>
-
-            <section id="sessions" class="tonga">
-
-    
-
+    <div id="content-container">
+   
+        <main>
+            <h2>The Temple Inn & Suites</h2>            
+            <section class="content-box">
+                <div class="hero-container">
+                    <picture>
+                        <source media="(min-width: 60em)" srcset="L14 image/kensington 2 .jpg">
+                        <source media="(min-width: 37.5em)" srcset="L14 image/kensington 1 Small.jpg">
+                        <img class="hero-image" src="image/kensington 1.jpg" alt="enjoyed your staying">
+                    </picture>
+                   
+                   </div>     
+                </div>
             </section>
 
-            <h3>Dates For When The Temple Is Closed:</h3>
+            <section class="content-box no-display">
+                
+                <table>
+                    <thead class="table-header"></thead>
+                </table>
+            </section>
 
-        </article>
+            <section class="content-box">
+            
+                <div id="article-container">
+                    <div class="article panel-wrapper"> 
+                   
+                            <p> Everyone are welcome to visit and we make this place more comfortable to all ages who visited from around the world. We serve three meal a day as well other 
+                                entertainment to make your stay memoable. Don't forget to check out our special everyday.
+                                <br /><br />
+                               
+                            
+                        </div> 
+                    </div>
+                    <section class="gallery-container">
+                        <figure>
+                            <img src="image/kensington 2.jpg" data-src="images/kensington 2 .jpg" alt="temple">
+                            <figcaption>Kensington Temple</figcaption>
+                        </figure>
+        
+                        <figure>
+                            <img src="image/swimmingpool.png" data-src="images/swimmingpool.png" alt="swimmingpool">
+                            <figcaption>Swimmingpool</figcaption>
+                        </figure>
+        
+                        <figure>
+                            <img src="image/dinner.png" data-src="images/dinner.png" alt="dinner">
+                            <figcaption>Dinning and Restaurant</figcaption>
+                        </figure>
+                 
+                </div>
+            </section>
 
+            <section class="content-box">
+                <h3>Contact Information</h3>                
+                <div id="contact">
+                              
+                    <div class="contact-info">
+                    
+                       
+                
+         <p>Address: 4800 Montgomery Ln #300, Bethesda, MD 20814</p>
+           <p>Phone Number: 231-232-4534</p>         
+                            <p>Email: templesuiteinn@gmail.com</p>
+                        </div>
+                        <br /><br />
+                    
+                </div>
+            </section>
+        </main>
     </div>
 
-    </main>
-
-
-
-    <article class="contactinfo">
-
-        <h4>The Temple Inn & Suite</h4>
-
-        <p>Halaloto Rd, Liahona 
-
-            <br> Nuku'alofa, Tongatapu</p>
-
-        <p>Phone: 676-20-300
-
-            <br> Email: templehotels@gmail.com</p>
-
-        <div class="map">
-
-            <iframe src="https://www.google.com/maps/embed/v1/view?zoom=15&center=38.9847%2C-77.0947&key=AIzaSyBraCrN9eDxKmBetKaWsMejLTV6sKG3WDs"
-
-                style="border:0" allowfullscreen title="Google Map"></iframe>
-
-        </div>
-
-    </article>
-
-
-
     <footer>
-
-        <p>&copy;2019 The Temple Inn & Suites |
-
-            <a href="Reference.html" class="reference">Reference Page</a> | Siokapesi Noema</p>
-
-        <div id="currentdate"></div>
-
+        <p>&copy; <span id="copyright"></span> | Siokapesi Noema | Seattle | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p> 
+        <span id="currentDate"></span>
+            
+       </footer>
     </footer>
 
-
-
-    <script src="script/currentdate.js"></script>
-
+    <script src="script/date.js"></script>
+  
     <script src="script/hymburger.js"></script>
-
-    <script src="script/meridian.js"></script>
-
 </body>
-
-
-
-</html>
+</html
