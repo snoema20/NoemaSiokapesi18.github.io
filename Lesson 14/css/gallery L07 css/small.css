@@ -21,11 +21,11 @@ body {
     width: 80%;
     margin: 0 auto;
     padding: 10px;
-    color: #acaa37;
+    color: #f8f8f2;
 }
 
 header {
-	background-color: #c9444b;
+	background-color: #3d2602f8;
 	display: flex;
 	align-items:center;
     justify-content:center;
@@ -33,7 +33,7 @@ header {
 }
 
 header img {
-	width: 70px;
+	width: 68px;
     height: auto;
 }
 
@@ -43,9 +43,9 @@ header img {
 }
 
 .sec-company-info h1 {
-	font-size: 1.1rem;
+	font-size: 1.3px;
     margin: 0 0 0 15px;
-    color: #faeced;
+    color: #0f0f0f;
 }
 
 .motto {
@@ -57,15 +57,15 @@ header img {
 }
 
 nav {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    background-color: #ac4141;
+    background-color: #3d2602f8;
     box-shadow: 0 5px 10px #0b112b;
 }
 
 .main-nav li:first-child {
     display: block;
-    background-color: #be4242;
+    background-color: #3d2602f8;
     border: none;
     font-size: 1.3rem;
     padding: 10px;
@@ -174,7 +174,7 @@ h3 {
     display: block;
     margin: 10px auto;
     padding: 15px;
-    background-color: #5457b3;
+    background-color: #e6e6f0;
     color: #ffffff;
     border-radius: 5px;    
     box-shadow: 0 10px 20px 0 rgba(204, 21, 21, 0.6);
@@ -209,7 +209,7 @@ h3 {
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1);
     opacity: 0.9;
     width: 55%;
-    font-size: 0.7rem;
+    font-size: 1px;
 }
 
 hr {
@@ -247,7 +247,7 @@ hr {
 .article, .contact-info {
     text-align: left;
     padding: 0 30px 30px 30px;
-    background-color: #cc9424;
+    background-color: #f0ede8;
     color: #1f2041;
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1); 
@@ -277,12 +277,12 @@ hr {
     padding: 6px;
     text-decoration: none;
     width: 100px;
-    font-size: 0.9em;
+    font-size: 1px;
 }
  
 .article-show, .article-hide {
     position: absolute;
-    bottom: -0.4em;
+    bottom: -0,6;
     z-index: 1000;
     text-align: center;
 }
@@ -344,8 +344,8 @@ footer {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.75em;  
     line-height: 1.5em;
-	background-color: #c9444b;  
-    color: #2d0983;
+	background-color: #3d2602f8;  
+    color: #fbf9ff;
 	display: flex;
     flex: 0 1 100%;
 	align-items:center;
@@ -357,9 +357,7 @@ footer a {
     color: #e0dff0;
 }
 
-/*
-    Gallery Styles
-*/
+
 
 .gallery-container {
     display: grid;
@@ -387,7 +385,7 @@ figure img {
 
 figure img[data-src] {
     filter: blur(0);
-    /*filter: blur(0.2em);*/
+  
 }
 
 figcaption {
@@ -422,7 +420,7 @@ form fieldset {
 }
 
 form legend {
-    color: #1f2041;
+    color: #dcdde4;
     margin: 0 1rem;
     padding: 0 .5rem;  
 }
@@ -456,16 +454,15 @@ form label.sbs {
 
 form input.submitBtn {
     border: none;
-    background-color: #a50404;
+    background-color: #f5e5e5;
     color: #fff;
     border-radius: 1rem;
     padding: .75rem 1.5rem;
-    margin: 0 0 2rem 2%;     
+    margin: 0 0 2px 2%;     
     width: 96%;
-    max-width: 20rem;
+    max-width: 22rem;
     box-sizing: border-box;
-    /*display: block;
-    margin-right: auto;*/
+  
 }
 
 form label.top input:required {
@@ -476,9 +473,6 @@ form label.top input:required:valid {
     border-left: 6px solid #004c00;
 }
 
-/*
-    Index Styles
-*/
 
 .general-info {
     text-align: left;
@@ -486,12 +480,12 @@ form label.top input:required:valid {
 
 .general-info a {
     text-decoration: none;
-    color: #ffc857;
+    color: #111110;
 }
 
 .town-container {
-    background-color: #1f2041;
-    color: #ffffff;
+    background-color: #f1f1f7;
+    color: #070606;
     border-radius: 5px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1);
     padding: 10px 20px 20px 20px;
@@ -500,10 +494,10 @@ form label.top input:required:valid {
 
 
 .towns { 
-    margin : 25px auto;
+    margin : 26px auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 21px;
     text-align: center;
     align-content: center;
     justify-content: center;
