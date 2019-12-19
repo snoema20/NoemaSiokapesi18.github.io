@@ -158,12 +158,12 @@ h1 {
 
 h2 {
     font-size: 14px;
-    color: #070707;
+    color: #faf0f0;
     font-family: 'Open Sans', sans-serif;
 }
 
 h2 span {
-    color: #0c0c0c;
+    color: #faf3f3;
 }
 
 h3 {
@@ -344,8 +344,8 @@ footer {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 0.75em;  
     line-height: 1.5em;
-	background-color: #f7f1e7f8;  
-    color: #111011;
+	background-color: #4d3306f8;  
+    color: #f7f5f7;
 	display: flex;
     flex: 0 1 100%;
 	align-items:center;
@@ -481,7 +481,7 @@ form label.top input:required:valid {
 }
 
 .town-container {
-    background-color: #f1f1f7;
+    background-color: #55380e;
     color: #070606;
     border-radius: 5px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1);
@@ -507,14 +507,14 @@ form label.top input:required:valid {
     overflow : hidden;
     display : flex;
     flex-flow : column nowrap;
-    background-color: #fcfbf1;
+    background-color: #63440c;
     color: #1f2041;
     border-radius: 5px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 1); 
 }
 
 .text-container h3 {
-    font-size: 2rem;
+    font-size: 12px;
     text-shadow: 2px 2px #ffffff;
 }
 
