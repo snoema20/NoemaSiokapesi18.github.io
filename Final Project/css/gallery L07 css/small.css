@@ -53,7 +53,7 @@ header img {
 	letter-spacing: 1pt;
 	color: #161616;
 	margin: 8px 0;
-	font-size: 16px;
+	font-size: 17px;
 }
 
 nav {
@@ -153,11 +153,11 @@ main {
 
 h1 {
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 h2 {
-    font-size: 14px;
+    font-size: 16px;
     color: #faf0f0;
     font-family: 'Open Sans', sans-serif;
 }
@@ -167,15 +167,15 @@ h2 span {
 }
 
 h3 {
-    font-size: 1em;
+    font-size:18px;
 }
 
 .content-box {
     display: block;
     margin: 10px auto;
     padding: 15px;
-    background-color: #e6e6f0;
-    color: #111111;
+    background-color: #4e3017;
+    color: #f5eded;
     border-radius: 15px;    
     box-shadow: 0 10px 20px 0 rgba(204, 21, 21, 0.6);
     box-sizing: border-box;
@@ -196,7 +196,7 @@ h3 {
 
 .hero-container h3 {
     margin: 0;
-    color: #0c0c0c;
+    color: #f5efef;
 }
 
 .hero-weather-info {
@@ -209,7 +209,7 @@ h3 {
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1);
     opacity: 0.9;
     width: 55%;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 hr {
@@ -223,7 +223,7 @@ hr {
 }
 
 .table-grid > span {
-    padding: 4px;
+    padding: 8px;
 }
 
 .head-content {
@@ -354,7 +354,7 @@ footer {
 }
 
 footer a {
-    color: #050505;
+    color: #f5f1f1;
 }
 
 
