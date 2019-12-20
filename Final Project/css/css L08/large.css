@@ -4,17 +4,17 @@
 	}
 
 	.sec-company-info h1 {
-		font-size: 3rem;
+		font-size: 22px;
 	}
 
 	.motto {
-		letter-spacing: 2.4pt;
-		font-size: 2.2rem;
+		letter-spacing: 1pt;
+		font-size: 18px;
 		margin-left: 10px;
     }
 
     h3 {
-      font-size: 1.7em;
+      font-size: 17px;
   }
 
     .main-nav {
@@ -22,7 +22,7 @@
     }
     
 	.main-nav li:first-child {
-        font-size: 2.3rem;
+        font-size: 16px;
         display: none;
     }
     
@@ -32,7 +32,7 @@
     }
 
     nav li a {
-        font-size: 1.8rem;
+        font-size: 16px;
     }
 
     .hero-weather-info {
@@ -49,7 +49,7 @@
     }
 
   footer {
-      font-size: 1em;
+      font-size: 16px;
       width: 90%;
       margin: 0 auto;
   }    

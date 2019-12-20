@@ -13,7 +13,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #5f3f03;
+    background-color: #f5f2ed;
     display: none;
 }
 
@@ -21,7 +21,7 @@ body {
     width: 80%;
     margin: 0 auto;
     padding: 10px;
-    color: #acaa37;
+    color: #030303;
 }
 
 header {
@@ -43,9 +43,9 @@ header img {
 }
 
 .sec-company-info h1 {
-	font-size: 1.1rem;
+	font-size: 16px;
     margin: 0 0 0 15px;
-    color: #faeced;
+    color: #131212;
 }
 
 .motto {
@@ -53,21 +53,21 @@ header img {
 	letter-spacing: 1pt;
 	color: #ffffff;
 	margin: 8px 0;
-	font-size: .7rem;
+	font-size: 18px;
 }
 
 nav {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    background-color: #633c09;
+    background-color: #f7f6f5;
     box-shadow: 0 5px 10px #e4e5ec;
 }
 
 .main-nav li:first-child {
     display: block;
-    background-color: #633c09;
+    background-color: #f8f7f5;
     border: none;
-    font-size: 1.3rem;
+    font-size: 17px;
     padding: 10px;
 }
 
@@ -95,18 +95,18 @@ nav ul {
 
 nav li a {
     display: block;
-    color: #e7e7ec;
+    color: #0c0c0c;
     text-align: center;
     padding: .8rem 2%;
     text-decoration: none;
     font-size: .8em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+    font-family: sans-serif;   
     border-top: 1px solid rgba(255,255,255, 0.3)
 }
 
 nav ul li.active a {
     background-color: rgba(255,200,87, 0.3);
-    color: #ffffff;
+    color: #d42020;
 }
 
 nav ul li a:hover {
@@ -153,13 +153,13 @@ main {
 
 h1 {
     font-family: 'Roboto', sans-serif;
-    font-size: 2em;
+    font-size: 22px;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 17px;
     color: #1f2041;
-    font-family: 'Open Sans', sans-serif;
+    font-family: monospace;
 }
 
 h2 span {
@@ -167,7 +167,7 @@ h2 span {
 }
 
 h3 {
-    font-size: 1em;
+    font-size: 16px;
 }
 
 .content-box {
@@ -209,7 +209,7 @@ h3 {
     box-shadow: 0 10px 20px 0 rgb(235, 233, 233);
     opacity: 0.9;
     width: 55%;
-    font-size: 0.7rem;
+    font-size: 16px;
 }
 
 hr {
@@ -247,8 +247,8 @@ hr {
 .article, .contact-info {
     text-align: left;
     padding: 0 30px 30px 30px;
-    background-color: #5f3f03;
-    color: #f5f5ff;
+    background-color: #f1eee7;
+    color: #121213;
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1); 
     box-sizing: border-box;
@@ -270,8 +270,8 @@ hr {
 }
 
 .btn {
-    color: #ffc857;
-    background: #1f2041;
+    color: #0e0d0d;
+    background: #ebebf3;
     border-radius: 0.8em;
     margin: 5% auto;
     padding: 6px;
@@ -342,7 +342,7 @@ hr {
 footer {
     width: 100%;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.75em;  
+    font-size: 14px;  
     line-height: 1.5em;
 	background-color: #5f3f03;  
     color: #f2f1f8;
@@ -514,18 +514,18 @@ form label.top input:required:valid {
 }
 
 .text-container h3 {
-    font-size: 2rem;
+    font-size: 14px;
     text-shadow: 2px 2px #ffffff;
 }
 
 .text-container h4 {
-    font-size: 1rem;
+    font-size: 14px;
     font-style: italic;
     margin-top : -0.8em;
 }
 
 .text-container p {
-    font-size: 1.2rem;
+    font-size: 14px;
 }
 
 .town-card div, .town-card img {
