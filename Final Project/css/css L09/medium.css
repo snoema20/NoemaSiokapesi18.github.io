@@ -43,14 +43,14 @@
     th {
         background-color: #ffc857;
         color: #2b0b0b;
-        padding: 15px;
+        padding: 8px;
         border-left: 2px solid #ffffff;
         border-right: 2px solid #ffffff;
     }
 
     td {
-        background-color: #2b0b0b;
-        color: #ffc857; 
+        background-color: #faf5f5;
+        color: #111111; 
         border-left: 2px solid #ffffff;
         border-right: 2px solid #ffffff;
         padding: 10px;
