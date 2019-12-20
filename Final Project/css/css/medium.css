@@ -4,31 +4,31 @@
 	}
 
     .sec-company-info h1 {
-		font-size: 18px;
+		font-size: 2rem;
 	}
 
 	.motto {
-		font-size: 17px;
+		font-size: 1.1rem;
     }   
     
     .main-nav li:first-child {
-        font-size: 15px;
+        font-size: 1.4rem;
     }
     
     nav li a {
-        font-size: 16px;
+        font-size: .9rem;
     }
 
     .hero-weather-info {
         left: 30px;
         width: 40%;
-        font-size: 16px;
+        font-size: 0.90rem;
     }
 
     .btn {
         border-radius: 1.5em;
-        width: 50px;
-        font-size: 16px;
+        width: 150px;
+        font-size: 1.2em;
     }
 
     table {
@@ -43,17 +43,17 @@
     th {
         background-color: #ffc857;
         color: #2b0b0b;
-        padding: 8px;
+        padding: 15px;
         border-left: 2px solid #ffffff;
         border-right: 2px solid #ffffff;
     }
 
     td {
-        background-color: #faf5f5;
-        color: #111111; 
+        background-color: #2b0b0b;
+        color: #ffc857; 
         border-left: 2px solid #ffffff;
         border-right: 2px solid #ffffff;
-        padding: 10px;
+        padding: 15px;
     }
 
     table td:first-child, table th:first-child{
@@ -96,13 +96,20 @@
     }
 
     footer {
-        font-size: 14px;
+        font-size: 0.8rem;
     }
+
+    /*
+        Gallery Styles
+    */
+
     .gallery-container {
         grid-template-columns: 1fr 1fr;
     }
 
-    
+    /*
+        Index Styles
+    */
 
     .towns {
         grid-template-columns : 1fr; 
@@ -121,7 +128,7 @@
     } 
 
     .text-container p {
-      font-size: 14px;      
+      font-size: 1.05rem;      
       box-sizing: border-box;
   }
 }
