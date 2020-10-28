@@ -1,0 +1,38 @@
+@media only screen and (min-width: 60em) {
+    body{
+        width: 100%;
+    }
+    nav ul {
+        display: flex;
+    }
+
+    nav ul li {
+        flex: 1 1 70%;
+    }
+
+    header h1,h2, h3, header img{
+        display:inline-block;
+        vertical-align:middle;
+    }
+    h1{
+        font-size: 3em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    p, table, nav {
+        font-size: 2.5em;
+    }
+    .img {
+        text-align: center;
+        align-content: center;
+     }
+     .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+}

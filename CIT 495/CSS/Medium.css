@@ -1,0 +1,16 @@
+@media (min-width: 768px) {
+
+  .gallery, .towns {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 15px;
+  }
+
+  .towns {
+      grid-template-columns: repeat(3, 1fr);
+  }
+.p {
+  text-align: center;
+  font-size: medium;
+}
+}

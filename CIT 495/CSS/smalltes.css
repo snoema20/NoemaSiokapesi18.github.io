@@ -1,0 +1,194 @@
+body {
+    font-family: cursive ;
+    margin: auto;
+}
+#wrap {
+    width: 70%;
+    margin: auto;
+    background-color: rgb(240, 245, 235);
+    align-self: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding: 2px;
+}
+p {
+    text-align: center;
+    font-size: medium;
+}
+
+header,
+nav,
+main,
+footer {
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 3em;
+    color: rgb(240, 221, 57);
+    font-family: cursive;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: rgb(14, 15, 15);
+    font-family: cursive;
+}
+
+p, table, nav {
+    font-size: 2em;
+}
+
+#top-page, footer{
+    background-color: rgb(68, 190, 247);
+}
+nav {
+    border-top: solid rgb(221, 159, 159);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li a {
+    display: block;
+    color: gold(1, 75, 32);
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    align-content: center;
+}
+
+nav a:hover {
+    background-color: rgb(223, 170, 24);
+    color: rgb(23, 23, 24);
+    text-align: center;
+}
+
+a {
+    color: rgb(65, 2, 56);
+}
+
+#color-palette {
+    width: 80%;
+    height: auto;
+}
+
+.active {
+    background-color: rgb(160, 139, 20);
+}
+
+.active a{
+    color: purple(110, 42, 3);
+}
+
+header {
+    margin: auto;
+}
+.txtCenter{
+    text-align: center;
+    padding: 3px;
+}
+
+footer {
+    padding: .2em;
+    color: rgb(1, 10, 14);
+    font-size: 1em;
+    text-align: center;
+    line-height: 1.3em;
+}
+
+footer a {
+    color: rgb(9, 11, 122);
+}
+
+td, th {
+    border: solid 1px #46B1C9;
+    padding: 3px;
+}
+
+th {
+    background-color: rgb(197, 80, 13);
+    color: #C62B2B;
+    font-family: cursive;
+}
+
+main section table {
+    margin: auto;
+    padding: 5px;
+}
+
+main section table.colored-td-first-child td:first-child {
+    background-color: rgb(16, 8, 80);
+    color: rgb(235, 241, 243);
+}
+
+#table-color-scheme tr:first-child td {
+    padding-top: 150px;
+}
+
+td img {
+    max-width: 100%;
+    height: auto;
+}
+
+.yello {
+    background-color: #46B1C9;
+    color: #FFF15E;
+}
+
+.red {
+    background-color: #46B1C9;
+    color: #C62B2B;
+}
+
+.black {
+    background-color: white;
+    color: black;
+}
+
+.patua {
+    font-family: cursive;
+}
+
+.crete {
+    font-family: cursive;
+}
+
+.small {
+    font-size: 2em;
+}
+
+.medium {
+    font-size: 2em;
+}
+
+.large {
+    font-size: 1.8em;
+}
+
+ .img {
+    text-align: center;
+    align-content: center;
+ }
+ 
+ .h3 p {
+     text-align: center;
+     font-size: small;
+ }
+
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
